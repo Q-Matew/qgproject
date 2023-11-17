@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?><talendfile:ProcessType xmlns:talendfile="platform:/resource/org.talend.model/model/TalendFile.xsd" xmlns:xmi="http://www.omg.org/XMI" defaultContext="Default" jobType="Standard" xmi:version="2.0">
-  <context confirmationNeeded="false" name="Default"/>
+  <context confirmationNeeded="false" hide="false" name="Default"/>
   <parameters>
     <elementParameter field="CLOSED_LIST" name="LOG4J_RUN_LEVEL" show="false" value="Info"/>
     <elementParameter field="TEXT" name="SCREEN_OFFSET_X" show="false" value="0"/>
@@ -43,7 +43,7 @@
     <elementParameter field="TEXT" name="PROPERTIES_IMPLICIT_CONTEXT" show="false" value="&quot;&quot;"/>
     <elementParameter field="TEXT" name="SCHEMA_DB_IMPLICIT_CONTEXT" show="false" value="&quot;&quot;"/>
     <elementParameter field="TEXT" name="USER_IMPLICIT_CONTEXT" show="false" value="&quot;&quot;"/>
-    <elementParameter field="PASSWORD" name="PASS_IMPLICIT_CONTEXT" show="false" value="enc:system.encryption.key.v1:IbQBCA8uPa89HOPmZ3ZvNE/u+bnNY17jXM9pUsHP"/>
+    <elementParameter field="PASSWORD" name="PASS_IMPLICIT_CONTEXT" show="false" value="enc:system.encryption.key.v1:sbiS6nUhpfXO51opcXnt0n54n38/YGWi+d97RjAm"/>
     <elementParameter field="FILE" name="DBFILE_IMPLICIT_CONTEXT" show="false" value="&quot;&quot;"/>
     <elementParameter field="DBTABLE" name="DBTABLE_IMPLICIT_CONTEXT" show="false" value="&quot;&quot;"/>
     <elementParameter field="TEXT" name="QUERY_CONDITION_IMPLICIT_CONTEXT" show="false" value="&quot;&quot;"/>
@@ -97,12 +97,7 @@
     <elementParameter field="TEXT" name="FOOTER_LIBRARY" show="false" value=""/>
     <elementParameter field="TEXT" name="FOOTER_CODE" show="false" value=""/>
     <elementParameter field="TEXT" name="FOOTER_IMPORT" show="false" value=""/>
-    <routinesParameter id="_26zTYKuIEeq2_fH8dztAFg" name="DQTechnical"/>
-    <routinesParameter id="_25UFoKuIEeq2_fH8dztAFg" name="DataMasking"/>
     <routinesParameter id="_2yhhIKuIEeq2_fH8dztAFg" name="DataOperation"/>
-    <routinesParameter id="_26MPYKuIEeq2_fH8dztAFg" name="DataQualityDependencies"/>
-    <routinesParameter id="_25z04KuIEeq2_fH8dztAFg" name="DataQuality"/>
-    <routinesParameter id="_26fKUKuIEeq2_fH8dztAFg" name="DqStringHandling"/>
     <routinesParameter id="_21Fs8KuIEeq2_fH8dztAFg" name="Mathematical"/>
     <routinesParameter id="_21k1IKuIEeq2_fH8dztAFg" name="Numeric"/>
     <routinesParameter id="_214XIKuIEeq2_fH8dztAFg" name="Relational"/>
@@ -117,6 +112,8 @@
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tFileInputDelimited_1"/>
     <elementParameter field="TECHNICAL" name="SCHEMA:SCHEMA_TYPE" show="false" value="REPOSITORY"/>
     <elementParameter field="TECHNICAL" name="SCHEMA:REPOSITORY_SCHEMA_TYPE" show="false" value="_EqKPwPLrEei2QqN5AvUvOg - metadata"/>
+    <elementParameter field="CHECK" name="USE_EXISTING_DYNAMIC" value="false"/>
+    <elementParameter field="COMPONENT_LIST" name="DYNAMIC" show="false" value=""/>
     <elementParameter field="LABEL" name="FILENAMETEXT" value="&quot;When the input source is a stream or a zip file,footer and random shouldn't be bigger than 0.&quot;"/>
     <elementParameter field="FILE" name="FILENAME" value="&quot;D:/Desktop/Events&amp;Training/Vinda/data/customer_data.csv&quot;"/>
     <elementParameter field="CHECK" name="CSV_OPTION" value="false"/>
@@ -185,6 +182,7 @@
       <elementValue elementRef="DECODE" value="false"/>
     </elementParameter>
     <elementParameter field="TEXT" name="DESTINATION" show="false" value=""/>
+    <elementParameter field="CHECK" name="USE_HEADER_AS_IS" value="false"/>
     <elementParameter field="TEXT" name="SCHEMA_OPT_NUM" show="false" value="100"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="FLOW" label="metadata" name="tFileInputDelimited_1">
@@ -216,7 +214,7 @@
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tDBOutput_1"/>
     <elementParameter field="TECHNICAL" name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY"/>
     <elementParameter field="TECHNICAL" name="PROPERTY:REPOSITORY_PROPERTY_TYPE" show="false" value="_7NrZIPLoEei2QqN5AvUvOg"/>
-    <elementParameter field="CLOSED_LIST" name="DB_VERSION" value="MYSQL_5"/>
+    <elementParameter field="CLOSED_LIST" name="DB_VERSION" value="MYSQL_8"/>
     <elementParameter field="CHECK" name="USE_EXISTING_CONNECTION" value="false"/>
     <elementParameter field="COMPONENT_LIST" name="CONNECTION" show="false" value=""/>
     <elementParameter field="TEXT" name="TYPE" show="false" value="MYSQL"/>
@@ -224,7 +222,7 @@
     <elementParameter field="TEXT" name="PORT" value="&quot;3306&quot;"/>
     <elementParameter field="TEXT" name="DBNAME" value="&quot;dw0&quot;"/>
     <elementParameter field="TEXT" name="USER" value="&quot;root&quot;"/>
-    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:r2CzZLRajz+NU/GHjMbixC2azzSd6xTaMjAUomYH/mL2R75LDw=="/>
+    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:WyrJvKv3lgYDF2ZqT9JI5DiyBVrJ4NIPRLXlXJHoKOEezgbxaydj3pOMnXg="/>
     <elementParameter field="DBTABLE" name="TABLE" value="&quot;stg_customer_info&quot;"/>
     <elementParameter field="CLOSED_LIST" name="TABLE_ACTION" value="DROP_IF_EXISTS_AND_CREATE"/>
     <elementParameter field="CLOSED_LIST" name="DATA_ACTION" value="INSERT"/>
@@ -332,13 +330,13 @@
     <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="92;131;150"/>
     <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
   </subjob>
-<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_351255d4-19c6-4fb2-abe9-9dd7c0f7650e"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>KQ8GIIA3tdG7d86/PFEaMGpg0YweYrVmkSTI9++Ye9aKY+z2/WD4iG40Ummaczuiu6ElglOMqdGI&#13;
-ekf3mDsPDw==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_b864f62e-86b9-49a7-9473-de763321c4e0"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>to3YG5Y5UdVJdWZMl2GCIATCXwK5M2W4vTp+7HW0cdy2bsiTx9T9AGJ0s3uHliIa3XXRqUZgerCp&#13;
-PENebwez7g==</DigestValue></Reference></SignedInfo><SignatureValue>JGj0DM9Jtaoi8S1k1kRMkFSujv2ghv3rZPoJVv7Rt2wEPOe+hiBwLfgxGNISodloz2JGKn4NpltF&#13;
-rkbvkrvCs6oqzEi5lSyUjswgo5WVQg75heD9LsLLyRrTplfbxkpAr3QLdT0AKApNVQKxuqLzSUQY&#13;
-KYhlKvtsJBlZ2TOgZxrOH6b7ThHIL8xc2aQv3p/FUGcLnzTcCnlsIDpy0k9TiJgBsksk0S6AfQmi&#13;
-wDywnWI0gPawnWL1gfGTXYGWx1HI81E0r2Fzn7AxQx0gbwpaI1AE9ou5e3iFWoLVXQ4xYjTYTVKm&#13;
-7CXALIhKWaG/A1AgWw28WIUhL8jX39ektOzejg==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w&#13;
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_b324fe06-5095-4b90-a6b1-222c71ab93a1"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>itxzcG/THeYOcujuuNYJTh9J4DvDRuy1sQwxTE9U4OSLYunetCI6qYlAAxf+GECnI88gmmLwntIq&#13;
+vCK+cW4zTg==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_907d0960-9859-430c-9ccc-0899ca6b23e8"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>acC+wECH4XG7YDK8iDhgeK68zOr4Abu904XLEVFhp6y5Ermm+KgME6xyyC93L4gdWva73kRiv9AL&#13;
+zjLFp4TOMg==</DigestValue></Reference></SignedInfo><SignatureValue>gvGP+sBMpxgoyf20BKbtUdbXC5T+XRfpSQYEwDpTVfKeqYWp74mDr6Zt0pQLpXTltE72Dqny/GMv&#13;
+NCzO52Ih1WYMGdWp9n9G1XVL7jpap2kay4srjrU5p1YLPSyj7GN/GOxeHeRIU5cNuWzwTxUq0iPR&#13;
+ukQ+Oy6MChTtmjH4rkJaVdKVnnlC3Jdcf01JAuRqmuV58ZdtCrZIddBotV5K1r2jWxd1b/M99yu4&#13;
++1zJidPTLoRZHL5z5gJAAKnmdmtXVvPq8Hli7vw7bZ4j4RXaJ+1XRCRTFuWVhB/gQOsG+ekKI1Ft&#13;
+5WrqcKGEPigFAHuwfxs/kG/oiiIc2p8H49XZcQ==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w&#13;
 DAYDVQQIEwVQYXJpczEOMAwGA1UEBxMFUGFyaXMxFDASBgNVBAoTC1RhbGVuZCBJbmMuMQwwCgYD&#13;
 VQQLDANSJkQxFjAUBgNVBAMMDVRhbGVuZCBSJkQgQ0ExIjAgBgkqhkiG9w0BCQEWE3NlY3VyaXR5&#13;
 QHRhbGVuZC5jb20wHhcNMTkwNjAzMDgxODIwWhcNMjkwNjAzMDAwMDAwWjB7MSgwJgYDVQQDEx9U&#13;
@@ -360,4 +358,4 @@ hakvpzhOyLo91h8YAQrEZJdNuKA8IYmBrFZQZDCz0uywKSyFfzPyJhvxylCLG/iDPPfE0VWcrMJ/&#13
 WQJly/2XPg/NBCTF3pSKS0kCiA7PeaI3cWkMYYA3PMwYDvzqs1opBRglG7ikj0bQxSm3lcjMuuvW&#13;
 gBRksFKjP3K/nztsjSoYITOM9jR29ReIL3v0E8RbAFwA2RGq6Dxd0ixfbucMesy5Gnr8tfYy6rW+&#13;
 qSQqd3ah4+PSzBNVwIB4ytpdrG3SlhCI2i2Th8ek8Sjsaquh9qPAerWNd2+84HWOOGj1Xe1qc6vg&#13;
-qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_b864f62e-86b9-49a7-9473-de763321c4e0" Target="#_351255d4-19c6-4fb2-abe9-9dd7c0f7650e"><Timestamp>2023-11-17 01:23:41</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
+qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_907d0960-9859-430c-9ccc-0899ca6b23e8" Target="#_b324fe06-5095-4b90-a6b1-222c71ab93a1"><Timestamp>2023-11-17 02:28:17</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>

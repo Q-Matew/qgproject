@@ -249,7 +249,7 @@
     <elementParameter field="TEXT" name="ROWS_BUFFER_SIZE" value="2000000"/>
     <elementParameter field="CHECK" name="CHANGE_HASH_AND_EQUALS_FOR_BIGDECIMAL" value="true"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
-    <metadata connector="FLOW" name="out1">
+    <metadata connector="FLOW" name="output">
       <column comment="" key="false" length="255" name="dateSid" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
@@ -276,23 +276,23 @@
       <column comment="" key="false" length="20" name="activeness" nullable="true" originalLength="10" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
     </metadata>
     <nodeData xsi:type="TalendMapper:MapperData">
-      <uiProperties/>
+      <uiProperties shellMaximized="true"/>
       <varTables minimized="true" name="Var" sizeState="INTERMEDIATE"/>
-      <outputTables name="out1" sizeState="INTERMEDIATE">
-        <mapperTableEntries expression="row4.dateSid " name="dateSid" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="row4.customerSid " name="customerSid" type="id_Integer"/>
+      <outputTables name="output" sizeState="INTERMEDIATE">
+        <mapperTableEntries expression="aggregated.dateSid " name="dateSid" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="aggregated.customerSid " name="customerSid" type="id_Integer"/>
         <mapperTableEntries expression="lastLocation.locationSid " name="locationSid" type="id_Integer"/>
-        <mapperTableEntries expression="row4.noOfSession " name="noOfSession" nullable="true" type="id_Double"/>
-        <mapperTableEntries expression="row4.noOfSession/7" name="averageNoOfSession" nullable="true" type="id_Double"/>
-        <mapperTableEntries expression="row4.noOfHits " name="noOfHits" nullable="true" type="id_Double"/>
-        <mapperTableEntries expression="row4.noOfHits /7" name="averageNoOfHits" nullable="true" type="id_Double"/>
-        <mapperTableEntries expression="row4.secondsOnSite " name="secondsOnSite" nullable="true" type="id_Double"/>
-        <mapperTableEntries expression="row4.secondsOnSite /7" name="averageSecondsOnSite" nullable="true" type="id_Double"/>
-        <mapperTableEntries expression="row4.noOfPageview " name="noOfPageview" nullable="true" type="id_Double"/>
-        <mapperTableEntries expression="row4.noOfPageview /7" name="averagePageview" nullable="true" type="id_Double"/>
-        <mapperTableEntries expression="row4.noOfSession &gt; 10?&quot;High Active User&quot;:&#13;&#10;row4.noOfSession &gt; 5?&quot;Medium User&quot;:&quot;Low Active User&quot; " name="activeness" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="aggregated.noOfSession " name="noOfSession" nullable="true" type="id_Double"/>
+        <mapperTableEntries expression="aggregated.noOfSession/7" name="averageNoOfSession" nullable="true" type="id_Double"/>
+        <mapperTableEntries expression="aggregated.noOfHits " name="noOfHits" nullable="true" type="id_Double"/>
+        <mapperTableEntries expression="aggregated.noOfHits /7" name="averageNoOfHits" nullable="true" type="id_Double"/>
+        <mapperTableEntries expression="aggregated.secondsOnSite " name="secondsOnSite" nullable="true" type="id_Double"/>
+        <mapperTableEntries expression="aggregated.secondsOnSite /7" name="averageSecondsOnSite" nullable="true" type="id_Double"/>
+        <mapperTableEntries expression="aggregated.noOfPageview " name="noOfPageview" nullable="true" type="id_Double"/>
+        <mapperTableEntries expression="aggregated.noOfPageview /7" name="averagePageview" nullable="true" type="id_Double"/>
+        <mapperTableEntries expression="aggregated.noOfSession &gt; 10?&quot;High Active User&quot;:&#13;&#10;aggregated.noOfSession &gt; 5?&quot;Medium User&quot;:&quot;Low Active User&quot; " name="activeness" nullable="true" type="id_String"/>
       </outputTables>
-      <inputTables lookupMode="LOAD_ONCE" matchingMode="UNIQUE_MATCH" name="row4" sizeState="INTERMEDIATE">
+      <inputTables lookupMode="LOAD_ONCE" matchingMode="UNIQUE_MATCH" name="aggregated" sizeState="INTERMEDIATE">
         <mapperTableEntries name="dateSid" nullable="true" type="id_String"/>
         <mapperTableEntries name="customerSid" type="id_Integer"/>
         <mapperTableEntries name="noOfHits" nullable="true" type="id_Double"/>
@@ -301,7 +301,7 @@
         <mapperTableEntries name="noOfSession" nullable="true" type="id_Double"/>
       </inputTables>
       <inputTables lookupMode="LOAD_ONCE" matchingMode="UNIQUE_MATCH" name="lastLocation" sizeState="INTERMEDIATE">
-        <mapperTableEntries expression="row4.customerSid " name="customerSid" operator="=" type="id_Integer"/>
+        <mapperTableEntries expression="aggregated.customerSid " name="customerSid" operator="=" type="id_Integer"/>
         <mapperTableEntries name="locationSid" type="id_Integer"/>
       </inputTables>
     </nodeData>
@@ -370,16 +370,16 @@
       <uiProperties/>
       <varTables minimized="true" name="Var" sizeState="INTERMEDIATE"/>
       <outputTables name="lastLocation" sizeState="INTERMEDIATE">
-        <mapperTableEntries expression="row1.customerSid " name="customerSid" type="id_Integer"/>
-        <mapperTableEntries expression="row2.locationSid " name="locationSid" type="id_Integer"/>
+        <mapperTableEntries expression="lastvisitdate.customerSid " name="customerSid" type="id_Integer"/>
+        <mapperTableEntries expression="factactivityinfo.locationSid " name="locationSid" type="id_Integer"/>
       </outputTables>
-      <inputTables lookupMode="LOAD_ONCE" matchingMode="UNIQUE_MATCH" name="row1" sizeState="INTERMEDIATE">
+      <inputTables lookupMode="LOAD_ONCE" matchingMode="UNIQUE_MATCH" name="lastvisitdate" sizeState="INTERMEDIATE">
         <mapperTableEntries name="customerSid" type="id_Integer"/>
         <mapperTableEntries name="lastVisitDate" nullable="true" type="id_String"/>
       </inputTables>
-      <inputTables activateCondensedTool="true" lookupMode="LOAD_ONCE" matchingMode="UNIQUE_MATCH" name="row2" sizeState="INTERMEDIATE">
-        <mapperTableEntries expression="row1.lastVisitDate " name="dateSid" nullable="true" operator="=" type="id_String"/>
-        <mapperTableEntries expression="row1.customerSid " name="customerSid" operator="=" type="id_Integer"/>
+      <inputTables activateCondensedTool="true" lookupMode="LOAD_ONCE" matchingMode="UNIQUE_MATCH" name="factactivityinfo" sizeState="INTERMEDIATE">
+        <mapperTableEntries expression="lastvisitdate.lastVisitDate " name="dateSid" nullable="true" operator="=" type="id_String"/>
+        <mapperTableEntries expression="lastvisitdate.customerSid " name="customerSid" operator="=" type="id_Integer"/>
         <mapperTableEntries name="locationSid" type="id_Integer"/>
       </inputTables>
     </nodeData>
@@ -586,42 +586,42 @@
       <column defaultValue="" key="false" length="255" name="errorMessage" nullable="true" originalLength="-1" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
     </metadata>
   </node>
-  <connection connectorName="FLOW" label="row3" lineStyle="0" metaname="tDBInput_7" offsetLabelX="0" offsetLabelY="0" source="tDBInput_7" target="tAggregateRow_1">
+  <connection connectorName="FLOW" label="main" lineStyle="0" metaname="tDBInput_7" offsetLabelX="0" offsetLabelY="0" source="tDBInput_7" target="tAggregateRow_1">
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
-    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="row3"/>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="main"/>
   </connection>
-  <connection connectorName="FLOW" label="row4" lineStyle="0" metaname="tAggregateRow_1" offsetLabelX="0" offsetLabelY="0" source="tAggregateRow_1" target="tMap_2">
+  <connection connectorName="FLOW" label="aggregated" lineStyle="0" metaname="tAggregateRow_1" offsetLabelX="0" offsetLabelY="0" source="tAggregateRow_1" target="tMap_2">
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
-    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="row4"/>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="aggregated"/>
   </connection>
-  <connection connectorName="FLOW" label="out1" lineStyle="0" metaname="out1" offsetLabelX="0" offsetLabelY="0" source="tMap_2" target="tDBOutput_5">
+  <connection connectorName="FLOW" label="output" lineStyle="0" metaname="output" offsetLabelX="0" offsetLabelY="0" source="tMap_2" target="tDBOutput_5">
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
-    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="out1"/>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="output"/>
   </connection>
-  <connection connectorName="FLOW" label="row1" lineStyle="0" metaname="tDBInput_2" offsetLabelX="0" offsetLabelY="0" source="tDBInput_2" target="tMap_1">
+  <connection connectorName="FLOW" label="lastvisitdate" lineStyle="0" metaname="tDBInput_2" offsetLabelX="0" offsetLabelY="0" source="tDBInput_2" target="tMap_1">
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
-    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="row1"/>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="lastvisitdate"/>
   </connection>
-  <connection connectorName="FLOW" label="lastLocation" lineStyle="8" metaname="lastLocation" offsetLabelX="0" offsetLabelY="0" source="tMap_1" target="tMap_2">
+  <connection connectorName="FLOW" label="lastLocation" lineStyle="8" metaname="lastLocation" offsetLabelX="50" offsetLabelY="-3" source="tMap_1" target="tMap_2">
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="lastLocation"/>
   </connection>
-  <connection connectorName="FLOW" label="row2" lineStyle="8" metaname="tDBInput_5" offsetLabelX="50" offsetLabelY="1" source="tDBInput_5" target="tMap_1">
+  <connection connectorName="FLOW" label="factactivityinfo" lineStyle="8" metaname="tDBInput_5" offsetLabelX="50" offsetLabelY="5" source="tDBInput_5" target="tMap_1">
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
-    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="row2"/>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="factactivityinfo"/>
   </connection>
   <subjob>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tDBInput_7"/>
     <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="92;131;150"/>
     <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
   </subjob>
-<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_f4856c6f-5333-4537-8e01-6350ec7f01f1"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>JGFRxci7j3bWhTsJvGoYTkeB4pNpc3yxH4d71/Mmnd2UAsBMK5+u61EADJ8aO1pGLR5oJ66NXbvN&#13;
-2dgAdidyFQ==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_7cb90c78-47bc-4e43-97ec-c89b6484e905"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>pOv0331WUVnC5UkdXD9HdQPKghMRQN1PTOa+S9ye0tin0aZWyvwKlrzt1yTauMi3m1XIZ/DASEEk&#13;
-LdI5DvXPqQ==</DigestValue></Reference></SignedInfo><SignatureValue>of2Kot0EiScpErrZX16NJdm98VvCq5MEvKyjWKWRvqBXInrJfyhA4GCzk7NhxLpuXEEGMmZQSgl9&#13;
-7L+tXv5dNMdjEECsjHeJD27YA+7HS6NRRYyRwMrzJJow9PdjfM/07qoXD4RoloPJiUq9hcsgMo3j&#13;
-jmqitmI65by6f0mRV/926w5goPxLq6hoRKsuZY4pRIFoUyw9QB7Unqafm6at/mVJ94TpAgOrT+RC&#13;
-r4eaHf67YLgY0snAm3sSfxhJbd3U85C4j1elt/zpPkROEiy2/6nC6u6LJWH7uJiieLTWPmjxGwcd&#13;
-rAmFdx8RBiCIRpWxiK1Pzia47tX6yRyZKJKW+g==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w&#13;
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_29150547-999f-4265-a6d9-5c8aa4af0a06"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>dHL1/VxunfmFDb+CRL4r9ihBzF7m8+ClNXv2vE4y0/WOFJMQdmP+utGQV3jJrTypCMjj01Arhlf0&#13;
+IHAcv8KdCg==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_e11e038c-ec24-44d9-b30c-06b8583b35a3"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>oH8ja2FHt/rujgRdUBaVP/5p5CNHoYW1s+UfUU0XaXeek+73xLRGC6jLW6EHcXx/5UKaBCFeQujB&#13;
+OjAgtRG4mw==</DigestValue></Reference></SignedInfo><SignatureValue>UF/V7eCB2mMWM9YHQ6U9SljiQnC7SGVdF5hBYy1G12/pw5DR/viMUqHHnDC9vFXcvllgrzFsgqWf&#13;
+oFelizLTB1lPcUvwpmW1qYYmIJGIMDqFbGtzoZ9Mfb94YCF3pXux3O/AiNzB40+9O0A57Cp0bGcX&#13;
+gT8lpkaa9nblqEHkpO3v7SA2Rr0OfGsVB/8pLHRzKIpn+nTitH8Vn+zZ17erwvy+vflsFUB/0NtS&#13;
+sVSuKPKZUZYHVh6C8GVcmDvTPKSL6JClVAImSvQ7pupO/2YPQRUXae8MQ7nAsuNzeY4cKUyUViou&#13;
+dcVTXipe406yrUlJmmGNnWejjcB48mSLouqCxQ==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w&#13;
 DAYDVQQIEwVQYXJpczEOMAwGA1UEBxMFUGFyaXMxFDASBgNVBAoTC1RhbGVuZCBJbmMuMQwwCgYD&#13;
 VQQLDANSJkQxFjAUBgNVBAMMDVRhbGVuZCBSJkQgQ0ExIjAgBgkqhkiG9w0BCQEWE3NlY3VyaXR5&#13;
 QHRhbGVuZC5jb20wHhcNMTkwNjAzMDgxODIwWhcNMjkwNjAzMDAwMDAwWjB7MSgwJgYDVQQDEx9U&#13;
@@ -643,4 +643,4 @@ hakvpzhOyLo91h8YAQrEZJdNuKA8IYmBrFZQZDCz0uywKSyFfzPyJhvxylCLG/iDPPfE0VWcrMJ/&#13
 WQJly/2XPg/NBCTF3pSKS0kCiA7PeaI3cWkMYYA3PMwYDvzqs1opBRglG7ikj0bQxSm3lcjMuuvW&#13;
 gBRksFKjP3K/nztsjSoYITOM9jR29ReIL3v0E8RbAFwA2RGq6Dxd0ixfbucMesy5Gnr8tfYy6rW+&#13;
 qSQqd3ah4+PSzBNVwIB4ytpdrG3SlhCI2i2Th8ek8Sjsaquh9qPAerWNd2+84HWOOGj1Xe1qc6vg&#13;
-qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_7cb90c78-47bc-4e43-97ec-c89b6484e905" Target="#_f4856c6f-5333-4537-8e01-6350ec7f01f1"><Timestamp>2023-11-17 04:37:21</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
+qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_e11e038c-ec24-44d9-b30c-06b8583b35a3" Target="#_29150547-999f-4265-a6d9-5c8aa4af0a06"><Timestamp>2023-11-17 06:30:08</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>

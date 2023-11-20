@@ -400,6 +400,23 @@
       </column>
       <column comment="" key="false" length="19" name="noOfSession" nullable="true" originalLength="255" pattern="" precision="6" sourceType="" type="id_Double" usefulColumn="true"/>
     </metadata>
+    <metadata connector="FLOW" name="toParquet">
+      <column comment="" key="false" length="255" name="dateSid" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" defaultValue="" key="false" length="8" name="customerSid" nullable="false" originalLength="-1" pattern="" precision="0" sourceType="INT" type="id_Integer" usefulColumn="true"/>
+      <column comment="" defaultValue="" key="false" length="11" name="locationSid" nullable="false" originalLength="-1" pattern="" precision="0" sourceType="INT" type="id_Integer" usefulColumn="true"/>
+      <column comment="" key="false" length="19" name="noOfHits" nullable="true" pattern="" precision="6" sourceType="VARCHAR" type="id_Double" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="19" name="secondsOnSite" nullable="true" pattern="" precision="6" sourceType="VARCHAR" type="id_Double" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="19" name="noOfPageview" nullable="true" pattern="" precision="6" sourceType="VARCHAR" type="id_Double" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="19" name="noOfSession" nullable="true" originalLength="255" pattern="" precision="6" sourceType="" type="id_Double" usefulColumn="true"/>
+    </metadata>
     <nodeData xsi:type="TalendMapper:MapperData">
       <uiProperties shellMaximized="true"/>
       <varTables minimized="true" name="Var" sizeState="INTERMEDIATE"/>
@@ -411,6 +428,15 @@
         <mapperTableEntries expression="typeConverted.secondsOnSite " name="secondsOnSite" nullable="true" type="id_Double"/>
         <mapperTableEntries expression="typeConverted.noOfPageview " name="noOfPageview" nullable="true" type="id_Double"/>
         <mapperTableEntries expression="typeConverted.noOfSession " name="noOfSession" nullable="true" type="id_Double"/>
+      </outputTables>
+      <outputTables name="toParquet" sizeState="INTERMEDIATE">
+        <mapperTableEntries expression="typeConverted.dateSid  " name="dateSid" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="dim_cust.customerSid  " name="customerSid" type="id_Integer"/>
+        <mapperTableEntries expression="dim_loc.locationSid  " name="locationSid" type="id_Integer"/>
+        <mapperTableEntries expression="typeConverted.noOfHits  " name="noOfHits" nullable="true" type="id_Double"/>
+        <mapperTableEntries expression="typeConverted.secondsOnSite  " name="secondsOnSite" nullable="true" type="id_Double"/>
+        <mapperTableEntries expression="typeConverted.noOfPageview  " name="noOfPageview" nullable="true" type="id_Double"/>
+        <mapperTableEntries expression="typeConverted.noOfSession  " name="noOfSession" nullable="true" type="id_Double"/>
       </outputTables>
       <inputTables lookupMode="LOAD_ONCE" matchingMode="UNIQUE_MATCH" name="typeConverted" sizeState="INTERMEDIATE">
         <mapperTableEntries name="dateSid" nullable="true" type="id_String"/>
@@ -515,7 +541,7 @@
       <additionalProperties key="Comment" value=""/>
     </metadata>
   </node>
-  <node componentName="tMysqlOutput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="896" posY="256">
+  <node componentName="tMysqlOutput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="992" posY="256">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tDBOutput_4"/>
     <elementParameter field="TECHNICAL" name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY"/>
     <elementParameter field="TECHNICAL" name="PROPERTY:REPOSITORY_PROPERTY_TYPE" show="false" value="_7NrZIPLoEei2QqN5AvUvOg"/>
@@ -629,6 +655,33 @@
       <column defaultValue="" key="false" length="255" name="errorMessage" nullable="true" originalLength="-1" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
     </metadata>
   </node>
+  <node componentName="tFileOutputParquet" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="960" posY="384">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tFileOutputParquet_1"/>
+    <elementParameter field="FILE" name="FILENAME" value="&quot;/Users/minganntew/Documents/Projects/MangThai/TalendJob/DWH/outputresult.parquet&quot;"/>
+    <elementParameter field="CLOSED_LIST" name="FILE_ACTION" value="CREATE"/>
+    <elementParameter field="OPENED_LIST" name="COMPRESSION" value="&quot;UNCOMPRESSED&quot;"/>
+    <elementParameter field="CHECK" name="USE_EXTERNAL_HADOOP_DEPS" value="false"/>
+    <elementParameter field="TEXT" name="ROW_GROUP_SIZE" value="134217728"/>
+    <elementParameter field="TEXT" name="PAGE_SIZE" value="1048576"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <metadata connector="FLOW" name="tFileOutputParquet_1">
+      <column comment="" key="false" length="255" name="dateSid" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" defaultValue="" key="false" length="8" name="customerSid" nullable="false" originalLength="-1" pattern="" precision="0" sourceType="INT" type="id_Integer" usefulColumn="true"/>
+      <column comment="" defaultValue="" key="false" length="11" name="locationSid" nullable="false" originalLength="-1" pattern="" precision="0" sourceType="INT" type="id_Integer" usefulColumn="true"/>
+      <column comment="" key="false" length="19" name="noOfHits" nullable="true" pattern="" precision="6" sourceType="VARCHAR" type="id_Double" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="19" name="secondsOnSite" nullable="true" pattern="" precision="6" sourceType="VARCHAR" type="id_Double" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="19" name="noOfPageview" nullable="true" pattern="" precision="6" sourceType="VARCHAR" type="id_Double" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="19" name="noOfSession" nullable="true" originalLength="255" pattern="" precision="6" sourceType="" type="id_Double" usefulColumn="true"/>
+    </metadata>
+  </node>
   <node componentName="tMysqlInput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="128" posY="64">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tDBInput_8"/>
     <elementParameter field="TECHNICAL" name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY"/>
@@ -724,6 +777,63 @@
       <column defaultValue="" key="false" length="255" name="errorMessage" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
     </metadata>
   </node>
+  <node componentName="tS3Put" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="1088" posY="384">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tS3Put_1"/>
+    <elementParameter field="CHECK" name="USE_EXISTING_CONNECTION" value="false"/>
+    <elementParameter field="COMPONENT_LIST" name="CONNECTION" show="false" value=""/>
+    <elementParameter field="CLOSED_LIST" name="CREDENTIAL_PROVIDER" value="STATIC_CREDENTIALS"/>
+    <elementParameter field="FILE" name="PROFILE_PATH" show="false" value="&quot;&quot;"/>
+    <elementParameter field="TEXT" name="PROFILE_NAME" show="false" value="&quot;&quot;"/>
+    <elementParameter field="TEXT" name="ACCESS_KEY" value="&quot;AKIAQRL7IZUN4WSBCHNY&quot;"/>
+    <elementParameter field="PASSWORD" name="SECRET_KEY" value="enc:system.encryption.key.v1:+O2NjthJW3i7/FLrNdyJMhTR1eMb9wG8/b7tMP2/2xalQb4cYqUjX3IYAgeAMH6ZKRZMNBw+SaLluuoaVZIPI5PPtuek4A=="/>
+    <elementParameter field="CHECK" name="ASSUME_ROLE" value="false"/>
+    <elementParameter field="TEXT" name="ARN" show="false" value="&quot;&quot;"/>
+    <elementParameter field="TEXT" name="ROLE_SESSION_NAME" show="false" value="&quot;&quot;"/>
+    <elementParameter field="TEXT" name="SESSION_DURATION" show="false" value="15"/>
+    <elementParameter field="OPENED_LIST" name="REGION" value="DEFAULT"/>
+    <elementParameter field="CHECK" name="ENCRYPT" value="false"/>
+    <elementParameter field="CLOSED_LIST" name="KEY_TYPE" show="false" value="KMS_CMK"/>
+    <elementParameter field="CLOSED_LIST" name="ALGORITHM_SYMMETRIC_MASTER_KEY" show="false" value="AES"/>
+    <elementParameter field="CLOSED_LIST" name="ALGORITHM_ASYMMETRIC_MASTER_KEY" show="false" value="RSA"/>
+    <elementParameter field="CLOSED_LIST" name="ENCODING" show="false" value="BASE64"/>
+    <elementParameter field="PASSWORD" name="ENCRYPTED_KEY_CMK" show="false" value="enc:system.encryption.key.v1:kQs5VcDky0kfL31mEU27XPdBtqwRjl1Thw8nGojq"/>
+    <elementParameter field="PASSWORD" name="ENCRYPTED_KEY_BASE64" show="false" value="enc:system.encryption.key.v1:5XefkY20hvXgRiPFPVc1lU9bNsz5L+KY2cui1rmj"/>
+    <elementParameter field="FILE" name="ENCRYPTED_KEY_X509" show="false" value="&quot;&quot;"/>
+    <elementParameter field="FILE" name="PUBLIC_KEY" show="false" value="&quot;&quot;"/>
+    <elementParameter field="FILE" name="PRIVATE_KEY" show="false" value="&quot;&quot;"/>
+    <elementParameter field="TEXT" name="BUCKET" value="&quot;aws-logs-037311008027-ap-southeast-1/MangThaiDemo&quot;"/>
+    <elementParameter field="TEXT" name="KEY" value="&quot;&quot;"/>
+    <elementParameter field="FILE" name="FILE" value="&quot;/Users/minganntew/Documents/Projects/MangThai/TalendJob/DWH/outputresult.parquet&quot;"/>
+    <elementParameter field="CHECK" name="ENABLE_SERVER_SIDE_ENCRYPTION" value="false"/>
+    <elementParameter field="CHECK" name="ENABLE_KMS" show="false" value="false"/>
+    <elementParameter field="TEXT" name="KMSID" show="false" value="&quot;&quot;"/>
+    <elementParameter field="CHECK" name="DIE_ON_ERROR" value="false"/>
+    <elementParameter field="FILE" name="WEB_IDENTITY_TOKEN_FILE" show="false" value=""/>
+    <elementParameter field="TEXT" name="WEB_TOKEN_ARN" show="false" value=""/>
+    <elementParameter field="TEXT" name="WEB_TOKEN_ROLE_SESSION_NAME" show="false" value=""/>
+    <elementParameter field="CHECK" name="CONFIG_CLIENT" value="false"/>
+    <elementParameter field="TABLE" name="CLIENT_CONFIGURATION" show="false"/>
+    <elementParameter field="CHECK" name="SET_STS_ENDPOINT" show="false" value="false"/>
+    <elementParameter field="TEXT" name="STS_ENDPOINT" show="false" value="&quot;&quot;"/>
+    <elementParameter field="OPENED_LIST" name="SIGNING_REGION" show="false" value="DEFAULT"/>
+    <elementParameter field="TEXT" name="EXTERNALID" show="false" value="&quot;&quot;"/>
+    <elementParameter field="TEXT" name="SERIALNUMBER" show="false" value="&quot;&quot;"/>
+    <elementParameter field="TEXT" name="TOKENCODE" show="false" value="&quot;&quot;"/>
+    <elementParameter field="TABLE" name="TAGS" show="false"/>
+    <elementParameter field="TABLE" name="POLICY_TABLE" show="false"/>
+    <elementParameter field="MEMO" name="POLICY" show="false" value="&quot;&quot;"/>
+    <elementParameter field="TEXT" name="MULTIPART_THRESHOLD" value="5"/>
+    <elementParameter field="TEXT" name="PART_SIZE" value="5"/>
+    <elementParameter field="CHECK" name="ENABLE_ACCELERATE" value="false"/>
+    <elementParameter field="CHECK" name="ACCESS_CONTROL_LIST" value="false"/>
+    <elementParameter field="TABLE" name="ACL" show="false"/>
+    <elementParameter field="OPENED_LIST" name="CANNED_ACCESS_CONTROL_LIST" value="&quot;NONE&quot;"/>
+    <elementParameter field="CHECK" name="ENABLE_OBJECT_LOCK" value="false"/>
+    <elementParameter field="CLOSED_LIST" name="RETENTION_MODE" show="false" value="GOVERNANCE"/>
+    <elementParameter field="TEXT" name="RETENTION_PERIOD" show="false" value="1"/>
+    <elementParameter field="CLOSED_LIST" name="RETENTION_PERIOD_TYPE" show="false" value="DAYS"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+  </node>
   <connection connectorName="FLOW" label="main" lineStyle="0" metaname="tDBInput_2" offsetLabelX="0" offsetLabelY="0" source="tDBInput_2" target="tMap_1">
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="main"/>
@@ -736,9 +846,13 @@
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="typeConverted"/>
   </connection>
-  <connection connectorName="FLOW" label="joined" lineStyle="0" metaname="joined" offsetLabelX="0" offsetLabelY="0" source="tMap_2" target="tDBOutput_4">
+  <connection connectorName="FLOW" label="joined" lineStyle="0" metaname="joined" offsetLabelX="0" offsetLabelY="0" outputId="1" source="tMap_2" target="tDBOutput_4">
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="joined"/>
+  </connection>
+  <connection connectorName="FLOW" label="toParquet" lineStyle="0" metaname="toParquet" offsetLabelX="9" offsetLabelY="-11" outputId="2" source="tMap_2" target="tFileOutputParquet_1">
+    <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="toParquet"/>
   </connection>
   <connection connectorName="FLOW" label="dim_cust" lineStyle="8" metaname="tDBInput_4" offsetLabelX="-1" offsetLabelY="50" source="tDBInput_4" target="tMap_2">
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
@@ -747,6 +861,9 @@
   <connection connectorName="FLOW" label="dim_loc" lineStyle="8" metaname="tDBInput_6" offsetLabelX="50" offsetLabelY="5" source="tDBInput_6" target="tMap_2">
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="dim_loc"/>
+  </connection>
+  <connection connectorName="COMPONENT_OK" label="OnComponentOk" lineStyle="3" metaname="tFileOutputParquet_1" offsetLabelX="3" offsetLabelY="34" source="tFileOutputParquet_1" target="tS3Put_1">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="OnComponentOk1"/>
   </connection>
   <connection connectorName="FLOW" label="MaxMinDate" lineStyle="0" metaname="tDBInput_8" offsetLabelX="0" offsetLabelY="0" source="tDBInput_8" target="tSetGlobalVar_1">
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
@@ -779,13 +896,18 @@
     <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" value="0;252;255"/>
     <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
   </subjob>
-<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_7300b3da-fb1c-4447-acfe-5fc81374e1ca"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>ep15mPpRnvf5UF/RUlCceXutG2CUffgrqjNlr/7HdMF5apUtBoobNbiZ7+UPaDaIuk1FsNRRReqE&#13;
-7c9GjGVTjQ==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_eb96b95a-6e90-4a86-b8e8-96efe8ccd6b8"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>UaV8OsBFe1SOUFEZei/j+sXpEnfYJZTyJ4DO2kspCbM4dw9lwHhllgMcJAbelURngxhvq75Cu/kL&#13;
-xlkCu+Fkuw==</DigestValue></Reference></SignedInfo><SignatureValue>SwiGZKeupjQlQFj3JEoSIy/L8eLtwk9IZ6B1p0qB9B8umcE6HeDfeB/v/HK4jIyQ5Qmb74zN7bV3&#13;
-IPzs3HvcCXTENEP0mQN4tVi7TQpYc+dPyRyP63HJVW+uaxYIsR3ccrYdC46GurAJ2E7QE26Xz5qv&#13;
-4KfuktlJLsvs4BXUMEMVJdih4fa5hKnODA6X/cS46VqAz/jO8OKku4Te6mr1GkLZFEN+JN6vcQRc&#13;
-xbKkVjgBGHYe/Dst2MuRpzfhusySrCybSkbdZXOsse7yJpJHBs9wVhbF7KmfqjOf8o/ScKfHesYT&#13;
-6NkyMKm8W4HKG3/RmswjQigMWCgsQs0lkn4yzQ==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w&#13;
+  <subjob>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tS3Put_1"/>
+    <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="92;131;150"/>
+    <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
+  </subjob>
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_0647d3e3-b450-4ddb-87f9-158041f36c08"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>AwzhL4dClIklcJV1HPII25ve8ASwFz8ng34ueM3YTqoPrsFErA72F88lim30wvIOAFoPlQRP+dWY&#13;
+X93R+bhDYw==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_1bf3ee19-4933-422f-ad7c-e799181e2656"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>k0oPZfy767F4COMIJ/ugorAsuOARniv+jf86bzkAJNt9L7/ODUA9vTsAHhzn+TX0gXPh3MzLqksQ&#13;
+uJ9Q1n9T/w==</DigestValue></Reference></SignedInfo><SignatureValue>ScY6V7SPwABpxd1eAKoa9KyczyIf3QmV3gGklzmiHPLtJIqi8mT4prsIpHa2fQNrVvWFA4Mac/Wq&#13;
+frKzQmWkRLSHMkPDhVxeHh4xwIArw8nwjRGCG/1gHBfxhKOs/C4Ybj9XEAlHGpI02ImBewWvRvcM&#13;
+WdfD+Zk88/e3XXt6NtHaHO1Vc2sl0DAPKvITki9FE8BCcrrPPPID79EP3zOHRNEEXb8eQPys3i/1&#13;
+2NNLYsmuKjQsYjpjc6AhCFpDRUnCP3P+HlfakQxYJNqL87ixTCLcRzQ6le+tgiwcw/nee6+C7Bli&#13;
+RJnnk46piGlcU9pgQB76TcLDKjz+2VLZ05izLQ==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w&#13;
 DAYDVQQIEwVQYXJpczEOMAwGA1UEBxMFUGFyaXMxFDASBgNVBAoTC1RhbGVuZCBJbmMuMQwwCgYD&#13;
 VQQLDANSJkQxFjAUBgNVBAMMDVRhbGVuZCBSJkQgQ0ExIjAgBgkqhkiG9w0BCQEWE3NlY3VyaXR5&#13;
 QHRhbGVuZC5jb20wHhcNMTkwNjAzMDgxODIwWhcNMjkwNjAzMDAwMDAwWjB7MSgwJgYDVQQDEx9U&#13;
@@ -807,4 +929,4 @@ hakvpzhOyLo91h8YAQrEZJdNuKA8IYmBrFZQZDCz0uywKSyFfzPyJhvxylCLG/iDPPfE0VWcrMJ/&#13
 WQJly/2XPg/NBCTF3pSKS0kCiA7PeaI3cWkMYYA3PMwYDvzqs1opBRglG7ikj0bQxSm3lcjMuuvW&#13;
 gBRksFKjP3K/nztsjSoYITOM9jR29ReIL3v0E8RbAFwA2RGq6Dxd0ixfbucMesy5Gnr8tfYy6rW+&#13;
 qSQqd3ah4+PSzBNVwIB4ytpdrG3SlhCI2i2Th8ek8Sjsaquh9qPAerWNd2+84HWOOGj1Xe1qc6vg&#13;
-qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_eb96b95a-6e90-4a86-b8e8-96efe8ccd6b8" Target="#_7300b3da-fb1c-4447-acfe-5fc81374e1ca"><Timestamp>2023-11-17 06:44:49</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
+qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_1bf3ee19-4933-422f-ad7c-e799181e2656" Target="#_0647d3e3-b450-4ddb-87f9-158041f36c08"><Timestamp>2023-11-20 13:04:46</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>

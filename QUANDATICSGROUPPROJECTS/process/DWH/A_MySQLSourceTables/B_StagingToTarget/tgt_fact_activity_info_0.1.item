@@ -111,6 +111,11 @@
     <routinesParameter id="_kFA0cPLoEei2QqN5AvUvOg" name="TalendDate"/>
     <routinesParameter id="_kF7acPLoEei2QqN5AvUvOg" name="TalendStringUtil"/>
     <routinesParameter id="_kFf8oPLoEei2QqN5AvUvOg" name="TalendString"/>
+    <routinesParameter id="_ymdksInfEe6nXJ9CVzb8Hg" name="DataMasking"/>
+    <routinesParameter id="_ymXeEInfEe6nXJ9CVzb8Hg" name="DataQualityDependencies"/>
+    <routinesParameter id="_ymVB0InfEe6nXJ9CVzb8Hg" name="DQTechnical"/>
+    <routinesParameter id="_ymWP8InfEe6nXJ9CVzb8Hg" name="DqStringHandling"/>
+    <routinesParameter id="_ymEjIInfEe6nXJ9CVzb8Hg" name="DataQuality"/>
   </parameters>
   <node componentName="tMysqlInput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="96" posY="448">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tDBInput_2"/>
@@ -864,7 +869,7 @@
     <elementParameter field="TEXT" name="ARN" show="false" value="&quot;&quot;"/>
     <elementParameter field="TEXT" name="ROLE_SESSION_NAME" show="false" value="&quot;&quot;"/>
     <elementParameter field="TEXT" name="SESSION_DURATION" show="false" value="15"/>
-    <elementParameter field="OPENED_LIST" name="REGION" value="DEFAULT"/>
+    <elementParameter field="OPENED_LIST" name="REGION" value="&quot;sa-east-1&quot;"/>
     <elementParameter field="CHECK" name="ENCRYPT" value="false"/>
     <elementParameter field="CLOSED_LIST" name="KEY_TYPE" show="false" value="KMS_CMK"/>
     <elementParameter field="CLOSED_LIST" name="ALGORITHM_SYMMETRIC_MASTER_KEY" show="false" value="AES"/>
@@ -877,7 +882,7 @@
     <elementParameter field="FILE" name="PRIVATE_KEY" show="false" value="&quot;&quot;"/>
     <elementParameter field="TEXT" name="BUCKET" value="context.S3Bucket"/>
     <elementParameter field="TEXT" name="KEY" value="&quot;outputresult_&quot; + TalendDate.getDate(&quot;yyyyMMdd&quot;) +&quot;.parquet&quot;"/>
-    <elementParameter field="FILE" name="FILE" value="&quot;/Users/minganntew/Documents/Projects/MangThai/TalendJob/DWH/outputresult_&quot; + TalendDate.getDate(&quot;yyyyMMdd&quot;) + &quot;.parquet&quot;"/>
+    <elementParameter field="FILE" name="FILE" value="&quot;/Users/minganntew/Documents/Projects/MuangThai/TalendJob/DWH/outputresult_&quot; + TalendDate.getDate(&quot;yyyyMMdd&quot;) + &quot;.parquet&quot;"/>
     <elementParameter field="CHECK" name="ENABLE_SERVER_SIDE_ENCRYPTION" value="false"/>
     <elementParameter field="CHECK" name="ENABLE_KMS" show="false" value="false"/>
     <elementParameter field="TEXT" name="KMSID" show="false" value="&quot;&quot;"/>
@@ -1088,13 +1093,13 @@
     <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" value="0;252;255"/>
     <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
   </subjob>
-<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_b9b689ae-47bf-4832-acdf-1665a77726f9"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>mjC9MEQ0Yv4IeHM+GkS5hCuh6gJ+QzNVTwuEutfXJpULc7iIFu6iCMJzsLMBeJhvHPYligiQQus1&#13;
-OF9daDYDAw==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_e10efffb-77aa-4987-9cfb-6ff2b786cea8"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>wlNywNniaDGBTFwOeqWtl0DnMvRtL7Z0cvwf6YAmJN06doUuLks3kLRKWaHmFxGtiHuJxAz+EtUC&#13;
-iSKyHCELGw==</DigestValue></Reference></SignedInfo><SignatureValue>MAwQAUqUdpSEd0toUXyBQhY942AMhRCe9Ed73rtsZ9q94lTYPpWc5mMytSZZeYzNHgeIZPBzs+I+&#13;
-Pb7R47g0Dd7BYhx3IrANdXWiQhp2ZMYFz8KPY+CDB6OxKKbQVNvA56ZHlgzN7fhmEM7T/GZdvseL&#13;
-Id+7yrEMNthKT+F58HcQz13qoJkMP4f7Rb4MznFapVb80fxYdFNj1q8SNiDvOYOjZ9zezuoplJtE&#13;
-1H+57e0A2vc1bAxQ7lWQYWzU5ms1AP4Ba9x5ezChM917hchjAaTeXMeawPMfTGdNRGceICpd6ZGn&#13;
-9p9tc6J3xklL2XkBUqWTh6yPsbaWlvkJM517Ig==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w&#13;
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_d5bb052f-1166-4c1a-aad1-0dda48271517"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>Wxe40hvcJ3ufJhVA/fYftaFYCpAbupCckkKUWYun3ZnuU8KLAcQruJaHV+K/p1e8dBHVi533rUjf&#13;
+zXRoD7HMTw==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_9fc2c6dc-43d1-4f11-b7f5-6c4fe1d08232"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>yHUlNecbPexQBiWBg8R/LSoOvEs6XZoGwGYWBEuSLinicfpnDR8WsUQB/YEGWrPvDPmBfhfVENLf&#13;
+woFTSeyqEA==</DigestValue></Reference></SignedInfo><SignatureValue>RrxWxlvxsHIHry8TUWBw3kTfGKT57zgnN4k4gqKZ7XVugrjL2bGyq5rDMRk/bnOc9cX5EkbU+gyW&#13;
+Hqleukucd9F6Fpsom/q8xioa675zTuj9Bn3fSeGZO0pfQa7NcGC5I1xfJQU74H/OfX4KIpv62d6V&#13;
+VLKzPeaOziS+8b8J84pYoQItPz3Ug+W1s6fWwvcJEu2KSPUIrO5DX3M3UholcyXewY+nsPl8YCSb&#13;
+5yo6WoxgE1QT0ZVDhOW2vuGzp99ySE3stfukiCAwvbwvH/hi++RWCKdSwb7tg+aNpxa8/qWp+8SA&#13;
+O+DNWkTG0+IPxFOdyiwReijGZcPhEfng+lELMg==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w&#13;
 DAYDVQQIEwVQYXJpczEOMAwGA1UEBxMFUGFyaXMxFDASBgNVBAoTC1RhbGVuZCBJbmMuMQwwCgYD&#13;
 VQQLDANSJkQxFjAUBgNVBAMMDVRhbGVuZCBSJkQgQ0ExIjAgBgkqhkiG9w0BCQEWE3NlY3VyaXR5&#13;
 QHRhbGVuZC5jb20wHhcNMTkwNjAzMDgxODIwWhcNMjkwNjAzMDAwMDAwWjB7MSgwJgYDVQQDEx9U&#13;
@@ -1116,4 +1121,4 @@ hakvpzhOyLo91h8YAQrEZJdNuKA8IYmBrFZQZDCz0uywKSyFfzPyJhvxylCLG/iDPPfE0VWcrMJ/&#13
 WQJly/2XPg/NBCTF3pSKS0kCiA7PeaI3cWkMYYA3PMwYDvzqs1opBRglG7ikj0bQxSm3lcjMuuvW&#13;
 gBRksFKjP3K/nztsjSoYITOM9jR29ReIL3v0E8RbAFwA2RGq6Dxd0ixfbucMesy5Gnr8tfYy6rW+&#13;
 qSQqd3ah4+PSzBNVwIB4ytpdrG3SlhCI2i2Th8ek8Sjsaquh9qPAerWNd2+84HWOOGj1Xe1qc6vg&#13;
-qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_e10efffb-77aa-4987-9cfb-6ff2b786cea8" Target="#_b9b689ae-47bf-4832-acdf-1665a77726f9"><Timestamp>2023-11-23 08:24:50</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
+qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_9fc2c6dc-43d1-4f11-b7f5-6c4fe1d08232" Target="#_d5bb052f-1166-4c1a-aad1-0dda48271517"><Timestamp>2023-11-24 03:07:16</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>

@@ -113,7 +113,7 @@
     <routinesParameter id="_p9SeQH5AEe6yYvs4wK7LGw" name="TalendStringUtil"/>
     <routinesParameter id="_p9QpEH5AEe6yYvs4wK7LGw" name="TalendString"/>
   </parameters>
-  <node componentName="tMysqlRow" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="288" posY="160">
+  <node componentName="tMysqlRow" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="64" posY="160">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tDBRow_1"/>
     <elementParameter field="TEXT" name="COMPONENT_NAME" show="false" value="tMysqlRow"/>
     <elementParameter field="TEXT" name="VERSION" show="false" value="0.102 (ALPHA)"/>
@@ -140,7 +140,7 @@
     <elementParameter field="QUERYSTORE_TYPE" name="QUERYSTORE" value="&quot;&quot;"/>
     <elementParameter field="TECHNICAL" name="QUERYSTORE:REPOSITORY_QUERYSTORE_TYPE" show="false" value=""/>
     <elementParameter field="TECHNICAL" name="QUERYSTORE:QUERYSTORE_TYPE" value="BUILT_IN"/>
-    <elementParameter field="MEMO_SQL" name="QUERY" value="&quot;&#10;Insert into rowsinsertedbasedondbrow&#10;select d.customerSid, d.dateSid,  d.noOfHits, d.secondsOnSite, d.noOfPageview, d.noOfSession, c.locationSid&#10;FROM (select customerSid, max(dateSid) as dateSid, sum(noOfHits) as noOfHits, sum(secondsOnSite) as secondsOnSite, sum(noOfPageview) as noOfPageview, sum(noOfSession) as noOfSession&#10;from fact_activity_info&#10;group by customerSid) d&#10;left join (select a.customerSid, b.locationSid&#10;&#9;&#9;   from (select customerSid, max(dateSid) as lastVisitDate&#10;                 from fact_activity_info&#10;                 group by customerSid) a&#10;&#9;&#9;   left join fact_activity_info b&#10;           on a.customerSid = b.customerSid &#10;           and a.lastVisitDate = b.dateSid) c&#10;on d.customerSid = c.customerSid&quot;"/>
+    <elementParameter field="MEMO_SQL" name="QUERY" value="&quot;&#10;truncate table rowsinsertedbasedondbrow;&#10;Insert into rowsinsertedbasedondbrow&#10;select d.customerSid, d.dateSid,  d.noOfHits, d.secondsOnSite, d.noOfPageview, d.noOfSession, c.locationSid&#10;FROM (select customerSid, max(dateSid) as dateSid, sum(noOfHits) as noOfHits, sum(secondsOnSite) as secondsOnSite, sum(noOfPageview) as noOfPageview, sum(noOfSession) as noOfSession&#10;from fact_activity_info&#10;group by customerSid) d&#10;left join (select a.customerSid, b.locationSid&#10;&#9;&#9;   from (select customerSid, max(dateSid) as lastVisitDate&#10;                 from fact_activity_info&#10;                 group by customerSid) a&#10;&#9;&#9;   left join fact_activity_info b&#10;           on a.customerSid = b.customerSid &#10;           and a.lastVisitDate = b.dateSid) c&#10;on d.customerSid = c.customerSid;&quot;"/>
     <elementParameter field="LABEL" name="NOTE" value="This option only applies when deploying and running in the Talend Runtime"/>
     <elementParameter field="CHECK" name="SPECIFY_DATASOURCE_ALIAS" value="false"/>
     <elementParameter field="TEXT" name="DATASOURCE_ALIAS" show="false" value="&quot;&quot;"/>
@@ -161,18 +161,69 @@
       <column defaultValue="" key="false" length="255" name="errorMessage" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
     </metadata>
   </node>
+  <node componentName="tWarn" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="64" posY="64">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tWarn_1"/>
+    <elementParameter field="TEXT" name="MESSAGE" value="&quot;Start&quot;"/>
+    <elementParameter field="TEXT" name="CODE" value="42"/>
+    <elementParameter field="CLOSED_LIST" name="PRIORITY" value="4"/>
+    <elementParameter field="TEXT" name="LABEL" value="Start"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <metadata connector="FLOW" name="tWarn_1"/>
+  </node>
+  <node componentName="tWarn" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="64" posY="352">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tWarn_2"/>
+    <elementParameter field="TEXT" name="MESSAGE" value="&quot;End&quot;"/>
+    <elementParameter field="TEXT" name="CODE" value="42"/>
+    <elementParameter field="CLOSED_LIST" name="PRIORITY" value="4"/>
+    <elementParameter field="TEXT" name="LABEL" value="End"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <metadata connector="FLOW" name="tWarn_2"/>
+  </node>
+  <node componentName="Process_Log_DWH" componentVersion="0.1" offsetLabelX="0" offsetLabelY="0" posX="96" posY="448">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="Process_Log_DWH_1"/>
+    <elementParameter field="TEXT" name="FAMILY" value="Joblets"/>
+    <elementParameter field="CHECK" name="ACTIVATE" value="true"/>
+    <elementParameter field="CHECK" name="DUMMY" show="false" value="false"/>
+    <elementParameter field="CHECK" name="STARTABLE" show="false" value="true"/>
+    <elementParameter field="CHECK" name="START" show="false" value="true"/>
+    <elementParameter field="CLOSED_LIST" name="PROCESS_TYPE_VERSION" value="Latest"/>
+    <elementParameter field="TEXT" name="LABEL" value="Process_Log_DWH"/>
+    <elementParameter field="TEXT" name="HINT" value="&lt;b&gt;__UNIQUE_NAME__&lt;/b&gt;&lt;br&gt;__COMMENT__"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <elementParameter field="CHECK" name="INFORMATION" value="false"/>
+    <elementParameter field="MEMO" name="COMMENT" value=""/>
+  </node>
   <subjob>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tDBRow_1"/>
     <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="92;131;150"/>
     <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
   </subjob>
-<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_91ab910d-d4a9-4707-86bf-bbfa2764542d"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>Ey4tRq3h/bTkGRZ2dAQT9rje1GybxZmosw6thoAmFp2fn46W193NAyyUNoIF5rDfeVjEPMgGzTJ4&#13;
-rJlEqFk5Qg==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_1f522873-6d0b-4146-97ed-91bd6d03e609"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>f+AanDfbUSYDlqS/tGMrHP6GTAAZlWoJ8H/rn3/pIRZx9dJoD0tqUtkGawokBT59vE+Y62A4Ikx/&#13;
-1MA5F7qu4Q==</DigestValue></Reference></SignedInfo><SignatureValue>H5mzkZbSkFVhBheFla9OCQqB2WOQ9izcYyVGZyarfSoMZzZYmThvHatTkv08y0frLVFfy0eD8lr/&#13;
-9a2+2OZ+KC0Yoh7huwpGUBbg+0SvGA0DVrEEgNpiLOXmeYYX8aVlwPUbyg8KmPcmf2A9bZDt3U6S&#13;
-tYcRzoeiY9kUoCYR7l8I/eJzZdlkf3NgVkJYrM3njxsCjnLBLY5pyr8nzaS8fSGnrO0ov2LZNqW/&#13;
-Ypi4U84I7Glw44gbjFBBKY+cNTtUHa6n6OT4k2rwPNHGDwBfCmk/HDyC2xFASvVPPTSp22AI0KlF&#13;
-HUMxtYhJHPPVzPNkImpbCtYmxvi9hfJXG0fO3g==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w&#13;
+  <subjob>
+    <elementParameter field="CHECK" name="SHOW_SUBJOB_TITLE" value="true"/>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tWarn_1"/>
+    <elementParameter field="TEXT" name="SUBJOB_TITLE" value="Job Start"/>
+    <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" value="0;252;255"/>
+    <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
+  </subjob>
+  <subjob>
+    <elementParameter field="CHECK" name="SHOW_SUBJOB_TITLE" value="true"/>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tWarn_2"/>
+    <elementParameter field="TEXT" name="SUBJOB_TITLE" value="Job End"/>
+    <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" value="0;252;255"/>
+    <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
+  </subjob>
+  <subjob>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="Process_Log_DWH_1"/>
+    <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="92;131;150"/>
+    <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
+  </subjob>
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_c20fdf10-ecaa-488f-b163-247b1c14e6c6"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>HHt55+PSflvExoR7j/skthiLB+ABOGbvw00A1OJ+GoDRQWzXJQPQSfd8/MjXKrYvH3bIHTM+NBZw&#13;
+fSaGNp/3UQ==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_fc51d392-18b3-4a4b-892a-7aa8b661b94e"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>Br4KUSTNNCGm2UNfOLV5NzDyfMwKtUUQxvQMcwNqtoDwJ6FL14A+Wx7umXGsCpRCgOesHpUkpzdc&#13;
+jD6M9ApI+A==</DigestValue></Reference></SignedInfo><SignatureValue>bUjhRFN2mOnn5gy6g4SjsIpTOLrVTMT37ibXqegurSaWNgsf0AYF3Y85QoFTKCcZefxRj64NgktV&#13;
+1DTPcfe4yO2r8DF8TSN8MJCDnCokQiqP2yT+P0koCrG8dBiTxhQ7JOBPWHM+6yP+yNcHT+FdMJu3&#13;
+HnMThuQsMm40L0VFwTdqlKpBcobVtVUfCd/q/83OUhkrKrLQidbmlrMrQGl2sOWdF6uqS2OgAqjJ&#13;
+dd7PeNiBpXVyZiap1Np9C0vYuslrx+TCmDSEAk0kvuxQC/loCXgyk9VFviafbyOvxgvgTSE0NMFP&#13;
+/pvkv34hMRhAA98rW1TN466LOzrwAVFUY9eI9Q==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w&#13;
 DAYDVQQIEwVQYXJpczEOMAwGA1UEBxMFUGFyaXMxFDASBgNVBAoTC1RhbGVuZCBJbmMuMQwwCgYD&#13;
 VQQLDANSJkQxFjAUBgNVBAMMDVRhbGVuZCBSJkQgQ0ExIjAgBgkqhkiG9w0BCQEWE3NlY3VyaXR5&#13;
 QHRhbGVuZC5jb20wHhcNMTkwNjAzMDgxODIwWhcNMjkwNjAzMDAwMDAwWjB7MSgwJgYDVQQDEx9U&#13;
@@ -194,4 +245,4 @@ hakvpzhOyLo91h8YAQrEZJdNuKA8IYmBrFZQZDCz0uywKSyFfzPyJhvxylCLG/iDPPfE0VWcrMJ/&#13
 WQJly/2XPg/NBCTF3pSKS0kCiA7PeaI3cWkMYYA3PMwYDvzqs1opBRglG7ikj0bQxSm3lcjMuuvW&#13;
 gBRksFKjP3K/nztsjSoYITOM9jR29ReIL3v0E8RbAFwA2RGq6Dxd0ixfbucMesy5Gnr8tfYy6rW+&#13;
 qSQqd3ah4+PSzBNVwIB4ytpdrG3SlhCI2i2Th8ek8Sjsaquh9qPAerWNd2+84HWOOGj1Xe1qc6vg&#13;
-qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_1f522873-6d0b-4146-97ed-91bd6d03e609" Target="#_91ab910d-d4a9-4707-86bf-bbfa2764542d"><Timestamp>2023-11-26 13:59:10</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
+qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_fc51d392-18b3-4a4b-892a-7aa8b661b94e" Target="#_c20fdf10-ecaa-488f-b163-247b1c14e6c6"><Timestamp>2023-11-26 14:02:06</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>

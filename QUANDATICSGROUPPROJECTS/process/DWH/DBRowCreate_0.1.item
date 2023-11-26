@@ -123,7 +123,7 @@
     <elementParameter field="TEXT" name="COMPONENT_NAME" show="false" value="tMysqlRow"/>
     <elementParameter field="TEXT" name="VERSION" show="false" value="0.102 (ALPHA)"/>
     <elementParameter field="TEXT" name="FAMILY" show="false" value="Databases/DB Specifics/MySQL"/>
-    <elementParameter field="CHECK" name="START" show="false" value="true"/>
+    <elementParameter field="CHECK" name="START" show="false" value="false"/>
     <elementParameter field="CHECK" name="STARTABLE" show="false" value="true"/>
     <elementParameter field="CHECK" name="SUBTREE_START" show="false" value="true"/>
     <elementParameter field="CHECK" name="END_OF_FLOW" show="false" value="true"/>
@@ -145,7 +145,7 @@
     <elementParameter field="QUERYSTORE_TYPE" name="QUERYSTORE" value="&quot;&quot;"/>
     <elementParameter field="TECHNICAL" name="QUERYSTORE:REPOSITORY_QUERYSTORE_TYPE" show="false" value=""/>
     <elementParameter field="TECHNICAL" name="QUERYSTORE:QUERYSTORE_TYPE" value="BUILT_IN"/>
-    <elementParameter field="MEMO_SQL" name="QUERY" value="&quot;&#10;Insert into rowsinsertedbasedondbrow&#10;select d.customerSid, d.dateSid,  d.noOfHits, d.secondsOnSite, d.noOfPageview, d.noOfSession, c.locationSid&#10;FROM (select customerSid, max(dateSid) as dateSid, sum(noOfHits) as noOfHits, sum(secondsOnSite) as secondsOnSite, sum(noOfPageview) as noOfPageview, sum(noOfSession) as noOfSession&#10;from fact_activity_info&#10;group by customerSid) d&#10;left join (select a.customerSid, b.locationSid&#10;&#9;&#9;   from (select customerSid, max(dateSid) as lastVisitDate&#10;                 from fact_activity_info&#10;                 group by customerSid) a&#10;&#9;&#9;   left join fact_activity_info b&#10;           on a.customerSid = b.customerSid &#10;           and a.lastVisitDate = b.dateSid) c&#10;on d.customerSid = c.customerSid&quot;"/>
+    <elementParameter field="MEMO_SQL" name="QUERY" value="&quot;truncate table rowsinsertedbasedondbrow&quot;"/>
     <elementParameter field="LABEL" name="NOTE" value="This option only applies when deploying and running in the Talend Runtime"/>
     <elementParameter field="CHECK" name="SPECIFY_DATASOURCE_ALIAS" value="false"/>
     <elementParameter field="TEXT" name="DATASOURCE_ALIAS" show="false" value="&quot;&quot;"/>
@@ -158,7 +158,7 @@
     <elementParameter field="ENCODING_TYPE" name="ENCODING" show="false" value="&quot;ISO-8859-15&quot;"/>
     <elementParameter field="TECHNICAL" name="ENCODING:ENCODING_TYPE" value="ISO-8859-15"/>
     <elementParameter field="TEXT" name="COMMIT_EVERY" value="10000"/>
-    <elementParameter field="TEXT" name="LABEL" value="source_database"/>
+    <elementParameter field="TEXT" name="LABEL" value="truncate"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="FLOW" name="tDBRow_1"/>
     <metadata connector="REJECT" name="REJECT">
@@ -211,7 +211,7 @@
     <elementParameter field="TEXT" name="COMPONENT_NAME" show="false" value="tMysqlRow"/>
     <elementParameter field="TEXT" name="VERSION" show="false" value="0.102 (ALPHA)"/>
     <elementParameter field="TEXT" name="FAMILY" show="false" value="Databases/DB Specifics/MySQL"/>
-    <elementParameter field="CHECK" name="START" show="false" value="true"/>
+    <elementParameter field="CHECK" name="START" show="false" value="false"/>
     <elementParameter field="CHECK" name="STARTABLE" show="false" value="true"/>
     <elementParameter field="CHECK" name="SUBTREE_START" show="false" value="true"/>
     <elementParameter field="CHECK" name="END_OF_FLOW" show="false" value="true"/>
@@ -254,12 +254,23 @@
       <column defaultValue="" key="false" length="255" name="errorMessage" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
     </metadata>
   </node>
+  <connection connectorName="COMPONENT_OK" label="OnComponentOk" lineStyle="3" metaname="tDBRow_1" offsetLabelX="-1" offsetLabelY="31" source="tDBRow_1" target="tDBRow_2">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="OnComponentOk1"/>
+  </connection>
+  <connection connectorName="SUBJOB_OK" label="OnSubjobOk" lineStyle="1" metaname="tDBRow_1" offsetLabelX="50" offsetLabelY="6" source="tDBRow_1" target="tJava_1">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="OnSubjobOk2"/>
+  </connection>
+  <connection connectorName="SUBJOB_OK" label="OnSubjobOk" lineStyle="1" metaname="tWarn_1" offsetLabelX="44" offsetLabelY="-16" source="tWarn_1" target="tDBRow_1">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="OnSubjobOk1"/>
+  </connection>
   <connection connectorName="SUBJOB_OK" label="OnSubjobOk" lineStyle="1" metaname="tJava_1" offsetLabelX="0" offsetLabelY="0" source="tJava_1" target="tWarn_2">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="OnSubjobOk3"/>
   </connection>
   <subjob>
+    <elementParameter field="CHECK" name="SHOW_SUBJOB_TITLE" value="true"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tDBRow_1"/>
-    <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="92;131;150"/>
+    <elementParameter field="TEXT" name="SUBJOB_TITLE" value="truncate table"/>
+    <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" value="0;252;255"/>
     <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
   </subjob>
   <subjob>
@@ -287,17 +298,19 @@
     <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
   </subjob>
   <subjob>
+    <elementParameter field="CHECK" name="SHOW_SUBJOB_TITLE" value="true"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tDBRow_2"/>
-    <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="92;131;150"/>
+    <elementParameter field="TEXT" name="SUBJOB_TITLE" value="DB SQL to insert into table"/>
+    <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" value="0;252;255"/>
     <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
   </subjob>
-<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_a44f376b-393b-48bf-b8b0-2d7fd89ecf89"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>uJnF6M0V6nBnuzYR3yH7DSQKZf8k3pm3DX/njeAjRSqxLWbr0iGvjP0zgKa6IMeWeoEzpeOiKX+Q&#13;
-DrQa8r11vg==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_d9f5edef-61da-4200-ae15-53e24ae99a71"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>Hx304GZrQMAuxzWj5rU/A9uwJn/Oucr3m/ldPcd/ZKqKg2F4GaAd5HIuABMU+Sgw6EzpnDeXmQql&#13;
-68824F9pZw==</DigestValue></Reference></SignedInfo><SignatureValue>pDDSskrxLtxdViRS679UpvUjr9Cp7bFOEXCnLJiWH+37svPvkK6U6UEMH/Z4HKUSrL3aCRwmDd+v&#13;
-nIxSWUBRo1W2L5eUnfrnZAdvPHlunlQ/68iubz+ZiISZerQV0ooTTgeeHOOYhkBh/1DPMY8kGkwi&#13;
-96KHDqqrktZSlttoUf1668I6l+WmTtzcy9IRPp5BnW4rlc4W+7q5Q+KqlppohnAaBiJemMy4hM3d&#13;
-i6fPczuXDgZFQzrhhToAzrpxRY8iemBl1scZ/Es7XqRb9cAFb+telTwDdZW9VeHzBHwjA+HBKqBv&#13;
-n2dHLsInBRvCrFbXifVp3JdeN6VXhz/6qcIEig==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w&#13;
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_2d97a5d0-e871-42b4-b6ea-7136ee56ae2b"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>qfMo1vbLq/hdE/euUF1by8kOW3VMUfPCfpYsF/gY4jLDndXq/Ah/uJDKZZ3quOav+N269OmiL29P&#13;
+8dEM3TzmcA==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_b3d11f30-2353-4c96-9998-e0a97bdc7bad"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>VTn2BNPCJ5Kejr0O7VT9enHbreKJ2SCwNXG1Yb01D5uOre1KVQjDnodYCJkxPYtFgyFPIMvQwJ9o&#13;
+y8Grrs+Ljw==</DigestValue></Reference></SignedInfo><SignatureValue>IeXdcCdCu57yvFC9fIl7F4jc4Dp9za76/2X1H5i98DCQ49wtJzH4UTmi58x9LaKUdB+S4ScnLAOG&#13;
+XMRvQn2l91h24fA1jNveLASxTpn6EyHOSW8KALWrhDcwPHuWiPzPI9HLTdy8VSd35WkHXR9OUurg&#13;
+RFPxNljLw76gPkjjI4fD/pk5SlRnI9Nj+fe/F6SyZr48xCMpCA1eCE2RZoRBJ+kCI6GK8H+DldbC&#13;
+SmQFH/6UtQ5gSF90aWdG2qpBKz/Oyw2peRpvk9eFH03Cm4ncKNMG3Q1I32dr+TVaXZp4h52FapM1&#13;
+AIQ7OBO3mrDKvwGfRKADAGBIyuyVBVk1E4s/rw==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w&#13;
 DAYDVQQIEwVQYXJpczEOMAwGA1UEBxMFUGFyaXMxFDASBgNVBAoTC1RhbGVuZCBJbmMuMQwwCgYD&#13;
 VQQLDANSJkQxFjAUBgNVBAMMDVRhbGVuZCBSJkQgQ0ExIjAgBgkqhkiG9w0BCQEWE3NlY3VyaXR5&#13;
 QHRhbGVuZC5jb20wHhcNMTkwNjAzMDgxODIwWhcNMjkwNjAzMDAwMDAwWjB7MSgwJgYDVQQDEx9U&#13;
@@ -319,4 +332,4 @@ hakvpzhOyLo91h8YAQrEZJdNuKA8IYmBrFZQZDCz0uywKSyFfzPyJhvxylCLG/iDPPfE0VWcrMJ/&#13
 WQJly/2XPg/NBCTF3pSKS0kCiA7PeaI3cWkMYYA3PMwYDvzqs1opBRglG7ikj0bQxSm3lcjMuuvW&#13;
 gBRksFKjP3K/nztsjSoYITOM9jR29ReIL3v0E8RbAFwA2RGq6Dxd0ixfbucMesy5Gnr8tfYy6rW+&#13;
 qSQqd3ah4+PSzBNVwIB4ytpdrG3SlhCI2i2Th8ek8Sjsaquh9qPAerWNd2+84HWOOGj1Xe1qc6vg&#13;
-qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_d9f5edef-61da-4200-ae15-53e24ae99a71" Target="#_a44f376b-393b-48bf-b8b0-2d7fd89ecf89"><Timestamp>2023-11-26 14:06:12</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
+qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_b3d11f30-2353-4c96-9998-e0a97bdc7bad" Target="#_2d97a5d0-e871-42b4-b6ea-7136ee56ae2b"><Timestamp>2023-11-26 14:08:22</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>

@@ -113,7 +113,7 @@
     <routinesParameter id="_p9SeQH5AEe6yYvs4wK7LGw" name="TalendStringUtil"/>
     <routinesParameter id="_p9QpEH5AEe6yYvs4wK7LGw" name="TalendString"/>
   </parameters>
-  <node componentName="tDqReportRun" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="64" posY="128">
+  <node componentName="tDqReportRun" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="64" posY="160">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tDqReportRun_1"/>
     <elementParameter field="REFRESH_REPORTS" name="REFRESH_REPORTS" value=""/>
     <elementParameter field="BROWSE_REPORTS" name="BROWSE_REPORTS" value=""/>
@@ -135,7 +135,7 @@
       <column defaultValue="" key="false" length="0" name="INFO_FAILURE" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
     </metadata>
   </node>
-  <node componentName="tJava" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="288" posY="128">
+  <node componentName="tJava" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="288" posY="160">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tJava_1"/>
     <elementParameter field="MEMO_JAVA" name="CODE" value="System.out.println(&quot;Report Generated Successfully&quot;);"/>
     <elementParameter field="MEMO_IMPORT" name="IMPORT" value="//import java.util.List;"/>
@@ -149,7 +149,7 @@
       <column defaultValue="" key="false" length="0" name="INFO_FAILURE" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
     </metadata>
   </node>
-  <node componentName="tWarn" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="64" posY="32">
+  <node componentName="tWarn" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="64" posY="64">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tWarn_1"/>
     <elementParameter field="TEXT" name="MESSAGE" value="&quot;Start&quot;"/>
     <elementParameter field="TEXT" name="CODE" value="42"/>
@@ -158,15 +158,7 @@
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="FLOW" name="tWarn_1"/>
   </node>
-  <node componentName="tJava" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="64" posY="224">
-    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tJava_2"/>
-    <elementParameter field="MEMO_JAVA" name="CODE" value="globalMap.put(&quot;InsertedRow&quot;, (Integer)globalMap.get(&quot;tDBOutput_1_NB_LINE_INSERTED&quot;));&#10;globalMap.put(&quot;UpdatedRow&quot;, (Integer)globalMap.get(&quot;tDBOutput_1_NB_LINE_UPDATED&quot;));&#10;globalMap.put(&quot;DeletedRow&quot;, (Integer)globalMap.get(&quot;tDBOutput_1_NB_LINE_DELETED&quot;));&#10;globalMap.put(&quot;RejectedRow&quot;, (Integer)globalMap.get(&quot;tDBOutput_1_NB_LINE_REJECTED&quot;));&#10;&#10;globalMap.put(&quot;Destination&quot;, &quot;stg_customer_info&quot;);&#10;globalMap.put(&quot;SourceCount&quot;, ((Integer)globalMap.get(&quot;tFileInputDelimited_1_NB_LINE&quot;)));"/>
-    <elementParameter field="MEMO_IMPORT" name="IMPORT" value="//import java.util.List;"/>
-    <elementParameter field="TEXT" name="LABEL" value="RowStatus"/>
-    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
-    <metadata connector="FLOW" name="tJava_2"/>
-  </node>
-  <node componentName="tWarn" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="64" posY="320">
+  <node componentName="tWarn" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="64" posY="352">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tWarn_2"/>
     <elementParameter field="TEXT" name="MESSAGE" value="&quot;End&quot;"/>
     <elementParameter field="TEXT" name="CODE" value="42"/>
@@ -189,29 +181,38 @@
     <elementParameter field="CHECK" name="INFORMATION" value="false"/>
     <elementParameter field="MEMO" name="COMMENT" value=""/>
   </node>
+  <node componentName="tJava" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="64" posY="256">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tJava_2"/>
+    <elementParameter field="MEMO_JAVA" name="CODE" value="globalMap.put(&quot;Destination&quot;, &quot;DQ Report PDF&quot;);"/>
+    <elementParameter field="MEMO_IMPORT" name="IMPORT" value="//import java.util.List;"/>
+    <elementParameter field="TEXT" name="LABEL" value="RowStatus"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <metadata connector="FLOW" name="tJava_2"/>
+  </node>
   <connection connectorName="FLOW" label="row1" lineStyle="0" metaname="tDqReportRun_1" offsetLabelX="0" offsetLabelY="0" source="tDqReportRun_1" target="tJava_1">
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="row1"/>
+  </connection>
+  <connection connectorName="SUBJOB_OK" label="OnSubjobOk" lineStyle="1" metaname="tDqReportRun_1" offsetLabelX="45" offsetLabelY="-16" source="tDqReportRun_1" target="tJava_2">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="OnSubjobOk4"/>
+  </connection>
+  <connection connectorName="SUBJOB_OK" label="OnSubjobOk" lineStyle="1" metaname="tWarn_1" offsetLabelX="43" offsetLabelY="-16" source="tWarn_1" target="tDqReportRun_1">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="OnSubjobOk3"/>
   </connection>
   <connection connectorName="SUBJOB_OK" label="OnSubjobOk" lineStyle="1" metaname="tJava_2" offsetLabelX="50" offsetLabelY="-15" source="tJava_2" target="tWarn_2">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="OnSubjobOk2"/>
   </connection>
   <subjob>
+    <elementParameter field="CHECK" name="SHOW_SUBJOB_TITLE" value="true"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tDqReportRun_1"/>
-    <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="92;131;150"/>
+    <elementParameter field="TEXT" name="SUBJOB_TITLE" value="Data Quality Report Generation"/>
+    <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" value="0;252;255"/>
     <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
   </subjob>
   <subjob>
     <elementParameter field="CHECK" name="SHOW_SUBJOB_TITLE" value="true"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tWarn_1"/>
     <elementParameter field="TEXT" name="SUBJOB_TITLE" value="Job Start"/>
-    <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" value="0;252;255"/>
-    <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
-  </subjob>
-  <subjob>
-    <elementParameter field="CHECK" name="SHOW_SUBJOB_TITLE" value="true"/>
-    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tJava_2"/>
-    <elementParameter field="TEXT" name="SUBJOB_TITLE" value="RowStatus"/>
     <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" value="0;252;255"/>
     <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
   </subjob>
@@ -227,13 +228,20 @@
     <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="92;131;150"/>
     <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
   </subjob>
-<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_c8a5a30e-0985-493e-ac7e-a4269b5bcd22"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>yYveNQnRN31jEI4gnsM81WN7NnID84/huiZsEd0g3C54hx3US+Nz8zbgc/wXFGaBRQgwOk3AFGxF&#13;
-nsefdNip4w==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_bbaeab59-fe0f-4ff9-b5f9-60a189bf34e5"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>nhbixOjPt8tNV+PwhzIOwzvFYzVoiY10NselmzWG2XUwdw/K5XZfScRC6AaSdZ76BTG5rcRNMPO6&#13;
-+XhjrrDBTQ==</DigestValue></Reference></SignedInfo><SignatureValue>U/x8EZ7fm5pBFYGPIaIpIqTMF1dFaJRM65KqUVHUQ+tWyS0Xq37GHirEfslQBcFdmTDfFJTpK/c3&#13;
-iEny2bsW5e69iBjPQxdV4T+vhHXipnKvCvkdURawis3LssUsrsZeppzuoxKWEoIcGFCZFVDNVhzh&#13;
-OF52dXcj7GLiIyp1I74IG/xw4vHrdQY7QJ2D1lI6Ec7OMVrhLpx3m2zgl7L9TQz7aTfr7ENYj8Ep&#13;
-pCWU4ddZnLobQzQSubzt29UYcOxeRjrI9+ZEWtnijex5JWYOM9QW6fLJ/KqkuFyZNJlQfEYMuGaY&#13;
-UrVGFk1Yc2Rh+9fk5FTes3TtmLzH+4mRibs4JA==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w&#13;
+  <subjob>
+    <elementParameter field="CHECK" name="SHOW_SUBJOB_TITLE" value="true"/>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tJava_2"/>
+    <elementParameter field="TEXT" name="SUBJOB_TITLE" value="RowStatus"/>
+    <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" value="0;252;255"/>
+    <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
+  </subjob>
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_ed3cf916-1e9a-4d8a-b6b5-4591c0ef181f"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>WJHaNdFjH/C4/N5b5dAZwM7DzdWjDDWD12hApvcenlsbluecu1exhJABWY5H63zwwLwHjY3ndn0V&#13;
+PAPD3jBKQA==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_ce9e51ed-a836-46ca-a9d3-7453842f160b"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>QGgANyp/YmXiN2gNVvNPidQsVmQzfjCNx7GGl+g6fNYXp1FvEKzmpT40Cq9Vg/hvt5eRdosya5v/&#13;
+5GjBpkbmqQ==</DigestValue></Reference></SignedInfo><SignatureValue>E9Ng7F0SP2NGWbBXqF04036gzzPS+4TKaoELOfpSKKs7TKh9hNZ6uCGIwU1dh3fOiGQOhhAPYRHY&#13;
+W84ECjoHxthQr6bZox17NhCnMhI1WndWvT2o4Gip274C+OqGWAy071S1IU3d16shdRGHP3Ainzj7&#13;
+LIwnxlXYSJS7QnAdX3/EPN6T6y3UKhHk89/F0vYQlSi7HXlaRrjOTZnyNaC/hoPTYIdXuzSmIYVv&#13;
+3/Ry1dOl57FSwb7qHLmZ4glCs6eSbuOets1CERc7Ud6YxwzXn+r6D7MKJOmuWIUcrvfDT6OIcjei&#13;
+l485nq8KbcEmt4nEWmZbdjb1S/CrPt48qAvEmA==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w&#13;
 DAYDVQQIEwVQYXJpczEOMAwGA1UEBxMFUGFyaXMxFDASBgNVBAoTC1RhbGVuZCBJbmMuMQwwCgYD&#13;
 VQQLDANSJkQxFjAUBgNVBAMMDVRhbGVuZCBSJkQgQ0ExIjAgBgkqhkiG9w0BCQEWE3NlY3VyaXR5&#13;
 QHRhbGVuZC5jb20wHhcNMTkwNjAzMDgxODIwWhcNMjkwNjAzMDAwMDAwWjB7MSgwJgYDVQQDEx9U&#13;
@@ -255,4 +263,4 @@ hakvpzhOyLo91h8YAQrEZJdNuKA8IYmBrFZQZDCz0uywKSyFfzPyJhvxylCLG/iDPPfE0VWcrMJ/&#13
 WQJly/2XPg/NBCTF3pSKS0kCiA7PeaI3cWkMYYA3PMwYDvzqs1opBRglG7ikj0bQxSm3lcjMuuvW&#13;
 gBRksFKjP3K/nztsjSoYITOM9jR29ReIL3v0E8RbAFwA2RGq6Dxd0ixfbucMesy5Gnr8tfYy6rW+&#13;
 qSQqd3ah4+PSzBNVwIB4ytpdrG3SlhCI2i2Th8ek8Sjsaquh9qPAerWNd2+84HWOOGj1Xe1qc6vg&#13;
-qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_bbaeab59-fe0f-4ff9-b5f9-60a189bf34e5" Target="#_c8a5a30e-0985-493e-ac7e-a4269b5bcd22"><Timestamp>2023-11-26 08:42:50</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
+qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_ce9e51ed-a836-46ca-a9d3-7453842f160b" Target="#_ed3cf916-1e9a-4d8a-b6b5-4591c0ef181f"><Timestamp>2023-11-26 08:45:55</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>

@@ -353,7 +353,7 @@
       <column comment="" key="false" length="50" name="TalendLastUpdatedDate" nullable="true" originalLength="50" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
     </metadata>
     <nodeData xsi:type="TalendMapper:MapperData">
-      <uiProperties shellMaximized="true"/>
+      <uiProperties/>
       <varTables minimized="true" name="Var" sizeState="INTERMEDIATE"/>
       <outputTables name="rawPush" sizeState="INTERMEDIATE">
         <mapperTableEntries expression="staffMaster.EmployeeID" name="EmployeeID" type="id_String"/>
@@ -602,15 +602,6 @@
   </node>
   <node componentName="tMSSqlOutput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="256" posY="256">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tDBOutput_1"/>
-    <elementParameter field="TEXT" name="COMPONENT_NAME" show="false" value="tMSSqlOutput"/>
-    <elementParameter field="TEXT" name="VERSION" show="false" value="0.102 (ALPHA)"/>
-    <elementParameter field="TEXT" name="FAMILY" show="false" value="Databases/DB Specifics/MS_SQL_Server"/>
-    <elementParameter field="CHECK" name="STARTABLE" show="false" value="false"/>
-    <elementParameter field="CHECK" name="SUBTREE_START" show="false" value="false"/>
-    <elementParameter field="CHECK" name="END_OF_FLOW" show="false" value="true"/>
-    <elementParameter field="TEXT" name="HELP" show="false" value="org.talend.help.tMSSqlOutput"/>
-    <elementParameter field="DIRECTORY" name="IREPORT_PATH" show="false" value=""/>
-    <elementParameter field="DIRECTORY" name="JAVA_LIBRARY_PATH" show="false" value="/Applications/TalendStudio-8.0.1/studio/configuration/lib/java"/>
     <elementParameter field="TECHNICAL" name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY"/>
     <elementParameter field="TECHNICAL" name="PROPERTY:REPOSITORY_PROPERTY_TYPE" show="false" value="_I2a48PDcEe6lz_uoJFWK-Q"/>
     <elementParameter field="CHECK" name="USE_EXISTING_CONNECTION" value="false"/>
@@ -924,7 +915,7 @@
       <column defaultValue="" key="false" length="255" name="errorMessage" nullable="true" originalLength="-1" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
     </metadata>
   </node>
-  <node componentName="Process_Log_DWH" componentVersion="0.1" offsetLabelX="0" offsetLabelY="0" posX="64" posY="544">
+  <node componentName="ProcessLog" componentVersion="0.1" offsetLabelX="0" offsetLabelY="0" posX="64" posY="544">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="Process_Log_DWH_1"/>
     <elementParameter field="TEXT" name="FAMILY" value="Joblets"/>
     <elementParameter field="CHECK" name="ACTIVATE" value="true"/>
@@ -932,7 +923,7 @@
     <elementParameter field="CHECK" name="STARTABLE" show="false" value="true"/>
     <elementParameter field="CHECK" name="START" show="false" value="true"/>
     <elementParameter field="CLOSED_LIST" name="PROCESS_TYPE_VERSION" value="Latest"/>
-    <elementParameter field="TEXT" name="LABEL" value="Process_Log_DWH"/>
+    <elementParameter field="TEXT" name="LABEL" value="ProcessLog"/>
     <elementParameter field="TEXT" name="HINT" value="&lt;b&gt;__UNIQUE_NAME__&lt;/b&gt;&lt;br&gt;__COMMENT__"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <elementParameter field="CHECK" name="INFORMATION" value="false"/>
@@ -1001,13 +992,13 @@
     <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="92;131;150"/>
     <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
   </subjob>
-<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_6b4f806d-704b-4a80-a4a7-f969ff2ef6f1"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>k0iuCZyol71e7xKGdZxDIH4yVJVGYvvb1sOuf2GySQH1QFBztDM2aEKQvbS8uej64wgkxNGO3ozH&#13;
-7hjBQqdkng==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_29fe5626-5e52-478e-807d-be95d4348bda"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>cMZI43zU7nYkRFWZ/I88DvXGZrorDy/vXB69xsemjeK+ciXhygzYAtfxYfRI2SsuBW0REsL7EuRe&#13;
-Hpjd8IT09A==</DigestValue></Reference></SignedInfo><SignatureValue>EOb4CZ4GQJcdKVXpUrUXNZHhNZVPOvVhyEIeIhi4NXbvMW+gtkZug/Ab3PP8z/i2KPi6dcOI2t+r&#13;
-ADNS64zzpMPMj611/JcTxLJk2UxmzPHttTMcEsyXu+ymstpTuje/ZdTU1K0pNfrW98OUNAIddH2B&#13;
-YMRHK6Mdz+EJvqmVVnPIVN/SlaKKitGJxo/CvKxDab7B5L1I/FcN4FqEn6cN7cFNfSDtPQbu7uRr&#13;
-F4apBPWEuUbtxk3EMYbmHjqfR3Xofws55ou+isS4wACU7UfPqEJOPzs1lVHpAyTeiPJKbQyszNXM&#13;
-5SLYnoqELIMvpIAuZ/L9UYAJkvoHBKn4Et5RxQ==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w&#13;
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_c9da4ffa-4411-4ad8-aaad-9690ee2b6ab9"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>YX3qsYKClzSodStRt4uLE4IDuYUUeMsldx1ckUmDHEIvN9ph7a4GLPMUOMlK3Qt+rjW3B+AHgFGX&#13;
+oR9m7paXDA==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_14dc350b-23cc-4558-b2b7-468f1c32080b"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>lnBnTHrSidvHFA1/CbRkX6WaP6zc1JZyEBQbag1DWgiE7icujeAO2Rtpru5VSXAGcAo1OsRxfSR7&#13;
+8GzWN2Qmwg==</DigestValue></Reference></SignedInfo><SignatureValue>m7Fr7c7tYCgx5DnQauDJ2+DbYGsp1OCWv8aUoO1d9w+HwGgwSSJvHTYeFV1h0EEw/A6WLVxnpVPU&#13;
+CtjtAHpdMQW99Q1zuABmmWYunY1Vu0VwriD7vfbMNxCAJdyQKV8dm0ExIQb+qqKNoUEwCfmFyMDc&#13;
+cc7qtUJBl10cGRt7zTDEwNvIpnr+3vps1m1vxKD2rkYkhmLLp0KVjEa+JVsSELu6iGN6YPj14XY2&#13;
+8ARTktKDYbAidrmlcUQtnUhTW+68zaAQkF7dAa0geu40ZFmTk8iE4Xks6HRcRIw+QNrFG/agyVG3&#13;
+IyedNCaukeyDh8A2rgAPt4wY8ZnPF4vQnZzweA==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w&#13;
 DAYDVQQIEwVQYXJpczEOMAwGA1UEBxMFUGFyaXMxFDASBgNVBAoTC1RhbGVuZCBJbmMuMQwwCgYD&#13;
 VQQLDANSJkQxFjAUBgNVBAMMDVRhbGVuZCBSJkQgQ0ExIjAgBgkqhkiG9w0BCQEWE3NlY3VyaXR5&#13;
 QHRhbGVuZC5jb20wHhcNMTkwNjAzMDgxODIwWhcNMjkwNjAzMDAwMDAwWjB7MSgwJgYDVQQDEx9U&#13;
@@ -1029,4 +1020,4 @@ hakvpzhOyLo91h8YAQrEZJdNuKA8IYmBrFZQZDCz0uywKSyFfzPyJhvxylCLG/iDPPfE0VWcrMJ/&#13
 WQJly/2XPg/NBCTF3pSKS0kCiA7PeaI3cWkMYYA3PMwYDvzqs1opBRglG7ikj0bQxSm3lcjMuuvW&#13;
 gBRksFKjP3K/nztsjSoYITOM9jR29ReIL3v0E8RbAFwA2RGq6Dxd0ixfbucMesy5Gnr8tfYy6rW+&#13;
 qSQqd3ah4+PSzBNVwIB4ytpdrG3SlhCI2i2Th8ek8Sjsaquh9qPAerWNd2+84HWOOGj1Xe1qc6vg&#13;
-qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_29fe5626-5e52-478e-807d-be95d4348bda" Target="#_6b4f806d-704b-4a80-a4a7-f969ff2ef6f1"><Timestamp>2024-04-02 12:29:39</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
+qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_14dc350b-23cc-4558-b2b7-468f1c32080b" Target="#_c9da4ffa-4411-4ad8-aaad-9690ee2b6ab9"><Timestamp>2024-04-02 12:30:11</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>

@@ -313,19 +313,19 @@
       <uiProperties shellMaximized="true"/>
       <varTables minimized="true" name="Var" sizeState="INTERMEDIATE"/>
       <outputTables name="enriched1" sizeState="INTERMEDIATE">
-        <mapperTableEntries expression="row3.Date" name="Date" type="id_Date"/>
-        <mapperTableEntries expression="row3.Day" name="Day" type="id_String"/>
-        <mapperTableEntries expression="row3.Month" name="Month" type="id_String"/>
-        <mapperTableEntries expression="row3.Year" name="Year" type="id_String"/>
-        <mapperTableEntries expression="row3.Day_Of_Week" name="Day_Of_Week" type="id_String"/>
-        <mapperTableEntries expression="row3.Name_Of_Day" name="Name_Of_Day" type="id_String"/>
-        <mapperTableEntries expression="row3.Week_Of_Month" name="Week_Of_Month" type="id_String"/>
-        <mapperTableEntries expression="row3.Week_Of_Year" name="Week_Of_Year" type="id_String"/>
-        <mapperTableEntries expression="row3.Weekend" name="Weekend" type="id_String"/>
-        <mapperTableEntries expression="row5.Holiday_Desc " name="Holiday_Name" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="row5.Holiday_Date == null || row5.Holiday_Date.isEmpty() ? &quot;N&quot; : &quot;Y&quot; " name="Holiday" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="converted.Date" name="Date" type="id_Date"/>
+        <mapperTableEntries expression="converted.Day" name="Day" type="id_String"/>
+        <mapperTableEntries expression="converted.Month" name="Month" type="id_String"/>
+        <mapperTableEntries expression="converted.Year" name="Year" type="id_String"/>
+        <mapperTableEntries expression="converted.Day_Of_Week" name="Day_Of_Week" type="id_String"/>
+        <mapperTableEntries expression="converted.Name_Of_Day" name="Name_Of_Day" type="id_String"/>
+        <mapperTableEntries expression="converted.Week_Of_Month" name="Week_Of_Month" type="id_String"/>
+        <mapperTableEntries expression="converted.Week_Of_Year" name="Week_Of_Year" type="id_String"/>
+        <mapperTableEntries expression="converted.Weekend" name="Weekend" type="id_String"/>
+        <mapperTableEntries expression="lookup.Holiday_Desc " name="Holiday_Name" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="lookup.Holiday_Desc == null || lookup.Holiday_Desc.isEmpty() ? &quot;N&quot; : &quot;Y&quot; " name="Holiday" nullable="true" type="id_String"/>
       </outputTables>
-      <inputTables lookupMode="LOAD_ONCE" matchingMode="UNIQUE_MATCH" name="row3" sizeState="INTERMEDIATE">
+      <inputTables lookupMode="LOAD_ONCE" matchingMode="UNIQUE_MATCH" name="converted" sizeState="INTERMEDIATE">
         <mapperTableEntries name="Date" type="id_Date"/>
         <mapperTableEntries name="Day" type="id_String"/>
         <mapperTableEntries name="Month" type="id_String"/>
@@ -337,10 +337,10 @@
         <mapperTableEntries name="Weekend" type="id_String"/>
         <mapperTableEntries name="Holiday" nullable="true" type="id_String"/>
       </inputTables>
-      <inputTables activateCondensedTool="true" lookupMode="LOAD_ONCE" matchingMode="UNIQUE_MATCH" name="row5" sizeState="INTERMEDIATE">
+      <inputTables activateCondensedTool="true" lookupMode="LOAD_ONCE" matchingMode="UNIQUE_MATCH" name="lookup" sizeState="INTERMEDIATE">
         <mapperTableEntries expression="" name="Country" type="id_String"/>
         <mapperTableEntries name="Year" nullable="true" type="id_Integer"/>
-        <mapperTableEntries expression="TalendDate.parseDate(&quot;dd-MM-yyyy&quot;,TalendDate.formatDate(&quot;dd-MM-yyyy&quot;,row3.Date)) " name="Holiday_Date" type="id_Date"/>
+        <mapperTableEntries expression="TalendDate.parseDate(&quot;dd-MM-yyyy&quot;,TalendDate.formatDate(&quot;dd-MM-yyyy&quot;,converted.Date)) " name="Holiday_Date" type="id_Date"/>
         <mapperTableEntries name="Holiday_Desc" nullable="true" type="id_String"/>
       </inputTables>
     </nodeData>
@@ -521,19 +521,19 @@
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="enriched"/>
   </connection>
-  <connection connectorName="FLOW" label="row2" lineStyle="0" metaname="tHashInput_1" offsetLabelX="0" offsetLabelY="0" source="tHashInput_1" target="tConvertType_1">
+  <connection connectorName="FLOW" label="main" lineStyle="0" metaname="tHashInput_1" offsetLabelX="0" offsetLabelY="0" source="tHashInput_1" target="tConvertType_1">
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
-    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="row2"/>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="main"/>
   </connection>
-  <connection connectorName="FLOW" label="row3" lineStyle="0" metaname="tConvertType_1" offsetLabelX="0" offsetLabelY="0" source="tConvertType_1" target="tMap_3">
+  <connection connectorName="FLOW" label="converted" lineStyle="0" metaname="tConvertType_1" offsetLabelX="0" offsetLabelY="0" source="tConvertType_1" target="tMap_3">
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
-    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="row3"/>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="converted"/>
   </connection>
   <connection connectorName="FLOW" label="enriched1" lineStyle="0" metaname="enriched1" offsetLabelX="0" offsetLabelY="0" source="tMap_3" target="tFileOutputDelimited_1">
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="enriched1"/>
   </connection>
-  <connection connectorName="FLOW" label="row5" lineStyle="8" metaname="tHashInput_2" offsetLabelX="0" offsetLabelY="0" source="tHashInput_2" target="tMap_3">
+  <connection connectorName="FLOW" label="lookup" lineStyle="8" metaname="tHashInput_2" offsetLabelX="50" offsetLabelY="9" source="tHashInput_2" target="tMap_3">
     <elementParameter field="TABLE" name="TRACES_CONNECTION_FILTER" show="false">
       <elementValue elementRef="TRACE_COLUMN" value="date"/>
       <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
@@ -558,7 +558,7 @@
       <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
     </elementParameter>
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
-    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="row5"/>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="lookup"/>
   </connection>
   <connection connectorName="FLOW" label="sgHoliday" lineStyle="0" metaname="tDBInput_1" offsetLabelX="0" offsetLabelY="0" source="tDBInput_1" target="tHashOutput_2">
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
@@ -582,13 +582,13 @@
     <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="92;131;150"/>
     <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
   </subjob>
-<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_632abdef-975b-4c23-a8a7-71fd22023719"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>ZYhEeYdXo41bTvHzeFitu+qjM2po04jCtpTsziufYZQds+aWVqZlYGZevuJO60nJHWGBBVJdcoSc&#13;
-G1ZBQTYhlQ==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_ef803bca-557f-41f4-ae84-e05a52732843"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>tT7ereY/cdMGCZp9AD7vX6WsVIA8buH5lKxWhaB2OGJkcjGQgLA8YfNN3w/7xPJUmJ+jUXwjR1f+&#13;
-amFOAysepg==</DigestValue></Reference></SignedInfo><SignatureValue>RMV3Yp3sjq0DMHZb1rAtjQzjGqea8ZjmCtTRWHPExpqT0BRPJFhHlwHJJ2ynWplU+ILpmuwNm2k3&#13;
-84XAe35g3gm2NknNz2IxtDbqNnhlxpfrxSxEUwCHf/nowjeNJO9qW1g5qKb5TyOcLup+Y2MJWkKI&#13;
-Wm49NZrP1O40l8puyvKJkhzZREa6XhT8fdK9JfdYG8q3UOHLE+aDvZNqwX8YcBLV3Xj8Qs7L6E+V&#13;
-I60AgdCxmBPsRit6NQ1k+DVpoAQrI6G9d1ERz0D0syNOAiOM28ZkMaQIlhRaaJEV3hX5b+ppBGdV&#13;
-t3/iAs0HWwZ9mBx1KTwvfuFktuyhETuggApbgA==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w&#13;
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_58a9cd99-1976-474c-964d-563537b5a990"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>ebHRaPbmFJhJSrn2TR9DXuGZncJtYVSHxUwy9Suj8OHlTUDGA/P1aaOPESXkHVlX4PGdmqbP5x/e&#13;
+cwnf/8Zvew==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_9cc8e65d-6da6-4d45-bcfa-d8188d9bdbde"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>z1SiXZIxr6BTflJyj5Ucj86hEMoQbfixfDdAf35DRO/h/b4Dkz/Q5HxgLkmJ5gkUVy9ErB6Ee3JW&#13;
+5lj2/kjD7Q==</DigestValue></Reference></SignedInfo><SignatureValue>LwsGxXDLdP2Q0va/pqybqdcotoyz/uxl0WFZv8uygExAcnCt5NF3F2xlUvTIxUzthG5tt1vDpTdi&#13;
+vQnP5skGc35SxmhKKvlW44hz47LEbopkm7hLXpbjWBwuwmI18cVNxQbJ7+ZIR1ce8EyFc4Au30ND&#13;
+YCUYCwC07Za4a6xl0ajzIRwxL0RE8Hh6xykZ6cHyRCBRMa/+L4Xp+I/WsasvRmnNtAgQFsFBU2nA&#13;
+oY0dljZsIkO02k4LhTasSvv3QT9eJrR4dlixwXMNnSp+rhgoDIEdTDveYrYKHGRstOgvuDRT6GXQ&#13;
+PcqGmMxpOOrO3RUalwwEhCkIto5NdvpmraD2rg==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w&#13;
 DAYDVQQIEwVQYXJpczEOMAwGA1UEBxMFUGFyaXMxFDASBgNVBAoTC1RhbGVuZCBJbmMuMQwwCgYD&#13;
 VQQLDANSJkQxFjAUBgNVBAMMDVRhbGVuZCBSJkQgQ0ExIjAgBgkqhkiG9w0BCQEWE3NlY3VyaXR5&#13;
 QHRhbGVuZC5jb20wHhcNMTkwNjAzMDgxODIwWhcNMjkwNjAzMDAwMDAwWjB7MSgwJgYDVQQDEx9U&#13;
@@ -610,4 +610,4 @@ hakvpzhOyLo91h8YAQrEZJdNuKA8IYmBrFZQZDCz0uywKSyFfzPyJhvxylCLG/iDPPfE0VWcrMJ/&#13
 WQJly/2XPg/NBCTF3pSKS0kCiA7PeaI3cWkMYYA3PMwYDvzqs1opBRglG7ikj0bQxSm3lcjMuuvW&#13;
 gBRksFKjP3K/nztsjSoYITOM9jR29ReIL3v0E8RbAFwA2RGq6Dxd0ixfbucMesy5Gnr8tfYy6rW+&#13;
 qSQqd3ah4+PSzBNVwIB4ytpdrG3SlhCI2i2Th8ek8Sjsaquh9qPAerWNd2+84HWOOGj1Xe1qc6vg&#13;
-qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_ef803bca-557f-41f4-ae84-e05a52732843" Target="#_632abdef-975b-4c23-a8a7-71fd22023719"><Timestamp>2024-04-02 14:50:04</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
+qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_9cc8e65d-6da6-4d45-bcfa-d8188d9bdbde" Target="#_58a9cd99-1976-474c-964d-563537b5a990"><Timestamp>2024-04-02 14:51:34</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>

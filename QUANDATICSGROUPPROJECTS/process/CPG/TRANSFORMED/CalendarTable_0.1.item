@@ -633,23 +633,21 @@
       <column comment="" key="false" length="1" name="Holiday" nullable="true" originalLength="1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
     </metadata>
   </node>
-  <node componentName="tFilterRow" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="224" posY="480">
-    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tFilterRow_11"/>
-    <elementParameter field="CLOSED_LIST" name="LOGICAL_OP" value="||"/>
-    <elementParameter field="TABLE" name="CONDITIONS">
-      <elementValue elementRef="INPUT_COLUMN" value="Weekend"/>
-      <elementValue elementRef="FUNCTION" value=""/>
-      <elementValue elementRef="OPERATOR" value="=="/>
-      <elementValue elementRef="RVALUE" value="&quot;N&quot;"/>
-      <elementValue elementRef="INPUT_COLUMN" value="Holiday"/>
-      <elementValue elementRef="FUNCTION" value=""/>
-      <elementValue elementRef="OPERATOR" value="=="/>
-      <elementValue elementRef="RVALUE" value="&quot;N&quot;"/>
-    </elementParameter>
-    <elementParameter field="CHECK" name="USE_ADVANCED" value="false"/>
-    <elementParameter field="MEMO_JAVA" name="ADVANCED_COND" show="false" value="// code sample : use input_row to define the condition.&#10;// input_row.columnName1.equals(&quot;foo&quot;) ||!(input_row.columnName2.equals(&quot;bar&quot;))&#10;// replace the following expression by your own filter condition &#10;input_row.columnName1.equals(input_row.columnName2)&#10;&#9;&#9;&#9;"/>
+  <node componentName="tMap" componentVersion="2.1" offsetLabelX="0" offsetLabelY="0" posX="224" posY="480">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tMap_2"/>
+    <elementParameter field="EXTERNAL" name="MAP" value=""/>
+    <elementParameter field="CLOSED_LIST" name="LINK_STYLE" value="AUTO"/>
+    <elementParameter field="DIRECTORY" name="TEMPORARY_DATA_DIRECTORY" value=""/>
+    <elementParameter field="IMAGE" name="PREVIEW" value="_tEhtoOA4Ee6YOPNNsDZA-w-tMap_2-PREVIEW.bmp"/>
+    <elementParameter field="CHECK" name="DIE_ON_ERROR" show="false" value="true"/>
+    <elementParameter field="CHECK" name="LKUP_PARALLELIZE" show="false" value="false"/>
+    <elementParameter field="TEXT" name="LEVENSHTEIN" show="false" value="0"/>
+    <elementParameter field="TEXT" name="JACCARD" show="false" value="0"/>
+    <elementParameter field="CHECK" name="ENABLE_AUTO_CONVERT_TYPE" show="false" value="false"/>
+    <elementParameter field="TEXT" name="ROWS_BUFFER_SIZE" value="2000000"/>
+    <elementParameter field="CHECK" name="CHANGE_HASH_AND_EQUALS_FOR_BIGDECIMAL" value="true"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
-    <metadata connector="FLOW" name="tFilterRow_11">
+    <metadata connector="FLOW" name="out1">
       <column comment="" key="true" length="10" name="Date" nullable="false" originalLength="10" pattern="&quot;yyyy-MM-dd&quot;" precision="-1" sourceType="" type="id_Date" usefulColumn="true"/>
       <column comment="" key="false" length="2" name="Day" nullable="false" originalLength="2" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="2" name="Month" nullable="false" originalLength="2" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
@@ -662,33 +660,36 @@
       <column comment="" key="false" length="255" name="Holiday_Name" nullable="true" originalLength="255" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="1" name="Holiday" nullable="true" originalLength="1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
     </metadata>
-    <metadata connector="FILTER" name="FILTER">
-      <column comment="" key="true" length="10" name="Date" nullable="false" originalLength="10" pattern="&quot;yyyy-MM-dd&quot;" precision="-1" sourceType="" type="id_Date" usefulColumn="true"/>
-      <column comment="" key="false" length="2" name="Day" nullable="false" originalLength="2" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="2" name="Month" nullable="false" originalLength="2" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="4" name="Year" nullable="false" originalLength="4" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="3" name="Day_Of_Week" nullable="false" originalLength="3" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="10" name="Name_Of_Day" nullable="false" originalLength="10" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="3" name="Week_Of_Month" nullable="false" originalLength="3" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="3" name="Week_Of_Year" nullable="false" originalLength="3" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="1" name="Weekend" nullable="false" originalLength="1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="255" name="Holiday_Name" nullable="true" originalLength="255" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="1" name="Holiday" nullable="true" originalLength="1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
-    </metadata>
-    <metadata connector="REJECT" name="REJECT">
-      <column comment="" key="true" length="10" name="Date" nullable="false" originalLength="10" pattern="&quot;yyyy-MM-dd&quot;" precision="-1" sourceType="" type="id_Date" usefulColumn="true"/>
-      <column comment="" key="false" length="2" name="Day" nullable="false" originalLength="2" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="2" name="Month" nullable="false" originalLength="2" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="4" name="Year" nullable="false" originalLength="4" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="3" name="Day_Of_Week" nullable="false" originalLength="3" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="10" name="Name_Of_Day" nullable="false" originalLength="10" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="3" name="Week_Of_Month" nullable="false" originalLength="3" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="3" name="Week_Of_Year" nullable="false" originalLength="3" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="1" name="Weekend" nullable="false" originalLength="1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="255" name="Holiday_Name" nullable="true" originalLength="255" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="1" name="Holiday" nullable="true" originalLength="1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
-      <column defaultValue="" key="false" length="255" name="errorMessage" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
-    </metadata>
+    <nodeData xsi:type="TalendMapper:MapperData">
+      <uiProperties shellMaximized="true"/>
+      <varTables minimized="true" name="Var" sizeState="INTERMEDIATE"/>
+      <outputTables activateExpressionFilter="true" expressionFilter="row1.Weekend.equals(&quot;N&quot;) || row1.Holiday.equals(&quot;N&quot;)" name="out1" sizeState="INTERMEDIATE">
+        <mapperTableEntries expression="row1.Date " name="Date" type="id_Date"/>
+        <mapperTableEntries expression="row1.Day " name="Day" type="id_String"/>
+        <mapperTableEntries expression="row1.Month " name="Month" type="id_String"/>
+        <mapperTableEntries expression="row1.Year " name="Year" type="id_String"/>
+        <mapperTableEntries expression="row1.Day_Of_Week " name="Day_Of_Week" type="id_String"/>
+        <mapperTableEntries expression="row1.Name_Of_Day " name="Name_Of_Day" type="id_String"/>
+        <mapperTableEntries expression="row1.Week_Of_Month " name="Week_Of_Month" type="id_String"/>
+        <mapperTableEntries expression="row1.Week_Of_Year " name="Week_Of_Year" type="id_String"/>
+        <mapperTableEntries expression="row1.Weekend " name="Weekend" type="id_String"/>
+        <mapperTableEntries expression="row1.Holiday_Name " name="Holiday_Name" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row1.Holiday " name="Holiday" nullable="true" type="id_String"/>
+      </outputTables>
+      <inputTables lookupMode="LOAD_ONCE" matchingMode="UNIQUE_MATCH" name="row1" sizeState="INTERMEDIATE">
+        <mapperTableEntries name="Date" type="id_Date"/>
+        <mapperTableEntries name="Day" type="id_String"/>
+        <mapperTableEntries name="Month" type="id_String"/>
+        <mapperTableEntries name="Year" type="id_String"/>
+        <mapperTableEntries name="Day_Of_Week" type="id_String"/>
+        <mapperTableEntries name="Name_Of_Day" type="id_String"/>
+        <mapperTableEntries name="Week_Of_Month" type="id_String"/>
+        <mapperTableEntries name="Week_Of_Year" type="id_String"/>
+        <mapperTableEntries name="Weekend" type="id_String"/>
+        <mapperTableEntries name="Holiday_Name" nullable="true" type="id_String"/>
+        <mapperTableEntries name="Holiday" nullable="true" type="id_String"/>
+      </inputTables>
+    </nodeData>
   </node>
   <node componentName="tLogRow" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="384" posY="480">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tLogRow_1"/>
@@ -821,13 +822,13 @@
   <connection connectorName="SUBJOB_OK" label="OnSubjobOk" lineStyle="1" metaname="tDBInput_1" offsetLabelX="49" offsetLabelY="-14" source="tDBInput_1" target="tLoop_1">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="OnSubjobOk2"/>
   </connection>
-  <connection connectorName="FLOW" label="filter" lineStyle="0" metaname="tHashInput_3" offsetLabelX="0" offsetLabelY="0" source="tHashInput_3" target="tFilterRow_11">
-    <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
-    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="filter"/>
-  </connection>
-  <connection connectorName="FILTER" label="row1" lineStyle="0" metaname="FILTER" offsetLabelX="0" offsetLabelY="0" source="tFilterRow_11" target="tLogRow_1">
+  <connection connectorName="FLOW" label="row1" lineStyle="0" metaname="tHashInput_3" offsetLabelX="0" offsetLabelY="0" source="tHashInput_3" target="tMap_2">
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="row1"/>
+  </connection>
+  <connection connectorName="FLOW" label="out1" lineStyle="0" metaname="out1" offsetLabelX="0" offsetLabelY="0" source="tMap_2" target="tLogRow_1">
+    <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="out1"/>
   </connection>
   <subjob>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tLoop_1"/>
@@ -849,13 +850,13 @@
     <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="92;131;150"/>
     <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
   </subjob>
-<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_1d545fcc-3ef5-49fb-9956-9b636d170a22"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>/P81hcK/u+dvX+G3twSi0Q0PiPRyOF31eYs6xAra1Fhkn2P4G+Rjl/PGB4s5rJq4fDjYGfF2S/9V&#13;
-0ksDVKu8BQ==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_c68e7661-ed83-40aa-9e81-84ecb3c3d0a2"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>DZxQcD0LhWoeAoXlpXzuzm6bdulUOsfLi7ZFWKBNRwvG9VGmdMtOiQ76/TWkR/pLz7WjwK5qVWZU&#13;
-Aoz82VJOcg==</DigestValue></Reference></SignedInfo><SignatureValue>H/8fjqhZ+u4khHS0K4gPxd+RRQwmdQJpyD2Ht/xzQThg5mC10Uwg22gd6jMhvb/EhA1m1/55uUwG&#13;
-dJsZPYevsfW0WlJwo+Lcftx5OYY6mV/FoFmTl+BMTL5DjlOr6oSqy8QYfa9wDF4EwbhmBJYkTEnn&#13;
-b+NLFvJwk/EjoBW5FA2NCo+TcPU+n9GUA7U5r9oJA/Uds1ougovlY++GdBsqGaKuLc4f/68pZ148&#13;
-tZToE8AZLqG7LiOx59RgHnams6BZqeJYepH1BvfKKyjyhx896DlFGtsxlABFASoBVzdE4cBl3pJp&#13;
-28xObLRXfYqSCd2EdpVx+1lkgunmlgr+bPvAgw==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w&#13;
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_0f79190a-51ab-4187-a429-230ea1720872"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>ctw0PEm+zYMn6KOvfomgXDMpmvQsOY3oJLDCIMNRdmwe4+vxU+52oluwD5afRXIyWHeyMJiLvm9f&#13;
+hN6uB+KPgA==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_8c7e0065-14d7-48d1-85ae-1ec31db918b3"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>9NLsk3grj2GrgdLRqTm+vS5Kf3AqU4BJDLd1AgYj0+YXlXWTOOSb02Uay1uQuGMvqLlZBjjQaOT3&#13;
+aYHOzZjnVQ==</DigestValue></Reference></SignedInfo><SignatureValue>hw2WiYwakbvxCxeaywOI8KuZJcknBrBVogqniOH9O3LGlOlUdVldCjQxxtwNskDJgFIJvg8hMCV8&#13;
+nTmAsbDmrazXTJh1Pvf3GHI3ZCXiW9uixuTa6B+LAMR8/usUkiSpIgDlR1XEU/thHKyriad4uezE&#13;
+8NPhjgmXEv4wXUeYP0dxfD8vpPOhyPD7LngEJBm4FkH4XpbkI9nzgxpmgIc24afDvrv6oYc9Kp6B&#13;
+8rA4xd2tCrgT5SvR2VgMF5uiDuhzPA4STE6hlu4EQsd4EprYpqF15eCVSYzR8mUWcg2wytkGOpNr&#13;
+/52ySoecs6WHGpExQ8hdNFc3VXHMMwrItsSikA==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w&#13;
 DAYDVQQIEwVQYXJpczEOMAwGA1UEBxMFUGFyaXMxFDASBgNVBAoTC1RhbGVuZCBJbmMuMQwwCgYD&#13;
 VQQLDANSJkQxFjAUBgNVBAMMDVRhbGVuZCBSJkQgQ0ExIjAgBgkqhkiG9w0BCQEWE3NlY3VyaXR5&#13;
 QHRhbGVuZC5jb20wHhcNMTkwNjAzMDgxODIwWhcNMjkwNjAzMDAwMDAwWjB7MSgwJgYDVQQDEx9U&#13;
@@ -877,4 +878,4 @@ hakvpzhOyLo91h8YAQrEZJdNuKA8IYmBrFZQZDCz0uywKSyFfzPyJhvxylCLG/iDPPfE0VWcrMJ/&#13
 WQJly/2XPg/NBCTF3pSKS0kCiA7PeaI3cWkMYYA3PMwYDvzqs1opBRglG7ikj0bQxSm3lcjMuuvW&#13;
 gBRksFKjP3K/nztsjSoYITOM9jR29ReIL3v0E8RbAFwA2RGq6Dxd0ixfbucMesy5Gnr8tfYy6rW+&#13;
 qSQqd3ah4+PSzBNVwIB4ytpdrG3SlhCI2i2Th8ek8Sjsaquh9qPAerWNd2+84HWOOGj1Xe1qc6vg&#13;
-qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_c68e7661-ed83-40aa-9e81-84ecb3c3d0a2" Target="#_1d545fcc-3ef5-49fb-9956-9b636d170a22"><Timestamp>2024-04-04 10:16:43</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
+qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_8c7e0065-14d7-48d1-85ae-1ec31db918b3" Target="#_0f79190a-51ab-4187-a429-230ea1720872"><Timestamp>2024-04-04 10:25:21</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>

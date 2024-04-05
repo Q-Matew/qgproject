@@ -956,7 +956,7 @@
       <column comment="" key="false" length="50" name="ProjectStatus" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="NVARCHAR" type="id_String" usefulColumn="true"/>
     </metadata>
   </node>
-  <node componentName="tMap" componentVersion="2.1" offsetLabelX="0" offsetLabelY="0" posX="512" posY="576">
+  <node componentName="tMap" componentVersion="2.1" offsetLabelX="0" offsetLabelY="0" posX="448" posY="576">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tMap_3"/>
     <elementParameter field="EXTERNAL" name="MAP" value=""/>
     <elementParameter field="CLOSED_LIST" name="LINK_STYLE" value="AUTO"/>
@@ -984,9 +984,6 @@
       <column comment="" key="false" length="1073741823" name="StageName" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="NVARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="23" name="StageStartDate" nullable="true" originalLength="-1" pattern="&quot;dd-MM-yyyy&quot;" precision="3" sourceType="DATETIME" type="id_Date" usefulColumn="true"/>
       <column comment="" key="false" length="23" name="StageEndDate" nullable="true" originalLength="-1" pattern="&quot;dd-MM-yyyy&quot;" precision="3" sourceType="DATETIME" type="id_Date" usefulColumn="true"/>
-      <column comment="" key="false" length="50" name="StaffID" nullable="true" pattern="" precision="0" sourceType="NVARCHAR" type="id_String" usefulColumn="true">
-        <additionalField key="Comment" value=""/>
-      </column>
     </metadata>
     <nodeData xsi:type="TalendMapper:MapperData">
       <uiProperties shellMaximized="true"/>
@@ -1005,7 +1002,6 @@
         <mapperTableEntries expression="proStg.StageName " name="StageName" nullable="true" type="id_String"/>
         <mapperTableEntries expression="proStg.StageStartDate " name="StageStartDate" nullable="true" type="id_Date"/>
         <mapperTableEntries expression="proStg.StageEndDate " name="StageEndDate" nullable="true" type="id_Date"/>
-        <mapperTableEntries expression="ManHour.StaffID " name="StaffID" nullable="true" type="id_String"/>
       </outputTables>
       <inputTables lookupMode="LOAD_ONCE" matchingMode="UNIQUE_MATCH" name="proDiv" sizeState="INTERMEDIATE">
         <mapperTableEntries name="ProjectDivisionObjectNo" type="id_String"/>
@@ -1037,33 +1033,6 @@
         <mapperTableEntries name="CloseDate" nullable="true" type="id_Date"/>
         <mapperTableEntries name="IsClose" nullable="true" type="id_Integer"/>
         <mapperTableEntries name="OtherStage" nullable="true" type="id_String"/>
-      </inputTables>
-      <inputTables activateCondensedTool="true" lookupMode="LOAD_ONCE" matchingMode="UNIQUE_MATCH" name="ManHour" sizeState="INTERMEDIATE">
-        <mapperTableEntries name="SECID" nullable="true" type="id_String"/>
-        <mapperTableEntries name="StaffID" nullable="true" type="id_String"/>
-        <mapperTableEntries name="ManDay" type="id_Double"/>
-        <mapperTableEntries name="AssignedBand" nullable="true" type="id_String"/>
-        <mapperTableEntries name="AssignedRate" nullable="true" type="id_String"/>
-        <mapperTableEntries name="ActualBand" nullable="true" type="id_String"/>
-        <mapperTableEntries name="ActualRate" nullable="true" type="id_String"/>
-        <mapperTableEntries name="Status" nullable="true" type="id_Integer"/>
-        <mapperTableEntries name="ModificationDate" nullable="true" type="id_Date"/>
-        <mapperTableEntries name="ModificationBy" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="proStg.ProjectDivisionObjNo " name="ProjectDivisionObjectNo" nullable="true" operator="=" type="id_String"/>
-        <mapperTableEntries name="GUID" type="id_Object"/>
-        <mapperTableEntries name="ValidDate" nullable="true" type="id_Date"/>
-        <mapperTableEntries name="GroupID" nullable="true" type="id_Object"/>
-        <mapperTableEntries name="IsDisable" nullable="true" type="id_Integer"/>
-        <mapperTableEntries name="CompanyCode" nullable="true" type="id_String"/>
-        <mapperTableEntries name="AssignedFromDate" nullable="true" type="id_Date"/>
-        <mapperTableEntries name="AssignedToDate" nullable="true" type="id_Date"/>
-        <mapperTableEntries name="STID" type="id_Object"/>
-        <mapperTableEntries name="ActualManday" type="id_Double"/>
-        <mapperTableEntries name="IsNormalStaff" nullable="true" type="id_Integer"/>
-        <mapperTableEntries name="IsPromoted" nullable="true" type="id_Integer"/>
-        <mapperTableEntries name="TimeLogFromDate" nullable="true" type="id_Date"/>
-        <mapperTableEntries name="TimeLogToDate" nullable="true" type="id_Date"/>
-        <mapperTableEntries name="TalendLastUpdatedDate" nullable="true" type="id_String"/>
       </inputTables>
     </nodeData>
   </node>
@@ -1163,6 +1132,101 @@
       <column comment="" defaultValue="" key="false" length="10" name="IsClose" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="INT" type="id_Integer" usefulColumn="true"/>
       <column comment="" key="false" length="1073741823" name="OtherStage" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="NVARCHAR" type="id_String" usefulColumn="true"/>
     </metadata>
+  </node>
+  <node componentName="tMap" componentVersion="2.1" offsetLabelX="0" offsetLabelY="0" posX="608" posY="576">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tMap_4"/>
+    <elementParameter field="EXTERNAL" name="MAP" value=""/>
+    <elementParameter field="CLOSED_LIST" name="LINK_STYLE" value="AUTO"/>
+    <elementParameter field="DIRECTORY" name="TEMPORARY_DATA_DIRECTORY" value=""/>
+    <elementParameter field="IMAGE" name="PREVIEW" value="_sTs0oPECEe6lz_uoJFWK-Q-tMap_4-PREVIEW.bmp"/>
+    <elementParameter field="CHECK" name="DIE_ON_ERROR" show="false" value="true"/>
+    <elementParameter field="CHECK" name="LKUP_PARALLELIZE" show="false" value="false"/>
+    <elementParameter field="TEXT" name="LEVENSHTEIN" show="false" value="0"/>
+    <elementParameter field="TEXT" name="JACCARD" show="false" value="0"/>
+    <elementParameter field="CHECK" name="ENABLE_AUTO_CONVERT_TYPE" show="false" value="false"/>
+    <elementParameter field="TEXT" name="ROWS_BUFFER_SIZE" value="2000000"/>
+    <elementParameter field="CHECK" name="CHANGE_HASH_AND_EQUALS_FOR_BIGDECIMAL" value="true"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <metadata connector="FLOW" name="out2">
+      <column comment="" key="false" length="100" name="ProjectDivisionObjectNo" nullable="false" originalLength="-1" pattern="" precision="0" sourceType="NVARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="100" name="ProjectDivisionWbsCode" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="NVARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="100" name="ProjecctDivisionName" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="NVARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="100" name="Subsidiary" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="NVARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="100" name="DivisionCode" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="NVARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="100" name="ProjectID" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="NVARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="100" name="ContractID" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="NVARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="100" name="ServiceID" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="NVARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="100" name="ProjectDirector" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="NVARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="50" name="ProjectStatus" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="NVARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="1073741823" name="StageName" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="NVARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="23" name="StageStartDate" nullable="true" originalLength="-1" pattern="&quot;dd-MM-yyyy&quot;" precision="3" sourceType="DATETIME" type="id_Date" usefulColumn="true"/>
+      <column comment="" key="false" length="23" name="StageEndDate" nullable="true" originalLength="-1" pattern="&quot;dd-MM-yyyy&quot;" precision="3" sourceType="DATETIME" type="id_Date" usefulColumn="true"/>
+      <column comment="" key="false" length="50" name="StaffID" nullable="true" pattern="" precision="0" sourceType="NVARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+    </metadata>
+    <nodeData xsi:type="TalendMapper:MapperData">
+      <uiProperties shellMaximized="true"/>
+      <varTables minimized="true" name="Var" sizeState="INTERMEDIATE"/>
+      <outputTables name="out2" sizeState="INTERMEDIATE">
+        <mapperTableEntries expression="out1.ProjectDivisionObjectNo" name="ProjectDivisionObjectNo" type="id_String"/>
+        <mapperTableEntries expression="out1.ProjectDivisionWbsCode" name="ProjectDivisionWbsCode" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="out1.ProjecctDivisionName" name="ProjecctDivisionName" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="out1.Subsidiary" name="Subsidiary" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="out1.DivisionCode" name="DivisionCode" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="out1.ProjectID" name="ProjectID" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="out1.ContractID" name="ContractID" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="out1.ServiceID" name="ServiceID" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="out1.ProjectDirector" name="ProjectDirector" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="out1.ProjectStatus" name="ProjectStatus" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="out1.StageName" name="StageName" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="out1.StageStartDate" name="StageStartDate" nullable="true" type="id_Date"/>
+        <mapperTableEntries expression="out1.StageEndDate" name="StageEndDate" nullable="true" type="id_Date"/>
+        <mapperTableEntries expression="row3.StaffID " name="StaffID" nullable="true" type="id_String"/>
+      </outputTables>
+      <inputTables lookupMode="LOAD_ONCE" matchingMode="UNIQUE_MATCH" name="out1" sizeState="INTERMEDIATE">
+        <mapperTableEntries name="ProjectDivisionObjectNo" type="id_String"/>
+        <mapperTableEntries name="ProjectDivisionWbsCode" nullable="true" type="id_String"/>
+        <mapperTableEntries name="ProjecctDivisionName" nullable="true" type="id_String"/>
+        <mapperTableEntries name="Subsidiary" nullable="true" type="id_String"/>
+        <mapperTableEntries name="DivisionCode" nullable="true" type="id_String"/>
+        <mapperTableEntries name="ProjectID" nullable="true" type="id_String"/>
+        <mapperTableEntries name="ContractID" nullable="true" type="id_String"/>
+        <mapperTableEntries name="ServiceID" nullable="true" type="id_String"/>
+        <mapperTableEntries name="ProjectDirector" nullable="true" type="id_String"/>
+        <mapperTableEntries name="ProjectStatus" nullable="true" type="id_String"/>
+        <mapperTableEntries name="StageName" nullable="true" type="id_String"/>
+        <mapperTableEntries name="StageStartDate" nullable="true" type="id_Date"/>
+        <mapperTableEntries name="StageEndDate" nullable="true" type="id_Date"/>
+      </inputTables>
+      <inputTables activateCondensedTool="true" lookupMode="LOAD_ONCE" matchingMode="UNIQUE_MATCH" name="row3" sizeState="INTERMEDIATE">
+        <mapperTableEntries name="SECID" nullable="true" type="id_String"/>
+        <mapperTableEntries name="StaffID" nullable="true" type="id_String"/>
+        <mapperTableEntries name="ManDay" type="id_Double"/>
+        <mapperTableEntries expression="" name="AssignedBand" nullable="true" type="id_String"/>
+        <mapperTableEntries name="AssignedRate" nullable="true" type="id_String"/>
+        <mapperTableEntries name="ActualBand" nullable="true" type="id_String"/>
+        <mapperTableEntries name="ActualRate" nullable="true" type="id_String"/>
+        <mapperTableEntries name="Status" nullable="true" type="id_Integer"/>
+        <mapperTableEntries name="ModificationDate" nullable="true" type="id_Date"/>
+        <mapperTableEntries name="ModificationBy" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="out1.ProjectDivisionObjectNo " name="ProjectDivisionObjectNo" nullable="true" operator="=" type="id_String"/>
+        <mapperTableEntries name="GUID" type="id_Object"/>
+        <mapperTableEntries name="ValidDate" nullable="true" type="id_Date"/>
+        <mapperTableEntries name="GroupID" nullable="true" type="id_Object"/>
+        <mapperTableEntries name="IsDisable" nullable="true" type="id_Integer"/>
+        <mapperTableEntries name="CompanyCode" nullable="true" type="id_String"/>
+        <mapperTableEntries name="AssignedFromDate" nullable="true" type="id_Date"/>
+        <mapperTableEntries name="AssignedToDate" nullable="true" type="id_Date"/>
+        <mapperTableEntries name="STID" type="id_Object"/>
+        <mapperTableEntries name="ActualManday" type="id_Double"/>
+        <mapperTableEntries name="IsNormalStaff" nullable="true" type="id_Integer"/>
+        <mapperTableEntries name="IsPromoted" nullable="true" type="id_Integer"/>
+        <mapperTableEntries name="TimeLogFromDate" nullable="true" type="id_Date"/>
+        <mapperTableEntries name="TimeLogToDate" nullable="true" type="id_Date"/>
+        <mapperTableEntries name="TalendLastUpdatedDate" nullable="true" type="id_String"/>
+      </inputTables>
+    </nodeData>
   </node>
   <node componentName="tMSSqlInput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="512" posY="672">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tDBInput_5"/>
@@ -1329,7 +1393,7 @@
       </column>
     </metadata>
   </node>
-  <node componentName="tLogRow" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="768" posY="576">
+  <node componentName="tLogRow" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="864" posY="576">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tLogRow_2"/>
     <elementParameter field="RADIO" name="BASIC_MODE" value="false"/>
     <elementParameter field="RADIO" name="TABLE_PRINT" value="true"/>
@@ -1468,7 +1532,7 @@
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="proDiv"/>
   </connection>
-  <connection connectorName="FLOW" label="out1" lineStyle="0" metaname="out1" offsetLabelX="0" offsetLabelY="0" source="tMap_3" target="tLogRow_2">
+  <connection connectorName="FLOW" label="out1" lineStyle="0" metaname="out1" offsetLabelX="0" offsetLabelY="0" source="tMap_3" target="tMap_4">
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="out1"/>
   </connection>
@@ -1476,9 +1540,18 @@
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="proStg"/>
   </connection>
-  <connection connectorName="FLOW" label="ManHour" lineStyle="8" metaname="tDBInput_5" offsetLabelX="50" offsetLabelY="2" source="tDBInput_5" target="tMap_3">
+  <connection connectorName="FLOW" label="out2" lineStyle="0" metaname="out2" offsetLabelX="0" offsetLabelY="0" source="tMap_4" target="tLogRow_2">
+    <elementParameter field="TABLE" name="TRACES_CONNECTION_FILTER" show="false">
+      <elementValue elementRef="TRACE_COLUMN" value="StaffID"/>
+      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
+      <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
+    </elementParameter>
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
-    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="ManHour"/>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="out2"/>
+  </connection>
+  <connection connectorName="FLOW" label="row3" lineStyle="8" metaname="tDBInput_5" offsetLabelX="0" offsetLabelY="0" source="tDBInput_5" target="tMap_4">
+    <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="row3"/>
   </connection>
   <subjob>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tDBInput_1"/>
@@ -1536,13 +1609,13 @@
     <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="92;131;150"/>
     <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
   </subjob>
-<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_1b620d46-a094-46a9-8346-fe50795b1c83"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>e0K/FCm2Nq1Hh9viuU9C+J6oOWEDdVXsEO3BNru1r+rvuT3Qd78/eok+MqA5ZlAfIJyKyV/a4YOd&#13;
-cdxcebCQcA==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_ac630127-0f03-4239-88b1-168aefc15a4d"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>nFDOWwKSws66c3Y99pG1v1Ktoge/Hf4UMAXSbvTgF1/TR2LBZsuXb3mGTwe8pUjPEma0QE4L3PQu&#13;
-0GqYF8wIJw==</DigestValue></Reference></SignedInfo><SignatureValue>PfXX2U8wocxXlGWJjk/WVI9d477JO477W1vgj7eMbT2sqgXyqZQbRjgvE/vK82yCnljbDxXLv/Ec&#13;
-q1YM2AhO4VTOqAHB50fReB4cJdJ+D2W5mHVHDHvYTfNYulQ1wc2noBoe3cDzuZut/O0YQPRMabAe&#13;
-eiPxvPNkoZbjKgsLta8LMk5ojCh3ZFPZmDs7Y+43QsxNI4Gj9Ifp4tscovNBF+eOzgmKCzBbhm/p&#13;
-vm6j1JBsIT7o8f60sHJxZLwAMZYzSwU7N4SJ2UU6YtoEo7HY7HowPaxsjJ1tN66ACkKIfGLJpkrv&#13;
-XYQ1W/xIVxyYosGaj20lZFBF7FVNY+EuPKY9sA==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w&#13;
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_de39bdef-a9d9-41f2-9530-648bd2709f7f"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>979+UzfO8TJpWQNuPyvM6h3ZT2g4MQOg6O6E/QMB2Tt4btOOFrcCiGwmBerRuRujfk2FeIUFxucL&#13;
+7emTH0fC7Q==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_ca4560c4-860b-4aab-a10d-5f65ff6f1b6f"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>r+0ZXsr+4IkeqYZJgIdLclSsetQ6ybfcPgZKr0olan+Y+hMfVvYk8VNe5Ql4EWMzPSqk4NB1qAPJ&#13;
+IFkdKmE0eg==</DigestValue></Reference></SignedInfo><SignatureValue>UaL4KQjm3iHW4RHfy1q1y8PSlcTo+lwulB1xM8oJoKBipYw9lq9iqCgmJuE0fe/19UfAob9FdxMf&#13;
+AXOcLXE5NTDy6qrQVwrTt9l5nKhoHMJCigK7dLBbtk/XZQf5bKzy11OGfkUyyy2DnF0UeP5AmBln&#13;
+e1tIgRei3DhOnzuenqL221pzr/sY0Pda157Ia8NCxb51kRVHE2uKHBPlXi/aBdd+sn6vJiH9csqA&#13;
+1CfY3V0Y9VjfZ5ZM167c6EwMqwiRSmrAA6UXXNgjZ4a61cCRDGT6o9qMO9CY0/f3uYVms0CP39hP&#13;
+fPpUY5lvgm+txOGN1ApS4naYpNnMzp2PFaz7uA==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w&#13;
 DAYDVQQIEwVQYXJpczEOMAwGA1UEBxMFUGFyaXMxFDASBgNVBAoTC1RhbGVuZCBJbmMuMQwwCgYD&#13;
 VQQLDANSJkQxFjAUBgNVBAMMDVRhbGVuZCBSJkQgQ0ExIjAgBgkqhkiG9w0BCQEWE3NlY3VyaXR5&#13;
 QHRhbGVuZC5jb20wHhcNMTkwNjAzMDgxODIwWhcNMjkwNjAzMDAwMDAwWjB7MSgwJgYDVQQDEx9U&#13;
@@ -1564,4 +1637,4 @@ hakvpzhOyLo91h8YAQrEZJdNuKA8IYmBrFZQZDCz0uywKSyFfzPyJhvxylCLG/iDPPfE0VWcrMJ/&#13
 WQJly/2XPg/NBCTF3pSKS0kCiA7PeaI3cWkMYYA3PMwYDvzqs1opBRglG7ikj0bQxSm3lcjMuuvW&#13;
 gBRksFKjP3K/nztsjSoYITOM9jR29ReIL3v0E8RbAFwA2RGq6Dxd0ixfbucMesy5Gnr8tfYy6rW+&#13;
 qSQqd3ah4+PSzBNVwIB4ytpdrG3SlhCI2i2Th8ek8Sjsaquh9qPAerWNd2+84HWOOGj1Xe1qc6vg&#13;
-qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_ac630127-0f03-4239-88b1-168aefc15a4d" Target="#_1b620d46-a094-46a9-8346-fe50795b1c83"><Timestamp>2024-04-05 06:23:36</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
+qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_ca4560c4-860b-4aab-a10d-5f65ff6f1b6f" Target="#_de39bdef-a9d9-41f2-9530-648bd2709f7f"><Timestamp>2024-04-05 06:25:50</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>

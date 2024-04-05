@@ -440,12 +440,12 @@
       <column comment="" key="false" length="23" name="AssignedToDate" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="3" sourceType="DATETIME" type="id_Date" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
-      <column comment="" defaultValue="" key="false" length="-1" name="CalendarDay" nullable="false" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_Long" usefulColumn="true"/>
-      <column comment="" defaultValue="((0))" key="false" length="10" name="ManDay" nullable="true" pattern="" precision="0" sourceType="FLOAT" type="id_Double" usefulColumn="true">
+      <column comment="" defaultValue="" key="false" length="18" name="CalendarDay" nullable="false" originalLength="18" pattern="" precision="2" sourceType="" type="id_Double" usefulColumn="true"/>
+      <column comment="" defaultValue="((0))" key="false" length="18" name="ManDay" nullable="true" pattern="" precision="2" sourceType="FLOAT" type="id_Double" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
-      <column comment="" defaultValue="" key="false" length="10" name="NetworkingDay" nullable="true" originalLength="10" pattern="" precision="0" sourceType="" type="id_Double" usefulColumn="true"/>
-      <column comment="" key="false" length="10" name="AllocationDayPerDay" nullable="true" originalLength="10" pattern="" precision="-1" sourceType="" type="id_Double" usefulColumn="true"/>
+      <column comment="" defaultValue="" key="false" length="18" name="NetworkingDay" nullable="true" originalLength="10" pattern="" precision="2" sourceType="" type="id_Double" usefulColumn="true"/>
+      <column comment="" key="false" length="18" name="AllocationDayPerDay" nullable="true" originalLength="10" pattern="" precision="2" sourceType="" type="id_Double" usefulColumn="true"/>
     </metadata>
     <nodeData xsi:type="TalendMapper:MapperData">
       <uiProperties shellMaximized="true"/>
@@ -460,7 +460,7 @@
         <mapperTableEntries expression="row1.STID " name="STID" type="id_Object"/>
         <mapperTableEntries expression="row1.AssignedFromDate " name="AssignedFromDate" nullable="true" type="id_Date"/>
         <mapperTableEntries expression="row1.AssignedToDate " name="AssignedToDate" nullable="true" type="id_Date"/>
-        <mapperTableEntries expression="Double.valueOf(String.valueOf(Var.calculateDaysDifference)) " name="CalendarDay" type="id_Long"/>
+        <mapperTableEntries expression="Double.valueOf(String.valueOf(Var.calculateDaysDifference)) " name="CalendarDay" type="id_Double"/>
         <mapperTableEntries expression="row1.ManDay " name="ManDay" nullable="true" type="id_Double"/>
         <mapperTableEntries expression="Var.networkingDay" name="NetworkingDay" nullable="true" type="id_Double"/>
         <mapperTableEntries expression="Var.AllocationDayPerDay " name="AllocationDayPerDay" nullable="true" type="id_Double"/>
@@ -579,12 +579,12 @@
       <column comment="" key="false" length="23" name="AssignedToDate" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="3" sourceType="DATETIME" type="id_Date" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
-      <column comment="" defaultValue="" key="false" length="-1" name="CalendarDay" nullable="false" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_Long" usefulColumn="true"/>
-      <column comment="" defaultValue="((0))" key="false" length="10" name="ManDay" nullable="true" pattern="" precision="0" sourceType="FLOAT" type="id_Double" usefulColumn="true">
+      <column comment="" defaultValue="" key="false" length="18" name="CalendarDay" nullable="false" originalLength="18" pattern="" precision="2" sourceType="" type="id_Double" usefulColumn="true"/>
+      <column comment="" defaultValue="((0))" key="false" length="18" name="ManDay" nullable="true" pattern="" precision="2" sourceType="FLOAT" type="id_Double" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
-      <column comment="" defaultValue="" key="false" length="10" name="NetworkingDay" nullable="true" originalLength="10" pattern="" precision="0" sourceType="" type="id_Double" usefulColumn="true"/>
-      <column comment="" key="false" length="10" name="AllocationDayPerDay" nullable="true" originalLength="10" pattern="" precision="-1" sourceType="" type="id_Double" usefulColumn="true"/>
+      <column comment="" defaultValue="" key="false" length="18" name="NetworkingDay" nullable="true" originalLength="10" pattern="" precision="2" sourceType="" type="id_Double" usefulColumn="true"/>
+      <column comment="" key="false" length="18" name="AllocationDayPerDay" nullable="true" originalLength="10" pattern="" precision="2" sourceType="" type="id_Double" usefulColumn="true"/>
     </metadata>
   </node>
   <node componentName="tLogRow" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="704" posY="352">
@@ -634,12 +634,12 @@
       <column comment="" key="false" length="23" name="AssignedToDate" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="3" sourceType="DATETIME" type="id_Date" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
-      <column comment="" defaultValue="" key="false" length="-1" name="CalendarDay" nullable="false" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_Long" usefulColumn="true"/>
-      <column comment="" defaultValue="((0))" key="false" length="10" name="ManDay" nullable="true" pattern="" precision="0" sourceType="FLOAT" type="id_Double" usefulColumn="true">
+      <column comment="" defaultValue="" key="false" length="18" name="CalendarDay" nullable="false" originalLength="18" pattern="" precision="2" sourceType="" type="id_Double" usefulColumn="true"/>
+      <column comment="" defaultValue="((0))" key="false" length="18" name="ManDay" nullable="true" pattern="" precision="2" sourceType="FLOAT" type="id_Double" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
-      <column comment="" defaultValue="" key="false" length="10" name="NetworkingDay" nullable="true" originalLength="10" pattern="" precision="0" sourceType="" type="id_Double" usefulColumn="true"/>
-      <column comment="" key="false" length="10" name="AllocationDayPerDay" nullable="true" originalLength="10" pattern="" precision="-1" sourceType="" type="id_Double" usefulColumn="true"/>
+      <column comment="" defaultValue="" key="false" length="18" name="NetworkingDay" nullable="true" originalLength="10" pattern="" precision="2" sourceType="" type="id_Double" usefulColumn="true"/>
+      <column comment="" key="false" length="18" name="AllocationDayPerDay" nullable="true" originalLength="10" pattern="" precision="2" sourceType="" type="id_Double" usefulColumn="true"/>
     </metadata>
   </node>
   <node componentName="tMSSqlInput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="64" posY="160">
@@ -967,13 +967,13 @@
     <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="92;131;150"/>
     <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
   </subjob>
-<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_7622ade7-063f-47c1-a089-f8d03d461e55"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>nXq9vbCHS/fZDpq9y/eS3jsvblFxeKz6A35NEiGaeHoxO/itsu7RlLl1P5QvvWUTNsxUtVZ0UO8U&#13;
-rQ+fZZaK4Q==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_e58277c5-2dc1-4ad7-877b-da8dd6be424f"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>A62Z2OanXRqqZ6flMtaNhP6rRvhu06Lf9UPgOTYosEOMzPIo4zldoB5SZsXarAVHoQEW8d6eYOiS&#13;
-0PMc7GgbsA==</DigestValue></Reference></SignedInfo><SignatureValue>UOL5IT3TIaT9pxWqTr1myyG+C9QKIpc03IuYP0oGvcYbKZ2J3Xp1fWdVV49c53CbZJt3MppDl3ZL&#13;
-8wZ3oG4LfpaCoJmqEyyzw5tXh2kareBlAyBxiEibduYbZRooMDRZf4DntYpY9rpYN1HDtF2PeZSA&#13;
-nTh0QqzOIrgPEDtptm4cvRW43Taan4pXc8Vsbt2AYtBSymsbUVSGiGEXzRTD+Zdg4BEPv+kN7+x4&#13;
-YBrL9DQ/B9XTcyDTTY6CGLh7g8LZ8mcbZ3PTZAT0P48ahiYYnHiE0QjvXd1paQf4kDk1xqWRK7sH&#13;
-Ts15CkkPaY0Z3pwcVJh765Uo2WwIQ2+97Nq4fg==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w&#13;
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_3b4462cb-dda0-4267-bf44-5da782c632de"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>b8KVPgZo8jaP1Wp603/mps1IkEeOLMyQ7MPpdkm5cHJokbnqt6lBfJfyQdZJ/V4lxVwraNS67+KP&#13;
+gF2TE8c+2A==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_23255af4-c997-4632-9b57-9db4f449c282"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>BXsY3HU6jlWJPhYYU4wclk9Xko5Jqantw/0XQpJ3ty1s3DVwz6WhgTBZva4RKAxdT4mQc2Szwunv&#13;
+tgXA8XdaXQ==</DigestValue></Reference></SignedInfo><SignatureValue>nrzvJMJ+7NoqM7h4EtN7P+cQpNaMU28oyzU8453Ei/I3h33RZ+2qICcF6xBWykceKq5POQMBj1Wn&#13;
+vp3szGnUufRvGyZrqEwSsb9ROjoJhtQukbODIZE3ePfhhKl9IrVprFKEML7nLAc7dtNB8Pu28+Q+&#13;
+NhPcOzjVf9YZ8U8zxXBvEN7VrD3ftdh2mfpSjbHuNIPOL1+ZZWhMS3sSx6R5mOglm1ikT1icYqEm&#13;
+YiQg/HC4CF4u7SXA7lz/hVDQofKaM03lxfSBwI2eqQ5cm/HKrLQv2pVeqWb5+vULKjelcdU9yYzB&#13;
+T0BQGo3vCNhazI1tjtjH77pidEmIxax9vErrjw==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w&#13;
 DAYDVQQIEwVQYXJpczEOMAwGA1UEBxMFUGFyaXMxFDASBgNVBAoTC1RhbGVuZCBJbmMuMQwwCgYD&#13;
 VQQLDANSJkQxFjAUBgNVBAMMDVRhbGVuZCBSJkQgQ0ExIjAgBgkqhkiG9w0BCQEWE3NlY3VyaXR5&#13;
 QHRhbGVuZC5jb20wHhcNMTkwNjAzMDgxODIwWhcNMjkwNjAzMDAwMDAwWjB7MSgwJgYDVQQDEx9U&#13;
@@ -995,4 +995,4 @@ hakvpzhOyLo91h8YAQrEZJdNuKA8IYmBrFZQZDCz0uywKSyFfzPyJhvxylCLG/iDPPfE0VWcrMJ/&#13
 WQJly/2XPg/NBCTF3pSKS0kCiA7PeaI3cWkMYYA3PMwYDvzqs1opBRglG7ikj0bQxSm3lcjMuuvW&#13;
 gBRksFKjP3K/nztsjSoYITOM9jR29ReIL3v0E8RbAFwA2RGq6Dxd0ixfbucMesy5Gnr8tfYy6rW+&#13;
 qSQqd3ah4+PSzBNVwIB4ytpdrG3SlhCI2i2Th8ek8Sjsaquh9qPAerWNd2+84HWOOGj1Xe1qc6vg&#13;
-qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_e58277c5-2dc1-4ad7-877b-da8dd6be424f" Target="#_7622ade7-063f-47c1-a089-f8d03d461e55"><Timestamp>2024-04-05 03:55:46</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
+qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_23255af4-c997-4632-9b57-9db4f449c282" Target="#_3b4462cb-dda0-4267-bf44-5da782c632de"><Timestamp>2024-04-05 03:56:32</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>

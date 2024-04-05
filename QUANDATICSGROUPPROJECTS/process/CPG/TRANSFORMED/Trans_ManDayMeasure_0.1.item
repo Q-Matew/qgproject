@@ -447,7 +447,54 @@
       </column>
     </metadata>
   </node>
-  <node componentName="tLogRow" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="768" posY="160">
+  <node componentName="tMap" componentVersion="2.1" offsetLabelX="0" offsetLabelY="0" posX="736" posY="160">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tMap_3"/>
+    <elementParameter field="EXTERNAL" name="MAP" value=""/>
+    <elementParameter field="CLOSED_LIST" name="LINK_STYLE" value="AUTO"/>
+    <elementParameter field="DIRECTORY" name="TEMPORARY_DATA_DIRECTORY" value=""/>
+    <elementParameter field="IMAGE" name="PREVIEW" value="_asxdMPNSEe6EtYPclWq0yg-tMap_3-PREVIEW.bmp"/>
+    <elementParameter field="CHECK" name="DIE_ON_ERROR" show="false" value="true"/>
+    <elementParameter field="CHECK" name="LKUP_PARALLELIZE" show="false" value="false"/>
+    <elementParameter field="TEXT" name="LEVENSHTEIN" show="false" value="0"/>
+    <elementParameter field="TEXT" name="JACCARD" show="false" value="0"/>
+    <elementParameter field="CHECK" name="ENABLE_AUTO_CONVERT_TYPE" show="false" value="false"/>
+    <elementParameter field="TEXT" name="ROWS_BUFFER_SIZE" value="2000000"/>
+    <elementParameter field="CHECK" name="CHANGE_HASH_AND_EQUALS_FOR_BIGDECIMAL" value="true"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <metadata connector="FLOW" name="toAppend">
+      <column comment="" key="false" length="50" name="StaffID" nullable="true" pattern="" precision="0" sourceType="NVARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="36" name="STID" nullable="false" pattern="" precision="0" sourceType="UNIQUEIDENTIFIER" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="100" name="ProjectDivisionObjectNo" nullable="true" pattern="" precision="0" sourceType="NVARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="23" name="CalendarDate" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="3" sourceType="DATETIME" type="id_Date" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+    </metadata>
+    <nodeData xsi:type="TalendMapper:MapperData">
+      <uiProperties/>
+      <varTables name="Var" sizeState="INTERMEDIATE">
+        <mapperTableEntries expression="TalendDate.addDate(toflow.CalendarDate,((Integer)globalMap.get(&quot;tLoop_1_CURRENT_ITERATION&quot;)),&quot;dd&quot;) " name="var1" type="id_Date"/>
+      </varTables>
+      <outputTables name="toAppend" sizeState="INTERMEDIATE">
+        <mapperTableEntries expression="toflow.StaffID " name="StaffID" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="toflow.STID " name="STID" type="id_String"/>
+        <mapperTableEntries expression="toflow.ProjectDivisionObjectNo " name="ProjectDivisionObjectNo" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="Var.var1 " name="CalendarDate" nullable="true" type="id_Date"/>
+      </outputTables>
+      <inputTables lookupMode="LOAD_ONCE" matchingMode="UNIQUE_MATCH" name="toflow" sizeState="INTERMEDIATE">
+        <mapperTableEntries name="StaffID" nullable="true" type="id_String"/>
+        <mapperTableEntries name="STID" type="id_String"/>
+        <mapperTableEntries name="ProjectDivisionObjectNo" nullable="true" type="id_String"/>
+        <mapperTableEntries name="CalendarDate" nullable="true" type="id_Date"/>
+      </inputTables>
+    </nodeData>
+  </node>
+  <node componentName="tLogRow" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="928" posY="160">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tLogRow_2"/>
     <elementParameter field="RADIO" name="BASIC_MODE" value="false"/>
     <elementParameter field="RADIO" name="TABLE_PRINT" value="true"/>
@@ -554,49 +601,7 @@
       </column>
     </metadata>
   </node>
-  <node componentName="tMap" componentVersion="2.1" offsetLabelX="0" offsetLabelY="0" posX="704" posY="384">
-    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tMap_3"/>
-    <elementParameter field="CHECK" name="ACTIVATE" value="false"/>
-    <elementParameter field="EXTERNAL" name="MAP" value=""/>
-    <elementParameter field="CLOSED_LIST" name="LINK_STYLE" value="AUTO"/>
-    <elementParameter field="DIRECTORY" name="TEMPORARY_DATA_DIRECTORY" value=""/>
-    <elementParameter field="IMAGE" name="PREVIEW" value="_asxdMPNSEe6EtYPclWq0yg-tMap_3-PREVIEW.bmp"/>
-    <elementParameter field="CHECK" name="DIE_ON_ERROR" show="false" value="true"/>
-    <elementParameter field="CHECK" name="LKUP_PARALLELIZE" show="false" value="false"/>
-    <elementParameter field="TEXT" name="LEVENSHTEIN" show="false" value="0"/>
-    <elementParameter field="TEXT" name="JACCARD" show="false" value="0"/>
-    <elementParameter field="CHECK" name="ENABLE_AUTO_CONVERT_TYPE" show="false" value="false"/>
-    <elementParameter field="TEXT" name="ROWS_BUFFER_SIZE" value="2000000"/>
-    <elementParameter field="CHECK" name="CHANGE_HASH_AND_EQUALS_FOR_BIGDECIMAL" value="true"/>
-    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
-    <metadata connector="FLOW" name="toAppend">
-      <column comment="" key="false" length="50" name="StaffID" nullable="true" pattern="" precision="0" sourceType="NVARCHAR" type="id_String" usefulColumn="true">
-        <additionalField key="Comment" value=""/>
-      </column>
-      <column comment="" key="false" length="36" name="STID" nullable="false" pattern="" precision="0" sourceType="UNIQUEIDENTIFIER" type="id_String" usefulColumn="true">
-        <additionalField key="Comment" value=""/>
-      </column>
-      <column comment="" key="false" length="100" name="ProjectDivisionObjectNo" nullable="true" pattern="" precision="0" sourceType="NVARCHAR" type="id_String" usefulColumn="true">
-        <additionalField key="Comment" value=""/>
-      </column>
-      <column comment="" key="false" length="23" name="CalendarDate" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="3" sourceType="DATETIME" type="id_Date" usefulColumn="true">
-        <additionalField key="Comment" value=""/>
-      </column>
-    </metadata>
-    <nodeData xsi:type="TalendMapper:MapperData">
-      <uiProperties/>
-      <varTables name="Var" sizeState="INTERMEDIATE">
-        <mapperTableEntries expression="TalendDate.addDate(flow.CalendarDate,((Integer)globalMap.get(&quot;tLoop_1_CURRENT_ITERATION&quot;)),&quot;dd&quot;) " name="var1" type="id_Date"/>
-      </varTables>
-      <outputTables name="toAppend" sizeState="INTERMEDIATE">
-        <mapperTableEntries expression="flow.StaffID " name="StaffID" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="flow.STID " name="STID" type="id_String"/>
-        <mapperTableEntries expression="flow.ProjectDivisionObjectNo " name="ProjectDivisionObjectNo" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="Var.var1 " name="CalendarDate" nullable="true" type="id_Date"/>
-      </outputTables>
-    </nodeData>
-  </node>
-  <node componentName="tHashOutput" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="864" posY="384">
+  <node componentName="tHashOutput" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="800" posY="288">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tHashOutput_2"/>
     <elementParameter field="CHECK" name="ACTIVATE" value="false"/>
     <elementParameter field="CHECK" name="LINK_WITH" value="false"/>
@@ -657,19 +662,18 @@
     <elementParameter field="TEXT" name="NUMBER_PARALLEL" show="false" value="2"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="iterate2"/>
   </connection>
-  <connection connectorName="FLOW" label="row2" lineStyle="0" metaname="tFixedFlowInput_1" offsetLabelX="0" offsetLabelY="0" source="tFixedFlowInput_1" target="tLogRow_2">
+  <connection connectorName="FLOW" label="toflow" lineStyle="0" metaname="tFixedFlowInput_1" offsetLabelX="0" offsetLabelY="0" source="tFixedFlowInput_1" target="tMap_3">
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
-    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="row2"/>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="toflow"/>
+  </connection>
+  <connection connectorName="FLOW" label="toAppend" lineStyle="0" metaname="toAppend" offsetLabelX="0" offsetLabelY="0" source="tMap_3" target="tLogRow_2">
+    <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="toAppend"/>
   </connection>
   <connection connectorName="FLOW" label="row1" lineStyle="0" metaname="tHashInput_2" offsetLabelX="0" offsetLabelY="0" source="tHashInput_2" target="tLogRow_1">
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
     <elementParameter field="CHECK" name="ACTIVATE" show="false" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="row1"/>
-  </connection>
-  <connection connectorName="FLOW" label="toAppend" lineStyle="0" metaname="toAppend" offsetLabelX="0" offsetLabelY="0" source="tMap_3" target="tHashOutput_2">
-    <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
-    <elementParameter field="CHECK" name="ACTIVATE" show="false" value="false"/>
-    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="toAppend"/>
   </connection>
   <subjob>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tDBInput_1"/>
@@ -687,17 +691,17 @@
     <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
   </subjob>
   <subjob>
-    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tMap_3"/>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tHashOutput_2"/>
     <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="92;131;150"/>
     <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
   </subjob>
-<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_97108089-29bb-4e90-ab1b-f430d415321d"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>VpbUZcct9Oz3yZUhCAGvMMp640mJucTM3bxYVWeGM66ZrgXH8aueJr5FZG8uO3N9g92TidemISjW&#13;
-Sdt90X0e/A==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_01c154d4-4788-4b0e-baf4-f0e41f860579"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>5j/xJTj1krkz7EUxG7ThAMZCb+vxzEDxGsQnWjuE69IjM1Mtb8VsoG6SBG3dCwMVdZcQoWcdRXaQ&#13;
-2YlN+412Kw==</DigestValue></Reference></SignedInfo><SignatureValue>T6WeuOExYQAtzftP5AxglzVQH76hueQbaVZezyBPfXhy0NWcIPQJ/yh1h8BY0Yfs9tu5k+z1p2vO&#13;
-b2g0QaaPY6DKk6BoxvJRVdsB3WvhfsToNfmZcUr4l32FW5CIjCcQf1NxyNTIJT3sZiXeVw9PsjAO&#13;
-IoUq8t0cmW7Ys3AxA0M97c6+tQg7EbMxkdE+RqlqIlEm6RL9K7ej3sDTU8OenAtetnlJOMjvVm6J&#13;
-CNPfbNsFIkp8yWPCsjS/2r6DCZ8bque2lUu9OmRm/LgvaQ0lJYgpJt+Xkn39N3GoZYBpgxqrxCpF&#13;
-fe19YSVCDFiFbqq/mC/tLhbw5YuQO3j3d2kSHQ==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w&#13;
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_51c2708e-c681-4b59-8f37-196d59682afc"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>Vb4xrPcI4rR9bt0flTsfXvGB4ROSoZqFaPSQ0XejjooophunyVvcMidzoG4d7nyocgFbXK1w7rLo&#13;
+Qs05S3C1cA==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_afc3e589-9f48-4c56-b695-e70668fd19f0"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>eVUf6uIiqDIMZ/4Xcp3pg/efW1y7677ex/zKxXTxSG0xcFGsQMbMSFk/rsp7mK9XYuo1PBpqk1RL&#13;
+w3bgRqkLUw==</DigestValue></Reference></SignedInfo><SignatureValue>OOKUR25XdvIEKuCj5j/qWrvaN8xM+T71R3t6Yv6SFp6GPgBaZVDg0GoDDoBF/DZ53tIqZGZ+WjOK&#13;
+tADECbdzKVIeAsjZhD+ZHtpdqN0RZekl9nidr+GsFpCcMcuRkDWJav6pOzeN7+URO1iujo5p2apP&#13;
+prKR/ZIu0ph8kzcUHRMv4GztiA5U6eRxzedhvOQg5PzNQEv+QvKUT+N6q4qFfb5bffC7jidaLCS3&#13;
+TpGTMRLyzUAZLpoS5i7hiXtzdy5a3HS1N6FRWKzjaDkfps1owSWwzPZnrEQuv7l1Xc+hVsFyoLD/&#13;
+qif5pGMwcfrcIgXrE+DorER0BL2BmxhF/xaomw==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w&#13;
 DAYDVQQIEwVQYXJpczEOMAwGA1UEBxMFUGFyaXMxFDASBgNVBAoTC1RhbGVuZCBJbmMuMQwwCgYD&#13;
 VQQLDANSJkQxFjAUBgNVBAMMDVRhbGVuZCBSJkQgQ0ExIjAgBgkqhkiG9w0BCQEWE3NlY3VyaXR5&#13;
 QHRhbGVuZC5jb20wHhcNMTkwNjAzMDgxODIwWhcNMjkwNjAzMDAwMDAwWjB7MSgwJgYDVQQDEx9U&#13;
@@ -719,4 +723,4 @@ hakvpzhOyLo91h8YAQrEZJdNuKA8IYmBrFZQZDCz0uywKSyFfzPyJhvxylCLG/iDPPfE0VWcrMJ/&#13
 WQJly/2XPg/NBCTF3pSKS0kCiA7PeaI3cWkMYYA3PMwYDvzqs1opBRglG7ikj0bQxSm3lcjMuuvW&#13;
 gBRksFKjP3K/nztsjSoYITOM9jR29ReIL3v0E8RbAFwA2RGq6Dxd0ixfbucMesy5Gnr8tfYy6rW+&#13;
 qSQqd3ah4+PSzBNVwIB4ytpdrG3SlhCI2i2Th8ek8Sjsaquh9qPAerWNd2+84HWOOGj1Xe1qc6vg&#13;
-qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_01c154d4-4788-4b0e-baf4-f0e41f860579" Target="#_97108089-29bb-4e90-ab1b-f430d415321d"><Timestamp>2024-04-05 13:59:31</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
+qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_afc3e589-9f48-4c56-b695-e70668fd19f0" Target="#_51c2708e-c681-4b59-8f37-196d59682afc"><Timestamp>2024-04-05 14:00:42</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>

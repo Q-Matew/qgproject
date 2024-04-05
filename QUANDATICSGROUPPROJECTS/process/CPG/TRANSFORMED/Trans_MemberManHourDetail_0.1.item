@@ -1335,57 +1335,97 @@
         <mapperTableEntries name="StageEndDate" nullable="true" type="id_Date"/>
         <mapperTableEntries name="STID" type="id_String"/>
       </inputTables>
-      <inputTables activateCondensedTool="true" lookupMode="LOAD_ONCE" matchingMode="UNIQUE_MATCH" name="row3" sizeState="INTERMEDIATE">
-        <mapperTableEntries name="SECID" nullable="true" type="id_String"/>
-        <mapperTableEntries name="StaffID" nullable="true" type="id_String"/>
-        <mapperTableEntries name="ManDay" type="id_Double"/>
-        <mapperTableEntries name="AssignedBand" nullable="true" type="id_String"/>
-        <mapperTableEntries name="AssignedRate" nullable="true" type="id_String"/>
-        <mapperTableEntries name="ActualBand" nullable="true" type="id_String"/>
-        <mapperTableEntries name="ActualRate" nullable="true" type="id_String"/>
-        <mapperTableEntries name="Status" nullable="true" type="id_Integer"/>
-        <mapperTableEntries name="ModificationDate" nullable="true" type="id_Date"/>
-        <mapperTableEntries name="ModificationBy" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="out2.ProjectDivisionObjectNo " name="ProjectDivisionObjectNo" nullable="true" operator="=" type="id_String"/>
-        <mapperTableEntries name="GUID" type="id_Object"/>
-        <mapperTableEntries name="ValidDate" nullable="true" type="id_Date"/>
-        <mapperTableEntries name="GroupID" nullable="true" type="id_Object"/>
-        <mapperTableEntries name="IsDisable" nullable="true" type="id_Integer"/>
-        <mapperTableEntries name="CompanyCode" nullable="true" type="id_String"/>
-        <mapperTableEntries name="AssignedFromDate" nullable="true" type="id_Date"/>
-        <mapperTableEntries name="AssignedToDate" nullable="true" type="id_Date"/>
-        <mapperTableEntries expression="out2.STID " name="STID" operator="=" type="id_Object"/>
-        <mapperTableEntries name="ActualManday" type="id_Double"/>
-        <mapperTableEntries name="IsNormalStaff" nullable="true" type="id_Integer"/>
-        <mapperTableEntries name="IsPromoted" nullable="true" type="id_Integer"/>
-        <mapperTableEntries name="TimeLogFromDate" nullable="true" type="id_Date"/>
-        <mapperTableEntries name="TimeLogToDate" nullable="true" type="id_Date"/>
-        <mapperTableEntries name="TalendLastUpdatedDate" nullable="true" type="id_String"/>
-      </inputTables>
     </nodeData>
   </node>
+  <node componentName="tFileOutputDelimited" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="992" posY="576">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tFileOutputDelimited_1"/>
+    <elementParameter field="CHECK" name="USESTREAM" value="false"/>
+    <elementParameter field="TEXT" name="STREAMNAME" show="false" value="outputStream"/>
+    <elementParameter field="FILE" name="FILENAME" value="&quot;/Users/minganntew/Downloads/abc.csv&quot;"/>
+    <elementParameter field="TEXT" name="ROWSEPARATOR" show="false" value="&quot;\n&quot;"/>
+    <elementParameter field="CHECK" name="OS_LINE_SEPARATOR_AS_ROW_SEPARATOR" value="true"/>
+    <elementParameter field="OPENED_LIST" name="CSVROWSEPARATOR" value="&quot;\n&quot;"/>
+    <elementParameter field="TEXT" name="FIELDSEPARATOR" value="&quot;,&quot;"/>
+    <elementParameter field="CHECK" name="APPEND" value="false"/>
+    <elementParameter field="CHECK" name="INCLUDEHEADER" value="true"/>
+    <elementParameter field="CHECK" name="COMPRESS" value="false"/>
+    <elementParameter field="CHECK" name="ADVANCED_SEPARATOR" value="false"/>
+    <elementParameter field="TEXT" name="THOUSANDS_SEPARATOR" show="false" value="&quot;,&quot;"/>
+    <elementParameter field="TEXT" name="DECIMAL_SEPARATOR" show="false" value="&quot;.&quot;"/>
+    <elementParameter field="CHECK" name="CSV_OPTION" value="true"/>
+    <elementParameter field="TEXT" name="ESCAPE_CHAR" value="&quot;&quot;&quot;"/>
+    <elementParameter field="TEXT" name="TEXT_ENCLOSURE" value="&quot;&quot;&quot;"/>
+    <elementParameter field="CHECK" name="CREATE" value="true"/>
+    <elementParameter field="CHECK" name="SPLIT" value="false"/>
+    <elementParameter field="TEXT" name="SPLIT_EVERY" show="false" value="1000"/>
+    <elementParameter field="CHECK" name="FLUSHONROW" value="false"/>
+    <elementParameter field="TEXT" name="FLUSHONROW_NUM" show="false" value="1"/>
+    <elementParameter field="CHECK" name="ROW_MODE" value="false"/>
+    <elementParameter field="ENCODING_TYPE" name="ENCODING" value="&quot;ISO-8859-15&quot;"/>
+    <elementParameter field="TECHNICAL" name="ENCODING:ENCODING_TYPE" value="ISO-8859-15"/>
+    <elementParameter field="CHECK" name="DELETE_EMPTYFILE" value="true"/>
+    <elementParameter field="CHECK" name="FILE_EXIST_EXCEPTION" value="false"/>
+    <elementParameter field="TEXT" name="SCHEMA_OPT_NUM" show="false" value="90"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <metadata connector="FLOW" name="tFileOutputDelimited_1">
+      <column comment="" key="false" length="100" name="ProjectDivisionObjectNo" nullable="false" originalLength="-1" pattern="" precision="0" sourceType="NVARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="100" name="ProjectDivisionWbsCode" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="NVARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="100" name="ProjecctDivisionName" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="NVARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="100" name="Subsidiary" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="NVARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="100" name="DivisionCode" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="NVARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="100" name="ProjectID" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="NVARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="100" name="ContractID" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="NVARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="100" name="ServiceID" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="NVARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="100" name="ProjectDirector" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="NVARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="50" name="ProjectStatus" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="NVARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="1073741823" name="StageName" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="NVARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="23" name="StageStartDate" nullable="true" originalLength="-1" pattern="&quot;dd-MM-yyyy&quot;" precision="3" sourceType="DATETIME" type="id_Date" usefulColumn="true"/>
+      <column comment="" key="false" length="23" name="StageEndDate" nullable="true" originalLength="-1" pattern="&quot;dd-MM-yyyy&quot;" precision="3" sourceType="DATETIME" type="id_Date" usefulColumn="true"/>
+      <column comment="" key="false" length="36" name="STID" nullable="false" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="50" name="StaffID" nullable="true" pattern="" precision="0" sourceType="NVARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" defaultValue="((0))" key="false" length="53" name="ManDay" nullable="false" pattern="" precision="0" sourceType="FLOAT" type="id_Double" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="23" name="AssignedFromDate" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="3" sourceType="DATETIME" type="id_Date" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="23" name="AssignedToDate" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="3" sourceType="DATETIME" type="id_Date" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+    </metadata>
+  </node>
   <node componentName="tMSSqlInput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="704" posY="672">
-    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tDBInput_5"/>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tDBInput_7"/>
+    <elementParameter field="TEXT" name="COMPONENT_NAME" show="false" value="tMSSqlInput"/>
+    <elementParameter field="TEXT" name="VERSION" show="false" value="0.102 (ALPHA)"/>
+    <elementParameter field="TEXT" name="FAMILY" show="false" value="Databases/DB Specifics/MS_SQL_Server"/>
+    <elementParameter field="CHECK" name="START" show="false" value="true"/>
+    <elementParameter field="CHECK" name="STARTABLE" show="false" value="true"/>
+    <elementParameter field="CHECK" name="SUBTREE_START" show="false" value="true"/>
+    <elementParameter field="CHECK" name="END_OF_FLOW" show="false" value="true"/>
+    <elementParameter field="TEXT" name="HELP" show="false" value="org.talend.help.tMSSqlInput"/>
+    <elementParameter field="DIRECTORY" name="IREPORT_PATH" show="false" value=""/>
+    <elementParameter field="DIRECTORY" name="JAVA_LIBRARY_PATH" show="false" value="/Applications/TalendStudio-8.0.1/studio/configuration/lib/java"/>
     <elementParameter field="CHECK" name="USE_EXISTING_CONNECTION" value="false"/>
     <elementParameter field="COMPONENT_LIST" name="CONNECTION" show="false" value=""/>
-    <elementParameter field="TECHNICAL" name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY"/>
-    <elementParameter field="TECHNICAL" name="PROPERTY:REPOSITORY_PROPERTY_TYPE" show="false" value="_I2a48PDcEe6lz_uoJFWK-Q"/>
     <elementParameter field="TEXT" name="HOST" value="&quot;10.1.20.82&quot;"/>
     <elementParameter field="CLOSED_LIST" name="DRIVER" value="MSSQL_PROP"/>
     <elementParameter field="TEXT" name="TYPE" show="false" value="MSSQL"/>
     <elementParameter field="TEXT" name="PORT" value="&quot;1433&quot;"/>
-    <elementParameter field="TEXT" name="DB_SCHEMA" value="&quot;&quot;"/>
-    <elementParameter field="TEXT" name="DBNAME" value="&quot;CPG_RAW&quot;"/>
+    <elementParameter field="TEXT" name="DB_SCHEMA" value="&quot;dbo&quot;"/>
+    <elementParameter field="TEXT" name="DBNAME" value="&quot;CPG_Manpower_Planning&quot;"/>
     <elementParameter field="TEXT" name="USER" value="&quot;dev_user&quot;"/>
-    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:GL+BM5WeDCZSox9gFvLR2ksu0U7eM4izMNTN6Lw4CYq+9AWem1U="/>
+    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:viXN7sUoRBvxFZo8pjYiZ2AoDXF+ZM+xQK4HtntMBsVrNR1ISbk="/>
     <elementParameter field="TECHNICAL" name="SCHEMA:SCHEMA_TYPE" show="false" value="REPOSITORY"/>
-    <elementParameter field="TECHNICAL" name="SCHEMA:REPOSITORY_SCHEMA_TYPE" show="false" value="_I2a48PDcEe6lz_uoJFWK-Q - Raw_Member_Man_Hour_Detail"/>
-    <elementParameter field="DBTABLE" name="TABLE" value="&quot;Raw_Member_Man_Hour_Detail&quot;"/>
+    <elementParameter field="TECHNICAL" name="SCHEMA:REPOSITORY_SCHEMA_TYPE" show="false" value="_CQoN0OgiEe6MtZw1M9JxpA - MemberManHourDetail"/>
+    <elementParameter field="DBTABLE" name="TABLE" value="&quot;MemberManHourDetail&quot;"/>
     <elementParameter field="QUERYSTORE_TYPE" name="QUERYSTORE" value="&quot;&quot;"/>
     <elementParameter field="TECHNICAL" name="QUERYSTORE:REPOSITORY_QUERYSTORE_TYPE" show="false" value=""/>
     <elementParameter field="TECHNICAL" name="QUERYSTORE:QUERYSTORE_TYPE" value="BUILT_IN"/>
     <elementParameter field="GUESS_SCHEMA" name="GUESS_SCHEMA" value="&quot;&quot;"/>
-    <elementParameter field="MEMO_SQL" name="QUERY" value="&quot;&#10;SELECT&#10;&#9;&#9;Raw_Member_Man_Hour_Detail.SECID,&#10;&#9;&#9;Raw_Member_Man_Hour_Detail.StaffID,&#10;&#9;&#9;Raw_Member_Man_Hour_Detail.ManDay,&#10;&#9;&#9;Raw_Member_Man_Hour_Detail.AssignedBand,&#10;&#9;&#9;Raw_Member_Man_Hour_Detail.AssignedRate,&#10;&#9;&#9;Raw_Member_Man_Hour_Detail.ActualBand,&#10;&#9;&#9;Raw_Member_Man_Hour_Detail.ActualRate,&#10;&#9;&#9;Raw_Member_Man_Hour_Detail.Status,&#10;&#9;&#9;Raw_Member_Man_Hour_Detail.ModificationDate,&#10;&#9;&#9;Raw_Member_Man_Hour_Detail.ModificationBy,&#10;&#9;&#9;Raw_Member_Man_Hour_Detail.ProjectDivisionObjectNo,&#10;&#9;&#9;Raw_Member_Man_Hour_Detail.GUID,&#10;&#9;&#9;Raw_Member_Man_Hour_Detail.ValidDate,&#10;&#9;&#9;Raw_Member_Man_Hour_Detail.GroupID,&#10;&#9;&#9;Raw_Member_Man_Hour_Detail.IsDisable,&#10;&#9;&#9;Raw_Member_Man_Hour_Detail.CompanyCode,&#10;&#9;&#9;Raw_Member_Man_Hour_Detail.AssignedFromDate,&#10;&#9;&#9;Raw_Member_Man_Hour_Detail.AssignedToDate,&#10;&#9;&#9;Raw_Member_Man_Hour_Detail.STID,&#10;&#9;&#9;Raw_Member_Man_Hour_Detail.ActualManday,&#10;&#9;&#9;Raw_Member_Man_Hour_Detail.IsNormalStaff,&#10;&#9;&#9;Raw_Member_Man_Hour_Detail.IsPromoted,&#10;&#9;&#9;Raw_Member_Man_Hour_Detail.TimeLogFromDate,&#10;&#9;&#9;Raw_Member_Man_Hour_Detail.TimeLogToDate,&#10;&#9;&#9;Raw_Member_Man_Hour_Detail.TalendLastUpdatedDate&#10;FROM&#9;Raw_Member_Man_Hour_Detail&#10;WHERE Raw_Member_Man_Hour_Detail.Status = '1'&#10;&quot;"/>
+    <elementParameter field="MEMO_SQL" name="QUERY" value="&quot;&#10;SELECT dbo.MemberManHourDetail.SECID,&#10;&#9;&#9;dbo.MemberManHourDetail.StaffID,&#10;&#9;&#9;dbo.MemberManHourDetail.ManDay,&#10;&#9;&#9;dbo.MemberManHourDetail.AssignedBand,&#10;&#9;&#9;dbo.MemberManHourDetail.AssignedRate,&#10;&#9;&#9;dbo.MemberManHourDetail.ActualBand,&#10;&#9;&#9;dbo.MemberManHourDetail.ActualRate,&#10;&#9;&#9;dbo.MemberManHourDetail.Status,&#10;&#9;&#9;dbo.MemberManHourDetail.ModificationDate,&#10;&#9;&#9;dbo.MemberManHourDetail.ModificationBy,&#10;&#9;&#9;dbo.MemberManHourDetail.ProjectDivisionObjectNo,&#10;&#9;&#9;dbo.MemberManHourDetail.GUID,&#10;&#9;&#9;dbo.MemberManHourDetail.ValidDate,&#10;&#9;&#9;dbo.MemberManHourDetail.GroupID,&#10;&#9;&#9;dbo.MemberManHourDetail.IsDisable,&#10;&#9;&#9;dbo.MemberManHourDetail.CompanyCode,&#10;&#9;&#9;dbo.MemberManHourDetail.AssignedFromDate,&#10;&#9;&#9;dbo.MemberManHourDetail.AssignedToDate,&#10;&#9;&#9;dbo.MemberManHourDetail.STID,&#10;&#9;&#9;dbo.MemberManHourDetail.ActualManday,&#10;&#9;&#9;dbo.MemberManHourDetail.IsNormalStaff,&#10;&#9;&#9;dbo.MemberManHourDetail.IsPromoted,&#10;&#9;&#9;dbo.MemberManHourDetail.TimeLogFromDate,&#10;&#9;&#9;dbo.MemberManHourDetail.TimeLogToDate&#10;FROM&#9;dbo.MemberManHourDetail&#10;WHERE status = '1'&#10;&quot;"/>
     <elementParameter field="LABEL" name="NOTE" value="This option only applies when deploying and running in the Talend Runtime"/>
     <elementParameter field="CHECK" name="SPECIFY_DATASOURCE_ALIAS" value="false"/>
     <elementParameter field="TEXT" name="DATASOURCE_ALIAS" show="false" value="&quot;&quot;"/>
@@ -1444,14 +1484,12 @@
       <elementValue elementRef="TRIM" value="false"/>
       <elementValue elementRef="SCHEMA_COLUMN" value="TimeLogToDate"/>
       <elementValue elementRef="TRIM" value="false"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="TalendLastUpdatedDate"/>
-      <elementValue elementRef="TRIM" value="false"/>
     </elementParameter>
     <elementParameter field="CHECK" name="SET_QUERY_TIMEOUT" value="false"/>
     <elementParameter field="TEXT" name="QUERY_TIMEOUT_IN_SECONDS" show="false" value="30"/>
-    <elementParameter field="TEXT" name="LABEL" value="ManHour"/>
+    <elementParameter field="TEXT" name="LABEL" value="__TABLE__"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
-    <metadata connector="FLOW" label="Raw_Member_Man_Hour_Detail" name="tDBInput_5">
+    <metadata connector="FLOW" label="MemberManHourDetail" name="tDBInput_7">
       <column comment="" key="false" length="200" name="SECID" nullable="true" pattern="" precision="0" sourceType="NVARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
@@ -1522,68 +1560,6 @@
         <additionalField key="Comment" value=""/>
       </column>
       <column comment="" key="false" length="23" name="TimeLogToDate" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="3" sourceType="DATETIME" type="id_Date" usefulColumn="true">
-        <additionalField key="Comment" value=""/>
-      </column>
-      <column comment="" key="false" length="50" name="TalendLastUpdatedDate" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
-        <additionalField key="Comment" value=""/>
-      </column>
-    </metadata>
-  </node>
-  <node componentName="tFileOutputDelimited" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="992" posY="576">
-    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tFileOutputDelimited_1"/>
-    <elementParameter field="CHECK" name="USESTREAM" value="false"/>
-    <elementParameter field="TEXT" name="STREAMNAME" show="false" value="outputStream"/>
-    <elementParameter field="FILE" name="FILENAME" value="&quot;/Users/minganntew/Downloads/abc.csv&quot;"/>
-    <elementParameter field="TEXT" name="ROWSEPARATOR" show="false" value="&quot;\n&quot;"/>
-    <elementParameter field="CHECK" name="OS_LINE_SEPARATOR_AS_ROW_SEPARATOR" value="true"/>
-    <elementParameter field="OPENED_LIST" name="CSVROWSEPARATOR" value="&quot;\n&quot;"/>
-    <elementParameter field="TEXT" name="FIELDSEPARATOR" value="&quot;,&quot;"/>
-    <elementParameter field="CHECK" name="APPEND" value="false"/>
-    <elementParameter field="CHECK" name="INCLUDEHEADER" value="true"/>
-    <elementParameter field="CHECK" name="COMPRESS" value="false"/>
-    <elementParameter field="CHECK" name="ADVANCED_SEPARATOR" value="false"/>
-    <elementParameter field="TEXT" name="THOUSANDS_SEPARATOR" show="false" value="&quot;,&quot;"/>
-    <elementParameter field="TEXT" name="DECIMAL_SEPARATOR" show="false" value="&quot;.&quot;"/>
-    <elementParameter field="CHECK" name="CSV_OPTION" value="true"/>
-    <elementParameter field="TEXT" name="ESCAPE_CHAR" value="&quot;&quot;&quot;"/>
-    <elementParameter field="TEXT" name="TEXT_ENCLOSURE" value="&quot;&quot;&quot;"/>
-    <elementParameter field="CHECK" name="CREATE" value="true"/>
-    <elementParameter field="CHECK" name="SPLIT" value="false"/>
-    <elementParameter field="TEXT" name="SPLIT_EVERY" show="false" value="1000"/>
-    <elementParameter field="CHECK" name="FLUSHONROW" value="false"/>
-    <elementParameter field="TEXT" name="FLUSHONROW_NUM" show="false" value="1"/>
-    <elementParameter field="CHECK" name="ROW_MODE" value="false"/>
-    <elementParameter field="ENCODING_TYPE" name="ENCODING" value="&quot;ISO-8859-15&quot;"/>
-    <elementParameter field="TECHNICAL" name="ENCODING:ENCODING_TYPE" value="ISO-8859-15"/>
-    <elementParameter field="CHECK" name="DELETE_EMPTYFILE" value="true"/>
-    <elementParameter field="CHECK" name="FILE_EXIST_EXCEPTION" value="false"/>
-    <elementParameter field="TEXT" name="SCHEMA_OPT_NUM" show="false" value="90"/>
-    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
-    <metadata connector="FLOW" name="tFileOutputDelimited_1">
-      <column comment="" key="false" length="100" name="ProjectDivisionObjectNo" nullable="false" originalLength="-1" pattern="" precision="0" sourceType="NVARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="100" name="ProjectDivisionWbsCode" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="NVARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="100" name="ProjecctDivisionName" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="NVARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="100" name="Subsidiary" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="NVARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="100" name="DivisionCode" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="NVARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="100" name="ProjectID" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="NVARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="100" name="ContractID" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="NVARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="100" name="ServiceID" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="NVARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="100" name="ProjectDirector" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="NVARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="50" name="ProjectStatus" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="NVARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="1073741823" name="StageName" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="NVARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="23" name="StageStartDate" nullable="true" originalLength="-1" pattern="&quot;dd-MM-yyyy&quot;" precision="3" sourceType="DATETIME" type="id_Date" usefulColumn="true"/>
-      <column comment="" key="false" length="23" name="StageEndDate" nullable="true" originalLength="-1" pattern="&quot;dd-MM-yyyy&quot;" precision="3" sourceType="DATETIME" type="id_Date" usefulColumn="true"/>
-      <column comment="" key="false" length="36" name="STID" nullable="false" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="50" name="StaffID" nullable="true" pattern="" precision="0" sourceType="NVARCHAR" type="id_String" usefulColumn="true">
-        <additionalField key="Comment" value=""/>
-      </column>
-      <column comment="" defaultValue="((0))" key="false" length="53" name="ManDay" nullable="false" pattern="" precision="0" sourceType="FLOAT" type="id_Double" usefulColumn="true">
-        <additionalField key="Comment" value=""/>
-      </column>
-      <column comment="" key="false" length="23" name="AssignedFromDate" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="3" sourceType="DATETIME" type="id_Date" usefulColumn="true">
-        <additionalField key="Comment" value=""/>
-      </column>
-      <column comment="" key="false" length="23" name="AssignedToDate" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="3" sourceType="DATETIME" type="id_Date" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
     </metadata>
@@ -1687,10 +1663,6 @@
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="out3"/>
   </connection>
-  <connection connectorName="FLOW" label="row3" lineStyle="8" metaname="tDBInput_5" offsetLabelX="0" offsetLabelY="0" source="tDBInput_5" target="tMap_4">
-    <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
-    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="row3"/>
-  </connection>
   <subjob>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tDBInput_1"/>
     <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="92;131;150"/>
@@ -1747,13 +1719,18 @@
     <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="92;131;150"/>
     <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
   </subjob>
-<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_99640e13-9314-4692-bb2d-ae1c34bea1ac"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>pwUziIz4/olD98NCEgVmhNPA6LNCBEGz7wfrbCvgHVjUdQrY9CLl+MnNbpBzttkcE5eVEZ/WyQdy&#13;
-jsc+TeFvvw==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_8597db22-6b10-4b26-b74a-2d8fe4f583b0"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>oTDl+VEN8XLOPyU5+4BGkBJQU/IpTiLVhWRmC8Qhebzhy0/vnFL5vlK08jcmIxghhzlhT/nztEJC&#13;
-sEIk04fPxg==</DigestValue></Reference></SignedInfo><SignatureValue>niefezGsiJ4o1ddM6LPDj8YzXvl5VfOVrCTJNIJqTBfjOTengxHRMnCofqYslM+JgF2z8nleFkzn&#13;
-rKoPWJEgPOpfvYyz3PgJtYSiVElEC/81m64ZTdMFz2hQm7RUksHM+2A21eDcBd6On/81C0Q3baKl&#13;
-br93ZkNvKheqOIBEvqPQKwZvy1nNiMmGxE/PhjZtvy0D3MCdvoY2XEeJkF/nbsaPT7b/UXrxZuY6&#13;
-UkBWOW2bENMJ5j8v+AOBifzGan7HEg4M9FzLQJJBYNvQvzbjoS4RCvV4IhONBizXvA24kfj8ZLFt&#13;
-BtE3rGct58jgGvLp4GVPDl40lUGDPrAEnmRckQ==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w&#13;
+  <subjob>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tDBInput_7"/>
+    <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="92;131;150"/>
+    <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
+  </subjob>
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_02672515-dafb-4fc2-9aef-e4ada080c85f"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>rOKxOQHX1pU3a+scQPUS2FgPBoGWS4ij0LcQTBz7OrPSB0p7iXOb7zNgiMJQ08/Cko6N0BNoqk9x&#13;
+zCWs/wklDQ==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_e77e6c4c-a70e-4473-8ae4-88f315d31052"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>x7FlXcJoqNgHaARS5eEYxWtHzQV8c7YZzw2OYOHL9L0LtuzKcRPycQibLOG1JhIZUP03eHunvBnS&#13;
+h6Ib3Ff4jg==</DigestValue></Reference></SignedInfo><SignatureValue>mHKv9cyGKtmxgLzdmk3Be+OEeO9lTuMg2qzM7imG0NIMlm2dC0Y36G/OGkakP3puqhiO5cYpn2KO&#13;
+pkcHY/QTp/Kb6rj5iEY0nLqQXgj7nUXRHAxYoTuD9w0ygzno8VqzjgfU1SD+3v+s1tKn4sWhHSE5&#13;
+b9qcWrTRDbfkmGckx5oIvN+lRaR1cobGh32n4M4prb8x+ySoFdh+iPfQuWKzLIZpr0sVPfdjOVsr&#13;
+bMgFvT7hTdw+1nKl6k9Lr+cCYubtxEz/kBFAuYoYJxZ8eEVMhwvOuz/lpRoN76Gb3rytG9loSM8r&#13;
+GX0inFeWrAiSM8EITM7+kzgWIhI7M8su5BSmvg==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w&#13;
 DAYDVQQIEwVQYXJpczEOMAwGA1UEBxMFUGFyaXMxFDASBgNVBAoTC1RhbGVuZCBJbmMuMQwwCgYD&#13;
 VQQLDANSJkQxFjAUBgNVBAMMDVRhbGVuZCBSJkQgQ0ExIjAgBgkqhkiG9w0BCQEWE3NlY3VyaXR5&#13;
 QHRhbGVuZC5jb20wHhcNMTkwNjAzMDgxODIwWhcNMjkwNjAzMDAwMDAwWjB7MSgwJgYDVQQDEx9U&#13;
@@ -1775,4 +1752,4 @@ hakvpzhOyLo91h8YAQrEZJdNuKA8IYmBrFZQZDCz0uywKSyFfzPyJhvxylCLG/iDPPfE0VWcrMJ/&#13
 WQJly/2XPg/NBCTF3pSKS0kCiA7PeaI3cWkMYYA3PMwYDvzqs1opBRglG7ikj0bQxSm3lcjMuuvW&#13;
 gBRksFKjP3K/nztsjSoYITOM9jR29ReIL3v0E8RbAFwA2RGq6Dxd0ixfbucMesy5Gnr8tfYy6rW+&#13;
 qSQqd3ah4+PSzBNVwIB4ytpdrG3SlhCI2i2Th8ek8Sjsaquh9qPAerWNd2+84HWOOGj1Xe1qc6vg&#13;
-qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_8597db22-6b10-4b26-b74a-2d8fe4f583b0" Target="#_99640e13-9314-4692-bb2d-ae1c34bea1ac"><Timestamp>2024-04-05 07:47:51</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
+qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_e77e6c4c-a70e-4473-8ae4-88f315d31052" Target="#_02672515-dafb-4fc2-9aef-e4ada080c85f"><Timestamp>2024-04-05 07:52:49</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>

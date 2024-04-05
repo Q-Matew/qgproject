@@ -520,17 +520,23 @@
       <column comment="" key="false" length="23" name="CalendarDate" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="3" sourceType="DATETIME" type="id_Date" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
+      <column comment="" defaultValue="" key="false" length="-1" name="Year" nullable="false" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_Integer" usefulColumn="true"/>
+      <column comment="" defaultValue="" key="false" length="-1" name="Month" nullable="false" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_Integer" usefulColumn="true"/>
     </metadata>
     <nodeData xsi:type="TalendMapper:MapperData">
       <uiProperties shellMaximized="true"/>
       <varTables name="Var" sizeState="INTERMEDIATE">
-        <mapperTableEntries expression="TalendDate.addDate(toflow.CalendarDate,((Integer)globalMap.get(&quot;tLoop_1_CURRENT_VALUE&quot;)),&quot;dd&quot;) " name="var1" type="id_Date"/>
+        <mapperTableEntries expression="TalendDate.addDate(toflow.CalendarDate,((Integer)globalMap.get(&quot;tLoop_1_CURRENT_VALUE&quot;)),&quot;dd&quot;) " name="CalendarDate" type="id_Date"/>
+        <mapperTableEntries expression="TalendDate.getPartOfDate(MONTH, Var.CalendarDate) " name="Month" type="id_Integer"/>
+        <mapperTableEntries expression="TalendDate.getPartOfDate(YEAR, Var.CalendarDate) " name="Year" type="id_Integer"/>
       </varTables>
       <outputTables name="toAppend" sizeState="INTERMEDIATE">
         <mapperTableEntries expression="toflow.StaffID " name="StaffID" nullable="true" type="id_String"/>
         <mapperTableEntries expression="toflow.STID " name="STID" type="id_String"/>
         <mapperTableEntries expression="toflow.ProjectDivisionObjectNo " name="ProjectDivisionObjectNo" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="Var.var1 " name="CalendarDate" nullable="true" type="id_Date"/>
+        <mapperTableEntries expression="Var.CalendarDate " name="CalendarDate" nullable="true" type="id_Date"/>
+        <mapperTableEntries expression="Var.Year " name="Year" type="id_Integer"/>
+        <mapperTableEntries expression="Var.Month " name="Month" type="id_Integer"/>
       </outputTables>
       <inputTables lookupMode="LOAD_ONCE" matchingMode="UNIQUE_MATCH" name="toflow" sizeState="INTERMEDIATE">
         <mapperTableEntries name="StaffID" nullable="true" type="id_String"/>
@@ -565,6 +571,8 @@
       <column comment="" key="false" length="23" name="CalendarDate" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="3" sourceType="DATETIME" type="id_Date" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
+      <column comment="" defaultValue="" key="false" length="-1" name="Year" nullable="false" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_Integer" usefulColumn="true"/>
+      <column comment="" defaultValue="" key="false" length="-1" name="Month" nullable="false" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_Integer" usefulColumn="true"/>
     </metadata>
   </node>
   <node componentName="tHashInput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="64" posY="256">
@@ -588,6 +596,8 @@
       <column comment="" key="false" length="23" name="CalendarDate" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="3" sourceType="DATETIME" type="id_Date" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
+      <column comment="" defaultValue="" key="false" length="-1" name="Year" nullable="false" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_Integer" usefulColumn="true"/>
+      <column comment="" defaultValue="" key="false" length="-1" name="Month" nullable="false" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_Integer" usefulColumn="true"/>
     </metadata>
   </node>
   <node componentName="tLogRow" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="288" posY="256">
@@ -612,6 +622,10 @@
       <elementValue elementRef="LENGTH" value="10"/>
       <elementValue elementRef="SCHEMA_COLUMN" value="CalendarDate"/>
       <elementValue elementRef="LENGTH" value="10"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="Year"/>
+      <elementValue elementRef="LENGTH" value="10"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="Month"/>
+      <elementValue elementRef="LENGTH" value="10"/>
     </elementParameter>
     <elementParameter field="CHECK" name="PRINT_CONTENT_WITH_LOG4J" value="true"/>
     <elementParameter field="TEXT" name="SCHEMA_OPT_NUM" show="false" value="100"/>
@@ -629,6 +643,8 @@
       <column comment="" key="false" length="23" name="CalendarDate" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="3" sourceType="DATETIME" type="id_Date" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
+      <column comment="" defaultValue="" key="false" length="-1" name="Year" nullable="false" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_Integer" usefulColumn="true"/>
+      <column comment="" defaultValue="" key="false" length="-1" name="Month" nullable="false" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_Integer" usefulColumn="true"/>
     </metadata>
   </node>
   <connection connectorName="FLOW" label="ManHour" lineStyle="0" metaname="tDBInput_1" offsetLabelX="0" offsetLabelY="0" source="tDBInput_1" target="tMap_1">
@@ -672,10 +688,26 @@
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="toflow"/>
   </connection>
   <connection connectorName="FLOW" label="toAppend" lineStyle="0" metaname="toAppend" offsetLabelX="0" offsetLabelY="0" source="tMap_3" target="tHashOutput_3">
+    <elementParameter field="TABLE" name="TRACES_CONNECTION_FILTER" show="false">
+      <elementValue elementRef="TRACE_COLUMN" value="Month"/>
+      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
+      <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
+      <elementValue elementRef="TRACE_COLUMN" value="Year"/>
+      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
+      <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
+    </elementParameter>
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="toAppend"/>
   </connection>
   <connection connectorName="FLOW" label="row1" lineStyle="0" metaname="tHashInput_2" offsetLabelX="0" offsetLabelY="0" source="tHashInput_2" target="tLogRow_1">
+    <elementParameter field="TABLE" name="TRACES_CONNECTION_FILTER" show="false">
+      <elementValue elementRef="TRACE_COLUMN" value="Month"/>
+      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
+      <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
+      <elementValue elementRef="TRACE_COLUMN" value="Year"/>
+      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
+      <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
+    </elementParameter>
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="row1"/>
   </connection>
@@ -694,13 +726,13 @@
     <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="92;131;150"/>
     <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
   </subjob>
-<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_4098a0c4-9f2e-4d9c-847d-b17833a48bca"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>q3y9QPrv2l/e1dQeonu0QQfbm2SGBwMjwRxq1X+xium7DI8rJrcq7/RX42Q7ckdki+zDDRVs+PpH&#13;
-FlNrLw987g==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_8b382dc5-3f42-4a57-a378-b9028202c17a"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>N76OPV69hr0ZBDg98fedESX1DMbX3NhLjlivPIDGrcCfAjpIs7ZlV4+5SUon4+hu7TVz8Kf7lotw&#13;
-yvzyfiYbBQ==</DigestValue></Reference></SignedInfo><SignatureValue>OkXOh1N0yiQFi2f7wm3pgI436UzisPB2r+JovQQ3SCEsAix8b4jn85+5yaAb8/KtUfy9/rwYl7nQ&#13;
-LFZawDrAub00UM1kfYs8Cx74Vs/YpBbKdRgcMM9S/fS3NYFjS5ebsgvpnu8H76UtWtG/eVmoacEX&#13;
-6NZ1e65yhzvYnJ3mmvOy7K/ekpOmSJNEhSwko4Df9ALa4WHVnp/G6NpHtcsQyvtyUK82YAc3bYvo&#13;
-8cCOEJCyllUpw1hkaRhqheYdo9hcXD134E+vbCU9lyjQRioN7p/qvb/MEJDMzrWzwYTV97QFRSo6&#13;
-YExNyygkwTrr6I9MV/90jM2GNb6ADgwngi7q+Q==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w&#13;
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_a4882ca7-97ac-455b-aeb6-8889f3e85dc5"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>oniBSsFdKm6ho48SIHgVdG266jHMUbh2+4gQt9XDvXw6KLEpVe2HY7kj+ufVpeKymOhMofIpo5iw&#13;
+9Qp4GyDczQ==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_649c9d6a-be10-49e6-92d5-bf4cd83fcc89"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>AaU934OuuLqPExsPfFDEpJh7xvpzeYwQufEZnygZ9jY/5cc6KKBDooepy0WA8JjVOwMptZjtXCic&#13;
+pCStrpccYg==</DigestValue></Reference></SignedInfo><SignatureValue>fLCrNbhi/9WiX0Jx31Q8Ja+GcbjcGgi8vo7snFbZAtsO9HEal/vOITlZYOlzt0zY3dQYR7qE1CwU&#13;
+t6RBhEQRHxdgsaEUEKcBDa8+wDg2Ag8MsrZmcENbk+ECRBDnWPnJXdo0M/lYKU79rqAFWsOFEiG+&#13;
+10v+bbaKKpJpb5t80pOGCtz7IZOPQTtCcT2CLLpNdoS//XILCD2G/+GBfLM3tW8qsJYrSN4hQ56D&#13;
+lU77bWXJM7D+sSH4ycLBXBBVZS1EIDOE+TgOBtSQ+YcQDDHO0n7XZYtZsMuuATOYREYyUlV/Bbet&#13;
+Mfxvwl6xNi5oSYRo9PSIceSOUIq4OSVRCdQ62A==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w&#13;
 DAYDVQQIEwVQYXJpczEOMAwGA1UEBxMFUGFyaXMxFDASBgNVBAoTC1RhbGVuZCBJbmMuMQwwCgYD&#13;
 VQQLDANSJkQxFjAUBgNVBAMMDVRhbGVuZCBSJkQgQ0ExIjAgBgkqhkiG9w0BCQEWE3NlY3VyaXR5&#13;
 QHRhbGVuZC5jb20wHhcNMTkwNjAzMDgxODIwWhcNMjkwNjAzMDAwMDAwWjB7MSgwJgYDVQQDEx9U&#13;
@@ -722,4 +754,4 @@ hakvpzhOyLo91h8YAQrEZJdNuKA8IYmBrFZQZDCz0uywKSyFfzPyJhvxylCLG/iDPPfE0VWcrMJ/&#13
 WQJly/2XPg/NBCTF3pSKS0kCiA7PeaI3cWkMYYA3PMwYDvzqs1opBRglG7ikj0bQxSm3lcjMuuvW&#13;
 gBRksFKjP3K/nztsjSoYITOM9jR29ReIL3v0E8RbAFwA2RGq6Dxd0ixfbucMesy5Gnr8tfYy6rW+&#13;
 qSQqd3ah4+PSzBNVwIB4ytpdrG3SlhCI2i2Th8ek8Sjsaquh9qPAerWNd2+84HWOOGj1Xe1qc6vg&#13;
-qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_8b382dc5-3f42-4a57-a378-b9028202c17a" Target="#_4098a0c4-9f2e-4d9c-847d-b17833a48bca"><Timestamp>2024-04-05 14:07:08</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
+qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_649c9d6a-be10-49e6-92d5-bf4cd83fcc89" Target="#_a4882ca7-97ac-455b-aeb6-8889f3e85dc5"><Timestamp>2024-04-05 14:12:23</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>

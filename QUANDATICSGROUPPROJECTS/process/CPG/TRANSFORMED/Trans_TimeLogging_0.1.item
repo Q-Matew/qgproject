@@ -132,7 +132,7 @@
     <elementParameter field="TECHNICAL" name="QUERYSTORE:REPOSITORY_QUERYSTORE_TYPE" show="false" value=""/>
     <elementParameter field="TECHNICAL" name="QUERYSTORE:QUERYSTORE_TYPE" value="BUILT_IN"/>
     <elementParameter field="GUESS_SCHEMA" name="GUESS_SCHEMA" value="&quot;&quot;"/>
-    <elementParameter field="MEMO_SQL" name="QUERY" value="&quot;&#10;SELECT&#10;&#9;&#9;DISTINCT(TOP 2 Trans_MemberManHourDetail.StaffID) AS StaffID&#10;FROM&#9;Trans_MemberManHourDetail&#10;&quot;"/>
+    <elementParameter field="MEMO_SQL" name="QUERY" value="&quot;&#10;SELECT&#10;&#9;&#9;DISTINCT(Trans_MemberManHourDetail.StaffID) AS StaffID&#10;FROM&#9;Trans_MemberManHourDetail&#10;&quot;"/>
     <elementParameter field="LABEL" name="NOTE" value="This option only applies when deploying and running in the Talend Runtime"/>
     <elementParameter field="CHECK" name="SPECIFY_DATASOURCE_ALIAS" value="false"/>
     <elementParameter field="TEXT" name="DATASOURCE_ALIAS" show="false" value="&quot;&quot;"/>
@@ -422,7 +422,63 @@
       </column>
     </metadata>
   </node>
-  <node componentName="tLogRow" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="448" posY="160">
+  <node componentName="tSampleRow" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="384" posY="160">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tSampleRow_1"/>
+    <elementParameter field="LABEL" name="INFO_RANGE" value="Range let you choose a list of line numbers and/or a list of ranges.&#10;&#10;- &quot;1,5&quot; : line 1 and 5&#10;- &quot;10..20&quot; : lines 10 to 20&#10;- &quot;23..45,48,50..54&quot; : lines 23 to 45, line 48 and lines 50 to 54&#10;- &quot;1..10&quot; : 10 first lines&#10;&#10;&#9;  "/>
+    <elementParameter field="MEMO_JAVA" name="RANGE" value="&quot;1..100&quot;"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <metadata connector="FLOW" name="tSampleRow_1">
+      <column comment="" key="true" length="36" name="id" nullable="false" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="50" name="eePersoNo" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="500" name="eeName" nullable="true" pattern="" precision="0" sourceType="NVARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="500" name="projectID" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="500" name="projectName" nullable="true" pattern="" precision="0" sourceType="NVARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="50" name="activityID" nullable="true" pattern="" precision="0" sourceType="NVARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="500" name="activityDesc" nullable="true" pattern="" precision="0" sourceType="NVARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="10" name="timeLogDate" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="DATE" type="id_Date" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="18" name="hour" nullable="true" pattern="" precision="2" sourceType="FLOAT" type="id_Double" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="10" name="status" nullable="true" pattern="" precision="0" sourceType="INT" type="id_Integer" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="50" name="hourInText" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="18" name="hourInMins" nullable="true" pattern="" precision="0" sourceType="FLOAT" type="id_Double" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="10" name="isUrgentLeave" nullable="true" pattern="" precision="0" sourceType="INT" type="id_Integer" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="40" name="wbsCode" nullable="true" pattern="" precision="0" sourceType="NVARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="4" name="companyCode" nullable="true" pattern="" precision="0" sourceType="NCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="4" name="divisionCode" nullable="true" pattern="" precision="0" sourceType="NCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+    </metadata>
+  </node>
+  <node componentName="tLogRow" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="608" posY="160">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tLogRow_1"/>
     <elementParameter field="RADIO" name="BASIC_MODE" value="false"/>
     <elementParameter field="RADIO" name="TABLE_PRINT" value="true"/>
@@ -534,13 +590,17 @@
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="staffID"/>
   </connection>
-  <connection connectorName="FLOW" label="out1" lineStyle="0" metaname="out1" offsetLabelX="0" offsetLabelY="0" source="tMap_1" target="tLogRow_1">
+  <connection connectorName="FLOW" label="out1" lineStyle="0" metaname="out1" offsetLabelX="0" offsetLabelY="0" source="tMap_1" target="tSampleRow_1">
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="out1"/>
   </connection>
   <connection connectorName="FLOW" label="timeLog" lineStyle="8" metaname="tDBInput_2" offsetLabelX="-50" offsetLabelY="6" source="tDBInput_2" target="tMap_1">
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="timeLog"/>
+  </connection>
+  <connection connectorName="FLOW" label="row1" lineStyle="0" metaname="tSampleRow_1" offsetLabelX="0" offsetLabelY="0" source="tSampleRow_1" target="tLogRow_1">
+    <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="row1"/>
   </connection>
   <subjob>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tDBInput_1"/>
@@ -552,13 +612,13 @@
     <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="92;131;150"/>
     <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
   </subjob>
-<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_6f6b85f6-ecfe-405e-a736-91bdf0c8c1f0"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>PToIqqsSJOxC+88TmTAN/AefOCDfyXa+2bA/Q/nMd+CMPh4CVWr/DjDCdSc6ZWHmKpTr4qV9/3X1&#13;
-Ydq2INjAtQ==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_1ad7ff37-1dff-4d5d-b0f9-5ea2a7257abc"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>21DDH0Ch5pdjfBAkGm4e5yjSRflKGXLtos7wFuS33QVkDtPgQ1VCfPa08xmF1X6lbi5wSC+SFHUc&#13;
-S5Yrr4I91g==</DigestValue></Reference></SignedInfo><SignatureValue>HOJNRIOupv8WEai95fXWd68wg0DldcN79N9nTEFW/q9RqJYfLTZQxj7kfOT1nRgq8sSTxboBlJ6r&#13;
-5f0X5wpOo7JfMaqWA017aRKTfuNMhJK0MmhrmxBho3/ufCaDegzq9VJdWEIzREpbOtV3HUIBzLWM&#13;
-9MGB98kg35NZroHgRh5bCL6zT8OEPWvsNyLQxSlCdb4nsjITfi1pidOr5ASFKNkwoEhVtsLzy30o&#13;
-FZP50xg21tz6U6kBv01f+QMExZwjLcjCFMz0UW7pbii3LVRlMAafStagVXJXRPO+xifV6OIBE8Gk&#13;
-6HDMIPRP1V0R+ac3ywF1p/KiTTIj7cBokiAKdw==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w&#13;
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_c3246a00-e03d-4eea-8fff-62cf2d6a64ba"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>HDhmmnKUwFwmijvXoxshmOnlUn/5tf9358/mQlojPWeJem5eOSt/S2vimJS8tbMDFJNkApSup+t/&#13;
+s6ogCMRWfQ==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_a5489789-ee48-490a-addd-c7c366f8aaa6"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>cOcSZnqFKGIQKZ4dGKkrjgfcJHb3xNO03f52gchHzz+PRme2Dp8tXLOH5tE3vIaLvXlKtujsUw4Y&#13;
+6kDQL6tG3Q==</DigestValue></Reference></SignedInfo><SignatureValue>lYiflI41/Lj+YcP1SJhby3uFEXYSL6+XCCce9HbvqhcxRxxlJ9Iz4EDUfYWzPebm/UoLQC20Zl48&#13;
+osIQFKPK17IbHeWgldm0uT9kL87EGU072Zte+NWNcoujjmd5MOsnfdtU0U5fnVr13IksdAM1pxgD&#13;
+AFHZOTfYb8oac700S/2lZnER5qQiLv+tEs4FHvwaDaKhHlbzC+IXy03WP+xjD23l2jQF1J/wjdQu&#13;
+xZ3HXUgTH/PQ6DiIBK+JRSa6VRlFMTCFyRRRxQajwuGZfODYNvwKbo5rfHxwErIU6TuD6JrVrRPc&#13;
+b1aTMgvdoRAfTAubWUfifwnPy8LPPxfZbwlv1w==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w&#13;
 DAYDVQQIEwVQYXJpczEOMAwGA1UEBxMFUGFyaXMxFDASBgNVBAoTC1RhbGVuZCBJbmMuMQwwCgYD&#13;
 VQQLDANSJkQxFjAUBgNVBAMMDVRhbGVuZCBSJkQgQ0ExIjAgBgkqhkiG9w0BCQEWE3NlY3VyaXR5&#13;
 QHRhbGVuZC5jb20wHhcNMTkwNjAzMDgxODIwWhcNMjkwNjAzMDAwMDAwWjB7MSgwJgYDVQQDEx9U&#13;
@@ -580,4 +640,4 @@ hakvpzhOyLo91h8YAQrEZJdNuKA8IYmBrFZQZDCz0uywKSyFfzPyJhvxylCLG/iDPPfE0VWcrMJ/&#13
 WQJly/2XPg/NBCTF3pSKS0kCiA7PeaI3cWkMYYA3PMwYDvzqs1opBRglG7ikj0bQxSm3lcjMuuvW&#13;
 gBRksFKjP3K/nztsjSoYITOM9jR29ReIL3v0E8RbAFwA2RGq6Dxd0ixfbucMesy5Gnr8tfYy6rW+&#13;
 qSQqd3ah4+PSzBNVwIB4ytpdrG3SlhCI2i2Th8ek8Sjsaquh9qPAerWNd2+84HWOOGj1Xe1qc6vg&#13;
-qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_1ad7ff37-1dff-4d5d-b0f9-5ea2a7257abc" Target="#_6f6b85f6-ecfe-405e-a736-91bdf0c8c1f0"><Timestamp>2024-04-08 11:13:48</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
+qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_a5489789-ee48-490a-addd-c7c366f8aaa6" Target="#_c3246a00-e03d-4eea-8fff-62cf2d6a64ba"><Timestamp>2024-04-08 11:15:06</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>

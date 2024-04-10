@@ -130,7 +130,7 @@
     <elementParameter field="TECHNICAL" name="QUERYSTORE:REPOSITORY_QUERYSTORE_TYPE" show="false" value=""/>
     <elementParameter field="TECHNICAL" name="QUERYSTORE:QUERYSTORE_TYPE" value="BUILT_IN"/>
     <elementParameter field="GUESS_SCHEMA" name="GUESS_SCHEMA" value="&quot;&quot;"/>
-    <elementParameter field="MEMO_SQL" name="QUERY" value="&quot;SELECT&#10;&#9;&#9;dbo.TimeLogging.\&quot;id\&quot;,&#10;&#9;&#9;dbo.TimeLogging.eePersoNo,&#10;&#9;&#9;dbo.TimeLogging.eeName,&#10;&#9;&#9;dbo.TimeLogging.projectID,&#10;&#9;&#9;dbo.TimeLogging.projectName,&#10;&#9;&#9;dbo.TimeLogging.activityID,&#10;&#9;&#9;dbo.TimeLogging.activityDesc,&#10;&#9;&#9;dbo.TimeLogging.timeLogDate,&#10;&#9;&#9;dbo.TimeLogging.hour,&#10;&#9;&#9;dbo.TimeLogging.status,&#10;&#9;&#9;dbo.TimeLogging.hourInText,&#10;&#9;&#9;dbo.TimeLogging.hourInMins,&#10;&#9;&#9;dbo.TimeLogging.isUrgentLeave,&#10;&#9;&#9;dbo.TimeLogging.wbsCode,&#10;&#9;&#9;dbo.TimeLogging.companyCode,&#10;&#9;&#9;dbo.TimeLogging.divisionCode,&#10;&#9;&#9;dbo.TimeLogging.isNormalStaff&#10;FROM&#9;dbo.TimeLogging&#10;WHERE eePersoNo = '00000116'&quot;"/>
+    <elementParameter field="MEMO_SQL" name="QUERY" value="&quot;SELECT&#10;&#9;&#9;dbo.TimeLogging.eePersoNo,&#10;&#9;&#9;dbo.TimeLogging.eeName,&#10;&#9;&#9;dbo.TimeLogging.projectID,&#10;&#9;&#9;dbo.TimeLogging.projectName,&#10;&#9;&#9;dbo.TimeLogging.activityID,&#10;&#9;&#9;dbo.TimeLogging.activityDesc,&#10;&#9;&#9;dbo.TimeLogging.timeLogDate,&#10;&#9;&#9;dbo.TimeLogging.hour,&#10;&#9;&#9;dbo.TimeLogging.status,&#10;&#9;&#9;dbo.TimeLogging.hourInText,&#10;&#9;&#9;dbo.TimeLogging.hourInMins,&#10;&#9;&#9;dbo.TimeLogging.isUrgentLeave,&#10;&#9;&#9;dbo.TimeLogging.wbsCode,&#10;&#9;&#9;dbo.TimeLogging.companyCode,&#10;&#9;&#9;dbo.TimeLogging.divisionCode,&#10;&#9;&#9;dbo.TimeLogging.isNormalStaff&#10;FROM&#9;dbo.TimeLogging&#10;WHERE eePersoNo = '00000116'&quot;"/>
     <elementParameter field="LABEL" name="NOTE" value="This option only applies when deploying and running in the Talend Runtime"/>
     <elementParameter field="CHECK" name="SPECIFY_DATASOURCE_ALIAS" value="false"/>
     <elementParameter field="TEXT" name="DATASOURCE_ALIAS" show="false" value="&quot;&quot;"/>
@@ -141,8 +141,6 @@
     <elementParameter field="TECHNICAL" name="ENCODING:ENCODING_TYPE" value="ISO-8859-15"/>
     <elementParameter field="CHECK" name="TRIM_ALL_COLUMN" value="false"/>
     <elementParameter field="TABLE" name="TRIM_COLUMN">
-      <elementValue elementRef="SCHEMA_COLUMN" value="id"/>
-      <elementValue elementRef="TRIM" value="false"/>
       <elementValue elementRef="SCHEMA_COLUMN" value="eePersoNo"/>
       <elementValue elementRef="TRIM" value="false"/>
       <elementValue elementRef="SCHEMA_COLUMN" value="eeName"/>
@@ -181,9 +179,6 @@
     <elementParameter field="TEXT" name="LABEL" value="__TABLE__"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="FLOW" label="TimeLogging" name="tDBInput_1">
-      <column comment="" key="true" length="36" name="id" nullable="false" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
-        <additionalField key="Comment" value=""/>
-      </column>
       <column comment="" key="false" length="50" name="eePersoNo" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
@@ -248,8 +243,6 @@
     <elementParameter field="CHECK" name="PRINT_COLNAMES" show="false" value="false"/>
     <elementParameter field="CHECK" name="USE_FIXED_LENGTH" show="false" value="false"/>
     <elementParameter field="TABLE" name="LENGTHS" show="false">
-      <elementValue elementRef="SCHEMA_COLUMN" value="id"/>
-      <elementValue elementRef="LENGTH" value="10"/>
       <elementValue elementRef="SCHEMA_COLUMN" value="eePersoNo"/>
       <elementValue elementRef="LENGTH" value="10"/>
       <elementValue elementRef="SCHEMA_COLUMN" value="eeName"/>
@@ -287,9 +280,6 @@
     <elementParameter field="TEXT" name="SCHEMA_OPT_NUM" show="false" value="100"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="FLOW" label="TimeLogging" name="tLogRow_1">
-      <column comment="" key="true" length="36" name="id" nullable="false" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
-        <additionalField key="Comment" value=""/>
-      </column>
       <column comment="" key="false" length="50" name="eePersoNo" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
@@ -349,13 +339,13 @@
     <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="92;131;150"/>
     <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
   </subjob>
-<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_08df549b-b833-44ff-a47e-2fd8ed806ec0"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>Vq2QE/Q7vaVxoBUekC4s9Ay9BCNItg8uI5pBYdo0ukWGdLh8iGYQ+8hXHeVRaZL59IbeWex30a+r&#13;
-RijaJowURQ==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_27809790-b2f9-4dd7-97a6-972595e21129"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>T2wg+TM1VQ2rAkcaFfOVXdwvbxAti0TlsMEfbEGYHDneqUlwCDshpD1vAcF3P+difw+soLwdIurt&#13;
-5vAMreq7+g==</DigestValue></Reference></SignedInfo><SignatureValue>Z1VUUDlr8fHNRmWAFi8+6NoNLNfyZS7+QyWaq2HRBu61nDDCyzYsM1Im1QSRhtfLb0vPEAdxA8ed&#13;
-TJeG1Vix2CoFGD/Dlw5tEeJAg3T6H46IB9RZNGdru/uhfBQmHGomwDNLH+iFfGPkFBu7kTx/nZOg&#13;
-LN2X5hCFbzRlwMLSm7cW5W/YPzn6jDcLrhIhBAN4yhfN0QORTO8btH5hEb2IWRGK4Z9PCpToK0ao&#13;
-OXzaSNl0Om54gDn+zq9MWnd5rksl2VfkhYZyEyfjwWilUkEX1IXHVH9T94hMnSsrtIKqDWR1b3Xv&#13;
-MjAFUdAiQ5l3XpZpiyykkwgpGvM1AD6Ajnlzrg==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w&#13;
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_7f8453d2-bd7a-4c77-9279-834b1c09b17d"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>ImI830VptM8JhVHTjCzRkcn/3dDqGozJ7BRMCHRwH8Dr1SGWmbaDQuzIwL7kZMDEJdnYoraMPlc9&#13;
+I6EpYIAZWA==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_85fc6f39-14a9-4d7d-8d62-b49c918861bc"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>ZTnyiSI/7L2lskFw4vbnnkuBsgIROk19FliLJIAwQPVLYl7dcKAOL+xwd4WP8Nt1/E6X0/+0Ggsq&#13;
+IdF7j4Nsww==</DigestValue></Reference></SignedInfo><SignatureValue>cq8c0p+DVCa6HDt5o6CVKAPWOb6yEV5XXw//5zcpBZaBDRSyjhmvhkCJwrDJs7ynrLD2nTpv3C+e&#13;
+c68fCGg1PXqQtXlDxSqEBD1xNVazU4DazuQvCmUo7nVA38x+Sj+h7XoS3e5+lAI1Qv5cu4tVvDte&#13;
+KDf9dBG4eCA8FU4l+a1mf/1TLwaD23BuwVVgwXLOF1OsdVRv+XpzlfZpuZ2hmrkurENq15ZnIMfo&#13;
+oWg4Djd+cu2slhtyWfhrncSM6t5xQ5WVCR7ZKKYiMrDDImJorNNsh4Dee17skkcWgIWq2Vy637B3&#13;
+uvmj1kzxhnpUDuXAgJlKOh4yXOh3WyCe5WrMeg==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w&#13;
 DAYDVQQIEwVQYXJpczEOMAwGA1UEBxMFUGFyaXMxFDASBgNVBAoTC1RhbGVuZCBJbmMuMQwwCgYD&#13;
 VQQLDANSJkQxFjAUBgNVBAMMDVRhbGVuZCBSJkQgQ0ExIjAgBgkqhkiG9w0BCQEWE3NlY3VyaXR5&#13;
 QHRhbGVuZC5jb20wHhcNMTkwNjAzMDgxODIwWhcNMjkwNjAzMDAwMDAwWjB7MSgwJgYDVQQDEx9U&#13;
@@ -377,4 +367,4 @@ hakvpzhOyLo91h8YAQrEZJdNuKA8IYmBrFZQZDCz0uywKSyFfzPyJhvxylCLG/iDPPfE0VWcrMJ/&#13
 WQJly/2XPg/NBCTF3pSKS0kCiA7PeaI3cWkMYYA3PMwYDvzqs1opBRglG7ikj0bQxSm3lcjMuuvW&#13;
 gBRksFKjP3K/nztsjSoYITOM9jR29ReIL3v0E8RbAFwA2RGq6Dxd0ixfbucMesy5Gnr8tfYy6rW+&#13;
 qSQqd3ah4+PSzBNVwIB4ytpdrG3SlhCI2i2Th8ek8Sjsaquh9qPAerWNd2+84HWOOGj1Xe1qc6vg&#13;
-qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_27809790-b2f9-4dd7-97a6-972595e21129" Target="#_08df549b-b833-44ff-a47e-2fd8ed806ec0"><Timestamp>2024-04-10 07:56:45</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
+qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_85fc6f39-14a9-4d7d-8d62-b49c918861bc" Target="#_7f8453d2-bd7a-4c77-9279-834b1c09b17d"><Timestamp>2024-04-10 07:57:14</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>

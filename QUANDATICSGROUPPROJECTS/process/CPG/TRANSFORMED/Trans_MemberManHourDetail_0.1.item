@@ -1004,7 +1004,7 @@
       <column comment="" key="false" length="100" name="ProjectDivisionObjNo" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="NVARCHAR" type="id_String" usefulColumn="true"/>
     </metadata>
   </node>
-  <node componentName="tMap" componentVersion="2.1" offsetLabelX="0" offsetLabelY="0" posX="544" posY="256">
+  <node componentName="tMap" componentVersion="2.1" offsetLabelX="0" offsetLabelY="0" posX="608" posY="256">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tMap_1"/>
     <elementParameter field="EXTERNAL" name="MAP" value=""/>
     <elementParameter field="CLOSED_LIST" name="LINK_STYLE" value="AUTO"/>
@@ -1051,7 +1051,7 @@
         <mapperTableEntries expression="joinedSource.ProjectDivisionWbsCode" name="ProjectDivisionWbsCode" nullable="true" type="id_String"/>
         <mapperTableEntries expression="joinedSource.ProjecctDivisionName" name="ProjecctDivisionName" nullable="true" type="id_String"/>
         <mapperTableEntries expression="joinedSource.StageName" name="StageName" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="joinedSource.Status" name="Status" nullable="true" type="id_Integer"/>
+        <mapperTableEntries expression="stageListMst.StageName == null ? joinedSource.Status : stageListMst.StageName " name="Status" nullable="true" type="id_Integer"/>
         <mapperTableEntries expression="joinedSource.TimeLogObjectNo" name="TimeLogObjectNo" nullable="true" type="id_String"/>
         <mapperTableEntries expression="joinedSource.AssignedFromDate" name="AssignedFromDate" nullable="true" type="id_Date"/>
         <mapperTableEntries expression="joinedSource.AssignedToDate" name="AssignedToDate" nullable="true" type="id_Date"/>
@@ -1086,9 +1086,14 @@
         <mapperTableEntries name="ProjectCode" nullable="true" type="id_String"/>
         <mapperTableEntries name="Divisions" nullable="true" type="id_String"/>
       </inputTables>
+      <inputTables lookupMode="LOAD_ONCE" matchingMode="UNIQUE_MATCH" name="stageListMst" sizeState="INTERMEDIATE">
+        <mapperTableEntries expression="joinedSource.StageName.toUpperCase() " name="GUID" operator="=" type="id_String"/>
+        <mapperTableEntries name="StageName" nullable="true" type="id_String"/>
+        <mapperTableEntries name="StageID" nullable="true" type="id_String"/>
+      </inputTables>
     </nodeData>
   </node>
-  <node componentName="tHashOutput" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="704" posY="256">
+  <node componentName="tHashOutput" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="832" posY="256">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tHashOutput_3"/>
     <elementParameter field="CHECK" name="LINK_WITH" value="false"/>
     <elementParameter field="COMPONENT_LIST" name="LIST" show="false" value=""/>
@@ -1120,7 +1125,7 @@
       <column comment="" defaultValue="" key="false" length="15" name="ManDay" nullable="false" originalLength="-1" pattern="" precision="0" sourceType="FLOAT" type="id_Double" usefulColumn="true"/>
     </metadata>
   </node>
-  <node componentName="tMSSqlInput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="544" posY="384">
+  <node componentName="tMSSqlInput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="480" posY="384">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tDBInput_1"/>
     <elementParameter field="TEXT" name="COMPONENT_NAME" show="false" value="tMSSqlInput"/>
     <elementParameter field="TEXT" name="VERSION" show="false" value="0.102 (ALPHA)"/>
@@ -1219,6 +1224,71 @@
         <additionalField key="Comment" value=""/>
       </column>
       <column comment="" key="false" length="2147483647" name="Divisions" nullable="true" pattern="" precision="0" sourceType="NVARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+    </metadata>
+  </node>
+  <node componentName="tMSSqlInput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="608" posY="384">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tDBInput_5"/>
+    <elementParameter field="TEXT" name="COMPONENT_NAME" show="false" value="tMSSqlInput"/>
+    <elementParameter field="TEXT" name="VERSION" show="false" value="0.102 (ALPHA)"/>
+    <elementParameter field="TEXT" name="FAMILY" show="false" value="Databases/DB Specifics/MS_SQL_Server"/>
+    <elementParameter field="CHECK" name="START" show="false" value="false"/>
+    <elementParameter field="CHECK" name="STARTABLE" show="false" value="true"/>
+    <elementParameter field="CHECK" name="SUBTREE_START" show="false" value="false"/>
+    <elementParameter field="CHECK" name="END_OF_FLOW" show="false" value="false"/>
+    <elementParameter field="TEXT" name="HELP" show="false" value="org.talend.help.tMSSqlInput"/>
+    <elementParameter field="DIRECTORY" name="IREPORT_PATH" show="false" value=""/>
+    <elementParameter field="DIRECTORY" name="JAVA_LIBRARY_PATH" show="false" value="/Applications/TalendStudio-8.0.1/studio/configuration/lib/java"/>
+    <elementParameter field="CHECK" name="USE_EXISTING_CONNECTION" value="false"/>
+    <elementParameter field="COMPONENT_LIST" name="CONNECTION" show="false" value=""/>
+    <elementParameter field="TECHNICAL" name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY"/>
+    <elementParameter field="TECHNICAL" name="PROPERTY:REPOSITORY_PROPERTY_TYPE" show="false" value="_CQoN0OgiEe6MtZw1M9JxpA"/>
+    <elementParameter field="TEXT" name="HOST" value="&quot;10.1.20.82&quot;"/>
+    <elementParameter field="CLOSED_LIST" name="DRIVER" value="MSSQL_PROP"/>
+    <elementParameter field="TEXT" name="TYPE" show="false" value="MSSQL"/>
+    <elementParameter field="TEXT" name="PORT" value="&quot;1433&quot;"/>
+    <elementParameter field="TEXT" name="DB_SCHEMA" value="&quot;dbo&quot;"/>
+    <elementParameter field="TEXT" name="DBNAME" value="&quot;&quot;"/>
+    <elementParameter field="TEXT" name="USER" value="&quot;dev_user&quot;"/>
+    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:Nf/5EbZi72VFYbyKyMFgoZgxK+qoHW7CjDUpkJgPy2OBAVEX1GU="/>
+    <elementParameter field="TECHNICAL" name="SCHEMA:SCHEMA_TYPE" show="false" value="REPOSITORY"/>
+    <elementParameter field="TECHNICAL" name="SCHEMA:REPOSITORY_SCHEMA_TYPE" show="false" value="_CQoN0OgiEe6MtZw1M9JxpA - StageListMaster"/>
+    <elementParameter field="DBTABLE" name="TABLE" value="&quot;StageListMaster&quot;"/>
+    <elementParameter field="QUERYSTORE_TYPE" name="QUERYSTORE" value="&quot;&quot;"/>
+    <elementParameter field="TECHNICAL" name="QUERYSTORE:REPOSITORY_QUERYSTORE_TYPE" show="false" value=""/>
+    <elementParameter field="TECHNICAL" name="QUERYSTORE:QUERYSTORE_TYPE" value="BUILT_IN"/>
+    <elementParameter field="GUESS_SCHEMA" name="GUESS_SCHEMA" value="&quot;&quot;"/>
+    <elementParameter field="MEMO_SQL" name="QUERY" value="&quot;SELECT dbo.StageListMaster.GUID,&#10;&#9;&#9;dbo.StageListMaster.StageName,&#10;&#9;&#9;dbo.StageListMaster.StageID&#10;FROM&#9;dbo.StageListMaster&quot;"/>
+    <elementParameter field="LABEL" name="NOTE" value="This option only applies when deploying and running in the Talend Runtime"/>
+    <elementParameter field="CHECK" name="SPECIFY_DATASOURCE_ALIAS" value="false"/>
+    <elementParameter field="TEXT" name="DATASOURCE_ALIAS" show="false" value="&quot;&quot;"/>
+    <elementParameter field="MAPPING_TYPE" name="MAPPING" show="false" value="id_MSSQL"/>
+    <elementParameter field="TEXT" name="PROPERTIES" value="&quot;&quot;"/>
+    <elementParameter field="CHECK" name="ACTIVE_DIR_AUTH" value="false"/>
+    <elementParameter field="ENCODING_TYPE" name="ENCODING" show="false" value="&quot;ISO-8859-15&quot;"/>
+    <elementParameter field="TECHNICAL" name="ENCODING:ENCODING_TYPE" value="ISO-8859-15"/>
+    <elementParameter field="CHECK" name="TRIM_ALL_COLUMN" value="false"/>
+    <elementParameter field="TABLE" name="TRIM_COLUMN">
+      <elementValue elementRef="SCHEMA_COLUMN" value="GUID"/>
+      <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="StageName"/>
+      <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="StageID"/>
+      <elementValue elementRef="TRIM" value="false"/>
+    </elementParameter>
+    <elementParameter field="CHECK" name="SET_QUERY_TIMEOUT" value="false"/>
+    <elementParameter field="TEXT" name="QUERY_TIMEOUT_IN_SECONDS" show="false" value="30"/>
+    <elementParameter field="TEXT" name="LABEL" value="__TABLE__"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <metadata connector="FLOW" label="StageListMaster" name="tDBInput_5">
+      <column comment="" defaultValue="'newid()'" key="true" length="-1" name="GUID" nullable="false" pattern="" precision="0" sourceType="UNIQUEIDENTIFIER" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="50" name="StageName" nullable="true" pattern="" precision="0" sourceType="NVARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="50" name="StageID" nullable="true" pattern="" precision="0" sourceType="NVARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
     </metadata>
@@ -1385,6 +1455,10 @@
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="proInfo"/>
   </connection>
+  <connection connectorName="FLOW" label="stageListMst" lineStyle="8" metaname="tDBInput_5" offsetLabelX="12" offsetLabelY="21" source="tDBInput_5" target="tMap_1">
+    <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="stageListMst"/>
+  </connection>
   <subjob>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tHashInput_1"/>
     <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="92;131;150"/>
@@ -1426,13 +1500,13 @@
     <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="92;131;150"/>
     <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
   </subjob>
-<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_ac92fdd8-02c6-484d-9957-223c2a16af0e"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>z3N5h7CK04z3sJHjKskIfPLC8Fg09K9fPtEpLqs/BkmBB3ooxjWKUj17BAaGWUz4m2E+bZ7HffiL&#13;
-cQGdLjqbgg==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_d68f77f8-7f16-47e1-ae10-adfa9ad03cf3"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>2RuvLqksJr+gL+G49ULdwBwIXs07CBhkyjLFeRDO89n0U4Ic0TFx3EkTg/ytSktfkrin4P+mnDkA&#13;
-N1gL6+LjzA==</DigestValue></Reference></SignedInfo><SignatureValue>bp6ytwrO5stM5aS8HkiomK12QMkw69P+TqFD+UVVPJQOlWLpCdvT2bz6JMQRtJxQXvnZBxt86yXC&#13;
-rft1HA28+iMdr+XF1Y3UHVlAb4cGK8Pqj80uIQaF6HQ+I+nkOZAM3s/1X2uXX9gEqX+Pgw5xFm6/&#13;
-xl8+VUAj4HlOWvnvRH6i8picvOI9B4yS1RRWuA/IpdbPGZKjDzRdFUQ+3ISQ5aKN64lrmGtEpt6Q&#13;
-8E9GRVoNz4qGyqkyky4h7y7RW/INQFzVGsCWdBJU9b+tcDR+P79o50dt1ozuSL79ccNq5coj/UK1&#13;
-n9srkC1K3gqXYSejmuGQCVLOU9ibNkzi2fbHvw==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w&#13;
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_51776d7f-6dfb-4586-a92f-08e45803278c"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>TeAEj6tpXATqC5BfweGMopwSRPdm7lW6iUwsdYsBXsDwfyd3hAV4ctKgYo83DQVeBX7XdrZy9NIp&#13;
+tixy8VwLRg==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_6c52130c-43c0-4803-8492-97f522398f7b"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>qEP2EgKEMiV8eYMYzLO5brRCU7trZq1XgNXBlRNKNV0bcXUdBEbJBUqgKL0aICOfvWW8aXUkdqH8&#13;
+3GA14bHH3w==</DigestValue></Reference></SignedInfo><SignatureValue>iIZQxzEItX1ClJP7e340vu6UZVdMYI5WZvcdcrsVHFuXKSeuIiNuExW0IXS82WwZI76jTPraofwQ&#13;
+pIsgk4l3rfNywNVMDEz64WU802HeHavDxzkyHb2XtkycVoS4Vl+y9eA1S7zaCwbOtam0XCvkrJMZ&#13;
+R/YQJxrsKj9VWwihXBtSLZh7Lj3mHwGt+FSrk2+2PXMzJF1RnuUQUTmHsheJ0Gez5di+LAyyp6WO&#13;
+8cSjnC3mMcJBrumQBaXGUktQhRH1a9wOBe03wE5InNYBOvLaL9Vd4KvhZDyjy/1/HP/TAoR80g0K&#13;
+tXsrv3N1W3wXLMHny2NdTtFi0WV8yhuIb5yeUg==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w&#13;
 DAYDVQQIEwVQYXJpczEOMAwGA1UEBxMFUGFyaXMxFDASBgNVBAoTC1RhbGVuZCBJbmMuMQwwCgYD&#13;
 VQQLDANSJkQxFjAUBgNVBAMMDVRhbGVuZCBSJkQgQ0ExIjAgBgkqhkiG9w0BCQEWE3NlY3VyaXR5&#13;
 QHRhbGVuZC5jb20wHhcNMTkwNjAzMDgxODIwWhcNMjkwNjAzMDAwMDAwWjB7MSgwJgYDVQQDEx9U&#13;
@@ -1454,4 +1528,4 @@ hakvpzhOyLo91h8YAQrEZJdNuKA8IYmBrFZQZDCz0uywKSyFfzPyJhvxylCLG/iDPPfE0VWcrMJ/&#13
 WQJly/2XPg/NBCTF3pSKS0kCiA7PeaI3cWkMYYA3PMwYDvzqs1opBRglG7ikj0bQxSm3lcjMuuvW&#13;
 gBRksFKjP3K/nztsjSoYITOM9jR29ReIL3v0E8RbAFwA2RGq6Dxd0ixfbucMesy5Gnr8tfYy6rW+&#13;
 qSQqd3ah4+PSzBNVwIB4ytpdrG3SlhCI2i2Th8ek8Sjsaquh9qPAerWNd2+84HWOOGj1Xe1qc6vg&#13;
-qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_d68f77f8-7f16-47e1-ae10-adfa9ad03cf3" Target="#_ac92fdd8-02c6-484d-9957-223c2a16af0e"><Timestamp>2024-04-10 06:23:07</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
+qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_6c52130c-43c0-4803-8492-97f522398f7b" Target="#_51776d7f-6dfb-4586-a92f-08e45803278c"><Timestamp>2024-04-10 06:29:40</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>

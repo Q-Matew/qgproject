@@ -1096,6 +1096,7 @@
       <column comment="" key="false" length="36" name="STID" nullable="true" pattern="" precision="0" sourceType="UNIQUEIDENTIFIER" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
+      <column comment="" key="false" length="500" name="ProjectID" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="100" name="ProjectDivisionObjectNo" nullable="true" pattern="" precision="0" sourceType="NVARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
@@ -1116,6 +1117,7 @@
         <mapperTableEntries expression="out1.StaffID " name="StaffID" nullable="true" type="id_String"/>
         <mapperTableEntries expression="row3.eeName " name="StaffName" nullable="true" type="id_String"/>
         <mapperTableEntries expression="out1.STID " name="STID" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row3.projectID " name="ProjectID" nullable="true" type="id_String"/>
         <mapperTableEntries expression="out1.ProjectDivisionObjectNo " name="ProjectDivisionObjectNo" nullable="true" type="id_String"/>
         <mapperTableEntries expression="out1.ProjectMonth " name="ProjectMonth" nullable="true" type="id_Integer"/>
         <mapperTableEntries expression="out1.ProjectYear " name="ProjectYear" nullable="true" type="id_Integer"/>
@@ -1142,7 +1144,7 @@
         <mapperTableEntries expression="" name="eeName" nullable="true" type="id_String"/>
         <mapperTableEntries name="companyCode" nullable="true" type="id_String"/>
         <mapperTableEntries expression="" name="projectID" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="" name="masterProjectDivisionObjectNo" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="out1.ProjectDivisionObjectNo " name="masterProjectDivisionObjectNo" nullable="true" operator="=" type="id_String"/>
         <mapperTableEntries expression="" name="timeLogMonth" nullable="true" type="id_Integer"/>
         <mapperTableEntries expression="" name="timeLogYear" nullable="true" type="id_Integer"/>
         <mapperTableEntries expression="" name="hour" nullable="true" type="id_Double"/>
@@ -1212,7 +1214,7 @@
         <mapperTableEntries expression="out2.StaffID " name="StaffID" nullable="true" type="id_String"/>
         <mapperTableEntries expression="out2.StaffName " name="StaffName" nullable="true" type="id_String"/>
         <mapperTableEntries expression="out2.STID " name="STID" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="row4.projectID " name="ProjectID" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="out2.ProjectID " name="ProjectID" nullable="true" type="id_String"/>
         <mapperTableEntries expression="out2.ProjectDivisionObjectNo " name="ProjectDivisionObjectNo" nullable="true" type="id_String"/>
         <mapperTableEntries expression="out2.ProjectMonth " name="ProjectMonth" nullable="true" type="id_Integer"/>
         <mapperTableEntries expression="out2.ProjectYear " name="ProjectYear" nullable="true" type="id_Integer"/>
@@ -1227,6 +1229,7 @@
         <mapperTableEntries name="StaffID" nullable="true" type="id_String"/>
         <mapperTableEntries name="StaffName" nullable="true" type="id_String"/>
         <mapperTableEntries name="STID" nullable="true" type="id_String"/>
+        <mapperTableEntries name="ProjectID" nullable="true" type="id_String"/>
         <mapperTableEntries name="ProjectDivisionObjectNo" nullable="true" type="id_String"/>
         <mapperTableEntries name="ProjectMonth" nullable="true" type="id_Integer"/>
         <mapperTableEntries name="ProjectYear" nullable="true" type="id_Integer"/>
@@ -1616,6 +1619,11 @@
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="row2"/>
   </connection>
   <connection connectorName="FLOW" label="out2" lineStyle="0" metaname="out2" offsetLabelX="0" offsetLabelY="0" source="tMap_7" target="tMap_8">
+    <elementParameter field="TABLE" name="TRACES_CONNECTION_FILTER" show="false">
+      <elementValue elementRef="TRACE_COLUMN" value="ProjectID"/>
+      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
+      <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
+    </elementParameter>
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="out2"/>
   </connection>
@@ -1733,13 +1741,13 @@
     <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="92;131;150"/>
     <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
   </subjob>
-<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_1aed79b8-24b1-488e-be5e-737b4fc6ef40"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>gb0NwV+gWCUAoX99Yq/7dJjdKnPjKpFCmDzltGvRIJWxbo8qnYEU7By1zH0oLrGImoGW1qfG86M0&#13;
-93WYOTVjOw==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_36ee23c9-9ed4-495a-8fcc-5e45bef5d67f"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>Nf9lg8SCS60bsyS3Fq86fob9QMlLItCXFutPg858QPJG2LfQILx7aY6rxZ53NA14BHJij3u/yuQ8&#13;
-CQ1OobZTwA==</DigestValue></Reference></SignedInfo><SignatureValue>l6V2cOBgJNEdrPCGgafD/4laOU3IVVdAx8iJejSY0h51XZ8GVivahjS6JxR2caLnyAEGOSUSPIz2&#13;
-w4JSgae9RMbTpgBm9d72M91qxzWLAWCN643jsgjqZQW8TjbTsSFhJxkSa3svlRSYtiNEU7CcKvkt&#13;
-+gk/rvsoCZUY3Qh5cOO/jo0FkoQuIw3VAJLBZ8/7vNtxfuQyYVfXryP+RXdSBzleet0WgPlh4diZ&#13;
-jMhVpCVU/rGxNQ5i9jqQSTlLo01fLf2Dy92GUJzM+jN43R4re9OHe4TVNWtOG649EzKJO+l27OAt&#13;
-ah9Rr5rm+TV+umEsEVgfmDGx+9vpCC4ESKDbtw==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w&#13;
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_8070ef34-2f63-4aaa-ae77-c133ce65fced"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>lvxnQuLj6I3QSCnf3uhIJpr347GPu2mJeFyzU6SWzvrD5nBzqWbujeVI7lj0W0UbxhXjxMxWGzqM&#13;
+VxcpKa5O6w==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_fe138a8f-231a-4821-9f79-2a75d984991e"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>e4UZhqunEY3LD08FgVIOvU8/P+cuRkVMjvY1LHq8mKLngktN0qtBaVZ80JjatUGwoN2zNV7YWqgL&#13;
+t0rX79ZUiw==</DigestValue></Reference></SignedInfo><SignatureValue>K51QSBdgiu1Ny6uUEoWKZZur+rW9gmDKCG4dkk+5qbsB1ihNF/dMDWfyP1Uv5ZGtGNn/4HvyTMah&#13;
+oECMSc6NzxPr7iCeelLu+mv3vZTqM4EMg42FzE1c+WL07X0zzXR+4x5KDWR1YqiU/QGZjtsSfb/4&#13;
+s1BFH3ORF17/phVtLf7QgeetXq8SOF7WFnUBNBwXrhjmkd/b1BIuhrE2ng1eWmlE9LPWZ/465TQZ&#13;
+DnlLeZ08Vx6RNQ78a4GfABHVqZCWKwHiHpmDg9ZWUKu9IWjMAgZ5iQts8V4FwfZmccpbKQoSns2b&#13;
+6W5HS9KGQ8w98YdU4XCE835046aMBbrvVHL74w==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w&#13;
 DAYDVQQIEwVQYXJpczEOMAwGA1UEBxMFUGFyaXMxFDASBgNVBAoTC1RhbGVuZCBJbmMuMQwwCgYD&#13;
 VQQLDANSJkQxFjAUBgNVBAMMDVRhbGVuZCBSJkQgQ0ExIjAgBgkqhkiG9w0BCQEWE3NlY3VyaXR5&#13;
 QHRhbGVuZC5jb20wHhcNMTkwNjAzMDgxODIwWhcNMjkwNjAzMDAwMDAwWjB7MSgwJgYDVQQDEx9U&#13;
@@ -1761,4 +1769,4 @@ hakvpzhOyLo91h8YAQrEZJdNuKA8IYmBrFZQZDCz0uywKSyFfzPyJhvxylCLG/iDPPfE0VWcrMJ/&#13
 WQJly/2XPg/NBCTF3pSKS0kCiA7PeaI3cWkMYYA3PMwYDvzqs1opBRglG7ikj0bQxSm3lcjMuuvW&#13;
 gBRksFKjP3K/nztsjSoYITOM9jR29ReIL3v0E8RbAFwA2RGq6Dxd0ixfbucMesy5Gnr8tfYy6rW+&#13;
 qSQqd3ah4+PSzBNVwIB4ytpdrG3SlhCI2i2Th8ek8Sjsaquh9qPAerWNd2+84HWOOGj1Xe1qc6vg&#13;
-qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_36ee23c9-9ed4-495a-8fcc-5e45bef5d67f" Target="#_1aed79b8-24b1-488e-be5e-737b4fc6ef40"><Timestamp>2024-04-24 10:29:21</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
+qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_fe138a8f-231a-4821-9f79-2a75d984991e" Target="#_8070ef34-2f63-4aaa-ae77-c133ce65fced"><Timestamp>2024-04-24 10:32:38</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>

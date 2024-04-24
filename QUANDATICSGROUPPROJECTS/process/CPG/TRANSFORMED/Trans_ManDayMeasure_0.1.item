@@ -1109,7 +1109,6 @@
       <column comment="" defaultValue="((0))" key="false" length="24" name="ProjectMonths" nullable="true" originalLength="24" pattern="" precision="2" sourceType="" type="id_Double" usefulColumn="true"/>
       <column comment="" defaultValue="((0))" key="false" length="24" name="AverageManDayAssignedPerMonthForProject" nullable="true" originalLength="24" pattern="" precision="2" sourceType="" type="id_Double" usefulColumn="true"/>
       <column comment="" defaultValue="((0))" key="false" length="24" name="TimeLoggableMandayPerMonth" nullable="true" originalLength="24" pattern="" precision="2" sourceType="" type="id_Double" usefulColumn="true"/>
-      <column comment="" defaultValue="" key="false" length="7" name="TimeLogHour" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="FLOAT" type="id_Double" usefulColumn="true"/>
     </metadata>
     <nodeData xsi:type="TalendMapper:MapperData">
       <uiProperties shellMaximized="true"/>
@@ -1127,7 +1126,6 @@
         <mapperTableEntries expression="out1.ProjectMonths " name="ProjectMonths" nullable="true" type="id_Double"/>
         <mapperTableEntries expression="out1.AverageManDayAssignedPerMonthForProject " name="AverageManDayAssignedPerMonthForProject" nullable="true" type="id_Double"/>
         <mapperTableEntries expression="out1.TimeLoggableMandayPerMonth " name="TimeLoggableMandayPerMonth" nullable="true" type="id_Double"/>
-        <mapperTableEntries expression="row3.hour " name="TimeLogHour" nullable="true" type="id_Double"/>
       </outputTables>
       <inputTables lookupMode="LOAD_ONCE" matchingMode="UNIQUE_MATCH" name="out1" sizeState="INTERMEDIATE">
         <mapperTableEntries name="StaffID" nullable="true" type="id_String"/>
@@ -1145,10 +1143,10 @@
         <mapperTableEntries expression="out1.StaffID " name="eePersoNo" nullable="true" type="id_String"/>
         <mapperTableEntries expression="" name="eeName" nullable="true" type="id_String"/>
         <mapperTableEntries name="companyCode" nullable="true" type="id_String"/>
-        <mapperTableEntries name="projectID" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="" name="projectID" nullable="true" type="id_String"/>
         <mapperTableEntries expression="out1.ProjectDivisionObjectNo " name="masterProjectDivisionObjectNo" nullable="true" operator="=" type="id_String"/>
-        <mapperTableEntries expression="out1.ProjectMonth " name="timeLogMonth" nullable="true" operator="=" type="id_Integer"/>
-        <mapperTableEntries expression="out1.ProjectYear " name="timeLogYear" nullable="true" type="id_Integer"/>
+        <mapperTableEntries expression="" name="timeLogMonth" nullable="true" type="id_Integer"/>
+        <mapperTableEntries expression="" name="timeLogYear" nullable="true" type="id_Integer"/>
         <mapperTableEntries expression="" name="hour" nullable="true" type="id_Double"/>
       </inputTables>
     </nodeData>
@@ -1223,7 +1221,6 @@
       <column comment="" defaultValue="((0))" key="false" length="24" name="ProjectMonths" nullable="true" originalLength="24" pattern="" precision="2" sourceType="" type="id_Double" usefulColumn="true"/>
       <column comment="" defaultValue="((0))" key="false" length="24" name="AverageManDayAssignedPerMonthForProject" nullable="true" originalLength="24" pattern="" precision="2" sourceType="" type="id_Double" usefulColumn="true"/>
       <column comment="" defaultValue="((0))" key="false" length="24" name="TimeLoggableMandayPerMonth" nullable="true" originalLength="24" pattern="" precision="2" sourceType="" type="id_Double" usefulColumn="true"/>
-      <column comment="" defaultValue="" key="false" length="7" name="TimeLogHour" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="FLOAT" type="id_Double" usefulColumn="true"/>
     </metadata>
   </node>
   <node componentName="tMSSqlInput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="64" posY="352">
@@ -1630,13 +1627,13 @@
     <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="92;131;150"/>
     <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
   </subjob>
-<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_04a927eb-ca5c-414c-93be-38cd315b315c"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>eu6pSkER+GjCiwJ+wJYi8udMlGM1cGKg6mBY4wSobQLINPcPJwN/6eqGd2HicpY9HmmeQ+6p+RP2&#13;
-MteQrmTHag==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_38a5d5d4-047a-41f9-8c17-b3d657193cc0"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>EcbJsh8x7OcKUOmIwtxupABdDXH2zDNcxh4t/pB3mMpyr0w6r1GdFfc7WAqL3ruYPZFkDFkPEiTR&#13;
-NzQ7zAg2gA==</DigestValue></Reference></SignedInfo><SignatureValue>k/fDaLGiXhJkgxP6mRIYYw01T6zeq/2Av0gj5fabbwFmrnKkQm7xKrXP+B4gF2Kf2MwJgbrXaKOd&#13;
-KJmGwU+3456pKJE/0zvUGQWeWL6uN+NUC/azcPJVQSv0wRHYHKQgXTfHAJ5Q/dV2TSdnu6cnkpjY&#13;
-r91QKjqIZxIhywLinoQBZyphzHIAK3kKi4t3V5T33es6htwVgLgkr57HnxKuxfR2w+4rxFeSQ5a6&#13;
-9EEX7D+bO+n9bAkUsy/Xo6df93ONQsEZXXZuqy4zKzV0zAipCAtQsRYGMiQ/NAYRajJmJT0WsQ0o&#13;
-F6qg5eDzev9cBz6GwUq8eL7WAGMYP5a9bvUZDw==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w&#13;
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_42d4f65f-8825-41e7-9763-2156e2e444ff"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>U/qrGlZ4fp4NY2rTBRX2ix3YHeTiU0OhbSzgB32ZkHVwivyjE0RrvUr2jfFUy3gXAVsE4HSAc/9U&#13;
+x9CkZgK+0w==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_6ae6b30f-ca85-43b4-b91a-e921f31bee60"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>5PxaNhSLqG2Up+K4CO0A1ogBU0Q2Brc0IihjZCyZ9nOKpsZ+pctPgDBBzqL5vB4TQ4+UWSNhqe2i&#13;
+93dRuzyqyA==</DigestValue></Reference></SignedInfo><SignatureValue>NqQsri5Y76UIHWzFGlT2m8z1pzDvvLMokN2zIP17H5IqBtAhx/O9EUW4L3PU/nUch8RtXqRFNoGh&#13;
+4W6LKdPC6Xdu2eMfAEJ+uLlgifINmd/fnN4gVIFczHfkV0gm2eGyX0w9Po8WrsRQCpYriVKE/ERR&#13;
+HC2aXEprPeww44icGiki1U+VSjxy+gz6ff+XkRXxIqRRzSj5fyXcvYe0Q3OVh+oVBjW8emcj9KVe&#13;
+snMDWUotF7s36zQEXDMwNCmn8DoYKd8nmAK+iF+pO0TFaWcd/sz/JD7Cr85HtVADAfgTpX8CfSei&#13;
+PbnC2e7gnpQDG1Nn6FLn0/d3HHDxsfgw7JTTHg==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w&#13;
 DAYDVQQIEwVQYXJpczEOMAwGA1UEBxMFUGFyaXMxFDASBgNVBAoTC1RhbGVuZCBJbmMuMQwwCgYD&#13;
 VQQLDANSJkQxFjAUBgNVBAMMDVRhbGVuZCBSJkQgQ0ExIjAgBgkqhkiG9w0BCQEWE3NlY3VyaXR5&#13;
 QHRhbGVuZC5jb20wHhcNMTkwNjAzMDgxODIwWhcNMjkwNjAzMDAwMDAwWjB7MSgwJgYDVQQDEx9U&#13;
@@ -1658,4 +1655,4 @@ hakvpzhOyLo91h8YAQrEZJdNuKA8IYmBrFZQZDCz0uywKSyFfzPyJhvxylCLG/iDPPfE0VWcrMJ/&#13
 WQJly/2XPg/NBCTF3pSKS0kCiA7PeaI3cWkMYYA3PMwYDvzqs1opBRglG7ikj0bQxSm3lcjMuuvW&#13;
 gBRksFKjP3K/nztsjSoYITOM9jR29ReIL3v0E8RbAFwA2RGq6Dxd0ixfbucMesy5Gnr8tfYy6rW+&#13;
 qSQqd3ah4+PSzBNVwIB4ytpdrG3SlhCI2i2Th8ek8Sjsaquh9qPAerWNd2+84HWOOGj1Xe1qc6vg&#13;
-qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_38a5d5d4-047a-41f9-8c17-b3d657193cc0" Target="#_04a927eb-ca5c-414c-93be-38cd315b315c"><Timestamp>2024-04-24 10:18:27</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
+qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_6ae6b30f-ca85-43b4-b91a-e921f31bee60" Target="#_42d4f65f-8825-41e7-9763-2156e2e444ff"><Timestamp>2024-04-24 10:23:01</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>

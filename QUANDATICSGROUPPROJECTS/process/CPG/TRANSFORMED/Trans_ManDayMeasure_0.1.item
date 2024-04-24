@@ -1258,28 +1258,70 @@
       </inputTables>
     </nodeData>
   </node>
-  <node componentName="tAggregateRow" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="384" posY="352">
+  <node componentName="tFileOutputDelimited" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="416" posY="352">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tFileOutputDelimited_2"/>
+    <elementParameter field="CHECK" name="USESTREAM" value="false"/>
+    <elementParameter field="TEXT" name="STREAMNAME" show="false" value="outputStream"/>
+    <elementParameter field="FILE" name="FILENAME" value="&quot;/Users/minganntew/Downloads/abc.csv&quot;"/>
+    <elementParameter field="TEXT" name="ROWSEPARATOR" show="false" value="&quot;\n&quot;"/>
+    <elementParameter field="CHECK" name="OS_LINE_SEPARATOR_AS_ROW_SEPARATOR" value="true"/>
+    <elementParameter field="OPENED_LIST" name="CSVROWSEPARATOR" value="&quot;\n&quot;"/>
+    <elementParameter field="TEXT" name="FIELDSEPARATOR" value="&quot;,&quot;"/>
+    <elementParameter field="CHECK" name="APPEND" value="false"/>
+    <elementParameter field="CHECK" name="INCLUDEHEADER" value="true"/>
+    <elementParameter field="CHECK" name="COMPRESS" value="false"/>
+    <elementParameter field="CHECK" name="ADVANCED_SEPARATOR" value="false"/>
+    <elementParameter field="TEXT" name="THOUSANDS_SEPARATOR" show="false" value="&quot;,&quot;"/>
+    <elementParameter field="TEXT" name="DECIMAL_SEPARATOR" show="false" value="&quot;.&quot;"/>
+    <elementParameter field="CHECK" name="CSV_OPTION" value="true"/>
+    <elementParameter field="TEXT" name="ESCAPE_CHAR" value="&quot;&quot;&quot;"/>
+    <elementParameter field="TEXT" name="TEXT_ENCLOSURE" value="&quot;&quot;&quot;"/>
+    <elementParameter field="CHECK" name="CREATE" value="true"/>
+    <elementParameter field="CHECK" name="SPLIT" value="false"/>
+    <elementParameter field="TEXT" name="SPLIT_EVERY" show="false" value="1000"/>
+    <elementParameter field="CHECK" name="FLUSHONROW" value="false"/>
+    <elementParameter field="TEXT" name="FLUSHONROW_NUM" show="false" value="1"/>
+    <elementParameter field="CHECK" name="ROW_MODE" value="false"/>
+    <elementParameter field="ENCODING_TYPE" name="ENCODING" value="&quot;ISO-8859-15&quot;"/>
+    <elementParameter field="TECHNICAL" name="ENCODING:ENCODING_TYPE" value="ISO-8859-15"/>
+    <elementParameter field="CHECK" name="DELETE_EMPTYFILE" value="true"/>
+    <elementParameter field="CHECK" name="FILE_EXIST_EXCEPTION" value="false"/>
+    <elementParameter field="TEXT" name="SCHEMA_OPT_NUM" show="false" value="90"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <metadata connector="FLOW" name="tFileOutputDelimited_2">
+      <column comment="" key="false" length="50" name="eePersoNo" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="500" name="eeName" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="NVARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="4" name="companyCode" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="NCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="500" name="projectID" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="100" name="masterProjectDivisionObjectNo" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="NVARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="8" name="timeLogMonth" nullable="true" originalLength="8" pattern="" precision="0" sourceType="" type="id_Integer" usefulColumn="true"/>
+      <column comment="" key="false" length="8" name="timeLogYear" nullable="true" originalLength="8" pattern="" precision="0" sourceType="" type="id_Integer" usefulColumn="true"/>
+      <column comment="" defaultValue="" key="false" length="7" name="hour" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="FLOAT" type="id_Double" usefulColumn="true"/>
+    </metadata>
+  </node>
+  <node componentName="tAggregateRow" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="640" posY="320">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tAggregateRow_2"/>
+    <elementParameter field="CHECK" name="ACTIVATE" value="false"/>
     <elementParameter field="TABLE" name="GROUPBYS">
       <elementValue elementRef="OUTPUT_COLUMN" value="eePersoNo"/>
-      <elementValue elementRef="INPUT_COLUMN" value="eePersoNo"/>
+      <elementValue elementRef="INPUT_COLUMN" value=""/>
       <elementValue elementRef="OUTPUT_COLUMN" value="eeName"/>
-      <elementValue elementRef="INPUT_COLUMN" value="eeName"/>
+      <elementValue elementRef="INPUT_COLUMN" value=""/>
       <elementValue elementRef="OUTPUT_COLUMN" value="companyCode"/>
-      <elementValue elementRef="INPUT_COLUMN" value="companyCode"/>
+      <elementValue elementRef="INPUT_COLUMN" value=""/>
       <elementValue elementRef="OUTPUT_COLUMN" value="projectID"/>
-      <elementValue elementRef="INPUT_COLUMN" value="projectID"/>
+      <elementValue elementRef="INPUT_COLUMN" value=""/>
       <elementValue elementRef="OUTPUT_COLUMN" value="masterProjectDivisionObjectNo"/>
-      <elementValue elementRef="INPUT_COLUMN" value="masterProjectDivisionObjectNo"/>
+      <elementValue elementRef="INPUT_COLUMN" value=""/>
       <elementValue elementRef="OUTPUT_COLUMN" value="timeLogMonth"/>
-      <elementValue elementRef="INPUT_COLUMN" value="timeLogMonth"/>
+      <elementValue elementRef="INPUT_COLUMN" value=""/>
       <elementValue elementRef="OUTPUT_COLUMN" value="timeLogYear"/>
-      <elementValue elementRef="INPUT_COLUMN" value="timeLogYear"/>
+      <elementValue elementRef="INPUT_COLUMN" value=""/>
     </elementParameter>
     <elementParameter field="TABLE" name="OPERATIONS">
       <elementValue elementRef="OUTPUT_COLUMN" value="hour"/>
       <elementValue elementRef="FUNCTION" value="sum"/>
-      <elementValue elementRef="INPUT_COLUMN" value="hour"/>
+      <elementValue elementRef="INPUT_COLUMN" value=""/>
       <elementValue elementRef="IGNORE_NULL" value="false"/>
     </elementParameter>
     <elementParameter field="TEXT" name="LIST_DELIMITER" value="&quot;,&quot;"/>
@@ -1298,7 +1340,7 @@
       <column comment="" defaultValue="" key="false" length="7" name="hour" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="FLOAT" type="id_Double" usefulColumn="true"/>
     </metadata>
   </node>
-  <node componentName="tLogRow" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="576" posY="352">
+  <node componentName="tLogRow" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="832" posY="320">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tLogRow_1"/>
     <elementParameter field="RADIO" name="BASIC_MODE" value="false"/>
     <elementParameter field="RADIO" name="TABLE_PRINT" value="true"/>
@@ -1494,12 +1536,13 @@
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="timelog"/>
   </connection>
-  <connection connectorName="FLOW" label="out2" lineStyle="0" metaname="out2" offsetLabelX="0" offsetLabelY="0" source="tMap_6" target="tAggregateRow_2">
+  <connection connectorName="FLOW" label="out2" lineStyle="0" metaname="out2" offsetLabelX="0" offsetLabelY="0" source="tMap_6" target="tFileOutputDelimited_2">
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="out2"/>
   </connection>
   <connection connectorName="FLOW" label="row3" lineStyle="0" metaname="tAggregateRow_2" offsetLabelX="0" offsetLabelY="0" source="tAggregateRow_2" target="tLogRow_1">
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
+    <elementParameter field="CHECK" name="ACTIVATE" show="false" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="row3"/>
   </connection>
   <subjob>
@@ -1563,13 +1606,23 @@
     <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="92;131;150"/>
     <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
   </subjob>
-<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_05de04b7-3645-4ef2-9efe-2733f36f56db"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>QfAHrAtAHHk9JEY2E8kNyq4Ve533/qI19OpM/Ju8KyeX/GGRpMZ+LUXdXQefIClCw8aXwChaj66X&#13;
-1FbyD9WPbw==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_82187ef1-5af0-4ab0-86db-0c49efdd1bfa"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>FxWl5UhIsxlaom7/CGjGzBhqGUqlDQmOEcdHQ7lKBrLUkjpvGQRuTBE6FQ2C+rGYw0nMgCwVwsc2&#13;
-BRMo5YHMzQ==</DigestValue></Reference></SignedInfo><SignatureValue>CTt41b0jOL/1mGrDOuNw3JyFDXcPbNg88ppHJX1OGdcZ/4tdWnZl4Cep27yHWjHC748Is9FDkRGk&#13;
-NN+dMoRRqFqu1wwZ+SqIQQwot6j2rba8ujw2pujtjW2wpcnrrDTA6CFilEfNxT227cBaMM54bTSu&#13;
-jJ94JbBDeVtBgFQrrk9kIvK+AKAiXojrlll+KuQHdlanG7pGz1g+Ndcp9LEi3T27vud2V+hKvEI9&#13;
-M92GB09uF9wq3ihoGn0pU633813Kz96COYhed95CWzLIrLv4PHByYivTYjcttABue5XkdpMZ6+Q7&#13;
-k0yzODGcXlTNBxOxYyBHpaeZd+ge1wrTAipcpw==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w&#13;
+  <subjob>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tAggregateRow_2"/>
+    <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="92;131;150"/>
+    <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
+  </subjob>
+  <subjob>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tLogRow_1"/>
+    <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="92;131;150"/>
+    <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
+  </subjob>
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_8f65cbde-42ea-47f9-a618-9474aaffd6ec"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>Yk3RK+kmK28XFgS5JOh0zUIEVUnPaX8BZRKtIUBhuAZHlzFK7zrYdfrM1rmug93zITU5/W5jneYo&#13;
+sMKyNEGS1g==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_d9a6038c-730d-439b-9790-a2253dac4592"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>s8YbDeaRN4mC/3aalUxDwcwJOjRkAm5hHxpIJt9aa30VZcUCLqWsXSU7//G/hoPcAA2XA+B/QpBs&#13;
+AduQBleIpg==</DigestValue></Reference></SignedInfo><SignatureValue>oUSbKwicWI+hB0/XO+7tiI9921uBjL+KYE0LKnew/cnGB9VvM6R4YAWEPgaBvrXzbl4aDZNjQPeT&#13;
+AkdZCldI3nG9s3MUWIby/Wx3YwqsvZ+YXnj3FhYV7K4SBts58ALwWA/PEeWkoIWYSLvi+57SVb+o&#13;
++4+jXBiooGfsRTfZNOiekcq06/x3vdpb/R/CL38wqCRZ+R2Zo0z+8uqZYT7T8UQTrLFOGaHMJsYe&#13;
+Je2nHjo5j01aKNebjn7Z+rnD+eQyEqAh74BGI4eC/MbUD5qIsgV9uOG1QWZk/Xeh1eDEicyKLWOO&#13;
++f2Vp1GZXXhmne5tZaNcAoPTcv55BpMbeo8SUQ==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w&#13;
 DAYDVQQIEwVQYXJpczEOMAwGA1UEBxMFUGFyaXMxFDASBgNVBAoTC1RhbGVuZCBJbmMuMQwwCgYD&#13;
 VQQLDANSJkQxFjAUBgNVBAMMDVRhbGVuZCBSJkQgQ0ExIjAgBgkqhkiG9w0BCQEWE3NlY3VyaXR5&#13;
 QHRhbGVuZC5jb20wHhcNMTkwNjAzMDgxODIwWhcNMjkwNjAzMDAwMDAwWjB7MSgwJgYDVQQDEx9U&#13;
@@ -1591,4 +1644,4 @@ hakvpzhOyLo91h8YAQrEZJdNuKA8IYmBrFZQZDCz0uywKSyFfzPyJhvxylCLG/iDPPfE0VWcrMJ/&#13
 WQJly/2XPg/NBCTF3pSKS0kCiA7PeaI3cWkMYYA3PMwYDvzqs1opBRglG7ikj0bQxSm3lcjMuuvW&#13;
 gBRksFKjP3K/nztsjSoYITOM9jR29ReIL3v0E8RbAFwA2RGq6Dxd0ixfbucMesy5Gnr8tfYy6rW+&#13;
 qSQqd3ah4+PSzBNVwIB4ytpdrG3SlhCI2i2Th8ek8Sjsaquh9qPAerWNd2+84HWOOGj1Xe1qc6vg&#13;
-qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_82187ef1-5af0-4ab0-86db-0c49efdd1bfa" Target="#_05de04b7-3645-4ef2-9efe-2733f36f56db"><Timestamp>2024-04-24 10:05:18</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
+qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_d9a6038c-730d-439b-9790-a2253dac4592" Target="#_8f65cbde-42ea-47f9-a618-9474aaffd6ec"><Timestamp>2024-04-24 10:07:20</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>

@@ -1311,12 +1311,9 @@
       <column comment="" defaultValue="((0))" key="false" length="18" name="TotalWorkingHourConsideredLeave" nullable="true" originalLength="18" pattern="" precision="2" sourceType="" type="id_Double" usefulColumn="true"/>
       <column comment="" defaultValue="((0))" key="false" length="7" name="TimeLogHour" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="FLOAT" type="id_Double" usefulColumn="true"/>
       <column comment="" defaultValue="((0))" key="false" length="18" name="TotalManDayLogPerMonthForProject" nullable="true" originalLength="18" pattern="" precision="2" sourceType="" type="id_Double" usefulColumn="true"/>
-      <column comment="" defaultValue="((0))" key="false" length="18" name="MandaysLeft" nullable="true" originalLength="18" pattern="" precision="2" sourceType="" type="id_Double" usefulColumn="true"/>
-      <column comment="" defaultValue="((0))" key="false" length="18" name="MonthsLeft" nullable="true" originalLength="18" pattern="" precision="2" sourceType="" type="id_Double" usefulColumn="true"/>
-      <column comment="" defaultValue="((0))" key="false" length="18" name="AverageMandaysBasedOnMonthsLeft" nullable="true" originalLength="18" pattern="" precision="2" sourceType="" type="id_Double" usefulColumn="true"/>
     </metadata>
     <nodeData xsi:type="TalendMapper:MapperData">
-      <uiProperties/>
+      <uiProperties shellMaximized="true"/>
       <varTables name="Var" sizeState="INTERMEDIATE">
         <mapperTableEntries expression="process4.Hour == 0 || toComputeH.workingHourConsideredLeave == null ? 0.0 : (process4.Hour / toComputeH.workingHourConsideredLeave&#10;) * Double.valueOf(process4.WorkingDay) " name="var1" type="id_Double"/>
       </varTables>
@@ -1337,9 +1334,6 @@
         <mapperTableEntries expression="toComputeH.workingHourConsideredLeave == null ? 0.0 : toComputeH.workingHourConsideredLeave " name="TotalWorkingHourConsideredLeave" nullable="true" type="id_Double"/>
         <mapperTableEntries expression="process4.Hour " name="TimeLogHour" nullable="true" type="id_Double"/>
         <mapperTableEntries expression="Double.valueOf(Mathematical.FFIX(Var.var1,2)) " name="TotalManDayLogPerMonthForProject" nullable="true" type="id_Double"/>
-        <mapperTableEntries expression="process4.ManDayAssignedForProject " name="MandaysLeft" nullable="true" type="id_Double"/>
-        <mapperTableEntries expression="process4.ProjectMonths " name="MonthsLeft" nullable="true" type="id_Double"/>
-        <mapperTableEntries expression="process4.AverageManDayAssignedPerMonthForProject " name="AverageMandaysBasedOnMonthsLeft" nullable="true" type="id_Double"/>
       </outputTables>
       <inputTables lookupMode="LOAD_ONCE" matchingMode="UNIQUE_MATCH" name="process4" sizeState="INTERMEDIATE">
         <mapperTableEntries name="StaffID" nullable="true" type="id_String"/>
@@ -1428,9 +1422,6 @@
       <column comment="" defaultValue="((0))" key="false" length="18" name="TotalWorkingHourConsideredLeave" nullable="true" originalLength="18" pattern="" precision="2" sourceType="" type="id_Double" usefulColumn="true"/>
       <column comment="" defaultValue="((0))" key="false" length="7" name="TimeLogHour" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="FLOAT" type="id_Double" usefulColumn="true"/>
       <column comment="" defaultValue="((0))" key="false" length="18" name="TotalManDayLogPerMonthForProject" nullable="true" originalLength="18" pattern="" precision="2" sourceType="" type="id_Double" usefulColumn="true"/>
-      <column comment="" defaultValue="((0))" key="false" length="18" name="MandaysLeft" nullable="true" originalLength="18" pattern="" precision="2" sourceType="" type="id_Double" usefulColumn="true"/>
-      <column comment="" defaultValue="((0))" key="false" length="18" name="MonthsLeft" nullable="true" originalLength="18" pattern="" precision="2" sourceType="" type="id_Double" usefulColumn="true"/>
-      <column comment="" defaultValue="((0))" key="false" length="18" name="AverageMandaysBasedOnMonthsLeft" nullable="true" originalLength="18" pattern="" precision="2" sourceType="" type="id_Double" usefulColumn="true"/>
     </metadata>
   </node>
   <node componentName="tMSSqlInput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="64" posY="352">
@@ -2126,9 +2117,6 @@
       <column comment="" defaultValue="((0))" key="false" length="18" name="TotalWorkingHourConsideredLeave" nullable="true" originalLength="18" pattern="" precision="2" sourceType="" type="id_Double" usefulColumn="true"/>
       <column comment="" defaultValue="((0))" key="false" length="7" name="TimeLogHour" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="FLOAT" type="id_Double" usefulColumn="true"/>
       <column comment="" defaultValue="((0))" key="false" length="18" name="TotalManDayLogPerMonthForProject" nullable="true" originalLength="18" pattern="" precision="2" sourceType="" type="id_Double" usefulColumn="true"/>
-      <column comment="" defaultValue="((0))" key="false" length="18" name="MandaysLeft" nullable="true" originalLength="18" pattern="" precision="2" sourceType="" type="id_Double" usefulColumn="true"/>
-      <column comment="" defaultValue="((0))" key="false" length="18" name="MonthsLeft" nullable="true" originalLength="18" pattern="" precision="2" sourceType="" type="id_Double" usefulColumn="true"/>
-      <column comment="" defaultValue="((0))" key="false" length="18" name="AverageMandaysBasedOnMonthsLeft" nullable="true" originalLength="18" pattern="" precision="2" sourceType="" type="id_Double" usefulColumn="true"/>
     </metadata>
   </node>
   <node componentName="tMemorizeRows" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="224" posY="1216">
@@ -2167,12 +2155,6 @@
       <elementValue elementRef="MEMORIZE_IT" value="true"/>
       <elementValue elementRef="SCHEMA_COLUMN" value="TotalManDayLogPerMonthForProject"/>
       <elementValue elementRef="MEMORIZE_IT" value="true"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="MandaysLeft"/>
-      <elementValue elementRef="MEMORIZE_IT" value="true"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="MonthsLeft"/>
-      <elementValue elementRef="MEMORIZE_IT" value="true"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="AverageMandaysBasedOnMonthsLeft"/>
-      <elementValue elementRef="MEMORIZE_IT" value="true"/>
     </elementParameter>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="FLOW" name="tMemorizeRows_1">
@@ -2202,9 +2184,6 @@
       <column comment="" defaultValue="((0))" key="false" length="18" name="TotalWorkingHourConsideredLeave" nullable="true" originalLength="18" pattern="" precision="2" sourceType="" type="id_Double" usefulColumn="true"/>
       <column comment="" defaultValue="((0))" key="false" length="7" name="TimeLogHour" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="FLOAT" type="id_Double" usefulColumn="true"/>
       <column comment="" defaultValue="((0))" key="false" length="18" name="TotalManDayLogPerMonthForProject" nullable="true" originalLength="18" pattern="" precision="2" sourceType="" type="id_Double" usefulColumn="true"/>
-      <column comment="" defaultValue="((0))" key="false" length="18" name="MandaysLeft" nullable="true" originalLength="18" pattern="" precision="2" sourceType="" type="id_Double" usefulColumn="true"/>
-      <column comment="" defaultValue="((0))" key="false" length="18" name="MonthsLeft" nullable="true" originalLength="18" pattern="" precision="2" sourceType="" type="id_Double" usefulColumn="true"/>
-      <column comment="" defaultValue="((0))" key="false" length="18" name="AverageMandaysBasedOnMonthsLeft" nullable="true" originalLength="18" pattern="" precision="2" sourceType="" type="id_Double" usefulColumn="true"/>
     </metadata>
   </node>
   <node componentName="tMap" componentVersion="2.1" offsetLabelX="0" offsetLabelY="0" posX="384" posY="1216">
@@ -2293,9 +2272,6 @@
         <mapperTableEntries name="TotalWorkingHourConsideredLeave" nullable="true" type="id_Double"/>
         <mapperTableEntries name="TimeLogHour" nullable="true" type="id_Double"/>
         <mapperTableEntries name="TotalManDayLogPerMonthForProject" nullable="true" type="id_Double"/>
-        <mapperTableEntries name="MandaysLeft" nullable="true" type="id_Double"/>
-        <mapperTableEntries name="MonthsLeft" nullable="true" type="id_Double"/>
-        <mapperTableEntries name="AverageMandaysBasedOnMonthsLeft" nullable="true" type="id_Double"/>
       </inputTables>
     </nodeData>
   </node>
@@ -2773,13 +2749,13 @@
     <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="92;131;150"/>
     <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
   </subjob>
-<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_22f6c47e-9cf4-45c7-9785-7dc8932d2ad3"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>X/pVBK1i1uD++iDj9XMJbEJxoJk+sYRHRn6fdMfkwNGAUZipVLZLfna0TN28T/SRjBLHAtTWwkmw&#13;
-grQPwm4E/w==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_7790f26f-1bb1-44fb-a104-526c2c82ea5c"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>7HdvJDi5mfalOROET93Ir5E2YbVpkzqBbEvhmox88h5AhXFKhKimr75SH9wu97THL7ZvZH4KqtFb&#13;
-KyMcMW0gbw==</DigestValue></Reference></SignedInfo><SignatureValue>A3hndwQ4fFgqqmgUBkwb7cu8t/w3F9Nawrg1UFeNXB0qQRvSEbhlkg7WrcuiXJN1/peAxaIs9i+H&#13;
-2c4FmHKE1SD8EGzyBBBzkjXBQTIiekA0OebHqh5s+9hFGZJWy/IpmhmWYllH4EmhN1XOEIsJ4G0M&#13;
-kcL6MiAAch369h7KyoJUU7/TU4nDCzTX56dzp5z/Sj9/IMnHOiSZUR8uwGwXt45OQEn52DqQreh0&#13;
-Cxa9U4OvYbxjxNnltbI8ojpGjDs9SJk32uDJJM4w1bWmuMrPj9A5dtCnbGyq6Pwwc6Dxs9rI0/TL&#13;
-RIFnj6/K6At5A1DENzHus/df7NatMIg+D6bnPg==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w&#13;
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_27bb733b-a88b-48ad-9ed8-617b265ee448"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>p4PlWGHlqnC0JfwvtHogJ3xkIk44Dp/3m1rYjEzfJV45nY2lkPy+Rg7LmAMnp/0eADABsP0s7uJa&#13;
+f3xVVfCZ0w==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_89d87b13-1909-4e61-973f-28e2db5a4c17"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>Koq8Sl5IavClENt0E1ftZIvSGykKV5K/Hr+WmrXd784bAq+cSRMWhPtaZqsTzUSyJ2tNJ/pJihrY&#13;
+MYZH8dM+Ow==</DigestValue></Reference></SignedInfo><SignatureValue>eoBXRQuBcPbMkmmZN+LtUW2ixjDnLlX9C8UrkeaTCRpKrvMCRF8YxjC8blaNS+mF8GE9ptUKzZmx&#13;
+gF7dYQKuFqsqq8bsWawS9Tfgv5/bbh+imVdNm9ZatqlGxj/2FpGrlGxueUissIat0p5xFX3MfEJR&#13;
+97yZvKZygmXlD0Gt3ldhu9vuGAfGIpzUHZnFGUqu8SzdzIJ6eEzIgLvzYSC0zW3TpjD6hHfE9n53&#13;
+pLoXDEjX7AE0qYEf8PEpPGTP9DihlCqWdsKrzwaXBebSj2gFI6nCcDKMP0LABJrycl7eq3wqrr9K&#13;
+bIekaY0nYzq8cXwY7eBH9iaIqjpjiqWQIpjzHw==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w&#13;
 DAYDVQQIEwVQYXJpczEOMAwGA1UEBxMFUGFyaXMxFDASBgNVBAoTC1RhbGVuZCBJbmMuMQwwCgYD&#13;
 VQQLDANSJkQxFjAUBgNVBAMMDVRhbGVuZCBSJkQgQ0ExIjAgBgkqhkiG9w0BCQEWE3NlY3VyaXR5&#13;
 QHRhbGVuZC5jb20wHhcNMTkwNjAzMDgxODIwWhcNMjkwNjAzMDAwMDAwWjB7MSgwJgYDVQQDEx9U&#13;
@@ -2801,4 +2777,4 @@ hakvpzhOyLo91h8YAQrEZJdNuKA8IYmBrFZQZDCz0uywKSyFfzPyJhvxylCLG/iDPPfE0VWcrMJ/&#13
 WQJly/2XPg/NBCTF3pSKS0kCiA7PeaI3cWkMYYA3PMwYDvzqs1opBRglG7ikj0bQxSm3lcjMuuvW&#13;
 gBRksFKjP3K/nztsjSoYITOM9jR29ReIL3v0E8RbAFwA2RGq6Dxd0ixfbucMesy5Gnr8tfYy6rW+&#13;
 qSQqd3ah4+PSzBNVwIB4ytpdrG3SlhCI2i2Th8ek8Sjsaquh9qPAerWNd2+84HWOOGj1Xe1qc6vg&#13;
-qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_7790f26f-1bb1-44fb-a104-526c2c82ea5c" Target="#_22f6c47e-9cf4-45c7-9785-7dc8932d2ad3"><Timestamp>2024-04-25 06:19:50</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
+qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_89d87b13-1909-4e61-973f-28e2db5a4c17" Target="#_27bb733b-a88b-48ad-9ed8-617b265ee448"><Timestamp>2024-04-25 06:25:24</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>

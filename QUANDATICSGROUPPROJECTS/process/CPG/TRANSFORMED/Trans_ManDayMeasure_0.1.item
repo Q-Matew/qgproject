@@ -1879,17 +1879,21 @@
       <column comment="" key="false" length="18" name="workingHour" nullable="true" pattern="" precision="2" sourceType="FLOAT" type="id_Double" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
+      <column comment="" key="false" length="-1" name="workingHourConsideredLeave" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="10" name="isOnLeve" nullable="false" originalLength="10" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
     </metadata>
     <nodeData xsi:type="TalendMapper:MapperData">
       <uiProperties shellMaximized="true"/>
-      <varTables minimized="true" name="Var" sizeState="INTERMEDIATE"/>
+      <varTables name="Var" sizeState="INTERMEDIATE">
+        <mapperTableEntries expression="row6.date == null ? &quot;N&quot; : &quot;Y&quot;" name="isOnLeve" type="id_String"/>
+      </varTables>
       <outputTables name="out4" sizeState="INTERMEDIATE">
         <mapperTableEntries expression="row5.eePersoNo " name="eePersoNo" type="id_String"/>
         <mapperTableEntries expression="row5.eeName " name="eeName" nullable="true" type="id_String"/>
         <mapperTableEntries expression="row5.workingDate " name="workingDate" type="id_Date"/>
-        <mapperTableEntries expression="row5.workingHour " name="workingHour" nullable="true" type="id_Double"/>
-        <mapperTableEntries expression="row6.date == null ? &quot;N&quot; : &quot;Y&quot;" name="isOnLeve" type="id_String"/>
+        <mapperTableEntries expression="row5.workingHour" name="workingHour" nullable="true" type="id_Double"/>
+        <mapperTableEntries expression="Var.isOnLeve.equals(&quot;Y&quot;) ? 0.0 :  row5.workingHour " name="workingHourConsideredLeave" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="Var.isOnLeve " name="isOnLeve" type="id_String"/>
       </outputTables>
       <inputTables lookupMode="LOAD_ONCE" matchingMode="UNIQUE_MATCH" name="row5" sizeState="INTERMEDIATE">
         <mapperTableEntries name="eePersoNo" type="id_String"/>
@@ -1977,6 +1981,7 @@
       <column comment="" key="false" length="18" name="workingHour" nullable="true" pattern="" precision="2" sourceType="FLOAT" type="id_Double" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
+      <column comment="" key="false" length="-1" name="workingHourConsideredLeave" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="10" name="isOnLeve" nullable="false" originalLength="10" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
     </metadata>
   </node>
@@ -2237,6 +2242,11 @@
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="row5"/>
   </connection>
   <connection connectorName="FLOW" label="out4" lineStyle="0" metaname="out4" offsetLabelX="0" offsetLabelY="0" source="tMap_11" target="tFileOutputDelimited_2">
+    <elementParameter field="TABLE" name="TRACES_CONNECTION_FILTER" show="false">
+      <elementValue elementRef="TRACE_COLUMN" value="workingHourConsideredLeave"/>
+      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
+      <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
+    </elementParameter>
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="out4"/>
   </connection>
@@ -2315,13 +2325,13 @@
     <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="92;131;150"/>
     <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
   </subjob>
-<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_c429d652-3cc9-48a9-adce-1cff50ae29f2"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>Jl6Fl9hzs0wzc8ppj4PWRQqDY8f50Bn8ADt5qNTDOo2v+2+aFDc7PpirI9iB7pY7S1uHojroILeG&#13;
-IKI8riuizg==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_200a8822-3254-4791-8fe5-e58e72342965"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>J0DEydMEvKF1bNOEIijYU2MDQ7KaI3w1vJM6xqBnqmWzwDHT9mUeFuw/3BnN0A7eX2K8EclYt9FE&#13;
-DmSOycS5+Q==</DigestValue></Reference></SignedInfo><SignatureValue>DenPWi/DhM+Jh3XQB7CL9JhjYS1two8wqv2oJEFUVY5lWycvrb3rp7mj+q5pa5PsCn6NnYaUz/Q7&#13;
-fXX+K1m71H9hGWVeh7X2lkkA7bjnIcFbvZeZJRhbWKJ7hMgcZwbC+8P8ZoToLYMWPZFUJ+c0yhlN&#13;
-FGTxvkzSh+ywPGk/YZndOEC/lbWmow7wZpc5LZL0A3ISL7rjlUJjPx10Qe3nQPyiDHYLHU3vgIOe&#13;
-nlqr9IO+BhVIDczFGJZ8KciIgpqwtX5/vAxFuXdWimA+329bOkkVIodCyOACtxsAF2Cd4c2iQMKJ&#13;
-boOGHwGavFm63XJVd4fzsxB6kcVVb2G2wMiscA==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w&#13;
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_4fc442bb-536e-466d-a93a-999e468884cb"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>B2C7wz5tra/W/k8r03zlhbxTbfOKBy/oUYB9ZfLtCGmuWcO0IDlFbKgjXohoPoNxDIGdNUOyE4HM&#13;
+rYndd3N+WA==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_ea2b3eb8-f0a2-4b50-a827-86a8a7038378"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>KdEVysUEa8OTq7Ie/YoP8kMFFxRIGa0Jg4TUpLJz7q5wU8dshlUQHM/pGJSpUJkAMuwXA25l5sRG&#13;
+nEQgOyyPag==</DigestValue></Reference></SignedInfo><SignatureValue>PmyJEj+OjzoDMehpVx60n6i7wOHezpoSgxW75f/5zYKwx7It2pkSa5S17+wogOJYPgPo73yiTq5D&#13;
+dC0SSVGQOfavLECKC627IWvHxmIOufDENBjW3NFn3NGXQpyg6GGbatqGP1eNVqdEOv7kP+sRNZ5q&#13;
+89b2PHizlkzpHTwwKfpfV6adaSuiXtUabo+73gcr+QEhBW3XKKP+8OSfCvsua5klPbDTVP67+XEY&#13;
+WB8089fvZdj05imllb9ZIY45UR0bzIHlnJHTjkNDDZV7ICZUt+MwYXUcHrg+anBZYGc7vzsNDbbc&#13;
+V2/Qi/O5ohSp/TU/2NiVd40iBPL9B1AJ4FdyBA==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w&#13;
 DAYDVQQIEwVQYXJpczEOMAwGA1UEBxMFUGFyaXMxFDASBgNVBAoTC1RhbGVuZCBJbmMuMQwwCgYD&#13;
 VQQLDANSJkQxFjAUBgNVBAMMDVRhbGVuZCBSJkQgQ0ExIjAgBgkqhkiG9w0BCQEWE3NlY3VyaXR5&#13;
 QHRhbGVuZC5jb20wHhcNMTkwNjAzMDgxODIwWhcNMjkwNjAzMDAwMDAwWjB7MSgwJgYDVQQDEx9U&#13;
@@ -2343,4 +2353,4 @@ hakvpzhOyLo91h8YAQrEZJdNuKA8IYmBrFZQZDCz0uywKSyFfzPyJhvxylCLG/iDPPfE0VWcrMJ/&#13
 WQJly/2XPg/NBCTF3pSKS0kCiA7PeaI3cWkMYYA3PMwYDvzqs1opBRglG7ikj0bQxSm3lcjMuuvW&#13;
 gBRksFKjP3K/nztsjSoYITOM9jR29ReIL3v0E8RbAFwA2RGq6Dxd0ixfbucMesy5Gnr8tfYy6rW+&#13;
 qSQqd3ah4+PSzBNVwIB4ytpdrG3SlhCI2i2Th8ek8Sjsaquh9qPAerWNd2+84HWOOGj1Xe1qc6vg&#13;
-qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_200a8822-3254-4791-8fe5-e58e72342965" Target="#_c429d652-3cc9-48a9-adce-1cff50ae29f2"><Timestamp>2024-04-25 01:48:56</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
+qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_ea2b3eb8-f0a2-4b50-a827-86a8a7038378" Target="#_4fc442bb-536e-466d-a93a-999e468884cb"><Timestamp>2024-04-25 01:57:02</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>

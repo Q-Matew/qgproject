@@ -2199,6 +2199,7 @@
       <column comment="" defaultValue="((0))" key="false" length="18" name="MandaysLeft" nullable="true" originalLength="18" pattern="" precision="2" sourceType="" type="id_Double" usefulColumn="true"/>
       <column comment="" defaultValue="((0))" key="false" length="18" name="MonthsLeft" nullable="true" originalLength="18" pattern="" precision="2" sourceType="" type="id_Double" usefulColumn="true"/>
       <column comment="" defaultValue="((0))" key="false" length="18" name="AverageMandaysBasedOnMonthsLeft" nullable="true" originalLength="18" pattern="" precision="2" sourceType="" type="id_Double" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="var1" nullable="false" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
     </metadata>
     <nodeData xsi:type="TalendMapper:MapperData">
       <uiProperties shellMaximized="true"/>
@@ -2206,6 +2207,7 @@
         <mapperTableEntries expression="Numeric.sequence(&quot;s1&quot;,1,1) " name="Index" type="id_Integer"/>
         <mapperTableEntries expression="Var.Index == 1 ? 0 : Var.CurrRow " name="PrevRow" nullable="true" type="id_Double"/>
         <mapperTableEntries expression="Var.Index == 1 ? row1.ManDayAssignedForProject - row1.TotalManDayLogPerMonthForProject : Var.PrevRow - row1.TotalManDayLogPerMonthForProject " name="CurrRow" nullable="true" type="id_Double"/>
+        <mapperTableEntries expression="String.valueOf(TalendDate.diffDate(TalendDate.parseDate(&quot;yyyyMM&quot;,String.valueOf(row1.ProjectEndDate),TalendDate.parseDate(&quot;yyyyMM&quot;,((String)globalMap.get(&quot;YearMonth&quot;))),&quot;MM&quot;)) " name="var1" type="id_String"/>
       </varTables>
       <outputTables name="out1" sizeState="INTERMEDIATE">
         <mapperTableEntries expression="row1.StaffID " name="StaffID" nullable="true" type="id_String"/>
@@ -2228,6 +2230,7 @@
         <mapperTableEntries expression="Var.CurrRow " name="MandaysLeft" nullable="true" type="id_Double"/>
         <mapperTableEntries expression="Double.valueOf(row1.ProjectMonths) -  Var.Index + 1 " name="MonthsLeft" nullable="true" type="id_Double"/>
         <mapperTableEntries expression="" name="AverageMandaysBasedOnMonthsLeft" nullable="true" type="id_Double"/>
+        <mapperTableEntries expression="Var.var1 " name="var1" type="id_String"/>
       </outputTables>
       <inputTables lookupMode="LOAD_ONCE" matchingMode="UNIQUE_MATCH" name="row1" sizeState="INTERMEDIATE">
         <mapperTableEntries name="StaffID" nullable="true" type="id_String"/>
@@ -2304,6 +2307,8 @@
       <elementValue elementRef="LENGTH" value="10"/>
       <elementValue elementRef="SCHEMA_COLUMN" value="AverageMandaysBasedOnMonthsLeft"/>
       <elementValue elementRef="LENGTH" value="10"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="var1"/>
+      <elementValue elementRef="LENGTH" value="10"/>
     </elementParameter>
     <elementParameter field="CHECK" name="PRINT_CONTENT_WITH_LOG4J" value="true"/>
     <elementParameter field="TEXT" name="SCHEMA_OPT_NUM" show="false" value="100"/>
@@ -2339,11 +2344,12 @@
       <column comment="" defaultValue="((0))" key="false" length="18" name="MandaysLeft" nullable="true" originalLength="18" pattern="" precision="2" sourceType="" type="id_Double" usefulColumn="true"/>
       <column comment="" defaultValue="((0))" key="false" length="18" name="MonthsLeft" nullable="true" originalLength="18" pattern="" precision="2" sourceType="" type="id_Double" usefulColumn="true"/>
       <column comment="" defaultValue="((0))" key="false" length="18" name="AverageMandaysBasedOnMonthsLeft" nullable="true" originalLength="18" pattern="" precision="2" sourceType="" type="id_Double" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="var1" nullable="false" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
     </metadata>
   </node>
   <node componentName="tJava" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="64" posY="160">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tJava_2"/>
-    <elementParameter field="MEMO_JAVA" name="CODE" value="globalMap.put(&quot;InsertedRow&quot;, TalendDate.getDate(&quot;yyyy&quot;));&#10;globalMap.put(&quot;InsertedRow&quot;, TalendDate.getDate(&quot;MM&quot;));&#10;&#10;"/>
+    <elementParameter field="MEMO_JAVA" name="CODE" value="globalMap.put(&quot;YearMonth&quot;, TalendDate.getDate(&quot;yyyyMM&quot;));&#10;System.out.println(((String)globalMap.get(&quot;YearMonth&quot;)));"/>
     <elementParameter field="MEMO_IMPORT" name="IMPORT" value="//import java.util.List;"/>
     <elementParameter field="TEXT" name="LABEL" value="dateIndicator"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
@@ -2749,6 +2755,9 @@
       <elementValue elementRef="TRACE_COLUMN" value="ProjectEndDate"/>
       <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
       <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
+      <elementValue elementRef="TRACE_COLUMN" value="var1"/>
+      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
+      <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
     </elementParameter>
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="out1"/>
@@ -2838,13 +2847,13 @@
     <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="92;131;150"/>
     <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
   </subjob>
-<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_224a1ac8-f2e1-46a2-bc1c-47a63a360b16"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>pvIfJ/ofePViXbp1dgGECNlTzM2QSbTjp8fPXenvwWjRlVEKJ5gqlIvyd+kY11u6JVEK/BxgofWC&#13;
-zd5j89x+nQ==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_e2ae49ba-129d-4025-a9cd-a2d2d04add79"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>DazB06b0ypRL037c9TVGUrdvWMNWnf+Fzk+sIXYLqaMXXdqG6HpEGJDx+qVGq/C7suypXGV4qaJ5&#13;
-tKNoXD/zBg==</DigestValue></Reference></SignedInfo><SignatureValue>A4AbOHvM+01YmQzGZHqQHVZCy04TJltKI6IqNPeAYFc/wD98qa8wuq481Ih9P8ut/SPn0aHWg3VT&#13;
-f0SKWK1yFVDopHTIYiSqBusFHopDf0gYD9FQv6QTlJDvF6YoxjrpYtVCKVps5Kfq1TWnQIlD4xBm&#13;
-oJYosXhZ8NNkE0Vi7iC1aLqWmR8iYCTBl08VQcZZ7pgUl/kiIr5IjV45aHDEhlNsckQKVvIOwucm&#13;
-aPBCrp22VE/XOLrg8mqRMT5mCsRg89dgly5OO4fDVyrhs1QGwocJaHrzzd2gjylQruIEP0pYzNd9&#13;
-zm1jAfY6yvGuYcUxuAi87FzMSgstwTRsUSzV9g==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w&#13;
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_1c7e5b83-ae4d-488f-9972-d14b6dec3688"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>9JM9fMyJkKXMam6kliYqc138/SNx1wc+UG6+wqBX45eieY06D0Kzh+doxgU6fpQbkWjdc0VRKDho&#13;
+NDY/z8sxog==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_f149fbca-09e2-4b6e-8e2a-bdf27c430a69"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>t4dRlQiLNXO9g52RJQwFU0LnXOh7CT7dPCWFHmQxGvV+oG8nGN1WnHEZneUnaODQgLdSu2KiP7oP&#13;
+zESJUBYuNA==</DigestValue></Reference></SignedInfo><SignatureValue>TQQ/yKOeBOI9aL8hX0bn6MhB+oiZtfGxBAh3dIygz26rR9nntZv+72HBSrlWObMzyZ21Vz32SupZ&#13;
+OX+IElQpS5PIQGoWSY0mDfD54SPbY9J3Lg0Y5UDb7mypvuqCsG/bCDwYcItj0be9SR2NQb2Q7gMm&#13;
+y2gGPJ2TTXuABjVAiXucNQOTkguwWufb8BIUf3Zmkb2Hvx54NMJKZm9pbcniwXU57jdouenQtAru&#13;
+xha6TpRwjowuQeL3hXWkNYyjRFpuZnDUO0sRUHRatFDh0ua9rNf+AAPw1Hn99E1AoiNuf/4vcZw8&#13;
+lSHQOTuzLtPOVynoNMsexeTV7aGOznNAJhAYdw==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w&#13;
 DAYDVQQIEwVQYXJpczEOMAwGA1UEBxMFUGFyaXMxFDASBgNVBAoTC1RhbGVuZCBJbmMuMQwwCgYD&#13;
 VQQLDANSJkQxFjAUBgNVBAMMDVRhbGVuZCBSJkQgQ0ExIjAgBgkqhkiG9w0BCQEWE3NlY3VyaXR5&#13;
 QHRhbGVuZC5jb20wHhcNMTkwNjAzMDgxODIwWhcNMjkwNjAzMDAwMDAwWjB7MSgwJgYDVQQDEx9U&#13;
@@ -2866,4 +2875,4 @@ hakvpzhOyLo91h8YAQrEZJdNuKA8IYmBrFZQZDCz0uywKSyFfzPyJhvxylCLG/iDPPfE0VWcrMJ/&#13
 WQJly/2XPg/NBCTF3pSKS0kCiA7PeaI3cWkMYYA3PMwYDvzqs1opBRglG7ikj0bQxSm3lcjMuuvW&#13;
 gBRksFKjP3K/nztsjSoYITOM9jR29ReIL3v0E8RbAFwA2RGq6Dxd0ixfbucMesy5Gnr8tfYy6rW+&#13;
 qSQqd3ah4+PSzBNVwIB4ytpdrG3SlhCI2i2Th8ek8Sjsaquh9qPAerWNd2+84HWOOGj1Xe1qc6vg&#13;
-qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_e2ae49ba-129d-4025-a9cd-a2d2d04add79" Target="#_224a1ac8-f2e1-46a2-bc1c-47a63a360b16"><Timestamp>2024-04-25 09:18:53</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
+qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_f149fbca-09e2-4b6e-8e2a-bdf27c430a69" Target="#_1c7e5b83-ae4d-488f-9972-d14b6dec3688"><Timestamp>2024-04-25 09:28:56</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>

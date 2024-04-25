@@ -653,14 +653,6 @@
       <elementValue elementRef="FUNCTION" value="sum"/>
       <elementValue elementRef="INPUT_COLUMN" value="WorkingDay"/>
       <elementValue elementRef="IGNORE_NULL" value="false"/>
-      <elementValue elementRef="OUTPUT_COLUMN" value="ProjectEndYear"/>
-      <elementValue elementRef="FUNCTION" value="max"/>
-      <elementValue elementRef="INPUT_COLUMN" value="Year"/>
-      <elementValue elementRef="IGNORE_NULL" value="false"/>
-      <elementValue elementRef="OUTPUT_COLUMN" value="ProjectEndMonth"/>
-      <elementValue elementRef="FUNCTION" value="max"/>
-      <elementValue elementRef="INPUT_COLUMN" value="Month"/>
-      <elementValue elementRef="IGNORE_NULL" value="false"/>
     </elementParameter>
     <elementParameter field="TEXT" name="LIST_DELIMITER" value="&quot;,&quot;"/>
     <elementParameter field="CHECK" name="USE_FINANCIAL_PRECISION" value="true"/>
@@ -680,8 +672,6 @@
       <column comment="" defaultValue="" key="false" length="2" name="ProjectMonth" nullable="true" originalLength="2" pattern="" precision="0" sourceType="" type="id_Integer" usefulColumn="true"/>
       <column comment="" defaultValue="" key="false" length="4" name="ProjectYear" nullable="true" originalLength="4" pattern="" precision="0" sourceType="" type="id_Integer" usefulColumn="true"/>
       <column comment="" key="false" length="8" name="WorkingDay" nullable="true" originalLength="8" pattern="" precision="0" sourceType="" type="id_Integer" usefulColumn="true"/>
-      <column comment="" key="false" length="4" name="ProjectEndYear" nullable="true" originalLength="4" pattern="" precision="0" sourceType="" type="id_Integer" usefulColumn="true"/>
-      <column comment="" key="false" length="2" name="ProjectEndMonth" nullable="true" originalLength="2" pattern="" precision="0" sourceType="" type="id_Integer" usefulColumn="true"/>
     </metadata>
   </node>
   <node componentName="tSortRow" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="544" posY="928">
@@ -721,8 +711,6 @@
       <column comment="" defaultValue="" key="false" length="2" name="ProjectMonth" nullable="true" originalLength="2" pattern="" precision="0" sourceType="" type="id_Integer" usefulColumn="true"/>
       <column comment="" defaultValue="" key="false" length="4" name="ProjectYear" nullable="true" originalLength="4" pattern="" precision="0" sourceType="" type="id_Integer" usefulColumn="true"/>
       <column comment="" key="false" length="8" name="WorkingDay" nullable="true" originalLength="8" pattern="" precision="0" sourceType="" type="id_Integer" usefulColumn="true"/>
-      <column comment="" key="false" length="4" name="ProjectEndYear" nullable="true" originalLength="4" pattern="" precision="0" sourceType="" type="id_Integer" usefulColumn="true"/>
-      <column comment="" key="false" length="2" name="ProjectEndMonth" nullable="true" originalLength="2" pattern="" precision="0" sourceType="" type="id_Integer" usefulColumn="true"/>
     </metadata>
   </node>
   <node componentName="tHashOutput" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="736" posY="928">
@@ -750,8 +738,6 @@
       <column comment="" defaultValue="" key="false" length="2" name="ProjectMonth" nullable="true" originalLength="2" pattern="" precision="0" sourceType="" type="id_Integer" usefulColumn="true"/>
       <column comment="" defaultValue="" key="false" length="4" name="ProjectYear" nullable="true" originalLength="4" pattern="" precision="0" sourceType="" type="id_Integer" usefulColumn="true"/>
       <column comment="" key="false" length="8" name="WorkingDay" nullable="true" originalLength="8" pattern="" precision="0" sourceType="" type="id_Integer" usefulColumn="true"/>
-      <column comment="" key="false" length="4" name="ProjectEndYear" nullable="true" originalLength="4" pattern="" precision="0" sourceType="" type="id_Integer" usefulColumn="true"/>
-      <column comment="" key="false" length="2" name="ProjectEndMonth" nullable="true" originalLength="2" pattern="" precision="0" sourceType="" type="id_Integer" usefulColumn="true"/>
     </metadata>
   </node>
   <node componentName="tMSSqlInput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="64" posY="256">
@@ -984,8 +970,6 @@
       <column comment="" defaultValue="" key="false" length="2" name="ProjectMonth" nullable="true" originalLength="2" pattern="" precision="0" sourceType="" type="id_Integer" usefulColumn="true"/>
       <column comment="" defaultValue="" key="false" length="4" name="ProjectYear" nullable="true" originalLength="4" pattern="" precision="0" sourceType="" type="id_Integer" usefulColumn="true"/>
       <column comment="" key="false" length="8" name="WorkingDay" nullable="true" originalLength="8" pattern="" precision="0" sourceType="" type="id_Integer" usefulColumn="true"/>
-      <column comment="" key="false" length="4" name="ProjectEndYear" nullable="true" originalLength="4" pattern="" precision="0" sourceType="" type="id_Integer" usefulColumn="true"/>
-      <column comment="" key="false" length="2" name="ProjectEndMonth" nullable="true" originalLength="2" pattern="" precision="0" sourceType="" type="id_Integer" usefulColumn="true"/>
     </metadata>
   </node>
   <node componentName="tMap" componentVersion="2.1" offsetLabelX="0" offsetLabelY="0" posX="224" posY="1120">
@@ -1015,8 +999,6 @@
       <column comment="" defaultValue="" key="false" length="2" name="ProjectMonth" nullable="true" originalLength="2" pattern="" precision="0" sourceType="" type="id_Integer" usefulColumn="true"/>
       <column comment="" defaultValue="" key="false" length="4" name="ProjectYear" nullable="true" originalLength="4" pattern="" precision="0" sourceType="" type="id_Integer" usefulColumn="true"/>
       <column comment="" key="false" length="8" name="WorkingDay" nullable="true" originalLength="8" pattern="" precision="0" sourceType="" type="id_Integer" usefulColumn="true"/>
-      <column comment="" key="false" length="4" name="ProjectEndYear" nullable="true" originalLength="4" pattern="" precision="0" sourceType="" type="id_Integer" usefulColumn="true"/>
-      <column comment="" key="false" length="2" name="ProjectEndMonth" nullable="true" originalLength="2" pattern="" precision="0" sourceType="" type="id_Integer" usefulColumn="true"/>
       <column comment="" defaultValue="((0))" key="false" length="24" name="ManDayAssignedForProject" nullable="true" pattern="" precision="2" sourceType="FLOAT" type="id_Double" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
@@ -1036,8 +1018,6 @@
         <mapperTableEntries expression="process1.ProjectMonth " name="ProjectMonth" nullable="true" type="id_Integer"/>
         <mapperTableEntries expression="process1.ProjectYear " name="ProjectYear" nullable="true" type="id_Integer"/>
         <mapperTableEntries expression="process1.WorkingDay " name="WorkingDay" nullable="true" type="id_Integer"/>
-        <mapperTableEntries expression="process1.ProjectEndYear " name="ProjectEndYear" nullable="true" type="id_Integer"/>
-        <mapperTableEntries expression="process1.ProjectEndMonth " name="ProjectEndMonth" nullable="true" type="id_Integer"/>
         <mapperTableEntries expression="toGetManday.ManDayAssignedPerProject " name="ManDayAssignedForProject" nullable="true" type="id_Double"/>
         <mapperTableEntries expression="Var.var1 " name="ProjectMonths" nullable="true" type="id_Double"/>
         <mapperTableEntries expression="Double.valueOf(Mathematical.FFIX((toGetManday.ManDayAssignedPerProject / Var.var1), 2)) " name="AverageManDayAssignedPerMonthForProject" nullable="true" type="id_Double"/>
@@ -1050,8 +1030,6 @@
         <mapperTableEntries name="ProjectMonth" nullable="true" type="id_Integer"/>
         <mapperTableEntries name="ProjectYear" nullable="true" type="id_Integer"/>
         <mapperTableEntries name="WorkingDay" nullable="true" type="id_Integer"/>
-        <mapperTableEntries name="ProjectEndYear" nullable="true" type="id_Integer"/>
-        <mapperTableEntries name="ProjectEndMonth" nullable="true" type="id_Integer"/>
       </inputTables>
       <inputTables lookupMode="LOAD_ONCE" matchingMode="UNIQUE_MATCH" name="toGetManday" sizeState="INTERMEDIATE">
         <mapperTableEntries expression="process1.StaffID " name="StaffID" nullable="true" operator="=" type="id_String"/>
@@ -1125,8 +1103,6 @@
       <column comment="" defaultValue="" key="false" length="2" name="ProjectMonth" nullable="true" originalLength="2" pattern="" precision="0" sourceType="" type="id_Integer" usefulColumn="true"/>
       <column comment="" defaultValue="" key="false" length="4" name="ProjectYear" nullable="true" originalLength="4" pattern="" precision="0" sourceType="" type="id_Integer" usefulColumn="true"/>
       <column comment="" key="false" length="8" name="WorkingDay" nullable="true" originalLength="8" pattern="" precision="0" sourceType="" type="id_Integer" usefulColumn="true"/>
-      <column comment="" key="false" length="4" name="ProjectEndYear" nullable="true" originalLength="4" pattern="" precision="0" sourceType="" type="id_Integer" usefulColumn="true"/>
-      <column comment="" key="false" length="2" name="ProjectEndMonth" nullable="true" originalLength="2" pattern="" precision="0" sourceType="" type="id_Integer" usefulColumn="true"/>
       <column comment="" defaultValue="((0))" key="false" length="24" name="ManDayAssignedForProject" nullable="true" pattern="" precision="2" sourceType="FLOAT" type="id_Double" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
@@ -1146,8 +1122,6 @@
         <mapperTableEntries expression="process2.ProjectMonth " name="ProjectMonth" nullable="true" type="id_Integer"/>
         <mapperTableEntries expression="process2.ProjectYear " name="ProjectYear" nullable="true" type="id_Integer"/>
         <mapperTableEntries expression="process2.WorkingDay " name="WorkingDay" nullable="true" type="id_Integer"/>
-        <mapperTableEntries expression="process2.ProjectEndYear " name="ProjectEndYear" nullable="true" type="id_Integer"/>
-        <mapperTableEntries expression="process2.ProjectEndMonth " name="ProjectEndMonth" nullable="true" type="id_Integer"/>
         <mapperTableEntries expression="process2.ManDayAssignedForProject " name="ManDayAssignedForProject" nullable="true" type="id_Double"/>
         <mapperTableEntries expression="process2.ProjectMonths " name="ProjectMonths" nullable="true" type="id_Double"/>
         <mapperTableEntries expression="process2.AverageManDayAssignedPerMonthForProject " name="AverageManDayAssignedPerMonthForProject" nullable="true" type="id_Double"/>
@@ -1160,8 +1134,6 @@
         <mapperTableEntries name="ProjectMonth" nullable="true" type="id_Integer"/>
         <mapperTableEntries name="ProjectYear" nullable="true" type="id_Integer"/>
         <mapperTableEntries name="WorkingDay" nullable="true" type="id_Integer"/>
-        <mapperTableEntries name="ProjectEndYear" nullable="true" type="id_Integer"/>
-        <mapperTableEntries name="ProjectEndMonth" nullable="true" type="id_Integer"/>
         <mapperTableEntries name="ManDayAssignedForProject" nullable="true" type="id_Double"/>
         <mapperTableEntries name="ProjectMonths" nullable="true" type="id_Double"/>
         <mapperTableEntries name="AverageManDayAssignedPerMonthForProject" nullable="true" type="id_Double"/>
@@ -1227,8 +1199,6 @@
       <column comment="" defaultValue="" key="false" length="2" name="ProjectMonth" nullable="true" originalLength="2" pattern="" precision="0" sourceType="" type="id_Integer" usefulColumn="true"/>
       <column comment="" defaultValue="" key="false" length="4" name="ProjectYear" nullable="true" originalLength="4" pattern="" precision="0" sourceType="" type="id_Integer" usefulColumn="true"/>
       <column comment="" key="false" length="8" name="WorkingDay" nullable="true" originalLength="8" pattern="" precision="0" sourceType="" type="id_Integer" usefulColumn="true"/>
-      <column comment="" key="false" length="4" name="ProjectEndYear" nullable="true" originalLength="4" pattern="" precision="0" sourceType="" type="id_Integer" usefulColumn="true"/>
-      <column comment="" key="false" length="2" name="ProjectEndMonth" nullable="true" originalLength="2" pattern="" precision="0" sourceType="" type="id_Integer" usefulColumn="true"/>
       <column comment="" defaultValue="((0))" key="false" length="24" name="ManDayAssignedForProject" nullable="true" pattern="" precision="2" sourceType="FLOAT" type="id_Double" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
@@ -1249,8 +1219,6 @@
         <mapperTableEntries expression="process3.ProjectMonth " name="ProjectMonth" nullable="true" type="id_Integer"/>
         <mapperTableEntries expression="process3.ProjectYear " name="ProjectYear" nullable="true" type="id_Integer"/>
         <mapperTableEntries expression="process3.WorkingDay " name="WorkingDay" nullable="true" type="id_Integer"/>
-        <mapperTableEntries expression="process3.ProjectEndYear " name="ProjectEndYear" nullable="true" type="id_Integer"/>
-        <mapperTableEntries expression="process3.ProjectEndMonth " name="ProjectEndMonth" nullable="true" type="id_Integer"/>
         <mapperTableEntries expression="process3.ManDayAssignedForProject " name="ManDayAssignedForProject" nullable="true" type="id_Double"/>
         <mapperTableEntries expression="process3.ProjectMonths " name="ProjectMonths" nullable="true" type="id_Double"/>
         <mapperTableEntries expression="process3.AverageManDayAssignedPerMonthForProject " name="AverageManDayAssignedPerMonthForProject" nullable="true" type="id_Double"/>
@@ -1266,8 +1234,6 @@
         <mapperTableEntries name="ProjectMonth" nullable="true" type="id_Integer"/>
         <mapperTableEntries name="ProjectYear" nullable="true" type="id_Integer"/>
         <mapperTableEntries name="WorkingDay" nullable="true" type="id_Integer"/>
-        <mapperTableEntries name="ProjectEndYear" nullable="true" type="id_Integer"/>
-        <mapperTableEntries name="ProjectEndMonth" nullable="true" type="id_Integer"/>
         <mapperTableEntries name="ManDayAssignedForProject" nullable="true" type="id_Double"/>
         <mapperTableEntries name="ProjectMonths" nullable="true" type="id_Double"/>
         <mapperTableEntries name="AverageManDayAssignedPerMonthForProject" nullable="true" type="id_Double"/>
@@ -1333,8 +1299,6 @@
       <column comment="" defaultValue="" key="false" length="2" name="ProjectMonth" nullable="true" originalLength="2" pattern="" precision="0" sourceType="" type="id_Integer" usefulColumn="true"/>
       <column comment="" defaultValue="" key="false" length="4" name="ProjectYear" nullable="true" originalLength="4" pattern="" precision="0" sourceType="" type="id_Integer" usefulColumn="true"/>
       <column comment="" key="false" length="8" name="WorkingDay" nullable="true" originalLength="8" pattern="" precision="0" sourceType="" type="id_Integer" usefulColumn="true"/>
-      <column comment="" key="false" length="4" name="ProjectEndYear" nullable="true" originalLength="4" pattern="" precision="0" sourceType="" type="id_Integer" usefulColumn="true"/>
-      <column comment="" key="false" length="2" name="ProjectEndMonth" nullable="true" originalLength="2" pattern="" precision="0" sourceType="" type="id_Integer" usefulColumn="true"/>
       <column comment="" defaultValue="((0))" key="false" length="24" name="ManDayAssignedForProject" nullable="true" pattern="" precision="2" sourceType="FLOAT" type="id_Double" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
@@ -1362,8 +1326,6 @@
         <mapperTableEntries expression="process4.ProjectMonth " name="ProjectMonth" nullable="true" type="id_Integer"/>
         <mapperTableEntries expression="process4.ProjectYear " name="ProjectYear" nullable="true" type="id_Integer"/>
         <mapperTableEntries expression="process4.WorkingDay " name="WorkingDay" nullable="true" type="id_Integer"/>
-        <mapperTableEntries expression="process4.ProjectEndYear " name="ProjectEndYear" nullable="true" type="id_Integer"/>
-        <mapperTableEntries expression="process4.ProjectEndMonth " name="ProjectEndMonth" nullable="true" type="id_Integer"/>
         <mapperTableEntries expression="process4.ManDayAssignedForProject " name="ManDayAssignedForProject" nullable="true" type="id_Double"/>
         <mapperTableEntries expression="process4.ProjectMonths " name="ProjectMonths" nullable="true" type="id_Double"/>
         <mapperTableEntries expression="process4.AverageManDayAssignedPerMonthForProject " name="AverageManDayAssignedPerMonthForProject" nullable="true" type="id_Double"/>
@@ -1382,8 +1344,6 @@
         <mapperTableEntries name="ProjectMonth" nullable="true" type="id_Integer"/>
         <mapperTableEntries name="ProjectYear" nullable="true" type="id_Integer"/>
         <mapperTableEntries name="WorkingDay" nullable="true" type="id_Integer"/>
-        <mapperTableEntries name="ProjectEndYear" nullable="true" type="id_Integer"/>
-        <mapperTableEntries name="ProjectEndMonth" nullable="true" type="id_Integer"/>
         <mapperTableEntries name="ManDayAssignedForProject" nullable="true" type="id_Double"/>
         <mapperTableEntries name="ProjectMonths" nullable="true" type="id_Double"/>
         <mapperTableEntries name="AverageManDayAssignedPerMonthForProject" nullable="true" type="id_Double"/>
@@ -1450,8 +1410,6 @@
       <column comment="" defaultValue="" key="false" length="2" name="ProjectMonth" nullable="true" originalLength="2" pattern="" precision="0" sourceType="" type="id_Integer" usefulColumn="true"/>
       <column comment="" defaultValue="" key="false" length="4" name="ProjectYear" nullable="true" originalLength="4" pattern="" precision="0" sourceType="" type="id_Integer" usefulColumn="true"/>
       <column comment="" key="false" length="8" name="WorkingDay" nullable="true" originalLength="8" pattern="" precision="0" sourceType="" type="id_Integer" usefulColumn="true"/>
-      <column comment="" key="false" length="4" name="ProjectEndYear" nullable="true" originalLength="4" pattern="" precision="0" sourceType="" type="id_Integer" usefulColumn="true"/>
-      <column comment="" key="false" length="2" name="ProjectEndMonth" nullable="true" originalLength="2" pattern="" precision="0" sourceType="" type="id_Integer" usefulColumn="true"/>
       <column comment="" defaultValue="((0))" key="false" length="24" name="ManDayAssignedForProject" nullable="true" pattern="" precision="2" sourceType="FLOAT" type="id_Double" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
@@ -2147,8 +2105,6 @@
       <column comment="" defaultValue="" key="false" length="2" name="ProjectMonth" nullable="true" originalLength="2" pattern="" precision="0" sourceType="" type="id_Integer" usefulColumn="true"/>
       <column comment="" defaultValue="" key="false" length="4" name="ProjectYear" nullable="true" originalLength="4" pattern="" precision="0" sourceType="" type="id_Integer" usefulColumn="true"/>
       <column comment="" key="false" length="8" name="WorkingDay" nullable="true" originalLength="8" pattern="" precision="0" sourceType="" type="id_Integer" usefulColumn="true"/>
-      <column comment="" key="false" length="4" name="ProjectEndYear" nullable="true" originalLength="4" pattern="" precision="0" sourceType="" type="id_Integer" usefulColumn="true"/>
-      <column comment="" key="false" length="2" name="ProjectEndMonth" nullable="true" originalLength="2" pattern="" precision="0" sourceType="" type="id_Integer" usefulColumn="true"/>
       <column comment="" defaultValue="((0))" key="false" length="24" name="ManDayAssignedForProject" nullable="true" pattern="" precision="2" sourceType="FLOAT" type="id_Double" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
@@ -2192,8 +2148,6 @@
       <column comment="" defaultValue="" key="false" length="3" name="ProjectMonths" nullable="true" originalLength="2" pattern="" precision="0" sourceType="" type="id_Integer" usefulColumn="true"/>
       <column comment="" defaultValue="" key="false" length="4" name="ProjectYear" nullable="true" originalLength="4" pattern="" precision="0" sourceType="" type="id_Integer" usefulColumn="true"/>
       <column comment="" key="false" length="8" name="WorkingDay" nullable="true" originalLength="8" pattern="" precision="0" sourceType="" type="id_Integer" usefulColumn="true"/>
-      <column comment="" key="false" length="4" name="ProjectEndYear" nullable="true" originalLength="4" pattern="" precision="0" sourceType="" type="id_Integer" usefulColumn="true"/>
-      <column comment="" key="false" length="2" name="ProjectEndMonth" nullable="true" originalLength="2" pattern="" precision="0" sourceType="" type="id_Integer" usefulColumn="true"/>
       <column comment="" defaultValue="((0))" key="false" length="24" name="ManDayAssignedForProject" nullable="true" pattern="" precision="2" sourceType="FLOAT" type="id_Double" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
@@ -2226,8 +2180,6 @@
         <mapperTableEntries expression="row1.ProjectMonth " name="ProjectMonths" nullable="true" type="id_Integer"/>
         <mapperTableEntries expression="row1.ProjectYear " name="ProjectYear" nullable="true" type="id_Integer"/>
         <mapperTableEntries expression="row1.WorkingDay " name="WorkingDay" nullable="true" type="id_Integer"/>
-        <mapperTableEntries expression="row1.ProjectEndYear " name="ProjectEndYear" nullable="true" type="id_Integer"/>
-        <mapperTableEntries expression="row1.ProjectEndMonth " name="ProjectEndMonth" nullable="true" type="id_Integer"/>
         <mapperTableEntries expression="row1.ManDayAssignedForProject " name="ManDayAssignedForProject" nullable="true" type="id_Double"/>
         <mapperTableEntries expression="row1.ProjectMonths " name="TotalProjectMonths" nullable="true" type="id_Double"/>
         <mapperTableEntries expression="row1.AverageManDayAssignedPerMonthForProject " name="AverageManDayAssignedPerMonthForProject" nullable="true" type="id_Double"/>
@@ -2249,8 +2201,6 @@
         <mapperTableEntries name="ProjectMonth" nullable="true" type="id_Integer"/>
         <mapperTableEntries name="ProjectYear" nullable="true" type="id_Integer"/>
         <mapperTableEntries name="WorkingDay" nullable="true" type="id_Integer"/>
-        <mapperTableEntries name="ProjectEndYear" nullable="true" type="id_Integer"/>
-        <mapperTableEntries name="ProjectEndMonth" nullable="true" type="id_Integer"/>
         <mapperTableEntries name="ManDayAssignedForProject" nullable="true" type="id_Double"/>
         <mapperTableEntries name="ProjectMonths" nullable="true" type="id_Double"/>
         <mapperTableEntries name="AverageManDayAssignedPerMonthForProject" nullable="true" type="id_Double"/>
@@ -2291,10 +2241,6 @@
       <elementValue elementRef="SCHEMA_COLUMN" value="ProjectYear"/>
       <elementValue elementRef="LENGTH" value="10"/>
       <elementValue elementRef="SCHEMA_COLUMN" value="WorkingDay"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="ProjectEndYear"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="ProjectEndMonth"/>
       <elementValue elementRef="LENGTH" value="10"/>
       <elementValue elementRef="SCHEMA_COLUMN" value="ManDayAssignedForProject"/>
       <elementValue elementRef="LENGTH" value="10"/>
@@ -2337,8 +2283,6 @@
       <column comment="" defaultValue="" key="false" length="3" name="ProjectMonths" nullable="true" originalLength="2" pattern="" precision="0" sourceType="" type="id_Integer" usefulColumn="true"/>
       <column comment="" defaultValue="" key="false" length="4" name="ProjectYear" nullable="true" originalLength="4" pattern="" precision="0" sourceType="" type="id_Integer" usefulColumn="true"/>
       <column comment="" key="false" length="8" name="WorkingDay" nullable="true" originalLength="8" pattern="" precision="0" sourceType="" type="id_Integer" usefulColumn="true"/>
-      <column comment="" key="false" length="4" name="ProjectEndYear" nullable="true" originalLength="4" pattern="" precision="0" sourceType="" type="id_Integer" usefulColumn="true"/>
-      <column comment="" key="false" length="2" name="ProjectEndMonth" nullable="true" originalLength="2" pattern="" precision="0" sourceType="" type="id_Integer" usefulColumn="true"/>
       <column comment="" defaultValue="((0))" key="false" length="24" name="ManDayAssignedForProject" nullable="true" pattern="" precision="2" sourceType="FLOAT" type="id_Double" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
@@ -2806,13 +2750,13 @@
     <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="92;131;150"/>
     <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
   </subjob>
-<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_36f0768a-977d-4a14-868a-7dfe7c4ee81e"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>CJXVN38pBJT1bvYCRObu96aszBIxVjO2+EvLPVBBymgFpGp+1bsnkDCHS+jyhaw8b8dfW1TKzq4p&#13;
-wt2YQQWLlQ==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_3800c27f-cb35-4cbe-bdb8-9ae294f23239"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>3H/N2/R9qfFQa+K0ab6oBGwZVSDyeh8wNfG/bhugj/SWbzQt+NFQdkpOaFc+TAQVE/LPMiQSnZTj&#13;
-3xC3jnjiDg==</DigestValue></Reference></SignedInfo><SignatureValue>c6Bzr4PRpBv37jdRi4D5R7irY13C0kHZN0XL/8VKOAnCQNGKFjGOoSGcvRvp+IE53eY/taTeyith&#13;
-onOZGz4WV0DQstZWR7E4U95cy+nrB7NQlfYnMjGVCyrjhnYb92f38u7kJbqd8AdldtpSJrhCDR5V&#13;
-KVKAS3ELsE/Qyb7XMQNBoWRxk3s0aaGeAqrz7QcaNzVePHYi2wIxCp63HXXU5kag7r6CsjhWgR1a&#13;
-9bPK55bNBrlIXU38aS7U/kH290oC++Zhj5bnf8ve7e8Wv/xwLvDSn062w2k6jbKZJlv7zw8EgKyc&#13;
-Ip+w3Fuy9nE4TnQDR7VeMdgKXYikQ/7N1Q4Riw==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w&#13;
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_12f69f78-56c9-4af9-b691-18a0177021f9"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>MRtdzZMa4uVcefAA1/cGK6I7lJc8b4E+QprxxvCYDS6/FhK2I+MEUSB0+EVYxfOLVa66T6nMOEjB&#13;
+Qt2EcN1cng==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_22d7d6b5-cf70-4aea-a68f-7a8dfe9440be"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>xf35KyPAMEEaj9YD+fQkSmnqo4enSf1y4v0iBtPQOnoKSO61VwSqQS/jty7TN/B1bFbA5dC0m3FF&#13;
+EAAXdYVQXg==</DigestValue></Reference></SignedInfo><SignatureValue>LP2Do3MafQl6U9qWc8MEN5s+9NvGeW0oFbYJnALKhoR3bvb5fpTgXTHySGTRjGTfch4Zrq2Mat76&#13;
+56TTjSVadGJS7J9qGBEb43pG+2sYgvPsW0lVUMkJg0TrG7XM3L3lTmY3LxC2/7QDpLhaDoCV75Tj&#13;
+7v9eK0yDrOGj8LkPjwSW6ewQmxcKBy76xi8zrwjmeRrHiwmoJFmk204FbVqDOMFq1sLZ1YYbJE7u&#13;
+AH5MzxREbXch17HWvThmnEv9XHVENulBBgxCwQUBGSEAQnaC+Z3MAfOdIjSGqkiOstgjTf9sdQ2O&#13;
+np7Ufcqrvu49M+inrxRUBYVOjXiHqV8gJwPH0Q==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w&#13;
 DAYDVQQIEwVQYXJpczEOMAwGA1UEBxMFUGFyaXMxFDASBgNVBAoTC1RhbGVuZCBJbmMuMQwwCgYD&#13;
 VQQLDANSJkQxFjAUBgNVBAMMDVRhbGVuZCBSJkQgQ0ExIjAgBgkqhkiG9w0BCQEWE3NlY3VyaXR5&#13;
 QHRhbGVuZC5jb20wHhcNMTkwNjAzMDgxODIwWhcNMjkwNjAzMDAwMDAwWjB7MSgwJgYDVQQDEx9U&#13;
@@ -2834,4 +2778,4 @@ hakvpzhOyLo91h8YAQrEZJdNuKA8IYmBrFZQZDCz0uywKSyFfzPyJhvxylCLG/iDPPfE0VWcrMJ/&#13
 WQJly/2XPg/NBCTF3pSKS0kCiA7PeaI3cWkMYYA3PMwYDvzqs1opBRglG7ikj0bQxSm3lcjMuuvW&#13;
 gBRksFKjP3K/nztsjSoYITOM9jR29ReIL3v0E8RbAFwA2RGq6Dxd0ixfbucMesy5Gnr8tfYy6rW+&#13;
 qSQqd3ah4+PSzBNVwIB4ytpdrG3SlhCI2i2Th8ek8Sjsaquh9qPAerWNd2+84HWOOGj1Xe1qc6vg&#13;
-qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_3800c27f-cb35-4cbe-bdb8-9ae294f23239" Target="#_36f0768a-977d-4a14-868a-7dfe7c4ee81e"><Timestamp>2024-04-25 09:05:17</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
+qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_22d7d6b5-cf70-4aea-a68f-7a8dfe9440be" Target="#_12f69f78-56c9-4af9-b691-18a0177021f9"><Timestamp>2024-04-25 09:09:25</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>

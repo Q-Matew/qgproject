@@ -1653,7 +1653,7 @@
     <elementParameter field="RADIO" name="FORLOOP" value="true"/>
     <elementParameter field="RADIO" name="WHILELOOP" value="false"/>
     <elementParameter field="TEXT" name="FROM" value="0"/>
-    <elementParameter field="TEXT" name="TO" value="copyOftoFlow.noOfDaysOnLeave"/>
+    <elementParameter field="TEXT" name="TO" value="SLToFlow.noOfDaysOnLeave"/>
     <elementParameter field="TEXT" name="STEP" value="1"/>
     <elementParameter field="CHECK" name="INCREASE" value="true"/>
     <elementParameter field="TEXT" name="DECLARATION" show="false" value="int i=0"/>
@@ -1667,23 +1667,23 @@
     <elementParameter field="RADIO" name="USE_SINGLEMODE" value="true"/>
     <elementParameter field="TABLE" name="VALUES">
       <elementValue elementRef="SCHEMA_COLUMN" value="eePersoNo"/>
-      <elementValue elementRef="VALUE" value="copyOftoFlow.eePersoNo"/>
+      <elementValue elementRef="VALUE" value="SLToFlow.eePersoNo"/>
       <elementValue elementRef="SCHEMA_COLUMN" value="eeName"/>
-      <elementValue elementRef="VALUE" value="copyOftoFlow.eeName"/>
+      <elementValue elementRef="VALUE" value="SLToFlow.eeName"/>
       <elementValue elementRef="SCHEMA_COLUMN" value="leaveType"/>
-      <elementValue elementRef="VALUE" value="copyOftoFlow.leaveType"/>
+      <elementValue elementRef="VALUE" value="SLToFlow.leaveType"/>
       <elementValue elementRef="SCHEMA_COLUMN" value="startDate"/>
-      <elementValue elementRef="VALUE" value="copyOftoFlow.startDate"/>
+      <elementValue elementRef="VALUE" value="SLToFlow.startDate"/>
       <elementValue elementRef="SCHEMA_COLUMN" value="endDate"/>
-      <elementValue elementRef="VALUE" value="copyOftoFlow.endDate"/>
+      <elementValue elementRef="VALUE" value="SLToFlow.endDate"/>
       <elementValue elementRef="SCHEMA_COLUMN" value="noOfDaysOnLeave"/>
-      <elementValue elementRef="VALUE" value="copyOftoFlow.noOfDaysOnLeave"/>
+      <elementValue elementRef="VALUE" value="SLToFlow.noOfDaysOnLeave"/>
       <elementValue elementRef="SCHEMA_COLUMN" value="startTime"/>
-      <elementValue elementRef="VALUE" value="copyOftoFlow.startTime"/>
+      <elementValue elementRef="VALUE" value="SLToFlow.startTime"/>
       <elementValue elementRef="SCHEMA_COLUMN" value="endTime"/>
-      <elementValue elementRef="VALUE" value="copyOftoFlow.endTime"/>
+      <elementValue elementRef="VALUE" value="SLToFlow.endTime"/>
       <elementValue elementRef="SCHEMA_COLUMN" value="hour"/>
-      <elementValue elementRef="VALUE" value="copyOftoFlow.hour"/>
+      <elementValue elementRef="VALUE" value="SLToFlow.hour"/>
     </elementParameter>
     <elementParameter field="RADIO" name="USE_INTABLE" value="false"/>
     <elementParameter field="TABLE" name="INTABLE" show="false"/>
@@ -1732,9 +1732,9 @@
       <column comment="" defaultValue="" key="false" length="18" name="hour" nullable="true" originalLength="-1" pattern="" precision="2" sourceType="FLOAT" type="id_Double" usefulColumn="true"/>
     </metadata>
     <nodeData xsi:type="TalendMapper:MapperData">
-      <uiProperties/>
+      <uiProperties shellMaximized="true"/>
       <varTables name="Var" sizeState="INTERMEDIATE">
-        <mapperTableEntries expression="TalendDate.addDate(flow.startDate,((Integer)globalMap.get(&quot;tLoop_1_CURRENT_VALUE&quot;)),&quot;dd&quot;) " name="var1" type="id_Date"/>
+        <mapperTableEntries expression="TalendDate.addDate(flow.startDate,((Integer)globalMap.get(&quot;tLoop_2_CURRENT_VALUE&quot;)),&quot;dd&quot;) " name="var1" type="id_Date"/>
       </varTables>
       <outputTables name="expanded" sizeState="INTERMEDIATE">
         <mapperTableEntries expression="flow.eePersoNo " name="eePersoNo" type="id_String"/>
@@ -2315,13 +2315,13 @@
     <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="92;131;150"/>
     <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
   </subjob>
-<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_3b7aa1ce-9fc0-484e-823f-500d91fcbf95"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>deio8ghkA+rsimxJjVgAGGR7ogdlFFW6oNpVnxH6SUiorTIqU5H8RO++Gcrdp7pdpFq4Ur/qAP4W&#13;
-UtsDiNBKbA==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_fd3afcde-dd93-406a-8bbe-20bb748cef36"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>e6iqUF1xeHnCHuNIv1dIYfD03xN+8h6vOCQyaZwtzhHP5F7RKIkZcRtl8plnha9LCRDG/xF+rr9/&#13;
-3HzWLtzVYg==</DigestValue></Reference></SignedInfo><SignatureValue>E61PGY3y1N75U9l7C3Sl56kQ7BYRv4rmZrB0XCLZJ2Br/Bfm63YTDzL0SYb8E+4Z/jzOt7ASIjFB&#13;
-ANsnbnqbgSVCzc8SXoGQoRY7FF4MHFgt863GXOogSbZZqFcKvn88nRty7uH3Lc1NpsOcjDEvaRAi&#13;
-fggGGUcTc0LDA/O7Lyc3k0Q3paz542vven8avnJJWTDJsIpPpBTVWDMIhC5o6eYg3syyISEHKATu&#13;
-FrJTL9/OaVmIpbQqWc8TsblCIDvCLeT6fJQka8oQmaz0vv/NBmPoH+eVcgPTMnKweh56q25S+eDR&#13;
-hdJjooXxVucrTarzGdokh6WjxX5ZRG7LmUkpRg==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w&#13;
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_c429d652-3cc9-48a9-adce-1cff50ae29f2"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>Jl6Fl9hzs0wzc8ppj4PWRQqDY8f50Bn8ADt5qNTDOo2v+2+aFDc7PpirI9iB7pY7S1uHojroILeG&#13;
+IKI8riuizg==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_200a8822-3254-4791-8fe5-e58e72342965"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>J0DEydMEvKF1bNOEIijYU2MDQ7KaI3w1vJM6xqBnqmWzwDHT9mUeFuw/3BnN0A7eX2K8EclYt9FE&#13;
+DmSOycS5+Q==</DigestValue></Reference></SignedInfo><SignatureValue>DenPWi/DhM+Jh3XQB7CL9JhjYS1two8wqv2oJEFUVY5lWycvrb3rp7mj+q5pa5PsCn6NnYaUz/Q7&#13;
+fXX+K1m71H9hGWVeh7X2lkkA7bjnIcFbvZeZJRhbWKJ7hMgcZwbC+8P8ZoToLYMWPZFUJ+c0yhlN&#13;
+FGTxvkzSh+ywPGk/YZndOEC/lbWmow7wZpc5LZL0A3ISL7rjlUJjPx10Qe3nQPyiDHYLHU3vgIOe&#13;
+nlqr9IO+BhVIDczFGJZ8KciIgpqwtX5/vAxFuXdWimA+329bOkkVIodCyOACtxsAF2Cd4c2iQMKJ&#13;
+boOGHwGavFm63XJVd4fzsxB6kcVVb2G2wMiscA==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w&#13;
 DAYDVQQIEwVQYXJpczEOMAwGA1UEBxMFUGFyaXMxFDASBgNVBAoTC1RhbGVuZCBJbmMuMQwwCgYD&#13;
 VQQLDANSJkQxFjAUBgNVBAMMDVRhbGVuZCBSJkQgQ0ExIjAgBgkqhkiG9w0BCQEWE3NlY3VyaXR5&#13;
 QHRhbGVuZC5jb20wHhcNMTkwNjAzMDgxODIwWhcNMjkwNjAzMDAwMDAwWjB7MSgwJgYDVQQDEx9U&#13;
@@ -2343,4 +2343,4 @@ hakvpzhOyLo91h8YAQrEZJdNuKA8IYmBrFZQZDCz0uywKSyFfzPyJhvxylCLG/iDPPfE0VWcrMJ/&#13
 WQJly/2XPg/NBCTF3pSKS0kCiA7PeaI3cWkMYYA3PMwYDvzqs1opBRglG7ikj0bQxSm3lcjMuuvW&#13;
 gBRksFKjP3K/nztsjSoYITOM9jR29ReIL3v0E8RbAFwA2RGq6Dxd0ixfbucMesy5Gnr8tfYy6rW+&#13;
 qSQqd3ah4+PSzBNVwIB4ytpdrG3SlhCI2i2Th8ek8Sjsaquh9qPAerWNd2+84HWOOGj1Xe1qc6vg&#13;
-qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_fd3afcde-dd93-406a-8bbe-20bb748cef36" Target="#_3b7aa1ce-9fc0-484e-823f-500d91fcbf95"><Timestamp>2024-04-25 01:47:01</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
+qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_200a8822-3254-4791-8fe5-e58e72342965" Target="#_c429d652-3cc9-48a9-adce-1cff50ae29f2"><Timestamp>2024-04-25 01:48:56</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>

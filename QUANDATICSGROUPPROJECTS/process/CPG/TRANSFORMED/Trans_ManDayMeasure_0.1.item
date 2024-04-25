@@ -2145,13 +2145,13 @@
       <column comment="" key="false" length="100" name="ProjectDivisionObjectNo" nullable="true" pattern="" precision="0" sourceType="NVARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
-      <column comment="" defaultValue="" key="false" length="3" name="TotalProjectMonths" nullable="true" originalLength="2" pattern="" precision="0" sourceType="" type="id_Integer" usefulColumn="true"/>
+      <column comment="" defaultValue="" key="false" length="3" name="ProjectMonths" nullable="true" originalLength="2" pattern="" precision="0" sourceType="" type="id_Integer" usefulColumn="true"/>
       <column comment="" defaultValue="" key="false" length="4" name="ProjectYear" nullable="true" originalLength="4" pattern="" precision="0" sourceType="" type="id_Integer" usefulColumn="true"/>
       <column comment="" key="false" length="8" name="WorkingDay" nullable="true" originalLength="8" pattern="" precision="0" sourceType="" type="id_Integer" usefulColumn="true"/>
       <column comment="" defaultValue="((0))" key="false" length="24" name="ManDayAssignedForProject" nullable="true" pattern="" precision="2" sourceType="FLOAT" type="id_Double" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
-      <column comment="" defaultValue="((0))" key="false" length="24" name="ProjectMonths" nullable="true" originalLength="24" pattern="" precision="2" sourceType="" type="id_Double" usefulColumn="true"/>
+      <column comment="" defaultValue="((0))" key="false" length="24" name="TotalProjectMonths" nullable="true" originalLength="24" pattern="" precision="2" sourceType="" type="id_Double" usefulColumn="true"/>
       <column comment="" defaultValue="((0))" key="false" length="24" name="AverageManDayAssignedPerMonthForProject" nullable="true" originalLength="24" pattern="" precision="2" sourceType="" type="id_Double" usefulColumn="true"/>
       <column comment="" defaultValue="((0))" key="false" length="24" name="TimeLoggableMandayPerMonth" nullable="true" originalLength="24" pattern="" precision="2" sourceType="" type="id_Double" usefulColumn="true"/>
       <column comment="" defaultValue="((0))" key="false" length="18" name="TotalWorkingHour" nullable="true" pattern="" precision="2" sourceType="FLOAT" type="id_Double" usefulColumn="true">
@@ -2177,11 +2177,11 @@
         <mapperTableEntries expression="row1.STID " name="STID" nullable="true" type="id_String"/>
         <mapperTableEntries expression="row1.ProjectID " name="ProjectID" nullable="true" type="id_String"/>
         <mapperTableEntries expression="row1.ProjectDivisionObjectNo " name="ProjectDivisionObjectNo" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="row1.ProjectMonth " name="TotalProjectMonths" nullable="true" type="id_Integer"/>
+        <mapperTableEntries expression="row1.ProjectMonth " name="ProjectMonths" nullable="true" type="id_Integer"/>
         <mapperTableEntries expression="row1.ProjectYear " name="ProjectYear" nullable="true" type="id_Integer"/>
         <mapperTableEntries expression="row1.WorkingDay " name="WorkingDay" nullable="true" type="id_Integer"/>
         <mapperTableEntries expression="row1.ManDayAssignedForProject " name="ManDayAssignedForProject" nullable="true" type="id_Double"/>
-        <mapperTableEntries expression="row1.ProjectMonths " name="ProjectMonths" nullable="true" type="id_Double"/>
+        <mapperTableEntries expression="row1.ProjectMonths " name="TotalProjectMonths" nullable="true" type="id_Double"/>
         <mapperTableEntries expression="row1.AverageManDayAssignedPerMonthForProject " name="AverageManDayAssignedPerMonthForProject" nullable="true" type="id_Double"/>
         <mapperTableEntries expression="row1.TimeLoggableMandayPerMonth " name="TimeLoggableMandayPerMonth" nullable="true" type="id_Double"/>
         <mapperTableEntries expression="row1.TotalWorkingHour " name="TotalWorkingHour" nullable="true" type="id_Double"/>
@@ -2189,7 +2189,7 @@
         <mapperTableEntries expression="row1.TimeLogHour " name="TimeLogHour" nullable="true" type="id_Double"/>
         <mapperTableEntries expression=" row1.TotalManDayLogPerMonthForProject " name="TotalManDayLogPerMonthForProject" nullable="true" type="id_Double"/>
         <mapperTableEntries expression="Var.CurrRow " name="MandaysLeft" nullable="true" type="id_Double"/>
-        <mapperTableEntries expression="Double.valueOf(row1.ProjectMonth) -  Var.Index - 1 " name="MonthsLeft" nullable="true" type="id_Double"/>
+        <mapperTableEntries expression="Double.valueOf(row1.ProjectMonths) -  Var.Index - 1 " name="MonthsLeft" nullable="true" type="id_Double"/>
         <mapperTableEntries expression="" name="AverageMandaysBasedOnMonthsLeft" nullable="true" type="id_Double"/>
       </outputTables>
       <inputTables lookupMode="LOAD_ONCE" matchingMode="UNIQUE_MATCH" name="row1" sizeState="INTERMEDIATE">
@@ -2236,7 +2236,7 @@
       <elementValue elementRef="LENGTH" value="10"/>
       <elementValue elementRef="SCHEMA_COLUMN" value="ProjectDivisionObjectNo"/>
       <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="TotalProjectMonths"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="ProjectMonths"/>
       <elementValue elementRef="LENGTH" value="10"/>
       <elementValue elementRef="SCHEMA_COLUMN" value="ProjectYear"/>
       <elementValue elementRef="LENGTH" value="10"/>
@@ -2244,7 +2244,7 @@
       <elementValue elementRef="LENGTH" value="10"/>
       <elementValue elementRef="SCHEMA_COLUMN" value="ManDayAssignedForProject"/>
       <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="ProjectMonths"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="TotalProjectMonths"/>
       <elementValue elementRef="LENGTH" value="10"/>
       <elementValue elementRef="SCHEMA_COLUMN" value="AverageManDayAssignedPerMonthForProject"/>
       <elementValue elementRef="LENGTH" value="10"/>
@@ -2280,13 +2280,13 @@
       <column comment="" key="false" length="100" name="ProjectDivisionObjectNo" nullable="true" pattern="" precision="0" sourceType="NVARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
-      <column comment="" defaultValue="" key="false" length="3" name="TotalProjectMonths" nullable="true" originalLength="2" pattern="" precision="0" sourceType="" type="id_Integer" usefulColumn="true"/>
+      <column comment="" defaultValue="" key="false" length="3" name="ProjectMonths" nullable="true" originalLength="2" pattern="" precision="0" sourceType="" type="id_Integer" usefulColumn="true"/>
       <column comment="" defaultValue="" key="false" length="4" name="ProjectYear" nullable="true" originalLength="4" pattern="" precision="0" sourceType="" type="id_Integer" usefulColumn="true"/>
       <column comment="" key="false" length="8" name="WorkingDay" nullable="true" originalLength="8" pattern="" precision="0" sourceType="" type="id_Integer" usefulColumn="true"/>
       <column comment="" defaultValue="((0))" key="false" length="24" name="ManDayAssignedForProject" nullable="true" pattern="" precision="2" sourceType="FLOAT" type="id_Double" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
-      <column comment="" defaultValue="((0))" key="false" length="24" name="ProjectMonths" nullable="true" originalLength="24" pattern="" precision="2" sourceType="" type="id_Double" usefulColumn="true"/>
+      <column comment="" defaultValue="((0))" key="false" length="24" name="TotalProjectMonths" nullable="true" originalLength="24" pattern="" precision="2" sourceType="" type="id_Double" usefulColumn="true"/>
       <column comment="" defaultValue="((0))" key="false" length="24" name="AverageManDayAssignedPerMonthForProject" nullable="true" originalLength="24" pattern="" precision="2" sourceType="" type="id_Double" usefulColumn="true"/>
       <column comment="" defaultValue="((0))" key="false" length="24" name="TimeLoggableMandayPerMonth" nullable="true" originalLength="24" pattern="" precision="2" sourceType="" type="id_Double" usefulColumn="true"/>
       <column comment="" defaultValue="((0))" key="false" length="18" name="TotalWorkingHour" nullable="true" pattern="" precision="2" sourceType="FLOAT" type="id_Double" usefulColumn="true">
@@ -2676,13 +2676,13 @@
     <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="92;131;150"/>
     <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
   </subjob>
-<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_6c1fc4ff-8c81-4f8a-bbae-c2d3fcd026c1"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>Y8sfWjf40tzfoWwGHgAXJps8PJbGOqyG1B3ePRr/YPiWBddQVFQ/zdryOBGdYgAzlV1gpdMYTZPB&#13;
-qBE3nvfHvg==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_742911f9-074a-4798-a321-a54d8aea2d75"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>TyYxHxpRsEJXUbijVWRSKfES8Zfma+kszeU+DqHKrOE164fCo+8vgR9zQfuMc9rB+7JJZ/DfafWT&#13;
-EHfc5ZKIVQ==</DigestValue></Reference></SignedInfo><SignatureValue>JyFJgHxp45ZW43s3kUC/926rH8mdT/RgAmXlr6fnnJcRRxdHq0fv+mysQjyK8z7khQ4VFrtrXZOn&#13;
-1rf7J+55JGIF7NiEHvuT5pDHw8oRqEVr4ZwaJhR/ZpW4UODFXMDh6K3ME8l9ybV3ITIZ6JRofoda&#13;
-ffkC2umxd69DlgHIv3loAQZ0T7numZUFkzlW9uIEJ1OHmqbHwjVNMJ5HAcwFMqAibtMzAwdt/G2f&#13;
-93HsGFu8p8iRyRYDNaBFM+AOYHUEHByntIO8gStcSO7n5KLUA9trgUeFkgOi9VrnyE6vOeSht2ps&#13;
-SdUhT7iNd9saDruoTD5/c4WCy0g40V0YlrUErg==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w&#13;
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_f1971828-a6e0-4f4c-9d0b-659b99851ae7"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>dMJpqxZ9a2pqekiBxVDPH3LnPPlEHHuHTarlmbIgJtHTODzXzIO8KCoKBlhJXMqtDui6w8pcgyPQ&#13;
+xvoEopTY4w==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_15cc0560-6251-4311-8bf6-a7041301cf65"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>naTnbNhIj5cbAppYRab7GFINMT4+us2/p6Weh0c8KX2lUP/2iGwG31O7H3z7hlgXU0N0F7cHbd21&#13;
+L6F0I3jYrg==</DigestValue></Reference></SignedInfo><SignatureValue>VFtoVqgP2UpxmA39B74unKqGEnQg2VL4V7HJzC5y8/A5tQVIAMITitTb20A3MCpUlrpikTVuCqxl&#13;
+sKwIG+6tkQTcCwlKritZJBMz1zYCSqitosS2dteRSXnF104K6rjFdO69h9yNJ+uFDBVJ3Xb/N92O&#13;
+43wnhWYE7cCrHG9osIVtk6ZPLBT+chQ2205rfGPLyCAozGZph0lKnsTuyCdmZrLc1tN3iF6zUJae&#13;
+PwzwZZotXmmE8+qj9oEIb1IqlrWBnqRsSwT/Vu/tX7Le74uCjX7zP6XeCimPHEs5fEuGFbCe0eJo&#13;
+HcSuZKRWw3KpwsUHwmfil/Br4MsAcAoJ55lLgA==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w&#13;
 DAYDVQQIEwVQYXJpczEOMAwGA1UEBxMFUGFyaXMxFDASBgNVBAoTC1RhbGVuZCBJbmMuMQwwCgYD&#13;
 VQQLDANSJkQxFjAUBgNVBAMMDVRhbGVuZCBSJkQgQ0ExIjAgBgkqhkiG9w0BCQEWE3NlY3VyaXR5&#13;
 QHRhbGVuZC5jb20wHhcNMTkwNjAzMDgxODIwWhcNMjkwNjAzMDAwMDAwWjB7MSgwJgYDVQQDEx9U&#13;
@@ -2704,4 +2704,4 @@ hakvpzhOyLo91h8YAQrEZJdNuKA8IYmBrFZQZDCz0uywKSyFfzPyJhvxylCLG/iDPPfE0VWcrMJ/&#13
 WQJly/2XPg/NBCTF3pSKS0kCiA7PeaI3cWkMYYA3PMwYDvzqs1opBRglG7ikj0bQxSm3lcjMuuvW&#13;
 gBRksFKjP3K/nztsjSoYITOM9jR29ReIL3v0E8RbAFwA2RGq6Dxd0ixfbucMesy5Gnr8tfYy6rW+&#13;
 qSQqd3ah4+PSzBNVwIB4ytpdrG3SlhCI2i2Th8ek8Sjsaquh9qPAerWNd2+84HWOOGj1Xe1qc6vg&#13;
-qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_742911f9-074a-4798-a321-a54d8aea2d75" Target="#_6c1fc4ff-8c81-4f8a-bbae-c2d3fcd026c1"><Timestamp>2024-04-25 08:44:05</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
+qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_15cc0560-6251-4311-8bf6-a7041301cf65" Target="#_f1971828-a6e0-4f4c-9d0b-659b99851ae7"><Timestamp>2024-04-25 08:45:19</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>

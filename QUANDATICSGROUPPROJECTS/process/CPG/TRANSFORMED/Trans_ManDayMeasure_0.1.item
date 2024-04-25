@@ -2230,11 +2230,13 @@
       <column comment="" defaultValue="((0))" key="false" length="18" name="MandaysLeft" nullable="true" originalLength="18" pattern="" precision="2" sourceType="" type="id_Double" usefulColumn="true"/>
       <column comment="" defaultValue="((0))" key="false" length="18" name="MonthsLeft" nullable="true" originalLength="18" pattern="" precision="2" sourceType="" type="id_Double" usefulColumn="true"/>
       <column comment="" defaultValue="((0))" key="false" length="18" name="AverageMandaysBasedOnMonthsLeft" nullable="true" originalLength="18" pattern="" precision="2" sourceType="" type="id_Double" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="testing" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_Integer" usefulColumn="true"/>
     </metadata>
     <nodeData xsi:type="TalendMapper:MapperData">
       <uiProperties shellMaximized="true"/>
-      <varTables minimized="true" name="Var" sizeState="INTERMEDIATE"/>
+      <varTables name="Var" sizeState="INTERMEDIATE">
+        <mapperTableEntries expression="row1.ProjectMonths " name="row1" nullable="true" type="id_Double"/>
+        <mapperTableEntries expression="Var.row1 " name="row2" nullable="true" type="id_Double"/>
+      </varTables>
       <outputTables name="out1" sizeState="INTERMEDIATE">
         <mapperTableEntries expression="row1.StaffID " name="StaffID" nullable="true" type="id_String"/>
         <mapperTableEntries expression="row1.StaffName " name="StaffName" nullable="true" type="id_String"/>
@@ -2252,10 +2254,9 @@
         <mapperTableEntries expression="row1.TotalWorkingHourConsideredLeave " name="TotalWorkingHourConsideredLeave" nullable="true" type="id_Double"/>
         <mapperTableEntries expression="row1.TimeLogHour " name="TimeLogHour" nullable="true" type="id_Double"/>
         <mapperTableEntries expression=" row1.TotalManDayLogPerMonthForProject " name="TotalManDayLogPerMonthForProject" nullable="true" type="id_Double"/>
-        <mapperTableEntries expression="StaffID_tMemorizeRows_1[0].equals(StaffID_tMemorizeRows_1[1]) &amp;&amp; STID_tMemorizeRows_1[0].equals(STID_tMemorizeRows_1[1]) &amp;&amp; ProjectID_tMemorizeRows_1[0].equals(ProjectID_tMemorizeRows_1[1]) &amp;&amp; ProjectDivisionObjectNo_tMemorizeRows_1[0].equals(ProjectDivisionObjectNo_tMemorizeRows_1[1]) ? null : row1.ManDayAssignedForProject " name="MandaysLeft" nullable="true" type="id_Double"/>
-        <mapperTableEntries expression="StaffID_tMemorizeRows_1[0].equals(StaffID_tMemorizeRows_1[1]) ? null : row1.ProjectMonths " name="MonthsLeft" nullable="true" type="id_Double"/>
+        <mapperTableEntries expression="" name="MandaysLeft" nullable="true" type="id_Double"/>
+        <mapperTableEntries expression="Var.row2 " name="MonthsLeft" nullable="true" type="id_Double"/>
         <mapperTableEntries expression="" name="AverageMandaysBasedOnMonthsLeft" nullable="true" type="id_Double"/>
-        <mapperTableEntries expression="ProjectMonth_tMemorizeRows_1[1]" name="testing" nullable="true" type="id_Integer"/>
       </outputTables>
       <inputTables lookupMode="LOAD_ONCE" matchingMode="UNIQUE_MATCH" name="row1" sizeState="INTERMEDIATE">
         <mapperTableEntries name="StaffID" nullable="true" type="id_String"/>
@@ -2329,8 +2330,6 @@
       <elementValue elementRef="LENGTH" value="10"/>
       <elementValue elementRef="SCHEMA_COLUMN" value="AverageMandaysBasedOnMonthsLeft"/>
       <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="testing"/>
-      <elementValue elementRef="LENGTH" value="10"/>
     </elementParameter>
     <elementParameter field="CHECK" name="PRINT_CONTENT_WITH_LOG4J" value="true"/>
     <elementParameter field="TEXT" name="SCHEMA_OPT_NUM" show="false" value="100"/>
@@ -2365,7 +2364,6 @@
       <column comment="" defaultValue="((0))" key="false" length="18" name="MandaysLeft" nullable="true" originalLength="18" pattern="" precision="2" sourceType="" type="id_Double" usefulColumn="true"/>
       <column comment="" defaultValue="((0))" key="false" length="18" name="MonthsLeft" nullable="true" originalLength="18" pattern="" precision="2" sourceType="" type="id_Double" usefulColumn="true"/>
       <column comment="" defaultValue="((0))" key="false" length="18" name="AverageMandaysBasedOnMonthsLeft" nullable="true" originalLength="18" pattern="" precision="2" sourceType="" type="id_Double" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="testing" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_Integer" usefulColumn="true"/>
     </metadata>
   </node>
   <connection connectorName="FLOW" label="ManHour" lineStyle="0" metaname="tDBInput_1" offsetLabelX="0" offsetLabelY="0" source="tDBInput_1" target="tMap_1">
@@ -2759,13 +2757,13 @@
     <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="92;131;150"/>
     <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
   </subjob>
-<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_69930e3f-368c-4de4-a905-2cc182db80ca"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>sV60W7zSy5P0F1hTzpfBvp3lMN886kWcl6cMB52RVdGgw8Gp4pSEUnTqV+zbNIcdZ+30zXmjtPFc&#13;
-hkXbqXtBLQ==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_dc205dec-df91-49bf-950d-df8a082e0cc5"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>TskH+G1RGzT0yBewoGHiq4mQnhBAigwJHxI+FLb+SYpfy100BB7v/BQMB1y6BxyP5cLHnKEKIWqw&#13;
-0JQ8xo/3fQ==</DigestValue></Reference></SignedInfo><SignatureValue>N6b9a0J/ji7cIab+TnoMn7e5FOVd49Nsod5YiBF6lvQgapGklutOtbLmuQXCnG6o7sxFH1q2Vadf&#13;
-/tmFk5QAsnoWyriSqvizA1GT+qjmi1RudFXQDtcHOzvDDinquOtdPE0EbsDbs4OcfBdcoSbpcFB0&#13;
-HviXtPLTW4jvGBntMRPD9cfFFG6rPFbZ9zskxaFACutwWDu+qhZsLy/6W8t4s+njUD7gGBgyB7wE&#13;
-JbOR8SSigvZB/yipWyVCefADdBb0SaEP+6xtBegx1fGJRnlryGsZ/woO1LHGa+/+74u2cYtAaPtq&#13;
-lWVYIxFJqgr/WOZ3/UoWxZ0Lg9ki9WdCWZrOzQ==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w&#13;
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_00f5c296-cccc-48e8-8474-14ad00bcca89"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>3goTLHiS/jNpX9z80IJIE6Wbe2Keh3JIpeWC0V/RRh4maIqTmgv1/jcPqSVfFWW/DvmotXZvsO0N&#13;
+gNK7LWLbhw==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_5f05c58a-f303-4f52-a127-a37b761c3b2d"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>zYiivvokE76o+WIYijlilAMthuScvVOD482CuaEqC/iX2llpR4F3zvxxb8jIh9Zwl5SQuZv8uVAI&#13;
+HBkhUmzkpQ==</DigestValue></Reference></SignedInfo><SignatureValue>GJLkLQURR3Gy0PXGJ2nJISUyn3WIHMzno/Z6hFuBgUIQKPdMDSOfmEhpt47iAcsIwGqW3cgfhRRE&#13;
+snIG1yWQxMlpnaWWviXusAKd1YliAYZ+/hsfI32abOkTDqXRq4btOAbZT+T7x7UNyzB3+tXyjZui&#13;
+KnbuzM4TYXTpOwdKNFqRznbenII/8vjMpvnJ5dAXwmbz9p38JL9YVAcSZWnyGzj1OqDNl/aLyBS+&#13;
++floWOPV1aKDOEOwZCci6mAzvFjUUGxixu8+LNESjVgyS/Fw7DJwiDMrtUi8B5Z18ZP6E7dZ4GEy&#13;
+z2XAVUxx5vYQKeK1aLH7puE5JGPadBVGRi3VIA==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w&#13;
 DAYDVQQIEwVQYXJpczEOMAwGA1UEBxMFUGFyaXMxFDASBgNVBAoTC1RhbGVuZCBJbmMuMQwwCgYD&#13;
 VQQLDANSJkQxFjAUBgNVBAMMDVRhbGVuZCBSJkQgQ0ExIjAgBgkqhkiG9w0BCQEWE3NlY3VyaXR5&#13;
 QHRhbGVuZC5jb20wHhcNMTkwNjAzMDgxODIwWhcNMjkwNjAzMDAwMDAwWjB7MSgwJgYDVQQDEx9U&#13;
@@ -2787,4 +2785,4 @@ hakvpzhOyLo91h8YAQrEZJdNuKA8IYmBrFZQZDCz0uywKSyFfzPyJhvxylCLG/iDPPfE0VWcrMJ/&#13
 WQJly/2XPg/NBCTF3pSKS0kCiA7PeaI3cWkMYYA3PMwYDvzqs1opBRglG7ikj0bQxSm3lcjMuuvW&#13;
 gBRksFKjP3K/nztsjSoYITOM9jR29ReIL3v0E8RbAFwA2RGq6Dxd0ixfbucMesy5Gnr8tfYy6rW+&#13;
 qSQqd3ah4+PSzBNVwIB4ytpdrG3SlhCI2i2Th8ek8Sjsaquh9qPAerWNd2+84HWOOGj1Xe1qc6vg&#13;
-qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_dc205dec-df91-49bf-950d-df8a082e0cc5" Target="#_69930e3f-368c-4de4-a905-2cc182db80ca"><Timestamp>2024-04-25 06:55:50</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
+qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_5f05c58a-f303-4f52-a127-a37b761c3b2d" Target="#_00f5c296-cccc-48e8-8474-14ad00bcca89"><Timestamp>2024-04-25 07:23:46</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>

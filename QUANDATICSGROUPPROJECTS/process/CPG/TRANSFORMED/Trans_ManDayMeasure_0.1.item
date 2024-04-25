@@ -1876,6 +1876,8 @@
       <column comment="" key="true" length="10" name="workingDate" nullable="false" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="DATE" type="id_Date" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
+      <column comment="" defaultValue="" key="false" length="-1" name="workingYear" nullable="false" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_Integer" usefulColumn="true"/>
+      <column comment="" defaultValue="" key="false" length="-1" name="workingMonth" nullable="false" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_Integer" usefulColumn="true"/>
       <column comment="" key="false" length="18" name="workingHour" nullable="true" pattern="" precision="2" sourceType="FLOAT" type="id_Double" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
@@ -1886,11 +1888,15 @@
       <uiProperties shellMaximized="true"/>
       <varTables name="Var" sizeState="INTERMEDIATE">
         <mapperTableEntries expression="row6.date == null ? &quot;N&quot; : &quot;Y&quot;" name="isOnLeve" type="id_String"/>
+        <mapperTableEntries expression="TalendDate.getPartOfDate(&quot;MONTH&quot;, row5.workingDate) + 1 " name="workingMonth" type="id_Integer"/>
+        <mapperTableEntries expression="TalendDate.getPartOfDate(&quot;YEAR&quot;,row5.workingDate) " name="workingYear" type="id_Integer"/>
       </varTables>
       <outputTables name="out4" sizeState="INTERMEDIATE">
         <mapperTableEntries expression="row5.eePersoNo " name="eePersoNo" type="id_String"/>
         <mapperTableEntries expression="row5.eeName " name="eeName" nullable="true" type="id_String"/>
         <mapperTableEntries expression="row5.workingDate " name="workingDate" type="id_Date"/>
+        <mapperTableEntries expression="Var.workingYear " name="workingYear" type="id_Integer"/>
+        <mapperTableEntries expression="Var.workingMonth " name="workingMonth" type="id_Integer"/>
         <mapperTableEntries expression="row5.workingHour" name="workingHour" nullable="true" type="id_Double"/>
         <mapperTableEntries expression="Var.isOnLeve.equals(&quot;Y&quot;) ? 0.0 :  row5.workingHour " name="workingHourConsideredLeave" nullable="true" type="id_Double"/>
         <mapperTableEntries expression="Var.isOnLeve " name="isOnLeve" type="id_String"/>
@@ -1938,7 +1944,7 @@
       <column comment="" defaultValue="" key="false" length="18" name="hour" nullable="true" originalLength="-1" pattern="" precision="2" sourceType="FLOAT" type="id_Double" usefulColumn="true"/>
     </metadata>
   </node>
-  <node componentName="tFileOutputDelimited" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="864" posY="160">
+  <node componentName="tFileOutputDelimited" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="1120" posY="160">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tFileOutputDelimited_2"/>
     <elementParameter field="CHECK" name="USESTREAM" value="false"/>
     <elementParameter field="TEXT" name="STREAMNAME" show="false" value="outputStream"/>
@@ -1978,6 +1984,8 @@
       <column comment="" key="true" length="10" name="workingDate" nullable="false" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="DATE" type="id_Date" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
+      <column comment="" defaultValue="" key="false" length="-1" name="workingYear" nullable="false" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_Integer" usefulColumn="true"/>
+      <column comment="" defaultValue="" key="false" length="-1" name="workingMonth" nullable="false" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_Integer" usefulColumn="true"/>
       <column comment="" key="false" length="18" name="workingHour" nullable="true" pattern="" precision="2" sourceType="FLOAT" type="id_Double" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
@@ -2246,6 +2254,12 @@
       <elementValue elementRef="TRACE_COLUMN" value="workingHourConsideredLeave"/>
       <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
       <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
+      <elementValue elementRef="TRACE_COLUMN" value="workingMonth"/>
+      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
+      <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
+      <elementValue elementRef="TRACE_COLUMN" value="workingYear"/>
+      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
+      <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
     </elementParameter>
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="out4"/>
@@ -2325,13 +2339,13 @@
     <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="92;131;150"/>
     <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
   </subjob>
-<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_f3a595f2-7f53-47a2-8ae3-1ab886f63750"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>ndC0BtMx/ojvJQ3bPqsaBobFh+NB+TcImmg0t2rPvLkkywf36Tp7bYuU5yk+nkUx5/B4A91/HNmy&#13;
-HYxH99Oc3w==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_00e90eb3-1b0f-448e-928a-92bc6fe8d40d"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>6wk44QG4cQpfN6LVXBT04js7H2NlpddTUHj4QyvLjc3Tjc02lb4i8S0WJ6eF4nWiPVDTELBxgsw3&#13;
-edM5hs0KDA==</DigestValue></Reference></SignedInfo><SignatureValue>VbcQrUlvw8fpgHbv8rQNs9Sv+Yq9nO2BE2a7LK/2HGC8gzaWphcvkz8m119ihCUyCSUwTaLCmek0&#13;
-WPS28dLu4pbus4KxwCk8AQ5qd9n/w9/3WdfnPfC1CgzzmgrwZ2+hta12TqRGOw4JGP9YsTtC3ckc&#13;
-vvjP355yc7QZ8U/CgtxCh4jhqRni+7oAHrLdubY0NtSpNBQVT2ojMcRAELBr2tCeT9uyxkFx+x6A&#13;
-vbEbTwyrJPZZc7YY6uKScvDHZi0dMuvRu+limaQ9oO+bWUD+2Bth8sOWwVYFo7Ad12CToeXSu5ql&#13;
-7DuywOPdIeaKbHLYkEtaTxctvuWywtZrLEnd8Q==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w&#13;
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_7ea6f2c2-7eb2-4108-a193-fb1683569ca4"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>O3be4AG1fep0gFb7nfL+LZiKScUt4cdw0MdbYMQVNV1bQ9m19RY9yk7YHX82Y/D36gWo2Ou8APSN&#13;
+UoAWc/mbBg==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_cf088272-6b5a-45e4-9c8f-0198e145f527"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>hWESl2eG+hj5ZtvAzBom1ScNC6X62WjysfUZGpH/CNeEGBtMuxHgTy54uhW/qmHX4qrrCGwmfROI&#13;
+thkLdd9KuQ==</DigestValue></Reference></SignedInfo><SignatureValue>HOzmckRtDTT+v4Gea7TLRWb1Jt8+SY6WjH16u5ORKWCELHkv492iuTyYTsIr8Zvmytdxya4J/eyv&#13;
+dgl+rK1LtKIX5549Zrj+Q8kAbvqZtfFTahP/qlf93FBbn+3bz1z79C3X4ur6EzvHZ1ie9E3/UUWJ&#13;
+4uiRdekIDajpr/AOX0KraZrFaGMf+ZFzgzGmhf/DX3FWVIzI0g53Nndi4DYpm31gXjFMsjWxWXEx&#13;
+FridAZxa2LkER1j5OEklJncex0ptZCpQIedQeQBDvzFML2u1U5Rc3lbmCnuS25AJbAGoiRKMTSEn&#13;
+UJ5S3RETcdgsFFWUfJtq5OsLIzN8s7iRECk5Cw==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w&#13;
 DAYDVQQIEwVQYXJpczEOMAwGA1UEBxMFUGFyaXMxFDASBgNVBAoTC1RhbGVuZCBJbmMuMQwwCgYD&#13;
 VQQLDANSJkQxFjAUBgNVBAMMDVRhbGVuZCBSJkQgQ0ExIjAgBgkqhkiG9w0BCQEWE3NlY3VyaXR5&#13;
 QHRhbGVuZC5jb20wHhcNMTkwNjAzMDgxODIwWhcNMjkwNjAzMDAwMDAwWjB7MSgwJgYDVQQDEx9U&#13;
@@ -2353,4 +2367,4 @@ hakvpzhOyLo91h8YAQrEZJdNuKA8IYmBrFZQZDCz0uywKSyFfzPyJhvxylCLG/iDPPfE0VWcrMJ/&#13
 WQJly/2XPg/NBCTF3pSKS0kCiA7PeaI3cWkMYYA3PMwYDvzqs1opBRglG7ikj0bQxSm3lcjMuuvW&#13;
 gBRksFKjP3K/nztsjSoYITOM9jR29ReIL3v0E8RbAFwA2RGq6Dxd0ixfbucMesy5Gnr8tfYy6rW+&#13;
 qSQqd3ah4+PSzBNVwIB4ytpdrG3SlhCI2i2Th8ek8Sjsaquh9qPAerWNd2+84HWOOGj1Xe1qc6vg&#13;
-qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_00e90eb3-1b0f-448e-928a-92bc6fe8d40d" Target="#_f3a595f2-7f53-47a2-8ae3-1ab886f63750"><Timestamp>2024-04-25 01:57:41</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
+qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_cf088272-6b5a-45e4-9c8f-0198e145f527" Target="#_7ea6f2c2-7eb2-4108-a193-fb1683569ca4"><Timestamp>2024-04-25 02:02:52</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>

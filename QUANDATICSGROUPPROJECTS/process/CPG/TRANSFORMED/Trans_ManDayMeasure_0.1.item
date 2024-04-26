@@ -2347,37 +2347,21 @@
       <column defaultValue="" key="false" length="255" name="errorMessage" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
     </metadata>
   </node>
-  <node componentName="tFileOutputDelimited" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="736" posY="1312">
-    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tFileOutputDelimited_3"/>
-    <elementParameter field="CHECK" name="USESTREAM" value="false"/>
-    <elementParameter field="TEXT" name="STREAMNAME" show="false" value="outputStream"/>
-    <elementParameter field="FILE" name="FILENAME" value="&quot;/Users/minganntew/Downloads/abc.csv&quot;"/>
-    <elementParameter field="TEXT" name="ROWSEPARATOR" show="false" value="&quot;\n&quot;"/>
-    <elementParameter field="CHECK" name="OS_LINE_SEPARATOR_AS_ROW_SEPARATOR" value="true"/>
-    <elementParameter field="OPENED_LIST" name="CSVROWSEPARATOR" value="&quot;\n&quot;"/>
-    <elementParameter field="TEXT" name="FIELDSEPARATOR" value="&quot;,&quot;"/>
-    <elementParameter field="CHECK" name="APPEND" value="true"/>
-    <elementParameter field="CHECK" name="INCLUDEHEADER" value="true"/>
-    <elementParameter field="CHECK" name="COMPRESS" show="false" value="false"/>
-    <elementParameter field="CHECK" name="ADVANCED_SEPARATOR" value="false"/>
-    <elementParameter field="TEXT" name="THOUSANDS_SEPARATOR" show="false" value="&quot;,&quot;"/>
-    <elementParameter field="TEXT" name="DECIMAL_SEPARATOR" show="false" value="&quot;.&quot;"/>
-    <elementParameter field="CHECK" name="CSV_OPTION" value="true"/>
-    <elementParameter field="TEXT" name="ESCAPE_CHAR" value="&quot;&quot;&quot;"/>
-    <elementParameter field="TEXT" name="TEXT_ENCLOSURE" value="&quot;&quot;&quot;"/>
-    <elementParameter field="CHECK" name="CREATE" value="true"/>
-    <elementParameter field="CHECK" name="SPLIT" value="false"/>
-    <elementParameter field="TEXT" name="SPLIT_EVERY" show="false" value="1000"/>
-    <elementParameter field="CHECK" name="FLUSHONROW" value="false"/>
-    <elementParameter field="TEXT" name="FLUSHONROW_NUM" show="false" value="1"/>
-    <elementParameter field="CHECK" name="ROW_MODE" value="false"/>
-    <elementParameter field="ENCODING_TYPE" name="ENCODING" value="&quot;ISO-8859-15&quot;"/>
-    <elementParameter field="TECHNICAL" name="ENCODING:ENCODING_TYPE" value="ISO-8859-15"/>
-    <elementParameter field="CHECK" name="DELETE_EMPTYFILE" value="true"/>
-    <elementParameter field="CHECK" name="FILE_EXIST_EXCEPTION" show="false" value="false"/>
-    <elementParameter field="TEXT" name="SCHEMA_OPT_NUM" show="false" value="90"/>
+  <node componentName="tMap" componentVersion="2.1" offsetLabelX="0" offsetLabelY="0" posX="736" posY="1312">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tMap_14"/>
+    <elementParameter field="EXTERNAL" name="MAP" value=""/>
+    <elementParameter field="CLOSED_LIST" name="LINK_STYLE" value="AUTO"/>
+    <elementParameter field="DIRECTORY" name="TEMPORARY_DATA_DIRECTORY" value=""/>
+    <elementParameter field="IMAGE" name="PREVIEW" value="_asxdMPNSEe6EtYPclWq0yg-tMap_14-PREVIEW.bmp"/>
+    <elementParameter field="CHECK" name="DIE_ON_ERROR" show="false" value="true"/>
+    <elementParameter field="CHECK" name="LKUP_PARALLELIZE" show="false" value="false"/>
+    <elementParameter field="TEXT" name="LEVENSHTEIN" show="false" value="0"/>
+    <elementParameter field="TEXT" name="JACCARD" show="false" value="0"/>
+    <elementParameter field="CHECK" name="ENABLE_AUTO_CONVERT_TYPE" show="false" value="false"/>
+    <elementParameter field="TEXT" name="ROWS_BUFFER_SIZE" value="2000000"/>
+    <elementParameter field="CHECK" name="CHANGE_HASH_AND_EQUALS_FOR_BIGDECIMAL" value="true"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
-    <metadata connector="FLOW" name="tFileOutputDelimited_3">
+    <metadata connector="FLOW" name="copyOfout1">
       <column comment="" key="false" length="50" name="StaffID" nullable="true" pattern="" precision="0" sourceType="NVARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
@@ -2390,13 +2374,13 @@
         <additionalField key="Comment" value=""/>
       </column>
       <column comment="" key="false" length="23" name="ProjectEndDate" nullable="true" originalLength="23" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
-      <column comment="" defaultValue="" key="false" length="2" name="ProjectMonth" nullable="true" originalLength="2" pattern="" precision="0" sourceType="" type="id_Integer" usefulColumn="true"/>
+      <column comment="" defaultValue="" key="false" length="3" name="ProjectMonths" nullable="true" originalLength="2" pattern="" precision="0" sourceType="" type="id_Integer" usefulColumn="true"/>
       <column comment="" defaultValue="" key="false" length="4" name="ProjectYear" nullable="true" originalLength="4" pattern="" precision="0" sourceType="" type="id_Integer" usefulColumn="true"/>
       <column comment="" key="false" length="8" name="WorkingDay" nullable="true" originalLength="8" pattern="" precision="0" sourceType="" type="id_Integer" usefulColumn="true"/>
       <column comment="" defaultValue="((0))" key="false" length="24" name="ManDayAssignedForProject" nullable="true" pattern="" precision="2" sourceType="FLOAT" type="id_Double" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
-      <column comment="" defaultValue="((0))" key="false" length="24" name="ProjectMonths" nullable="true" originalLength="24" pattern="" precision="2" sourceType="" type="id_Double" usefulColumn="true"/>
+      <column comment="" defaultValue="((0))" key="false" length="24" name="TotalProjectMonths" nullable="true" originalLength="24" pattern="" precision="2" sourceType="" type="id_Double" usefulColumn="true"/>
       <column comment="" defaultValue="((0))" key="false" length="24" name="AverageManDayAssignedPerMonthForProject" nullable="true" originalLength="24" pattern="" precision="2" sourceType="" type="id_Double" usefulColumn="true"/>
       <column comment="" defaultValue="((0))" key="false" length="24" name="TimeLoggableMandayPerMonth" nullable="true" originalLength="24" pattern="" precision="2" sourceType="" type="id_Double" usefulColumn="true"/>
       <column comment="" defaultValue="((0))" key="false" length="18" name="TotalWorkingHour" nullable="true" pattern="" precision="2" sourceType="FLOAT" type="id_Double" usefulColumn="true">
@@ -2405,6 +2389,104 @@
       <column comment="" defaultValue="((0))" key="false" length="18" name="TotalWorkingHourConsideredLeave" nullable="true" originalLength="18" pattern="" precision="2" sourceType="" type="id_Double" usefulColumn="true"/>
       <column comment="" defaultValue="((0))" key="false" length="7" name="TimeLogHour" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="FLOAT" type="id_Double" usefulColumn="true"/>
       <column comment="" defaultValue="((0))" key="false" length="18" name="TotalManDayLogPerMonthForProject" nullable="true" originalLength="18" pattern="" precision="2" sourceType="" type="id_Double" usefulColumn="true"/>
+      <column comment="" defaultValue="((0))" key="false" length="18" name="MandaysLeft" nullable="true" originalLength="18" pattern="" precision="2" sourceType="" type="id_Double" usefulColumn="true"/>
+      <column comment="" defaultValue="((0))" key="false" length="18" name="MonthsLeft" nullable="true" originalLength="18" pattern="" precision="2" sourceType="" type="id_Double" usefulColumn="true"/>
+      <column comment="" defaultValue="((0))" key="false" length="18" name="AverageMandaysBasedOnMonthsLeft" nullable="true" originalLength="18" pattern="" precision="2" sourceType="" type="id_Double" usefulColumn="true"/>
+    </metadata>
+    <nodeData xsi:type="TalendMapper:MapperData">
+      <uiProperties shellMaximized="true"/>
+      <varTables name="Var" sizeState="INTERMEDIATE">
+        <mapperTableEntries expression="Numeric.sequence(&quot;s1&quot;,1,1) " name="Index" type="id_Integer"/>
+        <mapperTableEntries expression="Var.Index == 1 ? 0 : Var.CurrRow " name="PrevRow" nullable="true" type="id_Double"/>
+        <mapperTableEntries expression="Var.Index == 1 ? filtered.ManDayAssignedForProject - filtered.TotalManDayLogPerMonthForProject : Var.PrevRow - filtered.TotalManDayLogPerMonthForProject " name="CurrRow" nullable="true" type="id_Double"/>
+        <mapperTableEntries expression="Double.valueOf(String.valueOf(TalendDate.diffDate(TalendDate.parseDate(&quot;yyyyMM&quot;,filtered.ProjectEndDate),TalendDate.parseDate(&quot;yyyyMM&quot;,((String)globalMap.get(&quot;YearMonth&quot;))),&quot;MM&quot;))) + 1.0 " name="var1" type="id_Double"/>
+        <mapperTableEntries expression="String.valueOf(filtered.ProjectYear) + String.valueOf(filtered.ProjectMonth) " name="var2" type="id_String"/>
+      </varTables>
+      <outputTables name="copyOfout1" sizeState="INTERMEDIATE">
+        <mapperTableEntries expression="filtered.StaffID " name="StaffID" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="filtered.StaffName " name="StaffName" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="filtered.STID " name="STID" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="filtered.ProjectID " name="ProjectID" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="filtered.ProjectDivisionObjectNo " name="ProjectDivisionObjectNo" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="filtered.ProjectEndDate " name="ProjectEndDate" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="filtered.ProjectMonth " name="ProjectMonths" nullable="true" type="id_Integer"/>
+        <mapperTableEntries expression="filtered.ProjectYear " name="ProjectYear" nullable="true" type="id_Integer"/>
+        <mapperTableEntries expression="filtered.WorkingDay " name="WorkingDay" nullable="true" type="id_Integer"/>
+        <mapperTableEntries expression="filtered.ManDayAssignedForProject " name="ManDayAssignedForProject" nullable="true" type="id_Double"/>
+        <mapperTableEntries expression="filtered.ProjectMonths " name="TotalProjectMonths" nullable="true" type="id_Double"/>
+        <mapperTableEntries expression="filtered.AverageManDayAssignedPerMonthForProject " name="AverageManDayAssignedPerMonthForProject" nullable="true" type="id_Double"/>
+        <mapperTableEntries expression="filtered.TimeLoggableMandayPerMonth " name="TimeLoggableMandayPerMonth" nullable="true" type="id_Double"/>
+        <mapperTableEntries expression="filtered.TotalWorkingHour " name="TotalWorkingHour" nullable="true" type="id_Double"/>
+        <mapperTableEntries expression="filtered.TotalWorkingHourConsideredLeave " name="TotalWorkingHourConsideredLeave" nullable="true" type="id_Double"/>
+        <mapperTableEntries expression="filtered.TimeLogHour " name="TimeLogHour" nullable="true" type="id_Double"/>
+        <mapperTableEntries expression=" filtered.TotalManDayLogPerMonthForProject " name="TotalManDayLogPerMonthForProject" nullable="true" type="id_Double"/>
+        <mapperTableEntries expression="Var.CurrRow " name="MandaysLeft" nullable="true" type="id_Double"/>
+        <mapperTableEntries expression="Double.valueOf(filtered.ProjectMonths) -  Var.Index + 1 " name="MonthsLeft" nullable="true" type="id_Double"/>
+        <mapperTableEntries expression="TalendDate.compareDate(TalendDate.parseDate(&quot;yyyyMM&quot;,((String)globalMap.get(&quot;YearMonth&quot;))), TalendDate.parseDate(&quot;yyyyMM&quot;,Var.var2)) == 1 ? 0.0 : Var.CurrRow / Var.var1 " name="AverageMandaysBasedOnMonthsLeft" nullable="true" type="id_Double"/>
+      </outputTables>
+      <inputTables lookupMode="LOAD_ONCE" matchingMode="UNIQUE_MATCH" name="filtered" sizeState="INTERMEDIATE">
+        <mapperTableEntries name="StaffID" nullable="true" type="id_String"/>
+        <mapperTableEntries name="StaffName" nullable="true" type="id_String"/>
+        <mapperTableEntries name="STID" nullable="true" type="id_String"/>
+        <mapperTableEntries name="ProjectID" nullable="true" type="id_String"/>
+        <mapperTableEntries name="ProjectDivisionObjectNo" nullable="true" type="id_String"/>
+        <mapperTableEntries name="ProjectEndDate" nullable="true" type="id_String"/>
+        <mapperTableEntries name="ProjectMonth" nullable="true" type="id_Integer"/>
+        <mapperTableEntries name="ProjectYear" nullable="true" type="id_Integer"/>
+        <mapperTableEntries name="WorkingDay" nullable="true" type="id_Integer"/>
+        <mapperTableEntries name="ManDayAssignedForProject" nullable="true" type="id_Double"/>
+        <mapperTableEntries name="ProjectMonths" nullable="true" type="id_Double"/>
+        <mapperTableEntries name="AverageManDayAssignedPerMonthForProject" nullable="true" type="id_Double"/>
+        <mapperTableEntries name="TimeLoggableMandayPerMonth" nullable="true" type="id_Double"/>
+        <mapperTableEntries name="TotalWorkingHour" nullable="true" type="id_Double"/>
+        <mapperTableEntries name="TotalWorkingHourConsideredLeave" nullable="true" type="id_Double"/>
+        <mapperTableEntries name="TimeLogHour" nullable="true" type="id_Double"/>
+        <mapperTableEntries name="TotalManDayLogPerMonthForProject" nullable="true" type="id_Double"/>
+      </inputTables>
+    </nodeData>
+  </node>
+  <node componentName="tHashOutput" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="896" posY="1312">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tHashOutput_10"/>
+    <elementParameter field="CHECK" name="LINK_WITH" value="false"/>
+    <elementParameter field="COMPONENT_LIST" name="LIST" show="false" value=""/>
+    <elementParameter field="CLOSED_LIST" name="DATA_WRITE_MODEL" value="MEMORY"/>
+    <elementParameter field="FILE" name="BASE_FILE_PATH" show="false" value="&quot;/Applications/TalendStudio-8.0.1/studio/workspace/in.hash&quot;"/>
+    <elementParameter field="TEXT" name="MEMORY_HEAP_MAX_SIZE" show="false" value="2"/>
+    <elementParameter field="CLOSED_LIST" name="KEYS_MANAGEMENT" value="KEEP_ALL"/>
+    <elementParameter field="CHECK" name="APPEND" value="true"/>
+    <elementParameter field="CHECK" name="HASH_KEY_FROM_INPUT_CONNECTOR" show="false" value="false"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <metadata connector="FLOW" name="tHashOutput_10">
+      <column comment="" key="false" length="50" name="StaffID" nullable="true" pattern="" precision="0" sourceType="NVARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="500" name="StaffName" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="NVARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="36" name="STID" nullable="true" pattern="" precision="0" sourceType="UNIQUEIDENTIFIER" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="500" name="ProjectID" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="100" name="ProjectDivisionObjectNo" nullable="true" pattern="" precision="0" sourceType="NVARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="23" name="ProjectEndDate" nullable="true" originalLength="23" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
+      <column comment="" defaultValue="" key="false" length="3" name="ProjectMonths" nullable="true" originalLength="2" pattern="" precision="0" sourceType="" type="id_Integer" usefulColumn="true"/>
+      <column comment="" defaultValue="" key="false" length="4" name="ProjectYear" nullable="true" originalLength="4" pattern="" precision="0" sourceType="" type="id_Integer" usefulColumn="true"/>
+      <column comment="" key="false" length="8" name="WorkingDay" nullable="true" originalLength="8" pattern="" precision="0" sourceType="" type="id_Integer" usefulColumn="true"/>
+      <column comment="" defaultValue="((0))" key="false" length="24" name="ManDayAssignedForProject" nullable="true" pattern="" precision="2" sourceType="FLOAT" type="id_Double" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" defaultValue="((0))" key="false" length="24" name="TotalProjectMonths" nullable="true" originalLength="24" pattern="" precision="2" sourceType="" type="id_Double" usefulColumn="true"/>
+      <column comment="" defaultValue="((0))" key="false" length="24" name="AverageManDayAssignedPerMonthForProject" nullable="true" originalLength="24" pattern="" precision="2" sourceType="" type="id_Double" usefulColumn="true"/>
+      <column comment="" defaultValue="((0))" key="false" length="24" name="TimeLoggableMandayPerMonth" nullable="true" originalLength="24" pattern="" precision="2" sourceType="" type="id_Double" usefulColumn="true"/>
+      <column comment="" defaultValue="((0))" key="false" length="18" name="TotalWorkingHour" nullable="true" pattern="" precision="2" sourceType="FLOAT" type="id_Double" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" defaultValue="((0))" key="false" length="18" name="TotalWorkingHourConsideredLeave" nullable="true" originalLength="18" pattern="" precision="2" sourceType="" type="id_Double" usefulColumn="true"/>
+      <column comment="" defaultValue="((0))" key="false" length="7" name="TimeLogHour" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="FLOAT" type="id_Double" usefulColumn="true"/>
+      <column comment="" defaultValue="((0))" key="false" length="18" name="TotalManDayLogPerMonthForProject" nullable="true" originalLength="18" pattern="" precision="2" sourceType="" type="id_Double" usefulColumn="true"/>
+      <column comment="" defaultValue="((0))" key="false" length="18" name="MandaysLeft" nullable="true" originalLength="18" pattern="" precision="2" sourceType="" type="id_Double" usefulColumn="true"/>
+      <column comment="" defaultValue="((0))" key="false" length="18" name="MonthsLeft" nullable="true" originalLength="18" pattern="" precision="2" sourceType="" type="id_Double" usefulColumn="true"/>
+      <column comment="" defaultValue="((0))" key="false" length="18" name="AverageMandaysBasedOnMonthsLeft" nullable="true" originalLength="18" pattern="" precision="2" sourceType="" type="id_Double" usefulColumn="true"/>
     </metadata>
   </node>
   <node componentName="tHashInput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="64" posY="1408">
@@ -2561,7 +2643,7 @@
       <column comment="" defaultValue="((0))" key="false" length="18" name="AverageMandaysBasedOnMonthsLeft" nullable="true" originalLength="18" pattern="" precision="2" sourceType="" type="id_Double" usefulColumn="true"/>
     </metadata>
     <nodeData xsi:type="TalendMapper:MapperData">
-      <uiProperties shellMaximized="true"/>
+      <uiProperties/>
       <varTables name="Var" sizeState="INTERMEDIATE">
         <mapperTableEntries expression="Numeric.sequence(&quot;s1&quot;,1,1) " name="Index" type="id_Integer"/>
         <mapperTableEntries expression="Var.Index == 1 ? 0 : Var.CurrRow " name="PrevRow" nullable="true" type="id_Double"/>
@@ -3034,9 +3116,13 @@
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="before"/>
   </connection>
-  <connection connectorName="FILTER" label="row2" lineStyle="0" metaname="FILTER" offsetLabelX="0" offsetLabelY="0" source="tFilterRow_40" target="tFileOutputDelimited_3">
+  <connection connectorName="FILTER" label="filtered" lineStyle="0" metaname="FILTER" offsetLabelX="0" offsetLabelY="0" source="tFilterRow_40" target="tMap_14">
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
-    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="row2"/>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="filtered"/>
+  </connection>
+  <connection connectorName="FLOW" label="copyOfout1" lineStyle="0" metaname="copyOfout1" offsetLabelX="0" offsetLabelY="0" source="tMap_14" target="tHashOutput_10">
+    <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="copyOfout1"/>
   </connection>
   <connection connectorName="FLOW" label="row1" lineStyle="0" metaname="tHashInput_10" offsetLabelX="0" offsetLabelY="0" source="tHashInput_10" target="tFileOutputDelimited_2">
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
@@ -3140,13 +3226,13 @@
     <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="92;131;150"/>
     <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
   </subjob>
-<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_618e0c91-0e77-4333-a2c7-e78de2022cdd"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>mSN7t1eiNLTMDH7/S51IS6Tbvzb0iZ/nim+FXmsiL6Oow9izin5kT7utqhPq0xRdTRHFp00S/Nj6&#13;
-6QkskZkeyQ==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_9748272c-d190-41ab-9c95-1b4c6c8698ad"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>y+jR/xlLWMyHHTSzbWoj/lyas38vHrqlW8Ib4JkyjPo9qb4kxQheiRSHVlxPh/DpsjygBC1Es+gf&#13;
-CMNBPGcBHw==</DigestValue></Reference></SignedInfo><SignatureValue>PSQtAxfN9YP5CGAc4CHxuB9kpZB5elPzAw3YqlwXmzQXroAF6qqY+C0+V7fOxFDMhrjtaQeb7yMf&#13;
-7uBYuLQYD5p58DRHKah0/2vH5SmD8s9i9PKvuYFHBnT0pIr7srRhLXYK5ggC1Gt7u9dezMMU9MIt&#13;
-Bk0limKOrWA6a14OqDMdgeYlc7t/2ltiAzpaImwmLan+5fMo41gBerdETokuQF1wEEeedHzZO/IM&#13;
-MmWm3y3fEpq/3m48Bk2olu2qum6ShjQjuTi7HEXrSRAFutagpGRjRnxXa4WZGeyNGqniRz2rApmA&#13;
-lhcY3eWeKVgneUpLzHNHaVkTHAz0Uhm8tlPweQ==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w&#13;
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_88e6352d-bfbe-42bf-8fb5-7f5cc34889e8"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>SNZe/AscAMunl3bMUHMobsGU25+dHpJhSyRvpeQcE+lcfe9JfA3qKUeVRz+ZKaMKsTFpzxXj2XwT&#13;
+EhSG28y2UQ==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_d2c35552-5541-4928-801b-4e47151c4736"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>LyqHIICBHXwDld8o2tQn6ZnaCzUAjVRVKUrNXKqA+vpn1D6+QBnubNWOEYJJCKMUCqTwhih6NriS&#13;
+Qo64F7jgiw==</DigestValue></Reference></SignedInfo><SignatureValue>Aw3F2d5+xFnlfHu7+LBQ8KJj1mj7bqwnrBuiJoM/LvN4jbFYpBk+P2hVPDOXscIqUXLWRyeYc3CQ&#13;
+/NODzgG0/iDpj2HjkCkbc4ib42A6zEpWnUW+TpxW7WWcNvJ9ySAAWIJ9IWwY7ejiFzCcZReO3x3B&#13;
+/BXo5JN6j0y9lKqml52WUpvj3rkTGemh4JdVIrjbFN1nfELxXN/kdMa7KrEy+ExKCdke/3yfCf/M&#13;
+lIBmpW0xhnSNgaT+3pvBsuFFRrgR4uH+vJnjSqatls2PKexNXsjM+1DpyBhOPUrbxZ0Vp2RoT5Jk&#13;
+MxeYzBoQ7gxYiASc5SoEDPZEUAFsx06rJ+mW/w==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w&#13;
 DAYDVQQIEwVQYXJpczEOMAwGA1UEBxMFUGFyaXMxFDASBgNVBAoTC1RhbGVuZCBJbmMuMQwwCgYD&#13;
 VQQLDANSJkQxFjAUBgNVBAMMDVRhbGVuZCBSJkQgQ0ExIjAgBgkqhkiG9w0BCQEWE3NlY3VyaXR5&#13;
 QHRhbGVuZC5jb20wHhcNMTkwNjAzMDgxODIwWhcNMjkwNjAzMDAwMDAwWjB7MSgwJgYDVQQDEx9U&#13;
@@ -3168,4 +3254,4 @@ hakvpzhOyLo91h8YAQrEZJdNuKA8IYmBrFZQZDCz0uywKSyFfzPyJhvxylCLG/iDPPfE0VWcrMJ/&#13
 WQJly/2XPg/NBCTF3pSKS0kCiA7PeaI3cWkMYYA3PMwYDvzqs1opBRglG7ikj0bQxSm3lcjMuuvW&#13;
 gBRksFKjP3K/nztsjSoYITOM9jR29ReIL3v0E8RbAFwA2RGq6Dxd0ixfbucMesy5Gnr8tfYy6rW+&#13;
 qSQqd3ah4+PSzBNVwIB4ytpdrG3SlhCI2i2Th8ek8Sjsaquh9qPAerWNd2+84HWOOGj1Xe1qc6vg&#13;
-qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_9748272c-d190-41ab-9c95-1b4c6c8698ad" Target="#_618e0c91-0e77-4333-a2c7-e78de2022cdd"><Timestamp>2024-04-25 10:17:44</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
+qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_d2c35552-5541-4928-801b-4e47151c4736" Target="#_88e6352d-bfbe-42bf-8fb5-7f5cc34889e8"><Timestamp>2024-04-26 01:42:18</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>

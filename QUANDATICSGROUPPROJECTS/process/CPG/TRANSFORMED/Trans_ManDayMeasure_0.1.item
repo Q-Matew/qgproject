@@ -2397,8 +2397,8 @@
       <uiProperties shellMaximized="true"/>
       <varTables name="Var" sizeState="INTERMEDIATE">
         <mapperTableEntries expression="Numeric.sequence(&quot;s1&quot;,1,1) " name="Index" type="id_Integer"/>
-        <mapperTableEntries expression="Var.Index == 1 ? 0 : Var.CurrRow " name="PrevRow" nullable="true" type="id_Double"/>
-        <mapperTableEntries expression="Var.Index == 1 ? filtered.ManDayAssignedForProject - filtered.TotalManDayLogPerMonthForProject : Var.PrevRow - filtered.TotalManDayLogPerMonthForProject " name="CurrRow" nullable="true" type="id_Double"/>
+        <mapperTableEntries expression="Double.valueOf(String.valueOf(TalendDate.diffDate(TalendDate.parseDate(&quot;yyyyMM&quot;,filtered.ProjectEndDate),TalendDate.parseDate(&quot;yyyyMM&quot;,((String)globalMap.get(&quot;YearMonth&quot;))),&quot;MM&quot;))) + 1.0 " name="var1" type="id_Double"/>
+        <mapperTableEntries expression="String.valueOf(filtered.ProjectYear) + String.valueOf(filtered.ProjectMonth) " name="var2" type="id_String"/>
       </varTables>
       <outputTables name="copyOfout1" sizeState="INTERMEDIATE">
         <mapperTableEntries expression="filtered.StaffID " name="StaffID" nullable="true" type="id_String"/>
@@ -2418,9 +2418,9 @@
         <mapperTableEntries expression="filtered.TotalWorkingHourConsideredLeave " name="TotalWorkingHourConsideredLeave" nullable="true" type="id_Double"/>
         <mapperTableEntries expression="filtered.TimeLogHour " name="TimeLogHour" nullable="true" type="id_Double"/>
         <mapperTableEntries expression=" filtered.TotalManDayLogPerMonthForProject " name="TotalManDayLogPerMonthForProject" nullable="true" type="id_Double"/>
-        <mapperTableEntries expression="Var.CurrRow " name="MandaysLeft" nullable="true" type="id_Double"/>
-        <mapperTableEntries expression="" name="MonthsLeft" nullable="true" type="id_Double"/>
-        <mapperTableEntries expression="" name="AverageMandaysBasedOnMonthsLeft" nullable="true" type="id_Double"/>
+        <mapperTableEntries expression="" name="MandaysLeft" nullable="true" type="id_Double"/>
+        <mapperTableEntries expression="Double.valueOf(filtered.ProjectMonths) -  Var.Index + 1 " name="MonthsLeft" nullable="true" type="id_Double"/>
+        <mapperTableEntries expression="TalendDate.compareDate(TalendDate.parseDate(&quot;yyyyMM&quot;,((String)globalMap.get(&quot;YearMonth&quot;))), TalendDate.parseDate(&quot;yyyyMM&quot;,Var.var2)) == 1 ? 0.0 : Var.CurrRow / Var.var1 " name="AverageMandaysBasedOnMonthsLeft" nullable="true" type="id_Double"/>
       </outputTables>
       <inputTables lookupMode="LOAD_ONCE" matchingMode="UNIQUE_MATCH" name="filtered" sizeState="INTERMEDIATE">
         <mapperTableEntries name="StaffID" nullable="true" type="id_String"/>
@@ -2453,6 +2453,7 @@
     <elementParameter field="CLOSED_LIST" name="KEYS_MANAGEMENT" value="KEEP_ALL"/>
     <elementParameter field="CHECK" name="APPEND" value="true"/>
     <elementParameter field="CHECK" name="HASH_KEY_FROM_INPUT_CONNECTOR" show="false" value="false"/>
+    <elementParameter field="TEXT" name="LABEL" value="enriched"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="FLOW" name="tHashOutput_10">
       <column comment="" key="false" length="50" name="StaffID" nullable="true" pattern="" precision="0" sourceType="NVARCHAR" type="id_String" usefulColumn="true">
@@ -3224,13 +3225,13 @@
     <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="92;131;150"/>
     <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
   </subjob>
-<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_e404f2b2-1613-42ec-a2a9-e04aeaf5a60a"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>/wa78rY6Gam6fYgrtti5lJQYd8dO4AN4fwol6DdNH8CaZr2RG//deBm/CkihmpCCibxpMbxJZVNe&#13;
-kkimKZ1TTQ==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_f869c7dd-59ef-42d3-8bc0-3ce84d27713c"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>9Gp3CXV66O+Bn+h9Ag5W9wXwVhoce8mjVfBwsmrAwZHshUFOuyfboFgpKT+A7bsd82OdmG/2E7pz&#13;
-pHTbnZVaqQ==</DigestValue></Reference></SignedInfo><SignatureValue>N+i1G8+6pczVCAGzzZW6h6u4g1FvIVH/KbltRKy96lPd/JgVpalxPm7jxYZ05qRwOUsx/7T1biVC&#13;
-zGak52uwrdMQ2RkgNJNKp7R0MWz7vhhPJpBexKvjc1954qupb7HcM0zO81kcboFLde32r9Tjl05l&#13;
-hNK8KWUTmL6mbY0OSMNUPHRscQXkwr9YTLRxAzSqxe6NLzlcqpLRCeKW5JP64mzc2znqmmxtbxgz&#13;
-hIQ+d7iftz1ygvBL2eTyXxziVD3ZvT9XpLYl0MqzYGU9jG06HzEkEAB94vSKKEPp81a6mRI/8cHv&#13;
-sVgwf8M7QbZZDNa0MoGuWD3rcC+RqvCPo4akSw==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w&#13;
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_485a01c6-a946-4554-b9ec-0ec628d17894"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>4b9qFaeQPIVbxp4wzwZjPzGGuPL/FEGM+8i03UGn+niL4bfCmVrYkOv8HMgoBXd9D5NE8D/F2C+o&#13;
+7ga0UI8vJQ==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_c0454894-66a3-4bc7-9e1f-7218115cb246"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>c40arAqUQNkw1HyU+id8H1I3ArtdmeX1doJkntYXSBEPcFy6ILLRhB5efQfuu+lD6BjZgW7K7X3V&#13;
+YIZ3IyfKbg==</DigestValue></Reference></SignedInfo><SignatureValue>YLLbXNNm9+aQLcKM9gcIwlyO7XvCa67V8cQEWUxqsnkxchWdx0UJKy9qPvhhpg/gImNN4xiigI+z&#13;
+e8hIfItaG1brumJmDmeim5cvipDFUvBprcLVrlzn7SyyaIymiKf1GJmPJNcCLi79sgsWqwhXsh3Q&#13;
+jF6fGAMbOmHcyNWQ5aC5Mf+voFVo+KZlKs0OKFxrnb/GySMItMwV4vNoaaET5o97B8xh7oSNFbes&#13;
+DdOoFd+fp5BN2MVx65g2N5uA2X8hPp7RKiqKa6sLi2qC8ZTwGjw4kRwD8F3kzzBvuy0MUVmcRsln&#13;
+wNcSKKLhpMggAv5wz29QGVBlfuiKDTnehhl9rA==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w&#13;
 DAYDVQQIEwVQYXJpczEOMAwGA1UEBxMFUGFyaXMxFDASBgNVBAoTC1RhbGVuZCBJbmMuMQwwCgYD&#13;
 VQQLDANSJkQxFjAUBgNVBAMMDVRhbGVuZCBSJkQgQ0ExIjAgBgkqhkiG9w0BCQEWE3NlY3VyaXR5&#13;
 QHRhbGVuZC5jb20wHhcNMTkwNjAzMDgxODIwWhcNMjkwNjAzMDAwMDAwWjB7MSgwJgYDVQQDEx9U&#13;
@@ -3252,4 +3253,4 @@ hakvpzhOyLo91h8YAQrEZJdNuKA8IYmBrFZQZDCz0uywKSyFfzPyJhvxylCLG/iDPPfE0VWcrMJ/&#13
 WQJly/2XPg/NBCTF3pSKS0kCiA7PeaI3cWkMYYA3PMwYDvzqs1opBRglG7ikj0bQxSm3lcjMuuvW&#13;
 gBRksFKjP3K/nztsjSoYITOM9jR29ReIL3v0E8RbAFwA2RGq6Dxd0ixfbucMesy5Gnr8tfYy6rW+&#13;
 qSQqd3ah4+PSzBNVwIB4ytpdrG3SlhCI2i2Th8ek8Sjsaquh9qPAerWNd2+84HWOOGj1Xe1qc6vg&#13;
-qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_f869c7dd-59ef-42d3-8bc0-3ce84d27713c" Target="#_e404f2b2-1613-42ec-a2a9-e04aeaf5a60a"><Timestamp>2024-04-26 01:46:12</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
+qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_c0454894-66a3-4bc7-9e1f-7218115cb246" Target="#_485a01c6-a946-4554-b9ec-0ec628d17894"><Timestamp>2024-04-26 01:52:30</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>

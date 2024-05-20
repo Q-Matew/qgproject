@@ -102,21 +102,6 @@
     <elementParameter field="TEXT" name="FOOTER_LIBRARY" show="false" value=""/>
     <elementParameter field="TEXT" name="FOOTER_CODE" show="false" value=""/>
     <elementParameter field="TEXT" name="FOOTER_IMPORT" show="false" value=""/>
-    <routinesParameter id="_ymVB0InfEe6nXJ9CVzb8Hg" name="DQTechnical"/>
-    <routinesParameter id="_ymdksInfEe6nXJ9CVzb8Hg" name="DataMasking"/>
-    <routinesParameter id="_p9TsYH5AEe6yYvs4wK7LGw" name="DataOperation"/>
-    <routinesParameter id="_ymXeEInfEe6nXJ9CVzb8Hg" name="DataQualityDependencies"/>
-    <routinesParameter id="_ymEjIInfEe6nXJ9CVzb8Hg" name="DataQuality"/>
-    <routinesParameter id="_ymWP8InfEe6nXJ9CVzb8Hg" name="DqStringHandling"/>
-    <routinesParameter id="_p9X90H5AEe6yYvs4wK7LGw" name="Mathematical"/>
-    <routinesParameter id="_p9MXoH5AEe6yYvs4wK7LGw" name="Numeric"/>
-    <routinesParameter id="_p9VhkH5AEe6yYvs4wK7LGw" name="Relational"/>
-    <routinesParameter id="_p8yH8H5AEe6yYvs4wK7LGw" name="SQLike"/>
-    <routinesParameter id="_p9WvsH5AEe6yYvs4wK7LGw" name="StringHandling"/>
-    <routinesParameter id="_p9Fp8H5AEe6yYvs4wK7LGw" name="TalendDataGenerator"/>
-    <routinesParameter id="_p9U6gH5AEe6yYvs4wK7LGw" name="TalendDate"/>
-    <routinesParameter id="_p9SeQH5AEe6yYvs4wK7LGw" name="TalendStringUtil"/>
-    <routinesParameter id="_p9QpEH5AEe6yYvs4wK7LGw" name="TalendString"/>
   </parameters>
   <node componentName="tHashInput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="64" posY="480">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tHashInput_1"/>
@@ -131,6 +116,9 @@
       <column comment="" key="false" length="50" name="StaffID" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="NVARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="36" name="STID" nullable="false" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="100" name="CompanyCode" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="NVARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="255" name="CompanyName" nullable="true" pattern="" precision="0" sourceType="NVARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
       <column comment="" key="false" length="100" name="ProjectID" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="NVARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="2147483647" name="ProjectName" nullable="true" pattern="" precision="0" sourceType="NVARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
@@ -145,7 +133,6 @@
       <column comment="" key="false" length="100" name="ProjectWBSCode" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="NVARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="23" name="AssignedFromDate" nullable="true" originalLength="-1" pattern="&quot;dd-MM-yyyy&quot;" precision="3" sourceType="DATETIME" type="id_Date" usefulColumn="true"/>
       <column comment="" key="false" length="23" name="AssignedToDate" nullable="true" originalLength="-1" pattern="&quot;dd-MM-yyyy&quot;" precision="3" sourceType="DATETIME" type="id_Date" usefulColumn="true"/>
-      <column comment="" defaultValue="" key="false" length="15" name="ManDay" nullable="false" originalLength="-1" pattern="" precision="0" sourceType="FLOAT" type="id_Double" usefulColumn="true"/>
     </metadata>
   </node>
   <node componentName="tMap" componentVersion="2.1" offsetLabelX="0" offsetLabelY="0" posX="416" posY="480">
@@ -170,6 +157,9 @@
         <additionalField key="Comment" value=""/>
       </column>
       <column comment="" key="false" length="100" name="CompanyCode" nullable="true" originalLength="100" pattern="" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="255" name="CompanyName" nullable="true" pattern="" precision="0" sourceType="NVARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
       <column comment="" key="false" length="100" name="ProjectID" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="NVARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="2147483647" name="ProjectName" nullable="true" pattern="" precision="0" sourceType="NVARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
@@ -207,6 +197,7 @@
         <mapperTableEntries expression="main.StaffID " name="StaffID" nullable="true" type="id_String"/>
         <mapperTableEntries expression="main.STID " name="STID" type="id_Object"/>
         <mapperTableEntries expression="main.CompanyCode " name="CompanyCode" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="main.CompanyName " name="CompanyName" nullable="true" type="id_String"/>
         <mapperTableEntries expression="main.ProjectID " name="ProjectID" nullable="true" type="id_String"/>
         <mapperTableEntries expression="main.ProjectName " name="ProjectName" nullable="true" type="id_String"/>
         <mapperTableEntries expression="main.ProjectDivisionObjectNo " name="ProjectDivisionObjectNo" nullable="true" type="id_String"/>
@@ -229,6 +220,7 @@
         <mapperTableEntries name="StaffID" nullable="true" type="id_String"/>
         <mapperTableEntries name="STID" type="id_String"/>
         <mapperTableEntries name="CompanyCode" nullable="true" type="id_String"/>
+        <mapperTableEntries name="CompanyName" nullable="true" type="id_String"/>
         <mapperTableEntries name="ProjectID" nullable="true" type="id_String"/>
         <mapperTableEntries name="ProjectName" nullable="true" type="id_String"/>
         <mapperTableEntries name="ProjectDivisionObjectNo" nullable="true" type="id_String"/>
@@ -241,7 +233,6 @@
         <mapperTableEntries name="ProjectWBSCode" nullable="true" type="id_String"/>
         <mapperTableEntries name="AssignedFromDate" nullable="true" type="id_Date"/>
         <mapperTableEntries name="AssignedToDate" nullable="true" type="id_Date"/>
-        <mapperTableEntries name="ManDay" type="id_Double"/>
       </inputTables>
       <inputTables activateCondensedTool="true" lookupMode="RELOAD" matchingMode="UNIQUE_MATCH" name="aggregated" sizeState="INTERMEDIATE">
         <mapperTableEntries expression="main.key " name="key" nullable="true" operator="=" type="id_String"/>
@@ -309,6 +300,9 @@
         <additionalField key="Comment" value=""/>
       </column>
       <column comment="" key="false" length="100" name="CompanyCode" nullable="true" originalLength="100" pattern="" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="255" name="CompanyName" nullable="true" pattern="" precision="0" sourceType="NVARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
       <column comment="" key="false" length="100" name="ProjectID" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="NVARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="2147483647" name="ProjectName" nullable="true" pattern="" precision="0" sourceType="NVARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
@@ -384,6 +378,11 @@
       <elementValue elementRef="UPDATABLE" value="true"/>
       <elementValue elementRef="INSERTABLE" value="true"/>
       <elementValue elementRef="SCHEMA_COLUMN" value="CompanyCode"/>
+      <elementValue elementRef="UPDATE_KEY" value="false"/>
+      <elementValue elementRef="DELETE_KEY" value="false"/>
+      <elementValue elementRef="UPDATABLE" value="true"/>
+      <elementValue elementRef="INSERTABLE" value="true"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="CompanyName"/>
       <elementValue elementRef="UPDATE_KEY" value="false"/>
       <elementValue elementRef="DELETE_KEY" value="false"/>
       <elementValue elementRef="UPDATABLE" value="true"/>
@@ -485,7 +484,10 @@
       <column comment="" defaultValue="" key="false" length="36" name="STID" nullable="false" pattern="" precision="0" sourceType="UNIQUEIDENTIFIER" type="id_Object" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
-      <column comment="" key="false" length="100" name="CompanyCode" nullable="true" originalLength="100" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="100" name="CompanyCode" nullable="true" originalLength="100" pattern="" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="255" name="CompanyName" nullable="true" pattern="" precision="0" sourceType="NVARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
       <column comment="" key="false" length="100" name="ProjectID" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="NVARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="2147483647" name="ProjectName" nullable="true" pattern="" precision="0" sourceType="NVARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
@@ -507,9 +509,9 @@
       <column comment="" defaultValue="((0))" key="false" length="18" name="ManDay" nullable="true" pattern="" precision="2" sourceType="FLOAT" type="id_Double" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
-      <column comment="" defaultValue="" key="false" length="18" name="CalendarDay" nullable="false" originalLength="18" pattern="" precision="2" sourceType="FLOAT" type="id_Double" usefulColumn="true"/>
-      <column comment="" defaultValue="" key="false" length="18" name="NetworkingDay" nullable="true" originalLength="10" pattern="" precision="2" sourceType="FLOAT" type="id_Double" usefulColumn="true"/>
-      <column comment="" key="false" length="18" name="AllocationDayPerDay" nullable="true" originalLength="10" pattern="" precision="2" sourceType="FLOAT" type="id_Double" usefulColumn="true"/>
+      <column comment="" defaultValue="" key="false" length="18" name="CalendarDay" nullable="false" originalLength="18" pattern="" precision="2" sourceType="" type="id_Double" usefulColumn="true"/>
+      <column comment="" defaultValue="" key="false" length="18" name="NetworkingDay" nullable="true" originalLength="10" pattern="" precision="2" sourceType="" type="id_Double" usefulColumn="true"/>
+      <column comment="" key="false" length="18" name="AllocationDayPerDay" nullable="true" originalLength="10" pattern="" precision="2" sourceType="" type="id_Double" usefulColumn="true"/>
     </metadata>
     <metadata connector="REJECT" name="REJECT">
       <column comment="" key="false" length="50" name="StaffID" nullable="true" pattern="" precision="0" sourceType="NVARCHAR" type="id_String" usefulColumn="true">
@@ -518,7 +520,10 @@
       <column comment="" defaultValue="" key="false" length="36" name="STID" nullable="false" pattern="" precision="0" sourceType="UNIQUEIDENTIFIER" type="id_Object" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
-      <column comment="" key="false" length="100" name="CompanyCode" nullable="true" originalLength="100" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="100" name="CompanyCode" nullable="true" originalLength="100" pattern="" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="255" name="CompanyName" nullable="true" pattern="" precision="0" sourceType="NVARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
       <column comment="" key="false" length="100" name="ProjectID" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="NVARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="2147483647" name="ProjectName" nullable="true" pattern="" precision="0" sourceType="NVARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
@@ -540,9 +545,9 @@
       <column comment="" defaultValue="((0))" key="false" length="18" name="ManDay" nullable="true" pattern="" precision="2" sourceType="FLOAT" type="id_Double" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
-      <column comment="" defaultValue="" key="false" length="18" name="CalendarDay" nullable="false" originalLength="18" pattern="" precision="2" sourceType="FLOAT" type="id_Double" usefulColumn="true"/>
-      <column comment="" defaultValue="" key="false" length="18" name="NetworkingDay" nullable="true" originalLength="10" pattern="" precision="2" sourceType="FLOAT" type="id_Double" usefulColumn="true"/>
-      <column comment="" key="false" length="18" name="AllocationDayPerDay" nullable="true" originalLength="10" pattern="" precision="2" sourceType="FLOAT" type="id_Double" usefulColumn="true"/>
+      <column comment="" defaultValue="" key="false" length="18" name="CalendarDay" nullable="false" originalLength="18" pattern="" precision="2" sourceType="" type="id_Double" usefulColumn="true"/>
+      <column comment="" defaultValue="" key="false" length="18" name="NetworkingDay" nullable="true" originalLength="10" pattern="" precision="2" sourceType="" type="id_Double" usefulColumn="true"/>
+      <column comment="" key="false" length="18" name="AllocationDayPerDay" nullable="true" originalLength="10" pattern="" precision="2" sourceType="" type="id_Double" usefulColumn="true"/>
       <column defaultValue="" key="false" length="255" name="errorCode" nullable="true" originalLength="-1" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column defaultValue="" key="false" length="255" name="errorMessage" nullable="true" originalLength="-1" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
     </metadata>
@@ -794,7 +799,7 @@
       <column comment="" key="false" length="100" name="MpWbsCode" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="NVARCHAR" type="id_String" usefulColumn="true"/>
     </metadata>
     <nodeData xsi:type="TalendMapper:MapperData">
-      <uiProperties shellMaximized="true"/>
+      <uiProperties/>
       <varTables minimized="true" name="Var" sizeState="INTERMEDIATE"/>
       <outputTables name="nextJoin" sizeState="INTERMEDIATE">
         <mapperTableEntries expression="oriSource.StaffID " name="StaffID" nullable="true" type="id_String"/>
@@ -942,7 +947,7 @@
       <column comment="" defaultValue="" key="false" length="15" name="ManDay" nullable="false" originalLength="-1" pattern="" precision="0" sourceType="FLOAT" type="id_Double" usefulColumn="true"/>
     </metadata>
     <nodeData xsi:type="TalendMapper:MapperData">
-      <uiProperties shellMaximized="true"/>
+      <uiProperties/>
       <varTables name="Var" sizeState="INTERMEDIATE">
         <mapperTableEntries expression="nextJoin.Subsidiary == null ? &quot;&quot; : nextJoin.Subsidiary" name="var1" type="id_String"/>
       </varTables>
@@ -1076,7 +1081,7 @@
       <column comment="" defaultValue="" key="false" length="15" name="ManDay" nullable="false" originalLength="-1" pattern="" precision="0" sourceType="FLOAT" type="id_Double" usefulColumn="true"/>
     </metadata>
     <nodeData xsi:type="TalendMapper:MapperData">
-      <uiProperties shellMaximized="true"/>
+      <uiProperties/>
       <varTables name="Var" sizeState="INTERMEDIATE">
         <mapperTableEntries expression="joinedSource.StageName == null ? &quot;&quot; : joinedSource.StageName" name="StageName" type="id_String"/>
       </varTables>
@@ -1117,9 +1122,9 @@
         <mapperTableEntries name="AssignedToDate" nullable="true" type="id_Date"/>
         <mapperTableEntries name="ManDay" type="id_Double"/>
       </inputTables>
-      <inputTables activateCondensedTool="true" lookupMode="LOAD_ONCE" matchingMode="UNIQUE_MATCH" name="proInfo" sizeState="INTERMEDIATE">
-        <mapperTableEntries expression="joinedSource.ProjectID " name="ProjectID" operator="=" type="id_String"/>
-        <mapperTableEntries expression="" name="ProjectName" nullable="true" type="id_String"/>
+      <inputTables lookupMode="LOAD_ONCE" matchingMode="ALL_ROWS" name="proInfo" sizeState="INTERMEDIATE">
+        <mapperTableEntries name="ProjectID" type="id_String"/>
+        <mapperTableEntries name="ProjectName" nullable="true" type="id_String"/>
         <mapperTableEntries name="Subsidiary" nullable="true" type="id_String"/>
         <mapperTableEntries name="LeadDivision" nullable="true" type="id_String"/>
         <mapperTableEntries name="SupportingDivision" nullable="true" type="id_String"/>
@@ -1131,99 +1136,6 @@
         <mapperTableEntries name="Divisions" nullable="true" type="id_String"/>
       </inputTables>
     </nodeData>
-  </node>
-  <node componentName="tMSSqlInput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="544" posY="384">
-    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tDBInput_1"/>
-    <elementParameter field="CHECK" name="USE_EXISTING_CONNECTION" value="false"/>
-    <elementParameter field="COMPONENT_LIST" name="CONNECTION" show="false" value=""/>
-    <elementParameter field="TEXT" name="HOST" value="&quot;10.1.20.82&quot;"/>
-    <elementParameter field="CLOSED_LIST" name="DRIVER" value="MSSQL_PROP"/>
-    <elementParameter field="TEXT" name="TYPE" show="false" value="MSSQL"/>
-    <elementParameter field="TEXT" name="PORT" value="&quot;1433&quot;"/>
-    <elementParameter field="TEXT" name="DB_SCHEMA" value="&quot;dbo&quot;"/>
-    <elementParameter field="TEXT" name="DBNAME" value="&quot;CPG_Manpower_Planning&quot;"/>
-    <elementParameter field="TEXT" name="USER" value="&quot;dev_user&quot;"/>
-    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:xH1icSus8+Eu66Rr0Lphal9kxdlB89kiPwn4J5KttUrwgaPyB3E="/>
-    <elementParameter field="TECHNICAL" name="SCHEMA:SCHEMA_TYPE" show="false" value="REPOSITORY"/>
-    <elementParameter field="TECHNICAL" name="SCHEMA:REPOSITORY_SCHEMA_TYPE" show="false" value="_CQoN0OgiEe6MtZw1M9JxpA - ProjectInfo"/>
-    <elementParameter field="DBTABLE" name="TABLE" value="&quot;ProjectInfo&quot;"/>
-    <elementParameter field="QUERYSTORE_TYPE" name="QUERYSTORE" value="&quot;&quot;"/>
-    <elementParameter field="TECHNICAL" name="QUERYSTORE:REPOSITORY_QUERYSTORE_TYPE" show="false" value=""/>
-    <elementParameter field="TECHNICAL" name="QUERYSTORE:QUERYSTORE_TYPE" value="BUILT_IN"/>
-    <elementParameter field="GUESS_SCHEMA" name="GUESS_SCHEMA" value="&quot;&quot;"/>
-    <elementParameter field="MEMO_SQL" name="QUERY" value="&quot;SELECT dbo.ProjectInfo.ProjectID,&#10;&#9;&#9;dbo.ProjectInfo.ProjectName,&#10;&#9;&#9;dbo.ProjectInfo.Subsidiary,&#10;&#9;&#9;dbo.ProjectInfo.LeadDivision,&#10;&#9;&#9;dbo.ProjectInfo.SupportingDivision,&#10;&#9;&#9;dbo.ProjectInfo.StartDate,&#10;&#9;&#9;dbo.ProjectInfo.EndDate,&#10;&#9;&#9;dbo.ProjectInfo.ModificationDate,&#10;&#9;&#9;dbo.ProjectInfo.ModificationBy,&#10;&#9;&#9;dbo.ProjectInfo.ProjectCode,&#10;&#9;&#9;dbo.ProjectInfo.Divisions&#10;FROM&#9;dbo.ProjectInfo&quot;"/>
-    <elementParameter field="LABEL" name="NOTE" value="This option only applies when deploying and running in the Talend Runtime"/>
-    <elementParameter field="CHECK" name="SPECIFY_DATASOURCE_ALIAS" value="false"/>
-    <elementParameter field="TEXT" name="DATASOURCE_ALIAS" show="false" value="&quot;&quot;"/>
-    <elementParameter field="MAPPING_TYPE" name="MAPPING" show="false" value="id_MSSQL"/>
-    <elementParameter field="TEXT" name="PROPERTIES" value="&quot;&quot;"/>
-    <elementParameter field="CHECK" name="ACTIVE_DIR_AUTH" value="false"/>
-    <elementParameter field="ENCODING_TYPE" name="ENCODING" show="false" value="&quot;ISO-8859-15&quot;"/>
-    <elementParameter field="TECHNICAL" name="ENCODING:ENCODING_TYPE" value="ISO-8859-15"/>
-    <elementParameter field="CHECK" name="TRIM_ALL_COLUMN" value="false"/>
-    <elementParameter field="TABLE" name="TRIM_COLUMN">
-      <elementValue elementRef="SCHEMA_COLUMN" value="ProjectID"/>
-      <elementValue elementRef="TRIM" value="false"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="ProjectName"/>
-      <elementValue elementRef="TRIM" value="false"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="Subsidiary"/>
-      <elementValue elementRef="TRIM" value="false"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="LeadDivision"/>
-      <elementValue elementRef="TRIM" value="false"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="SupportingDivision"/>
-      <elementValue elementRef="TRIM" value="false"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="StartDate"/>
-      <elementValue elementRef="TRIM" value="false"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="EndDate"/>
-      <elementValue elementRef="TRIM" value="false"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="ModificationDate"/>
-      <elementValue elementRef="TRIM" value="false"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="ModificationBy"/>
-      <elementValue elementRef="TRIM" value="false"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="ProjectCode"/>
-      <elementValue elementRef="TRIM" value="false"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="Divisions"/>
-      <elementValue elementRef="TRIM" value="false"/>
-    </elementParameter>
-    <elementParameter field="CHECK" name="SET_QUERY_TIMEOUT" value="false"/>
-    <elementParameter field="TEXT" name="QUERY_TIMEOUT_IN_SECONDS" show="false" value="30"/>
-    <elementParameter field="TEXT" name="LABEL" value="__TABLE__"/>
-    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
-    <metadata connector="FLOW" label="ProjectInfo" name="tDBInput_1">
-      <column comment="" key="true" length="100" name="ProjectID" nullable="false" pattern="" precision="0" sourceType="NVARCHAR" type="id_String" usefulColumn="true">
-        <additionalField key="Comment" value=""/>
-      </column>
-      <column comment="" key="false" length="2147483647" name="ProjectName" nullable="true" pattern="" precision="0" sourceType="NVARCHAR" type="id_String" usefulColumn="true">
-        <additionalField key="Comment" value=""/>
-      </column>
-      <column comment="" key="false" length="100" name="Subsidiary" nullable="true" pattern="" precision="0" sourceType="NVARCHAR" type="id_String" usefulColumn="true">
-        <additionalField key="Comment" value=""/>
-      </column>
-      <column comment="" key="false" length="500" name="LeadDivision" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
-        <additionalField key="Comment" value=""/>
-      </column>
-      <column comment="" key="false" length="2147483647" name="SupportingDivision" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
-        <additionalField key="Comment" value=""/>
-      </column>
-      <column comment="" key="false" length="23" name="StartDate" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="3" sourceType="DATETIME" type="id_Date" usefulColumn="true">
-        <additionalField key="Comment" value=""/>
-      </column>
-      <column comment="" key="false" length="23" name="EndDate" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="3" sourceType="DATETIME" type="id_Date" usefulColumn="true">
-        <additionalField key="Comment" value=""/>
-      </column>
-      <column comment="" key="false" length="23" name="ModificationDate" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="3" sourceType="DATETIME" type="id_Date" usefulColumn="true">
-        <additionalField key="Comment" value=""/>
-      </column>
-      <column comment="" key="false" length="100" name="ModificationBy" nullable="true" pattern="" precision="0" sourceType="NVARCHAR" type="id_String" usefulColumn="true">
-        <additionalField key="Comment" value=""/>
-      </column>
-      <column comment="" key="false" length="100" name="ProjectCode" nullable="true" pattern="" precision="0" sourceType="NVARCHAR" type="id_String" usefulColumn="true">
-        <additionalField key="Comment" value=""/>
-      </column>
-      <column comment="" key="false" length="2147483647" name="Divisions" nullable="true" pattern="" precision="0" sourceType="NVARCHAR" type="id_String" usefulColumn="true">
-        <additionalField key="Comment" value=""/>
-      </column>
-    </metadata>
   </node>
   <node componentName="tMap" componentVersion="2.1" offsetLabelX="0" offsetLabelY="0" posX="704" posY="256">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tMap_3"/>
@@ -1239,7 +1151,7 @@
     <elementParameter field="TEXT" name="ROWS_BUFFER_SIZE" value="2000000"/>
     <elementParameter field="CHECK" name="CHANGE_HASH_AND_EQUALS_FOR_BIGDECIMAL" value="true"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
-    <metadata connector="FLOW" name="thash">
+    <metadata connector="FLOW" name="CompName">
       <column comment="" key="false" length="-1" name="key" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="50" name="StaffID" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="NVARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="36" name="STID" nullable="false" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
@@ -1261,9 +1173,9 @@
       <column comment="" defaultValue="" key="false" length="15" name="ManDay" nullable="false" originalLength="-1" pattern="" precision="0" sourceType="FLOAT" type="id_Double" usefulColumn="true"/>
     </metadata>
     <nodeData xsi:type="TalendMapper:MapperData">
-      <uiProperties shellMaximized="true"/>
+      <uiProperties/>
       <varTables minimized="true" name="Var" sizeState="INTERMEDIATE"/>
-      <outputTables name="thash" sizeState="INTERMEDIATE">
+      <outputTables name="CompName" sizeState="INTERMEDIATE">
         <mapperTableEntries expression="getStgName.key " name="key" nullable="true" type="id_String"/>
         <mapperTableEntries expression="getStgName.StaffID " name="StaffID" nullable="true" type="id_String"/>
         <mapperTableEntries expression="getStgName.STID " name="STID" type="id_String"/>
@@ -1359,7 +1271,274 @@
       </column>
     </metadata>
   </node>
-  <node componentName="tHashOutput" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="864" posY="256">
+  <node componentName="tMSSqlInput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="544" posY="384">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tDBInput_1"/>
+    <elementParameter field="CHECK" name="USE_EXISTING_CONNECTION" value="false"/>
+    <elementParameter field="COMPONENT_LIST" name="CONNECTION" show="false" value=""/>
+    <elementParameter field="TEXT" name="HOST" value="&quot;10.1.20.82&quot;"/>
+    <elementParameter field="CLOSED_LIST" name="DRIVER" value="MSSQL_PROP"/>
+    <elementParameter field="TEXT" name="TYPE" show="false" value="MSSQL"/>
+    <elementParameter field="TEXT" name="PORT" value="&quot;1433&quot;"/>
+    <elementParameter field="TEXT" name="DB_SCHEMA" value="&quot;dbo&quot;"/>
+    <elementParameter field="TEXT" name="DBNAME" value="&quot;CPG_Manpower_Planning&quot;"/>
+    <elementParameter field="TEXT" name="USER" value="&quot;dev_user&quot;"/>
+    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:xH1icSus8+Eu66Rr0Lphal9kxdlB89kiPwn4J5KttUrwgaPyB3E="/>
+    <elementParameter field="TECHNICAL" name="SCHEMA:SCHEMA_TYPE" show="false" value="REPOSITORY"/>
+    <elementParameter field="TECHNICAL" name="SCHEMA:REPOSITORY_SCHEMA_TYPE" show="false" value="_CQoN0OgiEe6MtZw1M9JxpA - ProjectInfo"/>
+    <elementParameter field="DBTABLE" name="TABLE" value="&quot;ProjectInfo&quot;"/>
+    <elementParameter field="QUERYSTORE_TYPE" name="QUERYSTORE" value="&quot;&quot;"/>
+    <elementParameter field="TECHNICAL" name="QUERYSTORE:REPOSITORY_QUERYSTORE_TYPE" show="false" value=""/>
+    <elementParameter field="TECHNICAL" name="QUERYSTORE:QUERYSTORE_TYPE" value="BUILT_IN"/>
+    <elementParameter field="GUESS_SCHEMA" name="GUESS_SCHEMA" value="&quot;&quot;"/>
+    <elementParameter field="MEMO_SQL" name="QUERY" value="&quot;SELECT dbo.ProjectInfo.ProjectID,&#10;&#9;&#9;dbo.ProjectInfo.ProjectName,&#10;&#9;&#9;dbo.ProjectInfo.Subsidiary,&#10;&#9;&#9;dbo.ProjectInfo.LeadDivision,&#10;&#9;&#9;dbo.ProjectInfo.SupportingDivision,&#10;&#9;&#9;dbo.ProjectInfo.StartDate,&#10;&#9;&#9;dbo.ProjectInfo.EndDate,&#10;&#9;&#9;dbo.ProjectInfo.ModificationDate,&#10;&#9;&#9;dbo.ProjectInfo.ModificationBy,&#10;&#9;&#9;dbo.ProjectInfo.ProjectCode,&#10;&#9;&#9;dbo.ProjectInfo.Divisions&#10;FROM&#9;dbo.ProjectInfo&quot;"/>
+    <elementParameter field="LABEL" name="NOTE" value="This option only applies when deploying and running in the Talend Runtime"/>
+    <elementParameter field="CHECK" name="SPECIFY_DATASOURCE_ALIAS" value="false"/>
+    <elementParameter field="TEXT" name="DATASOURCE_ALIAS" show="false" value="&quot;&quot;"/>
+    <elementParameter field="MAPPING_TYPE" name="MAPPING" show="false" value="id_MSSQL"/>
+    <elementParameter field="TEXT" name="PROPERTIES" value="&quot;&quot;"/>
+    <elementParameter field="CHECK" name="ACTIVE_DIR_AUTH" value="false"/>
+    <elementParameter field="ENCODING_TYPE" name="ENCODING" show="false" value="&quot;ISO-8859-15&quot;"/>
+    <elementParameter field="TECHNICAL" name="ENCODING:ENCODING_TYPE" value="ISO-8859-15"/>
+    <elementParameter field="CHECK" name="TRIM_ALL_COLUMN" value="false"/>
+    <elementParameter field="TABLE" name="TRIM_COLUMN">
+      <elementValue elementRef="SCHEMA_COLUMN" value="ProjectID"/>
+      <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="ProjectName"/>
+      <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="Subsidiary"/>
+      <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="LeadDivision"/>
+      <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="SupportingDivision"/>
+      <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="StartDate"/>
+      <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="EndDate"/>
+      <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="ModificationDate"/>
+      <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="ModificationBy"/>
+      <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="ProjectCode"/>
+      <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="Divisions"/>
+      <elementValue elementRef="TRIM" value="false"/>
+    </elementParameter>
+    <elementParameter field="CHECK" name="SET_QUERY_TIMEOUT" value="false"/>
+    <elementParameter field="TEXT" name="QUERY_TIMEOUT_IN_SECONDS" show="false" value="30"/>
+    <elementParameter field="TEXT" name="LABEL" value="__TABLE__"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <metadata connector="FLOW" label="ProjectInfo" name="tDBInput_1">
+      <column comment="" key="true" length="100" name="ProjectID" nullable="false" pattern="" precision="0" sourceType="NVARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="2147483647" name="ProjectName" nullable="true" pattern="" precision="0" sourceType="NVARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="100" name="Subsidiary" nullable="true" pattern="" precision="0" sourceType="NVARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="500" name="LeadDivision" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="2147483647" name="SupportingDivision" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="23" name="StartDate" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="3" sourceType="DATETIME" type="id_Date" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="23" name="EndDate" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="3" sourceType="DATETIME" type="id_Date" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="23" name="ModificationDate" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="3" sourceType="DATETIME" type="id_Date" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="100" name="ModificationBy" nullable="true" pattern="" precision="0" sourceType="NVARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="100" name="ProjectCode" nullable="true" pattern="" precision="0" sourceType="NVARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="2147483647" name="Divisions" nullable="true" pattern="" precision="0" sourceType="NVARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+    </metadata>
+  </node>
+  <node componentName="tMap" componentVersion="2.1" offsetLabelX="0" offsetLabelY="0" posX="864" posY="256">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tMap_4"/>
+    <elementParameter field="EXTERNAL" name="MAP" value=""/>
+    <elementParameter field="CLOSED_LIST" name="LINK_STYLE" value="AUTO"/>
+    <elementParameter field="DIRECTORY" name="TEMPORARY_DATA_DIRECTORY" value=""/>
+    <elementParameter field="IMAGE" name="PREVIEW" value="_sTs0oPECEe6lz_uoJFWK-Q-tMap_4-PREVIEW.bmp"/>
+    <elementParameter field="CHECK" name="DIE_ON_ERROR" show="false" value="true"/>
+    <elementParameter field="CHECK" name="LKUP_PARALLELIZE" show="false" value="false"/>
+    <elementParameter field="TEXT" name="LEVENSHTEIN" show="false" value="0"/>
+    <elementParameter field="TEXT" name="JACCARD" show="false" value="0"/>
+    <elementParameter field="CHECK" name="ENABLE_AUTO_CONVERT_TYPE" show="false" value="false"/>
+    <elementParameter field="TEXT" name="ROWS_BUFFER_SIZE" value="2000000"/>
+    <elementParameter field="CHECK" name="CHANGE_HASH_AND_EQUALS_FOR_BIGDECIMAL" value="true"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <metadata connector="FLOW" name="toHash">
+      <column comment="" key="false" length="-1" name="key" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="50" name="StaffID" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="NVARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="36" name="STID" nullable="false" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="100" name="CompanyCode" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="NVARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="255" name="CompanyName" nullable="true" pattern="" precision="0" sourceType="NVARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="100" name="ProjectID" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="NVARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="2147483647" name="ProjectName" nullable="true" pattern="" precision="0" sourceType="NVARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="100" name="ProjectDivisionObjectNo" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="NVARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="100" name="ProjectDivisionWbsCode" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="NVARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="100" name="ProjecctDivisionName" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="NVARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="100" name="ProjectDirector" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="NVARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="1073741823" name="StageName" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="NVARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" defaultValue="" key="false" length="10" name="Status" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="INT" type="id_Integer" usefulColumn="true"/>
+      <column comment="" key="false" length="100" name="TimeLogObjectNo" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="NVARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="100" name="ProjectWBSCode" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="NVARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="23" name="AssignedFromDate" nullable="true" originalLength="-1" pattern="&quot;dd-MM-yyyy&quot;" precision="3" sourceType="DATETIME" type="id_Date" usefulColumn="true"/>
+      <column comment="" key="false" length="23" name="AssignedToDate" nullable="true" originalLength="-1" pattern="&quot;dd-MM-yyyy&quot;" precision="3" sourceType="DATETIME" type="id_Date" usefulColumn="true"/>
+    </metadata>
+    <nodeData xsi:type="TalendMapper:MapperData">
+      <uiProperties shellMaximized="true"/>
+      <varTables minimized="true" name="Var" sizeState="INTERMEDIATE"/>
+      <outputTables name="toHash" sizeState="INTERMEDIATE">
+        <mapperTableEntries expression="CompName.key " name="key" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="CompName.StaffID " name="StaffID" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="CompName.STID " name="STID" type="id_String"/>
+        <mapperTableEntries expression="CompName.CompanyCode " name="CompanyCode" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="comMas.SAPCompanyName " name="CompanyName" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="CompName.ProjectID " name="ProjectID" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="CompName.ProjectName " name="ProjectName" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="CompName.ProjectDivisionObjectNo " name="ProjectDivisionObjectNo" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="CompName.ProjectDivisionWbsCode " name="ProjectDivisionWbsCode" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="CompName.ProjecctDivisionName " name="ProjecctDivisionName" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="CompName.ProjectDirector " name="ProjectDirector" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="CompName.StageName " name="StageName" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="CompName.Status " name="Status" nullable="true" type="id_Integer"/>
+        <mapperTableEntries expression="CompName.TimeLogObjectNo " name="TimeLogObjectNo" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="CompName.ProjectWBSCode " name="ProjectWBSCode" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="CompName.AssignedFromDate " name="AssignedFromDate" nullable="true" type="id_Date"/>
+        <mapperTableEntries expression="CompName.AssignedToDate " name="AssignedToDate" nullable="true" type="id_Date"/>
+      </outputTables>
+      <inputTables lookupMode="LOAD_ONCE" matchingMode="UNIQUE_MATCH" name="CompName" sizeState="INTERMEDIATE">
+        <mapperTableEntries name="key" nullable="true" type="id_String"/>
+        <mapperTableEntries name="StaffID" nullable="true" type="id_String"/>
+        <mapperTableEntries name="STID" type="id_String"/>
+        <mapperTableEntries name="CompanyCode" nullable="true" type="id_String"/>
+        <mapperTableEntries name="ProjectID" nullable="true" type="id_String"/>
+        <mapperTableEntries name="ProjectName" nullable="true" type="id_String"/>
+        <mapperTableEntries name="ProjectDivisionObjectNo" nullable="true" type="id_String"/>
+        <mapperTableEntries name="ProjectDivisionWbsCode" nullable="true" type="id_String"/>
+        <mapperTableEntries name="ProjecctDivisionName" nullable="true" type="id_String"/>
+        <mapperTableEntries name="ProjectDirector" nullable="true" type="id_String"/>
+        <mapperTableEntries name="StageName" nullable="true" type="id_String"/>
+        <mapperTableEntries name="Status" nullable="true" type="id_Integer"/>
+        <mapperTableEntries name="TimeLogObjectNo" nullable="true" type="id_String"/>
+        <mapperTableEntries name="ProjectWBSCode" nullable="true" type="id_String"/>
+        <mapperTableEntries name="AssignedFromDate" nullable="true" type="id_Date"/>
+        <mapperTableEntries name="AssignedToDate" nullable="true" type="id_Date"/>
+        <mapperTableEntries name="ManDay" type="id_Double"/>
+      </inputTables>
+      <inputTables lookupMode="LOAD_ONCE" matchingMode="UNIQUE_MATCH" name="comMas" sizeState="INTERMEDIATE">
+        <mapperTableEntries expression="CompName.CompanyCode" name="SAPCompanyCode" type="id_String"/>
+        <mapperTableEntries expression="" name="SAPCompanyName" nullable="true" type="id_String"/>
+        <mapperTableEntries name="PCSCompanyName" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="" name="Status" nullable="true" type="id_Integer"/>
+        <mapperTableEntries name="ModificationDate" nullable="true" type="id_Date"/>
+        <mapperTableEntries name="ModificationBy" nullable="true" type="id_String"/>
+        <mapperTableEntries name="TalendLastUpdatedDate" nullable="true" type="id_String"/>
+      </inputTables>
+    </nodeData>
+  </node>
+  <node componentName="tMSSqlInput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="864" posY="384">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tDBInput_6"/>
+    <elementParameter field="TEXT" name="COMPONENT_NAME" show="false" value="tMSSqlInput"/>
+    <elementParameter field="TEXT" name="VERSION" show="false" value="0.102 (ALPHA)"/>
+    <elementParameter field="TEXT" name="FAMILY" show="false" value="Databases/DB Specifics/MS_SQL_Server"/>
+    <elementParameter field="CHECK" name="START" show="false" value="false"/>
+    <elementParameter field="CHECK" name="STARTABLE" show="false" value="true"/>
+    <elementParameter field="CHECK" name="SUBTREE_START" show="false" value="false"/>
+    <elementParameter field="CHECK" name="END_OF_FLOW" show="false" value="false"/>
+    <elementParameter field="TEXT" name="HELP" show="false" value="org.talend.help.tMSSqlInput"/>
+    <elementParameter field="DIRECTORY" name="IREPORT_PATH" show="false" value=""/>
+    <elementParameter field="DIRECTORY" name="JAVA_LIBRARY_PATH" show="false" value="/Applications/TalendStudio-8.0.1/studio/configuration/lib/java"/>
+    <elementParameter field="CHECK" name="USE_EXISTING_CONNECTION" value="false"/>
+    <elementParameter field="COMPONENT_LIST" name="CONNECTION" show="false" value=""/>
+    <elementParameter field="TECHNICAL" name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY"/>
+    <elementParameter field="TECHNICAL" name="PROPERTY:REPOSITORY_PROPERTY_TYPE" show="false" value="_I2a48PDcEe6lz_uoJFWK-Q"/>
+    <elementParameter field="TEXT" name="HOST" value="&quot;10.1.20.82&quot;"/>
+    <elementParameter field="CLOSED_LIST" name="DRIVER" value="MSSQL_PROP"/>
+    <elementParameter field="TEXT" name="TYPE" show="false" value="MSSQL"/>
+    <elementParameter field="TEXT" name="PORT" value="&quot;1433&quot;"/>
+    <elementParameter field="TEXT" name="DB_SCHEMA" value="&quot;&quot;"/>
+    <elementParameter field="TEXT" name="DBNAME" value="&quot;CPG_RAW&quot;"/>
+    <elementParameter field="TEXT" name="USER" value="&quot;dev_user&quot;"/>
+    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:bs3XGx3Uh5qifJUberSgsd6KYmCsLRSWFvEaEeCGshza64VrmgE="/>
+    <elementParameter field="TECHNICAL" name="SCHEMA:SCHEMA_TYPE" show="false" value="REPOSITORY"/>
+    <elementParameter field="TECHNICAL" name="SCHEMA:REPOSITORY_SCHEMA_TYPE" show="false" value="_I2a48PDcEe6lz_uoJFWK-Q - Raw_Company_Master"/>
+    <elementParameter field="DBTABLE" name="TABLE" value="&quot;Raw_Company_Master&quot;"/>
+    <elementParameter field="QUERYSTORE_TYPE" name="QUERYSTORE" value="&quot;&quot;"/>
+    <elementParameter field="TECHNICAL" name="QUERYSTORE:REPOSITORY_QUERYSTORE_TYPE" show="false" value=""/>
+    <elementParameter field="TECHNICAL" name="QUERYSTORE:QUERYSTORE_TYPE" value="BUILT_IN"/>
+    <elementParameter field="GUESS_SCHEMA" name="GUESS_SCHEMA" value="&quot;&quot;"/>
+    <elementParameter field="MEMO_SQL" name="QUERY" value="&quot;SELECT Raw_Company_Master.SAPCompanyCode,&#10;&#9;&#9;Raw_Company_Master.SAPCompanyName,&#10;&#9;&#9;Raw_Company_Master.PCSCompanyName,&#10;&#9;&#9;Raw_Company_Master.Status,&#10;&#9;&#9;Raw_Company_Master.ModificationDate,&#10;&#9;&#9;Raw_Company_Master.ModificationBy,&#10;&#9;&#9;Raw_Company_Master.TalendLastUpdatedDate&#10;FROM&#9;Raw_Company_Master&quot;"/>
+    <elementParameter field="LABEL" name="NOTE" value="This option only applies when deploying and running in the Talend Runtime"/>
+    <elementParameter field="CHECK" name="SPECIFY_DATASOURCE_ALIAS" value="false"/>
+    <elementParameter field="TEXT" name="DATASOURCE_ALIAS" show="false" value="&quot;&quot;"/>
+    <elementParameter field="MAPPING_TYPE" name="MAPPING" show="false" value="id_MSSQL"/>
+    <elementParameter field="TEXT" name="PROPERTIES" value="&quot;&quot;"/>
+    <elementParameter field="CHECK" name="ACTIVE_DIR_AUTH" value="false"/>
+    <elementParameter field="ENCODING_TYPE" name="ENCODING" show="false" value="&quot;ISO-8859-15&quot;"/>
+    <elementParameter field="TECHNICAL" name="ENCODING:ENCODING_TYPE" value="ISO-8859-15"/>
+    <elementParameter field="CHECK" name="TRIM_ALL_COLUMN" value="false"/>
+    <elementParameter field="TABLE" name="TRIM_COLUMN">
+      <elementValue elementRef="SCHEMA_COLUMN" value="SAPCompanyCode"/>
+      <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="SAPCompanyName"/>
+      <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="PCSCompanyName"/>
+      <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="Status"/>
+      <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="ModificationDate"/>
+      <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="ModificationBy"/>
+      <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="TalendLastUpdatedDate"/>
+      <elementValue elementRef="TRIM" value="false"/>
+    </elementParameter>
+    <elementParameter field="CHECK" name="SET_QUERY_TIMEOUT" value="false"/>
+    <elementParameter field="TEXT" name="QUERY_TIMEOUT_IN_SECONDS" show="false" value="30"/>
+    <elementParameter field="TEXT" name="LABEL" value="__TABLE__"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <metadata connector="FLOW" label="Raw_Company_Master" name="tDBInput_6">
+      <column comment="" key="true" length="4" name="SAPCompanyCode" nullable="false" pattern="" precision="0" sourceType="NVARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="25" name="SAPCompanyName" nullable="true" pattern="" precision="0" sourceType="NVARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="2147483647" name="PCSCompanyName" nullable="true" pattern="" precision="0" sourceType="NVARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="10" name="Status" nullable="true" pattern="" precision="0" sourceType="INT" type="id_Integer" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="23" name="ModificationDate" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="3" sourceType="DATETIME" type="id_Date" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="100" name="ModificationBy" nullable="true" pattern="" precision="0" sourceType="NVARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="50" name="TalendLastUpdatedDate" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+    </metadata>
+  </node>
+  <node componentName="tHashOutput" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="1024" posY="256">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tHashOutput_3"/>
     <elementParameter field="CHECK" name="LINK_WITH" value="false"/>
     <elementParameter field="COMPONENT_LIST" name="LIST" show="false" value=""/>
@@ -1376,6 +1555,9 @@
       <column comment="" key="false" length="50" name="StaffID" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="NVARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="36" name="STID" nullable="false" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="100" name="CompanyCode" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="NVARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="255" name="CompanyName" nullable="true" pattern="" precision="0" sourceType="NVARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
       <column comment="" key="false" length="100" name="ProjectID" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="NVARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="2147483647" name="ProjectName" nullable="true" pattern="" precision="0" sourceType="NVARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
@@ -1390,7 +1572,6 @@
       <column comment="" key="false" length="100" name="ProjectWBSCode" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="NVARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="23" name="AssignedFromDate" nullable="true" originalLength="-1" pattern="&quot;dd-MM-yyyy&quot;" precision="3" sourceType="DATETIME" type="id_Date" usefulColumn="true"/>
       <column comment="" key="false" length="23" name="AssignedToDate" nullable="true" originalLength="-1" pattern="&quot;dd-MM-yyyy&quot;" precision="3" sourceType="DATETIME" type="id_Date" usefulColumn="true"/>
-      <column comment="" defaultValue="" key="false" length="15" name="ManDay" nullable="false" originalLength="-1" pattern="" precision="0" sourceType="FLOAT" type="id_Double" usefulColumn="true"/>
     </metadata>
   </node>
   <connection connectorName="FLOW" label="main" lineStyle="0" metaname="tHashInput_1" offsetLabelX="0" offsetLabelY="0" source="tHashInput_1" target="tMap_2">
@@ -1426,6 +1607,9 @@
       <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
       <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
       <elementValue elementRef="TRACE_COLUMN" value="ProjectDirector"/>
+      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
+      <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
+      <elementValue elementRef="TRACE_COLUMN" value="CompanyName"/>
       <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
       <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
     </elementParameter>
@@ -1472,6 +1656,9 @@
       <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
       <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
       <elementValue elementRef="TRACE_COLUMN" value="ProjectDirector"/>
+      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
+      <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
+      <elementValue elementRef="TRACE_COLUMN" value="CompanyName"/>
       <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
       <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
     </elementParameter>
@@ -1580,28 +1767,25 @@
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="getStgName"/>
   </connection>
-  <connection connectorName="FLOW" label="proInfo" lineStyle="8" metaname="tDBInput_1" offsetLabelX="0" offsetLabelY="0" source="tDBInput_1" target="tMap_1">
+  <connection connectorName="FLOW" label="CompName" lineStyle="0" metaname="CompName" offsetLabelX="0" offsetLabelY="0" source="tMap_3" target="tMap_4">
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
-    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="proInfo"/>
-  </connection>
-  <connection connectorName="FLOW" label="thash" lineStyle="0" metaname="thash" offsetLabelX="0" offsetLabelY="0" source="tMap_3" target="tHashOutput_3">
-    <elementParameter field="TABLE" name="TRACES_CONNECTION_FILTER" show="false">
-      <elementValue elementRef="TRACE_COLUMN" value="ManDay"/>
-      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
-      <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
-      <elementValue elementRef="TRACE_COLUMN" value="ProjectWBSCode"/>
-      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
-      <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
-      <elementValue elementRef="TRACE_COLUMN" value="ProjectDirector"/>
-      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
-      <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
-    </elementParameter>
-    <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
-    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="thash"/>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="CompName"/>
   </connection>
   <connection connectorName="FLOW" label="stgLstMst" lineStyle="8" metaname="tDBInput_5" offsetLabelX="-9" offsetLabelY="0" source="tDBInput_5" target="tMap_3">
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="stgLstMst"/>
+  </connection>
+  <connection connectorName="FLOW" label="proInfo" lineStyle="8" metaname="tDBInput_1" offsetLabelX="0" offsetLabelY="0" source="tDBInput_1" target="tMap_1">
+    <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="proInfo"/>
+  </connection>
+  <connection connectorName="FLOW" label="toHash" lineStyle="0" metaname="toHash" offsetLabelX="0" offsetLabelY="0" source="tMap_4" target="tHashOutput_3">
+    <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="toHash"/>
+  </connection>
+  <connection connectorName="FLOW" label="comMas" lineStyle="8" metaname="tDBInput_6" offsetLabelX="0" offsetLabelY="0" source="tDBInput_6" target="tMap_4">
+    <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="comMas"/>
   </connection>
   <subjob>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tHashInput_1"/>
@@ -1644,13 +1828,13 @@
     <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="92;131;150"/>
     <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
   </subjob>
-<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_653c7b16-9876-41bd-9e1c-0bec5dd723ff"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>xZQjYGaTf4aQ+J+bTiIqeuD5JVf2PHyDlJIHOM9DR4VT49eY1sLtO41uAviF4LaiYi+UW5XEj8Ki&#13;
-nlTaiLmpIw==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_9bf0f230-d1f3-458b-9805-986827f270be"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>w7UHDJncLWBIPa51/ppgfqMyT490FfPAVioUEjSIS+I/rkhDHLgRHyHrxAy4h4v5hkM9l5ThsWa6&#13;
-80W4GN2ZoA==</DigestValue></Reference></SignedInfo><SignatureValue>ajUkQA0vgUxM34o0+ou+zToA1UfDjIDa8ULjKrq7EYvsAyXqfB0aIzgjxMq2VtCEO7vZHRBDE6xh&#13;
-aQbLWouxYVEOIe+dK1npVHPGgUMWaeDXeGmVn5OQsiTW0Y0Na3njwXn4mB+ULoet27t17h3FBRbf&#13;
-0PYGY9lIdRbLfa5Z4vBE4Q+8EpbzaLd47Ra3ICRjq7WXHiDSkgA98wdX9h/waQvxI2IqplaegRlE&#13;
-q9UR7xb8lEMgxhDCsZcGu9390RfreuVyr0ZghxY61LuLIQirB69b2nWhj14cTUyVLyiJW0Y7jyvA&#13;
-6SRVnQR4JiZmnDdesMT+xYcgXpVx+n8nb1UYTA==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w&#13;
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_4d887f3a-790a-4c5a-a7f0-6eb07c6e6435"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>V7n17ZoCcmvUTkJncEnTopb1OokDFhS0VYVtGcvXHfXu4p8dKJ1+cag/jg/+cVSlvJJunHnMS2Eo&#13;
+X42TmkcnyA==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_ada44628-23bd-46cc-8df8-f783a05d7eb8"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>RPSJIGtS1PAoOZL+IRFxJMDunCdN8kCL+PnpzA12fgrUtwPETZnQUBW6jkfoidc/L7TuhxH0RUFl&#13;
+4v4p2ig1DQ==</DigestValue></Reference></SignedInfo><SignatureValue>j53WFcB8ZYBARjKql7HVCj3L8594MB7ctlcXtKjOl+AL57Qtfbk3MF0T6uY6llWHI+/wQeYWF5lt&#13;
+4L90BrZ8sbo3YIA+zAgFAH+yvEWQ1CfiKzCxQP2C/AxGAijQt3ZxthegZcowTmNYBEfcOveSQUrM&#13;
+wOcIDsa4d4rUSeBEnRxFiWJdUNeh/sVO+QlF7L8Ses3c8zEzmpNj2fSftJUyEF1rFtSo9Qkhknqw&#13;
+ecsGKttIALtlAtN91PBmZGcZQ3UNb7prP7zRZEqPg8u/XvG+dZpB3GQACiJNL5567KrCVTIGKnWt&#13;
+k/tVRx4a0+V+IPctezYVVaJdvsTfkhqJE2acVQ==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w&#13;
 DAYDVQQIEwVQYXJpczEOMAwGA1UEBxMFUGFyaXMxFDASBgNVBAoTC1RhbGVuZCBJbmMuMQwwCgYD&#13;
 VQQLDANSJkQxFjAUBgNVBAMMDVRhbGVuZCBSJkQgQ0ExIjAgBgkqhkiG9w0BCQEWE3NlY3VyaXR5&#13;
 QHRhbGVuZC5jb20wHhcNMTkwNjAzMDgxODIwWhcNMjkwNjAzMDAwMDAwWjB7MSgwJgYDVQQDEx9U&#13;
@@ -1672,4 +1856,4 @@ hakvpzhOyLo91h8YAQrEZJdNuKA8IYmBrFZQZDCz0uywKSyFfzPyJhvxylCLG/iDPPfE0VWcrMJ/&#13
 WQJly/2XPg/NBCTF3pSKS0kCiA7PeaI3cWkMYYA3PMwYDvzqs1opBRglG7ikj0bQxSm3lcjMuuvW&#13;
 gBRksFKjP3K/nztsjSoYITOM9jR29ReIL3v0E8RbAFwA2RGq6Dxd0ixfbucMesy5Gnr8tfYy6rW+&#13;
 qSQqd3ah4+PSzBNVwIB4ytpdrG3SlhCI2i2Th8ek8Sjsaquh9qPAerWNd2+84HWOOGj1Xe1qc6vg&#13;
-qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_9bf0f230-d1f3-458b-9805-986827f270be" Target="#_653c7b16-9876-41bd-9e1c-0bec5dd723ff"><Timestamp>2024-04-10 07:17:02</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
+qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_ada44628-23bd-46cc-8df8-f783a05d7eb8" Target="#_4d887f3a-790a-4c5a-a7f0-6eb07c6e6435"><Timestamp>2024-05-20 07:15:39</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>

@@ -43,7 +43,7 @@
     <elementParameter field="TEXT" name="PROPERTIES_IMPLICIT_CONTEXT" show="false" value="&quot;&quot;"/>
     <elementParameter field="TEXT" name="SCHEMA_DB_IMPLICIT_CONTEXT" show="false" value="&quot;&quot;"/>
     <elementParameter field="TEXT" name="USER_IMPLICIT_CONTEXT" show="false" value="&quot;&quot;"/>
-    <elementParameter field="PASSWORD" name="PASS_IMPLICIT_CONTEXT" show="false" value="enc:system.encryption.key.v1:k9OBP4MTRu/IDBeMFY2NKvj/GMq6VHWHNgWhcYOW"/>
+    <elementParameter field="PASSWORD" name="PASS_IMPLICIT_CONTEXT" show="false" value="enc:system.encryption.key.v1:sbiS6nUhpfXO51opcXnt0n54n38/YGWi+d97RjAm"/>
     <elementParameter field="FILE" name="DBFILE_IMPLICIT_CONTEXT" show="false" value="&quot;&quot;"/>
     <elementParameter field="DBTABLE" name="DBTABLE_IMPLICIT_CONTEXT" show="false" value="&quot;&quot;"/>
     <elementParameter field="TEXT" name="QUERY_CONDITION_IMPLICIT_CONTEXT" show="false" value="&quot;&quot;"/>
@@ -58,35 +58,35 @@
     <elementParameter field="CHECK" name="ON_METERCATCHER_FLAG" value="false"/>
     <elementParameter field="CHECK" name="ON_CONSOLE_FLAG" show="false" value="false"/>
     <elementParameter field="CHECK" name="ON_FILES_FLAG" show="false" value="false"/>
-    <elementParameter field="DIRECTORY" name="FILE_PATH" show="false" value="&quot;C:/Users/USC_KNH/workspace/.metadata&quot;"/>
+    <elementParameter field="DIRECTORY" name="FILE_PATH" show="false" value="&quot;/Applications/TalendStudio-8.0.1/studio/workspace/.metadata&quot;"/>
     <elementParameter field="TEXT" name="FILENAME_STATS" show="false" value="&quot;stats_file.txt&quot;"/>
     <elementParameter field="TEXT" name="FILENAME_LOGS" show="false" value="&quot;logs_file.txt&quot;"/>
     <elementParameter field="TEXT" name="FILENAME_METTER" show="false" value="&quot;meter_file.txt&quot;"/>
     <elementParameter field="ENCODING_TYPE" name="ENCODING" show="false" value="ISO-8859-15"/>
     <elementParameter field="TECHNICAL" name="ENCODING:ENCODING_TYPE" show="false" value="ISO-8859-15"/>
-    <elementParameter field="CHECK" name="ON_DATABASE_FLAG" show="false" value="false"/>
-    <elementParameter field="CLOSED_LIST" name="DB_TYPE" show="false" value="JDBCOutput"/>
-    <elementParameter field="CLOSED_LIST" name="DB_VERSION" show="false" value="ORACLE_12"/>
+    <elementParameter field="CHECK" name="ON_DATABASE_FLAG" show="false" value="true"/>
+    <elementParameter field="CLOSED_LIST" name="DB_TYPE" show="false" value="tMysqlOutput"/>
+    <elementParameter field="CLOSED_LIST" name="DB_VERSION" show="false" value="MYSQL_8"/>
     <elementParameter field="TEXT" name="URL" show="false" value="&quot;&quot;"/>
     <elementParameter field="TABLE" name="DRIVER_JAR" show="false"/>
     <elementParameter field="TEXT" name="DRIVER_CLASS" show="false" value="&quot;&quot;"/>
-    <elementParameter field="TEXT" name="HOST" show="false" value="&quot;&quot;"/>
-    <elementParameter field="TEXT" name="PORT" show="false" value="&quot;&quot;"/>
+    <elementParameter field="TEXT" name="HOST" show="false" value="&quot;localhost&quot;"/>
+    <elementParameter field="TEXT" name="PORT" show="false" value="&quot;3306&quot;"/>
     <elementParameter field="TEXT" name="DATASOURCE" show="false" value="&quot;&quot;"/>
-    <elementParameter field="TEXT" name="DBNAME" show="false" value="&quot;&quot;"/>
+    <elementParameter field="TEXT" name="DBNAME" show="false" value="&quot;amc&quot;"/>
     <elementParameter field="TEXT" name="LOCAL_SERVICE_NAME" show="false" value="&quot;&quot;"/>
-    <elementParameter field="TEXT" name="PROPERTIES" show="false" value="&quot;&quot;"/>
-    <elementParameter field="TEXT" name="SCHEMA_DB" show="false" value="&quot;&quot;"/>
-    <elementParameter field="TEXT" name="USER" show="false" value="&quot;&quot;"/>
-    <elementParameter field="PASSWORD" name="PASS" show="false" value="enc:system.encryption.key.v1:OVcW9EbdRN1xLKjKbXEv3vxSmnCxW6SG3gEq6yNn"/>
+    <elementParameter field="TEXT" name="PROPERTIES" show="false" value="&quot;noDatetimeStringSync=true&quot;"/>
+    <elementParameter field="TEXT" name="SCHEMA_DB" show="false" value=""/>
+    <elementParameter field="TEXT" name="USER" show="false" value="&quot;root&quot;"/>
+    <elementParameter field="PASSWORD" name="PASS" show="false" value="enc:system.encryption.key.v1:wNhK16bcSx4UceBfn0CKcwbIpru4hTIBY3RjeaoohOPUMkDDZeyWfjwdxww="/>
     <elementParameter field="FILE" name="DBFILE" show="false" value="&quot;&quot;"/>
-    <elementParameter field="DBTABLE" name="TABLE_STATS" show="false" value="&quot;&quot;"/>
-    <elementParameter field="DBTABLE" name="TABLE_LOGS" show="false" value="&quot;&quot;"/>
-    <elementParameter field="DBTABLE" name="TABLE_METER" show="false" value="&quot;&quot;"/>
+    <elementParameter field="DBTABLE" name="TABLE_STATS" show="false" value="&quot;statcatcher&quot;"/>
+    <elementParameter field="DBTABLE" name="TABLE_LOGS" show="false" value="&quot;logcatcher&quot;"/>
+    <elementParameter field="DBTABLE" name="TABLE_METER" show="false" value="&quot;flowmetercatcher&quot;"/>
     <elementParameter field="CHECK" name="CATCH_RUNTIME_ERRORS" show="false" value="true"/>
     <elementParameter field="CHECK" name="CATCH_USER_ERRORS" show="false" value="true"/>
     <elementParameter field="CHECK" name="CATCH_USER_WARNING" show="false" value="true"/>
-    <elementParameter field="CHECK" name="CATCH_REALTIME_STATS" show="false" value="false"/>
+    <elementParameter field="CHECK" name="CATCH_REALTIME_STATS" show="false" value="true"/>
     <elementParameter field="TEXT" name="HEADERFOOTER_HEADERID" show="false" value=""/>
     <elementParameter field="CHECK" name="HEADER_ENABLED" show="false" value="false"/>
     <elementParameter field="TEXT" name="HEADER_LIBRARY" show="false" value=""/>
@@ -97,31 +97,21 @@
     <elementParameter field="TEXT" name="FOOTER_LIBRARY" show="false" value=""/>
     <elementParameter field="TEXT" name="FOOTER_CODE" show="false" value=""/>
     <elementParameter field="TEXT" name="FOOTER_IMPORT" show="false" value=""/>
-    <routinesParameter id="_H3rswPJxEe6-yr88VBSghg" name="DataOperation"/>
-    <routinesParameter id="_H4KN4PJxEe6-yr88VBSghg" name="Mathematical"/>
-    <routinesParameter id="_H4vcsPJxEe6-yr88VBSghg" name="Numeric"/>
-    <routinesParameter id="_H5HQIPJxEe6-yr88VBSghg" name="Relational"/>
-    <routinesParameter id="_H1WKcPJxEe6-yr88VBSghg" name="SQLike"/>
-    <routinesParameter id="_H5bZMPJxEe6-yr88VBSghg" name="StringHandling"/>
-    <routinesParameter id="_H7tRIPJxEe6-yr88VBSghg" name="TalendDataGenerator"/>
-    <routinesParameter id="_H8WKUPJxEe6-yr88VBSghg" name="TalendDate"/>
-    <routinesParameter id="_H9hPAPJxEe6-yr88VBSghg" name="TalendStringUtil"/>
-    <routinesParameter id="_H9DU8PJxEe6-yr88VBSghg" name="TalendString"/>
   </parameters>
-  <node componentName="tMSSqlInput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="128" posY="160">
+  <node componentName="tMSSqlInput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="64" posY="64">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tDBInput_2"/>
     <elementParameter field="CHECK" name="USE_EXISTING_CONNECTION" value="false"/>
     <elementParameter field="COMPONENT_LIST" name="CONNECTION" show="false" value=""/>
     <elementParameter field="TECHNICAL" name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY"/>
     <elementParameter field="TECHNICAL" name="PROPERTY:REPOSITORY_PROPERTY_TYPE" show="false" value="_I2a48PDcEe6lz_uoJFWK-Q"/>
-    <elementParameter field="TEXT" name="HOST" value="&quot;CORPDEVDASQLDB01&quot;"/>
+    <elementParameter field="TEXT" name="HOST" value="&quot;10.1.20.82&quot;"/>
     <elementParameter field="CLOSED_LIST" name="DRIVER" value="MSSQL_PROP"/>
     <elementParameter field="TEXT" name="TYPE" show="false" value="MSSQL"/>
     <elementParameter field="TEXT" name="PORT" value="&quot;1433&quot;"/>
     <elementParameter field="TEXT" name="DB_SCHEMA" value="&quot;&quot;"/>
-    <elementParameter field="TEXT" name="DBNAME" value="&quot;RAW_PCS&quot;"/>
-    <elementParameter field="TEXT" name="USER" value="&quot;DAadminuser&quot;"/>
-    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:XaU7ulS/Nws88bHK2qa7lvc7W9a2CBiH/zfGtP41GB+TOmzVupy/LRBgdw=="/>
+    <elementParameter field="TEXT" name="DBNAME" value="&quot;CPG_RAW&quot;"/>
+    <elementParameter field="TEXT" name="USER" value="&quot;dev_user&quot;"/>
+    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:EU4DtmtfTE/LjTUSxIk6OA83uirjjmvFgXz5C4yzU/Qtg5TsD2Y="/>
     <elementParameter field="TECHNICAL" name="SCHEMA:SCHEMA_TYPE" show="false" value="REPOSITORY"/>
     <elementParameter field="TECHNICAL" name="SCHEMA:REPOSITORY_SCHEMA_TYPE" show="false" value="_I2a48PDcEe6lz_uoJFWK-Q - Raw_Project_Stage"/>
     <elementParameter field="DBTABLE" name="TABLE" value="&quot;Raw_Project_Stage&quot;"/>
@@ -258,7 +248,7 @@
       </column>
     </metadata>
   </node>
-  <node componentName="tHashOutput" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="416" posY="160">
+  <node componentName="tHashOutput" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="352" posY="64">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tHashOutput_1"/>
     <elementParameter field="CHECK" name="LINK_WITH" value="false"/>
     <elementParameter field="COMPONENT_LIST" name="LIST" show="false" value=""/>
@@ -339,20 +329,20 @@
       </column>
     </metadata>
   </node>
-  <node componentName="tMSSqlOutput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="640" posY="160">
+  <node componentName="tMSSqlOutput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="576" posY="64">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tDBOutput_2"/>
     <elementParameter field="TECHNICAL" name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY"/>
     <elementParameter field="TECHNICAL" name="PROPERTY:REPOSITORY_PROPERTY_TYPE" show="false" value="_6XJPUPEEEe6lz_uoJFWK-Q"/>
     <elementParameter field="CHECK" name="USE_EXISTING_CONNECTION" value="false"/>
     <elementParameter field="COMPONENT_LIST" name="CONNECTION" show="false" value=""/>
     <elementParameter field="CLOSED_LIST" name="DRIVER" value="MSSQL_PROP"/>
-    <elementParameter field="TEXT" name="HOST" value="&quot;CORPDEVDASQLDB01&quot;"/>
+    <elementParameter field="TEXT" name="HOST" value="&quot;10.1.20.82&quot;"/>
     <elementParameter field="TEXT" name="PORT" value="&quot;1433&quot;"/>
     <elementParameter field="TEXT" name="DB_SCHEMA" value="&quot;&quot;"/>
-    <elementParameter field="TEXT" name="DBNAME" value="&quot;cpg_transformed&quot;"/>
+    <elementParameter field="TEXT" name="DBNAME" value="&quot;CPG_TRANSFORMED&quot;"/>
     <elementParameter field="TEXT" name="TYPE" show="false" value="MSSQL"/>
-    <elementParameter field="TEXT" name="USER" value="&quot;DAadminuser&quot;"/>
-    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:NkAwf2adX9GAiJSlQDwGd8v20h6isMb5zacNtVf2UiP3q8cTD6xa6uu6kQ=="/>
+    <elementParameter field="TEXT" name="USER" value="&quot;dev_user&quot;"/>
+    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:/ZDhbAd3XzLjHRd+BYHcnlGKCjKXOC8CFcOS8avbUTOrE/mrQoo="/>
     <elementParameter field="DBTABLE" name="TABLE" value="&quot;trans_ProjectStage&quot;"/>
     <elementParameter field="CLOSED_LIST" name="TABLE_ACTION" value="CREATE_IF_NOT_EXISTS"/>
     <elementParameter field="CHECK" name="IDENTITY_INSERT" value="false"/>
@@ -636,20 +626,20 @@
       <column defaultValue="" key="false" length="255" name="errorMessage" nullable="true" originalLength="-1" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
     </metadata>
   </node>
-  <node componentName="tMSSqlInput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="128" posY="256">
+  <node componentName="tMSSqlInput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="64" posY="160">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tDBInput_3"/>
     <elementParameter field="CHECK" name="USE_EXISTING_CONNECTION" value="false"/>
     <elementParameter field="COMPONENT_LIST" name="CONNECTION" show="false" value=""/>
     <elementParameter field="TECHNICAL" name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY"/>
     <elementParameter field="TECHNICAL" name="PROPERTY:REPOSITORY_PROPERTY_TYPE" show="false" value="_I2a48PDcEe6lz_uoJFWK-Q"/>
-    <elementParameter field="TEXT" name="HOST" value="&quot;CORPDEVDASQLDB01&quot;"/>
+    <elementParameter field="TEXT" name="HOST" value="&quot;10.1.20.82&quot;"/>
     <elementParameter field="CLOSED_LIST" name="DRIVER" value="MSSQL_PROP"/>
     <elementParameter field="TEXT" name="TYPE" show="false" value="MSSQL"/>
     <elementParameter field="TEXT" name="PORT" value="&quot;1433&quot;"/>
     <elementParameter field="TEXT" name="DB_SCHEMA" value="&quot;&quot;"/>
-    <elementParameter field="TEXT" name="DBNAME" value="&quot;RAW_PCS&quot;"/>
-    <elementParameter field="TEXT" name="USER" value="&quot;DAadminuser&quot;"/>
-    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:Z3CjscuKoOMr4th1qxWpu6MMsmvem4gjx5ibU4s7vDJYDEN9Hu9d48b6Kg=="/>
+    <elementParameter field="TEXT" name="DBNAME" value="&quot;CPG_RAW&quot;"/>
+    <elementParameter field="TEXT" name="USER" value="&quot;dev_user&quot;"/>
+    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:nDnT7nKkefcU1vklpxNVHCYaSggNILeowxjAf8MChETnaslTDHc="/>
     <elementParameter field="TECHNICAL" name="SCHEMA:SCHEMA_TYPE" show="false" value="REPOSITORY"/>
     <elementParameter field="TECHNICAL" name="SCHEMA:REPOSITORY_SCHEMA_TYPE" show="false" value="_I2a48PDcEe6lz_uoJFWK-Q - Raw_Project_Stage"/>
     <elementParameter field="DBTABLE" name="TABLE" value="&quot;Raw_Project_Stage&quot;"/>
@@ -786,7 +776,7 @@
       </column>
     </metadata>
   </node>
-  <node componentName="tHashOutput" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="416" posY="256">
+  <node componentName="tHashOutput" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="352" posY="160">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tHashOutput_2"/>
     <elementParameter field="CHECK" name="LINK_WITH" value="false"/>
     <elementParameter field="COMPONENT_LIST" name="LIST" show="false" value=""/>
@@ -867,20 +857,20 @@
       </column>
     </metadata>
   </node>
-  <node componentName="tMSSqlOutput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="640" posY="256">
+  <node componentName="tMSSqlOutput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="576" posY="160">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tDBOutput_3"/>
     <elementParameter field="TECHNICAL" name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY"/>
     <elementParameter field="TECHNICAL" name="PROPERTY:REPOSITORY_PROPERTY_TYPE" show="false" value="_6XJPUPEEEe6lz_uoJFWK-Q"/>
     <elementParameter field="CHECK" name="USE_EXISTING_CONNECTION" value="false"/>
     <elementParameter field="COMPONENT_LIST" name="CONNECTION" show="false" value=""/>
     <elementParameter field="CLOSED_LIST" name="DRIVER" value="MSSQL_PROP"/>
-    <elementParameter field="TEXT" name="HOST" value="&quot;CORPDEVDASQLDB01&quot;"/>
+    <elementParameter field="TEXT" name="HOST" value="&quot;10.1.20.82&quot;"/>
     <elementParameter field="TEXT" name="PORT" value="&quot;1433&quot;"/>
     <elementParameter field="TEXT" name="DB_SCHEMA" value="&quot;&quot;"/>
-    <elementParameter field="TEXT" name="DBNAME" value="&quot;cpg_transformed&quot;"/>
+    <elementParameter field="TEXT" name="DBNAME" value="&quot;CPG_TRANSFORMED&quot;"/>
     <elementParameter field="TEXT" name="TYPE" show="false" value="MSSQL"/>
-    <elementParameter field="TEXT" name="USER" value="&quot;DAadminuser&quot;"/>
-    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:AbAtCUQ+VSeLJH6gwpDimz5AXj9obUQvCZwUOIl19BGVU9qR22Z0/XcGTw=="/>
+    <elementParameter field="TEXT" name="USER" value="&quot;dev_user&quot;"/>
+    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:y9uYF3nvKcaCaTDN6db4LDukNSdnCD8mGqYX+ZFiags+VrQcHPg="/>
     <elementParameter field="DBTABLE" name="TABLE" value="&quot;trans_ProjectStage&quot;"/>
     <elementParameter field="CLOSED_LIST" name="TABLE_ACTION" value="CREATE_IF_NOT_EXISTS"/>
     <elementParameter field="CHECK" name="IDENTITY_INSERT" value="false"/>
@@ -1164,20 +1154,20 @@
       <column defaultValue="" key="false" length="255" name="errorMessage" nullable="true" originalLength="-1" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
     </metadata>
   </node>
-  <node componentName="tMSSqlInput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="128" posY="352">
+  <node componentName="tMSSqlInput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="64" posY="256">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tDBInput_1"/>
     <elementParameter field="CHECK" name="USE_EXISTING_CONNECTION" value="false"/>
     <elementParameter field="COMPONENT_LIST" name="CONNECTION" show="false" value=""/>
     <elementParameter field="TECHNICAL" name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY"/>
     <elementParameter field="TECHNICAL" name="PROPERTY:REPOSITORY_PROPERTY_TYPE" show="false" value="_I2a48PDcEe6lz_uoJFWK-Q"/>
-    <elementParameter field="TEXT" name="HOST" value="&quot;CORPDEVDASQLDB01&quot;"/>
+    <elementParameter field="TEXT" name="HOST" value="&quot;10.1.20.82&quot;"/>
     <elementParameter field="CLOSED_LIST" name="DRIVER" value="MSSQL_PROP"/>
     <elementParameter field="TEXT" name="TYPE" show="false" value="MSSQL"/>
     <elementParameter field="TEXT" name="PORT" value="&quot;1433&quot;"/>
     <elementParameter field="TEXT" name="DB_SCHEMA" value="&quot;&quot;"/>
-    <elementParameter field="TEXT" name="DBNAME" value="&quot;RAW_PCS&quot;"/>
-    <elementParameter field="TEXT" name="USER" value="&quot;DAadminuser&quot;"/>
-    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:43IREa6pPZ52qOWVOfKybhCwz8rsJ6QwztKtiZmV5RdKqL/CvsrqeJxykQ=="/>
+    <elementParameter field="TEXT" name="DBNAME" value="&quot;CPG_RAW&quot;"/>
+    <elementParameter field="TEXT" name="USER" value="&quot;dev_user&quot;"/>
+    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:jmemKYKXbotrcwLHGq20C9HSh7mKGBVwdI3Qier8gxYyBktXUi0="/>
     <elementParameter field="TECHNICAL" name="SCHEMA:SCHEMA_TYPE" show="false" value="REPOSITORY"/>
     <elementParameter field="TECHNICAL" name="SCHEMA:REPOSITORY_SCHEMA_TYPE" show="false" value="_I2a48PDcEe6lz_uoJFWK-Q - Raw_Project_Stage"/>
     <elementParameter field="DBTABLE" name="TABLE" value="&quot;Raw_Project_Stage&quot;"/>
@@ -1314,7 +1304,7 @@
       </column>
     </metadata>
   </node>
-  <node componentName="tHashOutput" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="416" posY="352">
+  <node componentName="tHashOutput" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="352" posY="256">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tHashOutput_3"/>
     <elementParameter field="CHECK" name="LINK_WITH" value="false"/>
     <elementParameter field="COMPONENT_LIST" name="LIST" show="false" value=""/>
@@ -1395,7 +1385,7 @@
       </column>
     </metadata>
   </node>
-  <node componentName="tHashInput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="160" posY="480">
+  <node componentName="tHashInput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="64" posY="352">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tHashInput_1"/>
     <elementParameter field="CHECK" name="LINK_WITH" value="true"/>
     <elementParameter field="COMPONENT_LIST" name="LIST" value="tHashOutput_3"/>
@@ -1472,7 +1462,7 @@
       </column>
     </metadata>
   </node>
-  <node componentName="tMap" componentVersion="2.1" offsetLabelX="0" offsetLabelY="0" posX="384" posY="480">
+  <node componentName="tMap" componentVersion="2.1" offsetLabelX="0" offsetLabelY="0" posX="288" posY="352">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tMap_1"/>
     <elementParameter field="EXTERNAL" name="MAP" value=""/>
     <elementParameter field="CLOSED_LIST" name="LINK_STYLE" value="AUTO"/>
@@ -1555,7 +1545,7 @@
       </column>
     </metadata>
     <nodeData xsi:type="TalendMapper:MapperData">
-      <uiProperties shellMaximized="true"/>
+      <uiProperties/>
       <varTables minimized="true" name="Var" sizeState="INTERMEDIATE"/>
       <outputTables name="out1" sizeState="INTERMEDIATE">
         <mapperTableEntries expression="row4.StageID " name="StageID" type="id_Integer"/>
@@ -1613,20 +1603,20 @@
       </inputTables>
     </nodeData>
   </node>
-  <node componentName="tMSSqlInput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="384" posY="640">
+  <node componentName="tMSSqlInput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="288" posY="512">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tDBInput_4"/>
     <elementParameter field="CHECK" name="USE_EXISTING_CONNECTION" value="false"/>
     <elementParameter field="COMPONENT_LIST" name="CONNECTION" show="false" value=""/>
     <elementParameter field="TECHNICAL" name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY"/>
     <elementParameter field="TECHNICAL" name="PROPERTY:REPOSITORY_PROPERTY_TYPE" show="false" value="_I2a48PDcEe6lz_uoJFWK-Q"/>
-    <elementParameter field="TEXT" name="HOST" value="&quot;CORPDEVDASQLDB01&quot;"/>
+    <elementParameter field="TEXT" name="HOST" value="&quot;10.1.20.82&quot;"/>
     <elementParameter field="CLOSED_LIST" name="DRIVER" value="MSSQL_PROP"/>
     <elementParameter field="TEXT" name="TYPE" show="false" value="MSSQL"/>
     <elementParameter field="TEXT" name="PORT" value="&quot;1433&quot;"/>
     <elementParameter field="TEXT" name="DB_SCHEMA" value="&quot;&quot;"/>
-    <elementParameter field="TEXT" name="DBNAME" value="&quot;RAW_PCS&quot;"/>
-    <elementParameter field="TEXT" name="USER" value="&quot;DAadminuser&quot;"/>
-    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:jVKdyoVjJ8D71jtRe7BwCPULyhaiOvWp3co155DBbm5uTQ7L+loulmRRMA=="/>
+    <elementParameter field="TEXT" name="DBNAME" value="&quot;CPG_RAW&quot;"/>
+    <elementParameter field="TEXT" name="USER" value="&quot;dev_user&quot;"/>
+    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:UA5k6DZhUWUcjQeM+J8C2CH/glbB+vN5Vu0sBEZU0blVnJYkpkA="/>
     <elementParameter field="TECHNICAL" name="SCHEMA:SCHEMA_TYPE" show="false" value="REPOSITORY"/>
     <elementParameter field="TECHNICAL" name="SCHEMA:REPOSITORY_SCHEMA_TYPE" show="false" value="_I2a48PDcEe6lz_uoJFWK-Q - Raw_Stage_List_Master"/>
     <elementParameter field="DBTABLE" name="TABLE" value="&quot;Raw_Stage_List_Master&quot;"/>
@@ -1673,20 +1663,20 @@
       </column>
     </metadata>
   </node>
-  <node componentName="tMSSqlOutput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="608" posY="480">
+  <node componentName="tMSSqlOutput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="512" posY="352">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tDBOutput_1"/>
     <elementParameter field="TECHNICAL" name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY"/>
     <elementParameter field="TECHNICAL" name="PROPERTY:REPOSITORY_PROPERTY_TYPE" show="false" value="_6XJPUPEEEe6lz_uoJFWK-Q"/>
     <elementParameter field="CHECK" name="USE_EXISTING_CONNECTION" value="false"/>
     <elementParameter field="COMPONENT_LIST" name="CONNECTION" show="false" value=""/>
     <elementParameter field="CLOSED_LIST" name="DRIVER" value="MSSQL_PROP"/>
-    <elementParameter field="TEXT" name="HOST" value="&quot;CORPDEVDASQLDB01&quot;"/>
+    <elementParameter field="TEXT" name="HOST" value="&quot;10.1.20.82&quot;"/>
     <elementParameter field="TEXT" name="PORT" value="&quot;1433&quot;"/>
     <elementParameter field="TEXT" name="DB_SCHEMA" value="&quot;&quot;"/>
-    <elementParameter field="TEXT" name="DBNAME" value="&quot;cpg_transformed&quot;"/>
+    <elementParameter field="TEXT" name="DBNAME" value="&quot;CPG_TRANSFORMED&quot;"/>
     <elementParameter field="TEXT" name="TYPE" show="false" value="MSSQL"/>
-    <elementParameter field="TEXT" name="USER" value="&quot;DAadminuser&quot;"/>
-    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:+6SwWlHgjhdrM9upQ7tC4QLQBSLCN9vayKmYB11yPXlwUzwxMQUa6YK21Q=="/>
+    <elementParameter field="TEXT" name="USER" value="&quot;dev_user&quot;"/>
+    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:MgFJ8WYP8ZQawwY1hepiaR+D7mVkwjjsEakKG0ZgT5eXd3ulbbc="/>
     <elementParameter field="DBTABLE" name="TABLE" value="&quot;trans_ProjectStage&quot;"/>
     <elementParameter field="CLOSED_LIST" name="TABLE_ACTION" value="CREATE_IF_NOT_EXISTS"/>
     <elementParameter field="CHECK" name="IDENTITY_INSERT" value="false"/>
@@ -2031,13 +2021,13 @@
     <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="92;131;150"/>
     <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
   </subjob>
-<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_35ac6fa8-18a4-4eab-aa91-fe332775d39a"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>8iGg/hFSiB+KV+9RR8f9gBfmVKdV3G/4HVW4jjGdX8MItSEnE2TXZnbN1IouMvqDSdNikJjhtpU1&#13;
-RvbIXJ+Mxg==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_ffc1bd66-46c6-4862-97de-0ca3d9772d4a"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>nBWzyvVbpZutLg7TfKe5xQ5dmqxtvEY4zkzrc26NYiOyAc2diBQPfz3g3RQQ68O6Pb2rYpUMV7LT&#13;
-fEHL73OQvw==</DigestValue></Reference></SignedInfo><SignatureValue>brIQHj4us/qfeasC5kCELKnAmJnE+SQtUkB96EDN6GPRWEmFZv/gEiLrnqgNrDfZOOwWlKlZEOgc&#13;
-FHctQXIwZMb2KxwInYaz9zXy0MfUKWnREFbpSMtV7XwY/WijozKX9uq+DOhT9UH35Y+B3VR3mx+p&#13;
-98IzKD9BcYhNgan+8ClP7U5bFVM0VOPCThYVEzKu8zeAYSQU3PI0ifpE7949ndywm5U9b6FYgkbW&#13;
-mQVjLDHAOsB2aV2xyY1jlnSflWKd8lNy84gruPbiUOf4h4zDUXi5zE56uC/VO9AzrW/3z/SGsuir&#13;
-a89XdbgQ6LVmUlUhe+o8qIpszbl8YrFtdsfm7Q==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w&#13;
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_e69bbfde-50fe-4ad7-bd07-205d4507e6c0"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>fG8NCQG34vi2As5fITxLVO3ArrvaBwl9S+zoXPMs7h7MIkhszVrHkQep79/0tahqWGV0e5Gl/DC/&#13;
+iqRMplVukg==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_c0d34459-661d-4d2e-927b-b82b80ff5695"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>QGeOv/8FcigifEiAgJKYnXCo7I/9H2as2p6Q+kXRT5bsiF5s6QjBuR3gPrbpcQbbUdPenN7M2nNl&#13;
+vD5rOFvUWQ==</DigestValue></Reference></SignedInfo><SignatureValue>UPKqeopxLfkiO2yeRpGOwwPMSytGQlFXO8vxia+w0RNcIQrpt77OOuqnGKMKtxklI5XHrM8aqaR8&#13;
+U2/76aJITzCAfR4/YNmGdB2fRi+TDLflmQ4/+jCd2jk9l6ZujaI1Dj0BYVjp5AdE5qQLs+lC4IzF&#13;
+pIlEzot5LwdTLk6VYh0yIYWKLxv3YXc+5p2pogTLwQZxjLkJPSOOHG83ztCWVWKwjFK1eNBAwyVl&#13;
+prjZzKC0iCafRmOcLN9Cxoerl6WyoZrcAz+zZ/IneUQyn0LXbzLCfFPYSizYeXexJ6VhvhasGMjJ&#13;
+MyKYOHWmeC3IYMgyi4t/UQKgqSijdXUqbsCj+g==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w&#13;
 DAYDVQQIEwVQYXJpczEOMAwGA1UEBxMFUGFyaXMxFDASBgNVBAoTC1RhbGVuZCBJbmMuMQwwCgYD&#13;
 VQQLDANSJkQxFjAUBgNVBAMMDVRhbGVuZCBSJkQgQ0ExIjAgBgkqhkiG9w0BCQEWE3NlY3VyaXR5&#13;
 QHRhbGVuZC5jb20wHhcNMTkwNjAzMDgxODIwWhcNMjkwNjAzMDAwMDAwWjB7MSgwJgYDVQQDEx9U&#13;
@@ -2059,4 +2049,4 @@ hakvpzhOyLo91h8YAQrEZJdNuKA8IYmBrFZQZDCz0uywKSyFfzPyJhvxylCLG/iDPPfE0VWcrMJ/&#13
 WQJly/2XPg/NBCTF3pSKS0kCiA7PeaI3cWkMYYA3PMwYDvzqs1opBRglG7ikj0bQxSm3lcjMuuvW&#13;
 gBRksFKjP3K/nztsjSoYITOM9jR29ReIL3v0E8RbAFwA2RGq6Dxd0ixfbucMesy5Gnr8tfYy6rW+&#13;
 qSQqd3ah4+PSzBNVwIB4ytpdrG3SlhCI2i2Th8ek8Sjsaquh9qPAerWNd2+84HWOOGj1Xe1qc6vg&#13;
-qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_ffc1bd66-46c6-4862-97de-0ca3d9772d4a" Target="#_35ac6fa8-18a4-4eab-aa91-fe332775d39a"><Timestamp>2024-05-28 00:46:47</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
+qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_c0d34459-661d-4d2e-927b-b82b80ff5695" Target="#_e69bbfde-50fe-4ad7-bd07-205d4507e6c0"><Timestamp>2024-05-28 01:45:51</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>

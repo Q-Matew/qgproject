@@ -492,6 +492,7 @@
       <column comment="" key="false" length="255" name="Class1" nullable="true" originalLength="-1" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="255" name="Category" nullable="true" originalLength="-1" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="PrevProjectCode" nullable="false" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="CalculatedField" nullable="false" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="255" name="Original_Estimate" nullable="true" originalLength="-1" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="255" name="Revised_Period_plan" nullable="true" originalLength="-1" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="255" name="Revised_YTD" nullable="true" originalLength="-1" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
@@ -510,6 +511,7 @@
       <varTables name="Var" sizeState="INTERMEDIATE">
         <mapperTableEntries expression="Var.CurrProjectCode == null ? row1.SAP_Project_Code : Var.CurrProjectCode " name="PrevProjectCode" type="id_String"/>
         <mapperTableEntries expression=" row1.SAP_Project_Code " name="CurrProjectCode" type="id_String"/>
+        <mapperTableEntries expression="Var.CurrProjectCode.equals(Var.PrevProjectCode) &amp;&amp; row1.Category.equals(&quot;Revenue&quot;) ? row1.Revised_Total : &quot;0&quot; " name="var1" type="id_String"/>
       </varTables>
       <outputTables name="out2" sizeState="INTERMEDIATE">
         <mapperTableEntries expression="row1.PL_Year " name="PL_Year" nullable="true" type="id_String"/>
@@ -521,6 +523,7 @@
         <mapperTableEntries expression="row1.Class1 " name="Class1" nullable="true" type="id_String"/>
         <mapperTableEntries expression="row1.Category " name="Category" nullable="true" type="id_String"/>
         <mapperTableEntries expression="Var.PrevProjectCode " name="PrevProjectCode" type="id_String"/>
+        <mapperTableEntries expression="Var.var1 " name="CalculatedField" type="id_String"/>
         <mapperTableEntries expression="row1.Original_Estimate " name="Original_Estimate" nullable="true" type="id_String"/>
         <mapperTableEntries expression="row1.Revised_Period_plan " name="Revised_Period_plan" nullable="true" type="id_String"/>
         <mapperTableEntries expression="row1.Revised_YTD " name="Revised_YTD" nullable="true" type="id_String"/>
@@ -590,6 +593,8 @@
       <elementValue elementRef="LENGTH" value="10"/>
       <elementValue elementRef="SCHEMA_COLUMN" value="PrevProjectCode"/>
       <elementValue elementRef="LENGTH" value="10"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="CalculatedField"/>
+      <elementValue elementRef="LENGTH" value="10"/>
       <elementValue elementRef="SCHEMA_COLUMN" value="Original_Estimate"/>
       <elementValue elementRef="LENGTH" value="10"/>
       <elementValue elementRef="SCHEMA_COLUMN" value="Revised_Period_plan"/>
@@ -628,6 +633,7 @@
       <column comment="" key="false" length="255" name="Class1" nullable="true" originalLength="-1" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="255" name="Category" nullable="true" originalLength="-1" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="PrevProjectCode" nullable="false" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="CalculatedField" nullable="false" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="255" name="Original_Estimate" nullable="true" originalLength="-1" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="255" name="Revised_Period_plan" nullable="true" originalLength="-1" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="255" name="Revised_YTD" nullable="true" originalLength="-1" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
@@ -667,6 +673,11 @@
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="row1"/>
   </connection>
   <connection connectorName="FLOW" label="out2" lineStyle="0" metaname="out2" offsetLabelX="0" offsetLabelY="0" source="tMap_2" target="tLogRow_1">
+    <elementParameter field="TABLE" name="TRACES_CONNECTION_FILTER" show="false">
+      <elementValue elementRef="TRACE_COLUMN" value="CalculatedField"/>
+      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
+      <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
+    </elementParameter>
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="out2"/>
   </connection>
@@ -680,13 +691,13 @@
     <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="92;131;150"/>
     <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
   </subjob>
-<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_60d1242a-9267-46ff-9814-ed7979827217"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>h7l1hTbQJGOVyqMLwLuFlSLp7bEdxznT/L7qbmHskP6KoIvPIzQcruTF6fiExI+bG8YHobqrtbK9&#13;
-F9QltXOcmA==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_0a435631-6e72-4b0a-b49d-140348386676"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>dPCejpxVxppdU+DYBRXb5tRDlBXEbMAC1KhJ19Cr33QueR7V46Bccksvyo/hPksRse5/zb9V6GD5&#13;
-FZ2FkjiHdA==</DigestValue></Reference></SignedInfo><SignatureValue>Ci0a9hlt7y+y1yCBZPdn8llpTpnFedL7tESKNNzfHuSCTNLFOkq8pB5PXpYwjwiHgs4LLwT7yvVb&#13;
-cg2pXzjat1ogw2/An70eJ8mZC78vbVKvpri0zfEutslkcBljKTTZ0rcv6JRqOt45dQ3HszGfQQnt&#13;
-SsMOhnLFRkqzapdAQHnxKcQs8xe8JLjxqtuXjwDWtDEzxOEeNC9OJrn3qnu1TG+Cy/Fv7mYW0mv7&#13;
-2lNdYZfZBH2m7luPiHo8KUE6EDAqoRX/AeyGI1Mi0WdnvB+HxmV+1EQxwF9E44Ru+gYheaWItRM7&#13;
-3cLwpn8grtD3/mDhydhxIfagMq2i3lTNvRYYsg==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w&#13;
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_93f2b71b-995d-49e2-9d23-66acd965f9a4"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>p2yUYy4/EOViVSYtPVv0F5Cx7ok+Okz0MNlUpLdt7ra9uok4wSUmDMs/ztMG/SgFviXGzDllU5TX&#13;
+rvnZE346MQ==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_8d2ce789-d266-495f-8451-026b70fcead8"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>GS7z5OVf4U/3C8vHP33yk5gp8gdQQecAW0hDCHg3HYXucUvyl2Hbo1jwkCnLTwA3CHweRPJmNFs4&#13;
+857ZJv9NvQ==</DigestValue></Reference></SignedInfo><SignatureValue>NwQSqaXwZjJ1WcZVOOlyNnxbv3hh5SNPHgCEcVwh3zC+A435pkTWUjg4dph9W81ipmcMySO0EJqL&#13;
+irfeyEa/x0g2nspewhLR3ykkw6NZ8FzIjEr/OhT/hq4b7sMR1kyoAozdAAUxnLRA6428F0WcFXYb&#13;
+Y1iDLu2GmE3EqeI6Um33RVBh2UsJwTksRz+s9KQt7j4KUQzCJLyMfORZpcnGU1PZt/X+2VZkO3YO&#13;
+j30Oz4BNhGagaJKLENswJBpLBVR/5qBFAthtpWeeZCowaktrymf9ktq9cG36V/cikb23OSbxlqc1&#13;
+wsjVhkBO2rhf7jT+3YQeox0ctCtv4p0EawUP8g==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w&#13;
 DAYDVQQIEwVQYXJpczEOMAwGA1UEBxMFUGFyaXMxFDASBgNVBAoTC1RhbGVuZCBJbmMuMQwwCgYD&#13;
 VQQLDANSJkQxFjAUBgNVBAMMDVRhbGVuZCBSJkQgQ0ExIjAgBgkqhkiG9w0BCQEWE3NlY3VyaXR5&#13;
 QHRhbGVuZC5jb20wHhcNMTkwNjAzMDgxODIwWhcNMjkwNjAzMDAwMDAwWjB7MSgwJgYDVQQDEx9U&#13;
@@ -708,4 +719,4 @@ hakvpzhOyLo91h8YAQrEZJdNuKA8IYmBrFZQZDCz0uywKSyFfzPyJhvxylCLG/iDPPfE0VWcrMJ/&#13
 WQJly/2XPg/NBCTF3pSKS0kCiA7PeaI3cWkMYYA3PMwYDvzqs1opBRglG7ikj0bQxSm3lcjMuuvW&#13;
 gBRksFKjP3K/nztsjSoYITOM9jR29ReIL3v0E8RbAFwA2RGq6Dxd0ixfbucMesy5Gnr8tfYy6rW+&#13;
 qSQqd3ah4+PSzBNVwIB4ytpdrG3SlhCI2i2Th8ek8Sjsaquh9qPAerWNd2+84HWOOGj1Xe1qc6vg&#13;
-qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_0a435631-6e72-4b0a-b49d-140348386676" Target="#_60d1242a-9267-46ff-9814-ed7979827217"><Timestamp>2024-05-29 16:51:14</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
+qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_8d2ce789-d266-495f-8451-026b70fcead8" Target="#_93f2b71b-995d-49e2-9d23-66acd965f9a4"><Timestamp>2024-05-29 16:56:45</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>

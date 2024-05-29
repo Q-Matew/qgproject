@@ -144,8 +144,8 @@
     <elementParameter field="TEXT" name="DECIMAL_SEPARATOR" show="false" value="&quot;.&quot;"/>
     <elementParameter field="CHECK" name="RANDOM" value="false"/>
     <elementParameter field="TEXT" name="NB_RANDOM" show="false" value="10"/>
-    <elementParameter field="CHECK" name="TRIMALL" value="false"/>
-    <elementParameter field="TABLE" name="TRIMSELECT">
+    <elementParameter field="CHECK" name="TRIMALL" value="true"/>
+    <elementParameter field="TABLE" name="TRIMSELECT" show="false">
       <elementValue elementRef="SCHEMA_COLUMN" value="PL_Year"/>
       <elementValue elementRef="TRIM" value="false"/>
       <elementValue elementRef="SCHEMA_COLUMN" value="PL_Month"/>
@@ -190,7 +190,7 @@
       <column comment="" key="false" length="255" name="SAP_Project_Code" nullable="true" originalLength="50" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="255" name="Post_Description" nullable="true" originalLength="255" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="255" name="Meinh" nullable="true" originalLength="255" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="10" name="POC" nullable="true" originalLength="10" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="255" name="POC" nullable="true" originalLength="10" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
     </metadata>
     <metadata connector="REJECT" name="REJECT">
       <column comment="" key="false" length="4" name="PL_Year" nullable="true" originalLength="4" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
@@ -198,7 +198,7 @@
       <column comment="" key="false" length="255" name="SAP_Project_Code" nullable="true" originalLength="50" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="255" name="Post_Description" nullable="true" originalLength="255" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="255" name="Meinh" nullable="true" originalLength="255" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="10" name="POC" nullable="true" originalLength="10" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="255" name="POC" nullable="true" originalLength="10" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
       <column defaultValue="" key="false" length="255" name="errorCode" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
       <column defaultValue="" key="false" length="255" name="errorMessage" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
     </metadata>
@@ -282,20 +282,20 @@
     <elementParameter field="TEXT" name="LABEL" value="CPG_RAW_LAYER"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="FLOW" name="tDBOutput_1">
-      <column comment="" key="false" length="4" name="PL_Year" nullable="true" originalLength="4" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="2" name="PL_Month" nullable="true" originalLength="2" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="255" name="SAP_Project_Code" nullable="true" originalLength="50" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="255" name="Post_Description" nullable="true" originalLength="255" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="255" name="Meinh" nullable="true" originalLength="255" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="10" name="POC" nullable="true" originalLength="10" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="4" name="PL_Year" nullable="true" originalLength="4" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="2" name="PL_Month" nullable="true" originalLength="2" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="255" name="SAP_Project_Code" nullable="true" originalLength="50" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="255" name="Post_Description" nullable="true" originalLength="255" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="255" name="Meinh" nullable="true" originalLength="255" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="255" name="POC" nullable="true" originalLength="10" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
     </metadata>
     <metadata connector="REJECT" name="REJECT">
-      <column comment="" key="false" length="4" name="PL_Year" nullable="true" originalLength="4" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="2" name="PL_Month" nullable="true" originalLength="2" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="255" name="SAP_Project_Code" nullable="true" originalLength="50" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="255" name="Post_Description" nullable="true" originalLength="255" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="255" name="Meinh" nullable="true" originalLength="255" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="10" name="POC" nullable="true" originalLength="10" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="4" name="PL_Year" nullable="true" originalLength="4" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="2" name="PL_Month" nullable="true" originalLength="2" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="255" name="SAP_Project_Code" nullable="true" originalLength="50" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="255" name="Post_Description" nullable="true" originalLength="255" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="255" name="Meinh" nullable="true" originalLength="255" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="255" name="POC" nullable="true" originalLength="10" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
       <column defaultValue="" key="false" length="255" name="errorCode" nullable="true" originalLength="-1" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column defaultValue="" key="false" length="255" name="errorMessage" nullable="true" originalLength="-1" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
     </metadata>
@@ -314,13 +314,13 @@
     <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="92;131;150"/>
     <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
   </subjob>
-<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_18d5326d-08e1-4291-a2ca-a99004835cd9"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>wuTwpedFFrZShgHdtNiWW/7bqVYEvRLQ6iYQ7ex3yp83EYPHtj4fAk+xxaaRsTjuVqbhxtZHFRNm&#13;
-S4M7U9670g==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_e2e0ec19-a51d-4cdc-bfef-a3683ca2936b"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>UK6GavjE6miqrukVZghTd6zqUMm/3njVAN3X8190tvwT5iYwtHDZdN/9eIhSxgqUAbBYSAYtWSMs&#13;
-J8CBMJoHDw==</DigestValue></Reference></SignedInfo><SignatureValue>AENU7caZ+E7Rz71CJsoyAq5+/4bLba9LEp0XEpBj5HqQW1r8IAi2qkke2MKkRh7ESyZu/6RtZ73o&#13;
-/6LHBdqal0Gb52OtTSrrtxuvD+ABIHO9LIRmMAbi31Jg8yAbn2Ut+LAF7M/dBfKbqJg1G8vDX6Hc&#13;
-ZGCcAzUB/HkQMU5h69ys+3T8V21ZDdck0d5ADAOYBpac/+fdWt5FZI9W6mAmyip6nJTYeTbxJ65h&#13;
-3pJ9lMTE3vvhXZB3Ss9LiP9DN7PiWAsZYa0givCqLS4Ujaghr/wLZHyl+PbUc1LG4KezrKOaIyLZ&#13;
-vt+M3g+PHZbTgqtR2tbt4RMB3LmknKxSjbvvbQ==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w&#13;
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_ba48e51d-fed8-407b-b080-2105ead36205"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>UBTnD04ka7xGqlNa7deNBWp2HLVKYHj/Qe4MKaaRjxV/FOnNHQdsd59gULTP5X5548tEvCvJ5Ojg&#13;
+o1e615i6hA==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_7f861a7f-b935-4ea8-81f5-44e888b7c2cb"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>NLl3zKZpOLIm+bqoSO/CLBajrN5UBckQZSw9lI28I4WnOuu7blA+88s7SyA55g4/zexvTk3aTdT6&#13;
+iYiv1KbCoQ==</DigestValue></Reference></SignedInfo><SignatureValue>LcSYbSyZZ/hCdSKNYSzP7ns8s8MSt5RWP4W2sI40ScxOsXsKmCF9dHxARRZta5RnluVlyMX7xa6Y&#13;
+mWHqTl3XbodKeQVPe3WlFQjb6Vg9S0KQ7dX9s2ZVONx3b0Lt3oqKnCIPGylvHVczGeB2nPF9JtB5&#13;
+AKeuh/cHJojgFughka+ztTAvJnmLxk6Udjh87fETI+iU+Ggl8rpbHU+oQ7xrAuIyPhqz7WoVoH8q&#13;
+HUKaoMc+8c2TAiS3oXK+aqmC40ULtvJRCplpL3idW+T0sak4Kzq3PbPWJlBir4YvfSsYXrbYCUMb&#13;
+IDM/Dd3XcpV7xonIDiuvqdqvtWEoAU0wpiLKPA==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w&#13;
 DAYDVQQIEwVQYXJpczEOMAwGA1UEBxMFUGFyaXMxFDASBgNVBAoTC1RhbGVuZCBJbmMuMQwwCgYD&#13;
 VQQLDANSJkQxFjAUBgNVBAMMDVRhbGVuZCBSJkQgQ0ExIjAgBgkqhkiG9w0BCQEWE3NlY3VyaXR5&#13;
 QHRhbGVuZC5jb20wHhcNMTkwNjAzMDgxODIwWhcNMjkwNjAzMDAwMDAwWjB7MSgwJgYDVQQDEx9U&#13;
@@ -342,4 +342,4 @@ hakvpzhOyLo91h8YAQrEZJdNuKA8IYmBrFZQZDCz0uywKSyFfzPyJhvxylCLG/iDPPfE0VWcrMJ/&#13
 WQJly/2XPg/NBCTF3pSKS0kCiA7PeaI3cWkMYYA3PMwYDvzqs1opBRglG7ikj0bQxSm3lcjMuuvW&#13;
 gBRksFKjP3K/nztsjSoYITOM9jR29ReIL3v0E8RbAFwA2RGq6Dxd0ixfbucMesy5Gnr8tfYy6rW+&#13;
 qSQqd3ah4+PSzBNVwIB4ytpdrG3SlhCI2i2Th8ek8Sjsaquh9qPAerWNd2+84HWOOGj1Xe1qc6vg&#13;
-qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_e2e0ec19-a51d-4cdc-bfef-a3683ca2936b" Target="#_18d5326d-08e1-4291-a2ca-a99004835cd9"><Timestamp>2024-05-29 15:42:54</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
+qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_7f861a7f-b935-4ea8-81f5-44e888b7c2cb" Target="#_ba48e51d-fed8-407b-b080-2105ead36205"><Timestamp>2024-05-29 15:47:23</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>

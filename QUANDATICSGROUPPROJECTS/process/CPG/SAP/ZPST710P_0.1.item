@@ -490,8 +490,8 @@
       <column comment="" key="false" length="255" name="Currency" nullable="true" originalLength="-1" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="255" name="CE_Group" nullable="true" originalLength="-1" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="255" name="Class1" nullable="true" originalLength="-1" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="PrevProjectCode" nullable="false" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="255" name="Category" nullable="true" originalLength="-1" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="PrevProjectCode" nullable="false" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="255" name="Original_Estimate" nullable="true" originalLength="-1" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="255" name="Revised_Period_plan" nullable="true" originalLength="-1" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="255" name="Revised_YTD" nullable="true" originalLength="-1" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
@@ -508,8 +508,9 @@
     <nodeData xsi:type="TalendMapper:MapperData">
       <uiProperties shellMaximized="true"/>
       <varTables name="Var" sizeState="INTERMEDIATE">
-        <mapperTableEntries expression="Var.CurrProjectCode " name="PrevProjectCode" type="id_String"/>
-        <mapperTableEntries expression="row1.SAP_Project_Code" name="CurrProjectCode" type="id_String"/>
+        <mapperTableEntries expression="Var.CurrProjectCode" name="PrevProjectCode" type="id_String"/>
+        <mapperTableEntries expression="Var.PrevProjectCode == null ? row1.SAP_Project_Code : row1.SAP_Project_Code " name="CurrProjectCode" type="id_String"/>
+        <mapperTableEntries name="var1" type="id_String"/>
       </varTables>
       <outputTables name="out2" sizeState="INTERMEDIATE">
         <mapperTableEntries expression="row1.PL_Year " name="PL_Year" nullable="true" type="id_String"/>
@@ -519,8 +520,8 @@
         <mapperTableEntries expression="row1.Currency " name="Currency" nullable="true" type="id_String"/>
         <mapperTableEntries expression="row1.CE_Group " name="CE_Group" nullable="true" type="id_String"/>
         <mapperTableEntries expression="row1.Class1 " name="Class1" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="Var.PrevProjectCode " name="PrevProjectCode" type="id_String"/>
         <mapperTableEntries expression="row1.Category " name="Category" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="Var.PrevProjectCode " name="PrevProjectCode" type="id_String"/>
         <mapperTableEntries expression="row1.Original_Estimate " name="Original_Estimate" nullable="true" type="id_String"/>
         <mapperTableEntries expression="row1.Revised_Period_plan " name="Revised_Period_plan" nullable="true" type="id_String"/>
         <mapperTableEntries expression="row1.Revised_YTD " name="Revised_YTD" nullable="true" type="id_String"/>
@@ -586,9 +587,9 @@
       <elementValue elementRef="LENGTH" value="10"/>
       <elementValue elementRef="SCHEMA_COLUMN" value="Class1"/>
       <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="PrevProjectCode"/>
-      <elementValue elementRef="LENGTH" value="10"/>
       <elementValue elementRef="SCHEMA_COLUMN" value="Category"/>
+      <elementValue elementRef="LENGTH" value="10"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="PrevProjectCode"/>
       <elementValue elementRef="LENGTH" value="10"/>
       <elementValue elementRef="SCHEMA_COLUMN" value="Original_Estimate"/>
       <elementValue elementRef="LENGTH" value="10"/>
@@ -626,8 +627,8 @@
       <column comment="" key="false" length="255" name="Currency" nullable="true" originalLength="-1" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="255" name="CE_Group" nullable="true" originalLength="-1" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="255" name="Class1" nullable="true" originalLength="-1" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="PrevProjectCode" nullable="false" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="255" name="Category" nullable="true" originalLength="-1" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="PrevProjectCode" nullable="false" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="255" name="Original_Estimate" nullable="true" originalLength="-1" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="255" name="Revised_Period_plan" nullable="true" originalLength="-1" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="255" name="Revised_YTD" nullable="true" originalLength="-1" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
@@ -680,13 +681,13 @@
     <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="92;131;150"/>
     <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
   </subjob>
-<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_873cf629-1af3-4167-837c-0ca42eb9556c"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>j5PavDjZb1a0pfZ/hNoO7B306F7+BfrhDstCm5vTNXT78Kyx7QuHgbClfOr+ZEDUTN7OJtuxR2AW&#13;
-a92nrsub/w==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_b4db4ed7-082a-45cd-8a5e-15bf163ae3ff"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>EiwJS/+2PBZuoySCF+3NgRakmT8lJDwkRllO9gecnT4GrHtKX0+ZJq2K5CkJDoGfwcwVaiYxGBSz&#13;
-EpdbtJKegw==</DigestValue></Reference></SignedInfo><SignatureValue>ZDlIZZmE7vUPVx1UCIVqA5SenevdwbNAM7w8nEiRtcdIHCYXHjwOmycO1HAqGO4+ugSWj88PZBO0&#13;
-71+4xcEE5stEIwH59B7wSKmvf89fBF9BEazze3wcEXjtQVF9nlCSAsxZn7N0CUkqCD/GMwOpcjYw&#13;
-Dbw1MEjJpKR0RHKqDK6n1M6ugPgvvTiw3hNE4f7RDsd5lLVEVsAJQN3iY9ijmvcKH3uj2Cr2ASPr&#13;
-jEx71FDUVJWWCa6XRttda5xgikuDXnYw/ir31nWxqJJV6bgCpW8jXr1+z7dlAOgleT6jIuPtOCpv&#13;
-IheoIRvVWgPDCHuq9Amc+nTD+W5X1DAcu4rwtQ==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w&#13;
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_5f3cea99-3566-4547-ab04-0487cc595423"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>J8T2cQTtuzJ/I5iamATm+CwZB/ex31M/4ELdm+m2n99RX2ElcGT5ssx3izM+k40po28+4X3ewOk+&#13;
+WD+7ug8CBQ==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_b3aa6427-d0d2-4dde-af04-a4fc45ef3d2a"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>iRKXmaes6DCRJM0g9WFiqpamShLspXe21il0q/oXLvwnduNV9+StglafLm59KG0lRhmhynOARDiD&#13;
+aWRZySb5gA==</DigestValue></Reference></SignedInfo><SignatureValue>KVnzMqg0swSreMS9JBqhVpNw5ttG2hKn8eZBAd2Kt7GL5COp1ZGHm+8I5h78vfeGeE7x1l+CNbY7&#13;
+QOwf1JmtxqVkOFHtucLUML280Yc/Kkl7WTnUfuZtw47zdJpe0OhuoM8jmn2CXSvokkTiB3sR1Jbk&#13;
+dYFjFje+cFq6lhZKvAUitSOEOWwgsTySt9iISpiu8kQxEmGIlQS91VHS1EHRdhXqEpd7Q2SJBWDW&#13;
+wwOOrYR33KRZcyVWeQiwykKmLhUVd9NHJA5BAE5oN16mMxs6cQmxJCBnPbGWRExzmQScKCk97F8o&#13;
+OsdW4tFJijgQyYDq2DgmiAj0dsHl55jTHzIgUQ==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w&#13;
 DAYDVQQIEwVQYXJpczEOMAwGA1UEBxMFUGFyaXMxFDASBgNVBAoTC1RhbGVuZCBJbmMuMQwwCgYD&#13;
 VQQLDANSJkQxFjAUBgNVBAMMDVRhbGVuZCBSJkQgQ0ExIjAgBgkqhkiG9w0BCQEWE3NlY3VyaXR5&#13;
 QHRhbGVuZC5jb20wHhcNMTkwNjAzMDgxODIwWhcNMjkwNjAzMDAwMDAwWjB7MSgwJgYDVQQDEx9U&#13;
@@ -708,4 +709,4 @@ hakvpzhOyLo91h8YAQrEZJdNuKA8IYmBrFZQZDCz0uywKSyFfzPyJhvxylCLG/iDPPfE0VWcrMJ/&#13
 WQJly/2XPg/NBCTF3pSKS0kCiA7PeaI3cWkMYYA3PMwYDvzqs1opBRglG7ikj0bQxSm3lcjMuuvW&#13;
 gBRksFKjP3K/nztsjSoYITOM9jR29ReIL3v0E8RbAFwA2RGq6Dxd0ixfbucMesy5Gnr8tfYy6rW+&#13;
 qSQqd3ah4+PSzBNVwIB4ytpdrG3SlhCI2i2Th8ek8Sjsaquh9qPAerWNd2+84HWOOGj1Xe1qc6vg&#13;
-qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_b4db4ed7-082a-45cd-8a5e-15bf163ae3ff" Target="#_873cf629-1af3-4167-837c-0ca42eb9556c"><Timestamp>2024-05-29 16:44:38</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
+qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_b3aa6427-d0d2-4dde-af04-a4fc45ef3d2a" Target="#_5f3cea99-3566-4547-ab04-0487cc595423"><Timestamp>2024-05-29 16:48:04</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>

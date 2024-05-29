@@ -468,65 +468,21 @@
       <column comment="" key="false" length="255" name="Variance_Total" nullable="true" originalLength="-1" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
     </metadata>
   </node>
-  <node componentName="tLogRow" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="288" posY="160">
-    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tLogRow_1"/>
-    <elementParameter field="RADIO" name="BASIC_MODE" value="false"/>
-    <elementParameter field="RADIO" name="TABLE_PRINT" value="true"/>
-    <elementParameter field="RADIO" name="VERTICAL" value="false"/>
-    <elementParameter field="RADIO" name="PRINT_UNIQUE" show="false" value="true"/>
-    <elementParameter field="RADIO" name="PRINT_LABEL" show="false" value="false"/>
-    <elementParameter field="RADIO" name="PRINT_UNIQUE_LABEL" show="false" value="false"/>
-    <elementParameter field="TEXT" name="FIELDSEPARATOR" show="false" value="&quot;|&quot;"/>
-    <elementParameter field="CHECK" name="PRINT_HEADER" show="false" value="false"/>
-    <elementParameter field="CHECK" name="PRINT_UNIQUE_NAME" show="false" value="false"/>
-    <elementParameter field="CHECK" name="PRINT_COLNAMES" show="false" value="false"/>
-    <elementParameter field="CHECK" name="USE_FIXED_LENGTH" show="false" value="false"/>
-    <elementParameter field="TABLE" name="LENGTHS" show="false">
-      <elementValue elementRef="SCHEMA_COLUMN" value="PL_Year"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="PL_Month"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="SAP_Project_Code"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="Row_No"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="Currency"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="CE_Group"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="Class1"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="Category"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="Original_Estimate"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="Revised_Period_plan"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="Revised_YTD"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="Revised_Accum"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="Revised_Total"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="Actual_Period"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="Actual_YTD"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="Actual_Accum"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="Variance_Period"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="Variance_YTD"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="Variance_Accum"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="Variance_Total"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-    </elementParameter>
-    <elementParameter field="CHECK" name="PRINT_CONTENT_WITH_LOG4J" value="true"/>
-    <elementParameter field="TEXT" name="SCHEMA_OPT_NUM" show="false" value="100"/>
+  <node componentName="tMap" componentVersion="2.1" offsetLabelX="0" offsetLabelY="0" posX="224" posY="160">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tMap_2"/>
+    <elementParameter field="EXTERNAL" name="MAP" value=""/>
+    <elementParameter field="CLOSED_LIST" name="LINK_STYLE" value="AUTO"/>
+    <elementParameter field="DIRECTORY" name="TEMPORARY_DATA_DIRECTORY" value=""/>
+    <elementParameter field="IMAGE" name="PREVIEW" value="_5qG2MB3SEe-xHuL8L-KbxA-tMap_2-PREVIEW.bmp"/>
+    <elementParameter field="CHECK" name="DIE_ON_ERROR" show="false" value="true"/>
+    <elementParameter field="CHECK" name="LKUP_PARALLELIZE" show="false" value="false"/>
+    <elementParameter field="TEXT" name="LEVENSHTEIN" show="false" value="0"/>
+    <elementParameter field="TEXT" name="JACCARD" show="false" value="0"/>
+    <elementParameter field="CHECK" name="ENABLE_AUTO_CONVERT_TYPE" show="false" value="false"/>
+    <elementParameter field="TEXT" name="ROWS_BUFFER_SIZE" value="2000000"/>
+    <elementParameter field="CHECK" name="CHANGE_HASH_AND_EQUALS_FOR_BIGDECIMAL" value="true"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
-    <metadata connector="FLOW" name="tLogRow_1">
+    <metadata name="out2">
       <column comment="" key="false" length="255" name="PL_Year" nullable="true" originalLength="-1" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="255" name="PL_Month" nullable="true" originalLength="-1" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="255" name="SAP_Project_Code" nullable="true" originalLength="-1" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
@@ -548,6 +504,57 @@
       <column comment="" key="false" length="255" name="Variance_Accum" nullable="true" originalLength="-1" pattern="&quot;dd-MM-yyyy&quot;" precision="3" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="255" name="Variance_Total" nullable="true" originalLength="-1" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
     </metadata>
+    <nodeData xsi:type="TalendMapper:MapperData">
+      <uiProperties shellMaximized="true"/>
+      <varTables name="Var" sizeState="INTERMEDIATE">
+        <mapperTableEntries name="var2" type="id_String"/>
+        <mapperTableEntries name="var1" type="id_String"/>
+      </varTables>
+      <outputTables name="out2" sizeState="INTERMEDIATE">
+        <mapperTableEntries expression="row1.PL_Year " name="PL_Year" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row1.PL_Month " name="PL_Month" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row1.SAP_Project_Code " name="SAP_Project_Code" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row1.Row_No " name="Row_No" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row1.Currency " name="Currency" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row1.CE_Group " name="CE_Group" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row1.Class1 " name="Class1" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row1.Category " name="Category" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row1.Original_Estimate " name="Original_Estimate" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row1.Revised_Period_plan " name="Revised_Period_plan" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row1.Revised_YTD " name="Revised_YTD" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row1.Revised_Accum " name="Revised_Accum" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row1.Revised_Total " name="Revised_Total" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row1.Actual_Period " name="Actual_Period" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row1.Actual_YTD " name="Actual_YTD" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row1.Actual_Accum " name="Actual_Accum" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row1.Variance_Period " name="Variance_Period" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row1.Variance_YTD " name="Variance_YTD" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row1.Variance_Accum " name="Variance_Accum" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row1.Variance_Total " name="Variance_Total" nullable="true" type="id_String"/>
+      </outputTables>
+      <inputTables lookupMode="LOAD_ONCE" matchingMode="UNIQUE_MATCH" name="row1" sizeState="INTERMEDIATE">
+        <mapperTableEntries name="PL_Year" nullable="true" type="id_String"/>
+        <mapperTableEntries name="PL_Month" nullable="true" type="id_String"/>
+        <mapperTableEntries name="SAP_Project_Code" nullable="true" type="id_String"/>
+        <mapperTableEntries name="Row_No" nullable="true" type="id_String"/>
+        <mapperTableEntries name="Currency" nullable="true" type="id_String"/>
+        <mapperTableEntries name="CE_Group" nullable="true" type="id_String"/>
+        <mapperTableEntries name="Class1" nullable="true" type="id_String"/>
+        <mapperTableEntries name="Category" nullable="true" type="id_String"/>
+        <mapperTableEntries name="Original_Estimate" nullable="true" type="id_String"/>
+        <mapperTableEntries name="Revised_Period_plan" nullable="true" type="id_String"/>
+        <mapperTableEntries name="Revised_YTD" nullable="true" type="id_String"/>
+        <mapperTableEntries name="Revised_Accum" nullable="true" type="id_String"/>
+        <mapperTableEntries name="Revised_Total" nullable="true" type="id_String"/>
+        <mapperTableEntries name="Actual_Period" nullable="true" type="id_String"/>
+        <mapperTableEntries name="Actual_YTD" nullable="true" type="id_String"/>
+        <mapperTableEntries name="Actual_Accum" nullable="true" type="id_String"/>
+        <mapperTableEntries name="Variance_Period" nullable="true" type="id_String"/>
+        <mapperTableEntries name="Variance_YTD" nullable="true" type="id_String"/>
+        <mapperTableEntries name="Variance_Accum" nullable="true" type="id_String"/>
+        <mapperTableEntries name="Variance_Total" nullable="true" type="id_String"/>
+      </inputTables>
+    </nodeData>
   </node>
   <connection connectorName="ITERATE" label="Iterate" lineStyle="7" metaname="tFileList_1" offsetLabelX="0" offsetLabelY="0" source="tFileList_1" target="tFileInputDelimited_1">
     <elementParameter field="CHECK" name="ENABLE_PARALLEL" value="false"/>
@@ -569,7 +576,7 @@
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="out1"/>
   </connection>
-  <connection connectorName="FLOW" label="row1" lineStyle="0" metaname="tHashInput_2" offsetLabelX="0" offsetLabelY="0" source="tHashInput_2" target="tLogRow_1">
+  <connection connectorName="FLOW" label="row1" lineStyle="0" metaname="tHashInput_2" offsetLabelX="0" offsetLabelY="0" source="tHashInput_2" target="tMap_2">
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="row1"/>
   </connection>
@@ -583,13 +590,13 @@
     <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="92;131;150"/>
     <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
   </subjob>
-<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_623a55d2-4317-4dde-9da6-5c63f2755e89"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>RpR8xG/m+KAUmE4wJABSLxzhVEREZle2TWhXcGrIBeC3xPKf/t52YLRWs/cOlP76UhGMbAMgzTOv&#13;
-464C2BrYrA==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_f9a41093-53d8-4ae6-9e40-0a2b59fd9831"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>t8GLS53dE64zo3LLeTy1/5UhaY2qRF0xvFPMnDwNoe4O01PSS3Uo4z1fcQ9MkG1uNO+TNVKgY732&#13;
-48gxoBuyBg==</DigestValue></Reference></SignedInfo><SignatureValue>Gn7Tt77SNHSRPXDF9neCL4wO7x4cIAFjAYoCCiw+9hzaosQwn820S/8fJBhQaB6uyaLZAdZP4A1x&#13;
-5DazORBX5tY1wvWGuUHPfR/nhzNEg4tHgK5sXB7+AxfcyOKV3OBaPm4EGF1JZynuVuCeL+87z5ia&#13;
-QK1rtH4g0Zkfg4O63o92DFhe+APrxXDo8Z1gS84lSIX89VqI+MGUdcFtIEXLWoQ3QkHYUJMlaqtY&#13;
-lmORjjwYC92+wbvvT77JlZLR15ifpXgbOeRUn14zPB0pP9Tgr6nsTHngTVsLdhdtzyMFsueB6X7d&#13;
-QwH1SYckGKYzzKIwIIwexBazpRqdB1Mf7a2ybA==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w&#13;
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_ef4545b2-f4aa-4d20-9927-141823633df3"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>WqQgNijAWBqlTXQ6MYx5d1tkKCg/6qwPYH+RpdmG/k1WjcDIldWBDFBJlAP+P3VdSmOiOxrPRNnn&#13;
+eDjuEO7Byg==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_8d313a1a-b102-4d3a-ba43-d5e12f087f8d"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>rWLMUp3ZE0nU2CoAjceGgCmOUmyfNzhSBKw6h4I8P7cLAmQDKq7dUpaEtumqgzMgoj8SoZM9Na2v&#13;
+ne+y2hcDEg==</DigestValue></Reference></SignedInfo><SignatureValue>Dy2cB3mJpIOgSCYeI4+oymD4hbSmxYbmh/qkp+70L42HeD9u0y2rtVCvNaxqpdQjLNZ3cMCsWk8E&#13;
+yg4Kjd8mt1IMvKS2BJaQp2rf1yeogA8nf2PHvOVrMJW2DtI+0PDy5NxywYFamCTTxo0U7/zXfTli&#13;
+0ZNABSFxvFBD0eUazNBEIdQFcw6bVeVy17qEW6bt3EKug2RNAk4OmeyaSoDI4MLWFiNZ6i48cQZp&#13;
+QdrR73rRjGrrNlIAxIpzGS8aP8YOapgxdE8qQ85RvI1rbikWFD0rY+MYPL1XqhFTj/6WeZ870pPC&#13;
+QQHe6N+aqCBArRqHIFSR2cThUBexNjQA8Ebvyg==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w&#13;
 DAYDVQQIEwVQYXJpczEOMAwGA1UEBxMFUGFyaXMxFDASBgNVBAoTC1RhbGVuZCBJbmMuMQwwCgYD&#13;
 VQQLDANSJkQxFjAUBgNVBAMMDVRhbGVuZCBSJkQgQ0ExIjAgBgkqhkiG9w0BCQEWE3NlY3VyaXR5&#13;
 QHRhbGVuZC5jb20wHhcNMTkwNjAzMDgxODIwWhcNMjkwNjAzMDAwMDAwWjB7MSgwJgYDVQQDEx9U&#13;
@@ -611,4 +618,4 @@ hakvpzhOyLo91h8YAQrEZJdNuKA8IYmBrFZQZDCz0uywKSyFfzPyJhvxylCLG/iDPPfE0VWcrMJ/&#13
 WQJly/2XPg/NBCTF3pSKS0kCiA7PeaI3cWkMYYA3PMwYDvzqs1opBRglG7ikj0bQxSm3lcjMuuvW&#13;
 gBRksFKjP3K/nztsjSoYITOM9jR29ReIL3v0E8RbAFwA2RGq6Dxd0ixfbucMesy5Gnr8tfYy6rW+&#13;
 qSQqd3ah4+PSzBNVwIB4ytpdrG3SlhCI2i2Th8ek8Sjsaquh9qPAerWNd2+84HWOOGj1Xe1qc6vg&#13;
-qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_f9a41093-53d8-4ae6-9e40-0a2b59fd9831" Target="#_623a55d2-4317-4dde-9da6-5c63f2755e89"><Timestamp>2024-05-29 16:38:28</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
+qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_8d313a1a-b102-4d3a-ba43-d5e12f087f8d" Target="#_ef4545b2-f4aa-4d20-9927-141823633df3"><Timestamp>2024-05-29 16:39:35</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>

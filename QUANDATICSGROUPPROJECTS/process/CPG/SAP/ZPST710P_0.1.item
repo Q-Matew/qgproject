@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?><talendfile:ProcessType xmlns:talendfile="platform:/resource/org.talend.model/model/TalendFile.xsd" xmlns:xmi="http://www.omg.org/XMI" defaultContext="Default" jobType="Standard" xmi:version="2.0">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><talendfile:ProcessType xmlns:talendfile="platform:/resource/org.talend.model/model/TalendFile.xsd" xmlns:TalendMapper="http://www.talend.org/mapper" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" defaultContext="Default" jobType="Standard" xmi:version="2.0">
   <context confirmationNeeded="false" hide="false" name="Default"/>
   <parameters>
     <elementParameter field="CLOSED_LIST" name="LOG4J_RUN_LEVEL" show="false" value="Info"/>
@@ -317,7 +317,92 @@
       <column comment="" key="false" length="255" name="Variance_Total" nullable="true" originalLength="-1" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
     </metadata>
   </node>
-  <node componentName="tHashOutput" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="544" posY="64">
+  <node componentName="tMap" componentVersion="2.1" offsetLabelX="0" offsetLabelY="0" posX="544" posY="64">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tMap_1"/>
+    <elementParameter field="EXTERNAL" name="MAP" value=""/>
+    <elementParameter field="CLOSED_LIST" name="LINK_STYLE" value="AUTO"/>
+    <elementParameter field="DIRECTORY" name="TEMPORARY_DATA_DIRECTORY" value=""/>
+    <elementParameter field="IMAGE" name="PREVIEW" value="_5qG2MB3SEe-xHuL8L-KbxA-tMap_1-PREVIEW.bmp"/>
+    <elementParameter field="CHECK" name="DIE_ON_ERROR" show="false" value="true"/>
+    <elementParameter field="CHECK" name="LKUP_PARALLELIZE" show="false" value="false"/>
+    <elementParameter field="TEXT" name="LEVENSHTEIN" show="false" value="0"/>
+    <elementParameter field="TEXT" name="JACCARD" show="false" value="0"/>
+    <elementParameter field="CHECK" name="ENABLE_AUTO_CONVERT_TYPE" show="false" value="false"/>
+    <elementParameter field="TEXT" name="ROWS_BUFFER_SIZE" value="2000000"/>
+    <elementParameter field="CHECK" name="CHANGE_HASH_AND_EQUALS_FOR_BIGDECIMAL" value="true"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <metadata connector="FLOW" name="out1">
+      <column comment="" key="false" length="255" name="PL_Year" nullable="true" originalLength="-1" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="255" name="PL_Month" nullable="true" originalLength="-1" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="255" name="SAP_Project_Code" nullable="true" originalLength="-1" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="255" name="Row_No" nullable="true" originalLength="-1" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="255" name="Currency" nullable="true" originalLength="-1" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="255" name="CE_Group" nullable="true" originalLength="-1" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="255" name="Class1" nullable="true" originalLength="-1" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="255" name="Category" nullable="true" originalLength="-1" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="255" name="Original_Estimate" nullable="true" originalLength="-1" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="255" name="Revised_Period_plan" nullable="true" originalLength="-1" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="255" name="Revised_YTD" nullable="true" originalLength="-1" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="255" name="Revised_Accum" nullable="true" originalLength="-1" pattern="&quot;dd-MM-yyyy&quot;" precision="2" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="255" name="Revised_Total" nullable="true" originalLength="-1" pattern="&quot;dd-MM-yyyy&quot;" precision="2" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="255" name="Actual_Period" nullable="true" originalLength="-1" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="255" name="Actual_YTD" nullable="true" originalLength="-1" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="255" name="Actual_Accum" nullable="true" originalLength="-1" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="255" name="Variance_Period" nullable="true" originalLength="-1" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="255" name="Variance_YTD" nullable="true" originalLength="-1" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="255" name="Variance_Accum" nullable="true" originalLength="-1" pattern="&quot;dd-MM-yyyy&quot;" precision="3" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="255" name="Variance_Total" nullable="true" originalLength="-1" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
+    </metadata>
+    <nodeData xsi:type="TalendMapper:MapperData">
+      <uiProperties shellMaximized="true"/>
+      <varTables minimized="true" name="Var" sizeState="INTERMEDIATE"/>
+      <outputTables name="out1" sizeState="INTERMEDIATE">
+        <mapperTableEntries expression="row2.PL_Year" name="PL_Year" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row2.PL_Month" name="PL_Month" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row2.SAP_Project_Code" name="SAP_Project_Code" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row2.Row_No" name="Row_No" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row2.Currency" name="Currency" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row2.CE_Group" name="CE_Group" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row2.Class1" name="Class1" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row2.Category" name="Category" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row2.Original_Estimate.contains(&quot;-&quot;) ? &quot;-&quot; + row2.Original_Estimate.replace(&quot;-&quot;, &quot;&quot;) : row2.Original_Estimate " name="Original_Estimate" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row2.Revised_Period_plan.contains(&quot;-&quot;) ? &quot;-&quot; + row2.Revised_Period_plan.replace(&quot;-&quot;, &quot;&quot;) : row2.Revised_Period_plan " name="Revised_Period_plan" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row2.Revised_YTD.contains(&quot;-&quot;) ? &quot;-&quot; + row2.Revised_YTD.replace(&quot;-&quot;, &quot;&quot;) : row2.Revised_YTD " name="Revised_YTD" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row2.Revised_Accum.contains(&quot;-&quot;) ? &quot;-&quot; + row2.Revised_Accum.replace(&quot;-&quot;, &quot;&quot;) : row2.Revised_Accum " name="Revised_Accum" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row2.Revised_Total.contains(&quot;-&quot;) ? &quot;-&quot; + row2.Revised_Total.replace(&quot;-&quot;, &quot;&quot;) : row2.Revised_Total " name="Revised_Total" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row2.Actual_Period.contains(&quot;-&quot;) ? &quot;-&quot; + row2.Actual_Period.replace(&quot;-&quot;, &quot;&quot;) : row2.Actual_Period " name="Actual_Period" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row2.Actual_YTD.contains(&quot;-&quot;) ? &quot;-&quot; + row2.Actual_YTD.replace(&quot;-&quot;, &quot;&quot;) : row2.Actual_YTD " name="Actual_YTD" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row2.Actual_Accum.contains(&quot;-&quot;) ? &quot;-&quot; + row2.Actual_Accum.replace(&quot;-&quot;, &quot;&quot;) : row2.Actual_Accum " name="Actual_Accum" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row2.Variance_Period.contains(&quot;-&quot;) ? &quot;-&quot; + row2.Variance_Period.replace(&quot;-&quot;, &quot;&quot;) : row2.Variance_Period " name="Variance_Period" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row2.Variance_YTD.contains(&quot;-&quot;) ? &quot;-&quot; + row2.Variance_YTD.replace(&quot;-&quot;, &quot;&quot;) : row2.Variance_YTD " name="Variance_YTD" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row2.Variance_Accum.contains(&quot;-&quot;) ? &quot;-&quot; + row2.Variance_Accum.replace(&quot;-&quot;, &quot;&quot;) : row2.Variance_Accum " name="Variance_Accum" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row2.Variance_Total" name="Variance_Total" nullable="true" type="id_String"/>
+      </outputTables>
+      <inputTables lookupMode="LOAD_ONCE" matchingMode="ALL_ROWS" name="row2" sizeState="INTERMEDIATE">
+        <mapperTableEntries name="PL_Year" nullable="true" type="id_String"/>
+        <mapperTableEntries name="PL_Month" nullable="true" type="id_String"/>
+        <mapperTableEntries name="SAP_Project_Code" nullable="true" type="id_String"/>
+        <mapperTableEntries name="Row_No" nullable="true" type="id_String"/>
+        <mapperTableEntries name="Currency" nullable="true" type="id_String"/>
+        <mapperTableEntries name="CE_Group" nullable="true" type="id_String"/>
+        <mapperTableEntries name="Class1" nullable="true" type="id_String"/>
+        <mapperTableEntries name="Category" nullable="true" type="id_String"/>
+        <mapperTableEntries name="Original_Estimate" nullable="true" type="id_String"/>
+        <mapperTableEntries name="Revised_Period_plan" nullable="true" type="id_String"/>
+        <mapperTableEntries name="Revised_YTD" nullable="true" type="id_String"/>
+        <mapperTableEntries name="Revised_Accum" nullable="true" type="id_String"/>
+        <mapperTableEntries name="Revised_Total" nullable="true" type="id_String"/>
+        <mapperTableEntries name="Actual_Period" nullable="true" type="id_String"/>
+        <mapperTableEntries name="Actual_YTD" nullable="true" type="id_String"/>
+        <mapperTableEntries name="Actual_Accum" nullable="true" type="id_String"/>
+        <mapperTableEntries name="Variance_Period" nullable="true" type="id_String"/>
+        <mapperTableEntries name="Variance_YTD" nullable="true" type="id_String"/>
+        <mapperTableEntries name="Variance_Accum" nullable="true" type="id_String"/>
+        <mapperTableEntries name="Variance_Total" nullable="true" type="id_String"/>
+      </inputTables>
+    </nodeData>
+  </node>
+  <node componentName="tHashOutput" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="704" posY="64">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tHashOutput_1"/>
     <elementParameter field="CHECK" name="LINK_WITH" value="false"/>
     <elementParameter field="COMPONENT_LIST" name="LIST" show="false" value=""/>
@@ -476,9 +561,13 @@
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="main"/>
   </connection>
-  <connection connectorName="FLOW" label="row2" lineStyle="0" metaname="tSampleRow_1" offsetLabelX="0" offsetLabelY="0" source="tSampleRow_1" target="tHashOutput_1">
+  <connection connectorName="FLOW" label="row2" lineStyle="0" metaname="tSampleRow_1" offsetLabelX="0" offsetLabelY="0" source="tSampleRow_1" target="tMap_1">
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="row2"/>
+  </connection>
+  <connection connectorName="FLOW" label="out1" lineStyle="0" metaname="out1" offsetLabelX="0" offsetLabelY="0" source="tMap_1" target="tHashOutput_1">
+    <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="out1"/>
   </connection>
   <connection connectorName="FLOW" label="row1" lineStyle="0" metaname="tHashInput_2" offsetLabelX="0" offsetLabelY="0" source="tHashInput_2" target="tLogRow_1">
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
@@ -494,13 +583,13 @@
     <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="92;131;150"/>
     <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
   </subjob>
-<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_448c5012-19ac-40b9-9a29-57d0f639304a"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>BpmFm8v+pU8Dmmr1jV9Hx/pXS6hJHEzy28NBqD+gLxCTQG/jVfbyB8z057usi2OLkqvPm+RZ+jrX&#13;
-HwGWx0GhBg==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_5403b5a4-9ca9-4510-8290-dfcfb232958f"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>T3lROmtPOvNRT5L/0t9opYlCRGJqfWPP4ySFQ3++nIaI/1e+I7CZruTa6rnUTwf4e2WU7303np9o&#13;
-XZmhGJuKDw==</DigestValue></Reference></SignedInfo><SignatureValue>mgBZRj4xdJ3s4xF66OiuPzaFDasro499pR0awvLb+sX6WDiJi3exh4KddZ8FjSaX0GG+aXv1Bdzn&#13;
-FLkUUPgJI/RLfcmCP5u4YGnc3gnd2S2sIj5BL+nRES/J5y2dRBhEQ9E5f1UWh/LZZEB+QCYYIMJ5&#13;
-GGZn7WFqzOCLlRthk95evGjK1mKtdnn9o6sYRtX+ERvAP9mphBQMncUHNmJVasf2Me5wXZxbvoiT&#13;
-48Oxgig4/OT58+3xsomU09HsL1IJIDR7Qhxp5WyF+Xpk32M1uZ2w9jkqJaxlyiCI9Iq4UQH/d0v2&#13;
-FjzP8hqoFKeRuJvgLIxsorHyuqyWHLt0YY6ctQ==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w&#13;
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_31ef3cef-057e-4116-9392-6d7a3f69ef74"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>LklwLxKTRT+cH9Eq3VK0uoEiC+d8UK+NJ3t8VAlM4wFje0HBAKScsrLmR9nPeVQiIH6WBszdbqTz&#13;
+YaK3/2xHMA==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_b8f99b66-c8af-4d46-a870-af9572772298"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>qJnhmg+wlREEXkJPpcZnAsJOMhML8pMPlif5MkMEH+9P8CYNRF+qdAHiV3AMIDEvWWpKg87RSbi+&#13;
+pAo7gsrNpw==</DigestValue></Reference></SignedInfo><SignatureValue>KUKzyRgsA5BpuOvFcupw1tzhoy+4HwR42PoZMD/xHUdrlsaFb/xuO0Sk1Vmyljgiu4suVBwPrOvw&#13;
+oUVUgB2fEuvvpxcRw2htRLTTNLEdCK68Xqm4MVHapYXGOjMPatMHGGtYJHqhsfhGoRnwykKIv92y&#13;
+f2JKFwgeQwEaPx/d71602F3Vy6zGTHH4mZIyfC4T4M/MzaXsd9cKSSboar9mmoiRM5pzkZFSm9sR&#13;
+wnoITeLwXosdUCP3iEDKyROw4F9o/zdeFtKQAajRkTpPde/uEPn7dX6HRtGWfWMT/TnDlv6K4FH6&#13;
+Ft8h00W5JOGtabiaOXXyQcgWQqlAex/d0MXxTQ==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w&#13;
 DAYDVQQIEwVQYXJpczEOMAwGA1UEBxMFUGFyaXMxFDASBgNVBAoTC1RhbGVuZCBJbmMuMQwwCgYD&#13;
 VQQLDANSJkQxFjAUBgNVBAMMDVRhbGVuZCBSJkQgQ0ExIjAgBgkqhkiG9w0BCQEWE3NlY3VyaXR5&#13;
 QHRhbGVuZC5jb20wHhcNMTkwNjAzMDgxODIwWhcNMjkwNjAzMDAwMDAwWjB7MSgwJgYDVQQDEx9U&#13;
@@ -522,4 +611,4 @@ hakvpzhOyLo91h8YAQrEZJdNuKA8IYmBrFZQZDCz0uywKSyFfzPyJhvxylCLG/iDPPfE0VWcrMJ/&#13
 WQJly/2XPg/NBCTF3pSKS0kCiA7PeaI3cWkMYYA3PMwYDvzqs1opBRglG7ikj0bQxSm3lcjMuuvW&#13;
 gBRksFKjP3K/nztsjSoYITOM9jR29ReIL3v0E8RbAFwA2RGq6Dxd0ixfbucMesy5Gnr8tfYy6rW+&#13;
 qSQqd3ah4+PSzBNVwIB4ytpdrG3SlhCI2i2Th8ek8Sjsaquh9qPAerWNd2+84HWOOGj1Xe1qc6vg&#13;
-qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_5403b5a4-9ca9-4510-8290-dfcfb232958f" Target="#_448c5012-19ac-40b9-9a29-57d0f639304a"><Timestamp>2024-05-29 16:31:48</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
+qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_b8f99b66-c8af-4d46-a870-af9572772298" Target="#_31ef3cef-057e-4116-9392-6d7a3f69ef74"><Timestamp>2024-05-29 16:37:30</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>

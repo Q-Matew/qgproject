@@ -1392,7 +1392,7 @@
     <elementParameter field="TECHNICAL" name="QUERYSTORE:REPOSITORY_QUERYSTORE_TYPE" show="false" value=""/>
     <elementParameter field="TECHNICAL" name="QUERYSTORE:QUERYSTORE_TYPE" value="BUILT_IN"/>
     <elementParameter field="GUESS_SCHEMA" name="GUESS_SCHEMA" value="&quot;&quot;"/>
-    <elementParameter field="MEMO_SQL" name="QUERY" value="&quot;SELECT &#10;&#9;&#9;Trans_TimeLogging.eePersoNo,&#10;&#9;&#9;Trans_TimeLogging.eeName,&#10;&#9;&#9;Trans_TimeLogging.companyCode,&#10;&#9;&#9;Trans_TimeLogging.projectID,&#10;&#9;&#9;Trans_TimeLogging.masterProjectDivisionObjectNo,&#10;&#9;&#9;Trans_TimeLogging.timeLogDate,&#10;&#9;&#9;Trans_TimeLogging.hour&#10;FROM&#9;Trans_TimeLogging&#10;WHERE Trans_TimeLogging.masterProjectDivisionObjectNo IS NOT NULL&#10;AND Trans_TimeLogging.eeName IS NOT NULL&quot;"/>
+    <elementParameter field="MEMO_SQL" name="QUERY" value="&quot;SELECT &#10;&#9;&#9;Trans_TimeLogging.eePersoNo,&#10;&#9;&#9;Trans_TimeLogging.eeName,&#10;&#9;&#9;Trans_TimeLogging.companyCode,&#10;&#9;&#9;Trans_TimeLogging.projectID,&#10;&#9;&#9;Trans_TimeLogging.masterProjectDivisionObjectNo,&#10;&#9;&#9;Trans_TimeLogging.timeLogDate,&#10;&#9;&#9;Trans_TimeLogging.hour,&#10;&#9;&#9;Trans_TimeLogging.workingHourPerDay&#10;FROM&#9;Trans_TimeLogging&#10;WHERE Trans_TimeLogging.masterProjectDivisionObjectNo IS NOT NULL&#10;AND Trans_TimeLogging.eeName IS NOT NULL&quot;"/>
     <elementParameter field="LABEL" name="NOTE" value="This option only applies when deploying and running in the Talend Runtime"/>
     <elementParameter field="CHECK" name="SPECIFY_DATASOURCE_ALIAS" value="false"/>
     <elementParameter field="TEXT" name="DATASOURCE_ALIAS" show="false" value="&quot;&quot;"/>
@@ -1417,6 +1417,8 @@
       <elementValue elementRef="TRIM" value="false"/>
       <elementValue elementRef="SCHEMA_COLUMN" value="hour"/>
       <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="workingHourPerDay"/>
+      <elementValue elementRef="TRIM" value="false"/>
     </elementParameter>
     <elementParameter field="CHECK" name="SET_QUERY_TIMEOUT" value="false"/>
     <elementParameter field="TEXT" name="QUERY_TIMEOUT_IN_SECONDS" show="false" value="30"/>
@@ -1429,7 +1431,8 @@
       <column comment="" key="false" length="500" name="projectID" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="100" name="masterProjectDivisionObjectNo" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="NVARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="10" name="timeLogDate" nullable="true" originalLength="-1" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="DATE" type="id_Date" usefulColumn="true"/>
-      <column comment="" defaultValue="" key="false" length="7" name="hour" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="FLOAT" type="id_Double" usefulColumn="true"/>
+      <column comment="" defaultValue="" key="false" length="18" name="hour" nullable="true" originalLength="18" pattern="" precision="2" sourceType="FLOAT" type="id_Double" usefulColumn="true"/>
+      <column comment="" key="false" length="18" name="workingHourPerDay" nullable="true" originalLength="18" pattern="" precision="2" sourceType="FLOAT" type="id_Double" usefulColumn="true"/>
     </metadata>
   </node>
   <node componentName="tMap" componentVersion="2.1" offsetLabelX="0" offsetLabelY="0" posX="224" posY="448">
@@ -1454,10 +1457,11 @@
       <column comment="" key="false" length="100" name="masterProjectDivisionObjectNo" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="NVARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="8" name="timeLogMonth" nullable="true" originalLength="8" pattern="" precision="0" sourceType="" type="id_Integer" usefulColumn="true"/>
       <column comment="" key="false" length="8" name="timeLogYear" nullable="true" originalLength="8" pattern="" precision="0" sourceType="" type="id_Integer" usefulColumn="true"/>
-      <column comment="" defaultValue="" key="false" length="7" name="hour" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="FLOAT" type="id_Double" usefulColumn="true"/>
+      <column comment="" defaultValue="" key="false" length="18" name="hour" nullable="true" originalLength="18" pattern="" precision="2" sourceType="FLOAT" type="id_Double" usefulColumn="true"/>
+      <column comment="" key="false" length="18" name="workingHourPerDay" nullable="true" originalLength="18" pattern="" precision="2" sourceType="FLOAT" type="id_Double" usefulColumn="true"/>
     </metadata>
     <nodeData xsi:type="TalendMapper:MapperData">
-      <uiProperties/>
+      <uiProperties shellMaximized="true"/>
       <varTables name="Var" sizeState="INTERMEDIATE">
         <mapperTableEntries expression="TalendDate.getPartOfDate(&quot;MONTH&quot;, timelog.timeLogDate) + 1 " name="var1" type="id_Integer"/>
         <mapperTableEntries expression="TalendDate.getPartOfDate(&quot;YEAR&quot;,timelog.timeLogDate) " name="var2" type="id_Integer"/>
@@ -1471,6 +1475,7 @@
         <mapperTableEntries expression="Var.var1 " name="timeLogMonth" nullable="true" type="id_Integer"/>
         <mapperTableEntries expression="Var.var2 " name="timeLogYear" nullable="true" type="id_Integer"/>
         <mapperTableEntries expression="timelog.hour " name="hour" nullable="true" type="id_Double"/>
+        <mapperTableEntries expression="timelog.workingHourPerDay " name="workingHourPerDay" nullable="true" type="id_Double"/>
       </outputTables>
       <inputTables lookupMode="LOAD_ONCE" matchingMode="UNIQUE_MATCH" name="timelog" sizeState="INTERMEDIATE">
         <mapperTableEntries name="eePersoNo" nullable="true" type="id_String"/>
@@ -1480,6 +1485,7 @@
         <mapperTableEntries name="masterProjectDivisionObjectNo" nullable="true" type="id_String"/>
         <mapperTableEntries name="timeLogDate" nullable="true" type="id_Date"/>
         <mapperTableEntries name="hour" nullable="true" type="id_Double"/>
+        <mapperTableEntries name="workingHourPerDay" nullable="true" type="id_Double"/>
       </inputTables>
     </nodeData>
   </node>
@@ -1506,6 +1512,10 @@
       <elementValue elementRef="FUNCTION" value="sum"/>
       <elementValue elementRef="INPUT_COLUMN" value="hour"/>
       <elementValue elementRef="IGNORE_NULL" value="true"/>
+      <elementValue elementRef="OUTPUT_COLUMN" value="workingHourPerDay"/>
+      <elementValue elementRef="FUNCTION" value="sum"/>
+      <elementValue elementRef="INPUT_COLUMN" value="workingHourPerDay"/>
+      <elementValue elementRef="IGNORE_NULL" value="true"/>
     </elementParameter>
     <elementParameter field="TEXT" name="LIST_DELIMITER" value="&quot;,&quot;"/>
     <elementParameter field="CHECK" name="USE_FINANCIAL_PRECISION" value="true"/>
@@ -1520,7 +1530,8 @@
       <column comment="" key="false" length="100" name="masterProjectDivisionObjectNo" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="NVARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="8" name="timeLogMonth" nullable="true" originalLength="8" pattern="" precision="0" sourceType="" type="id_Integer" usefulColumn="true"/>
       <column comment="" key="false" length="8" name="timeLogYear" nullable="true" originalLength="8" pattern="" precision="0" sourceType="" type="id_Integer" usefulColumn="true"/>
-      <column comment="" defaultValue="" key="false" length="7" name="hour" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="FLOAT" type="id_Double" usefulColumn="true"/>
+      <column comment="" defaultValue="" key="false" length="18" name="hour" nullable="true" originalLength="18" pattern="" precision="2" sourceType="FLOAT" type="id_Double" usefulColumn="true"/>
+      <column comment="" key="false" length="18" name="workingHourPerDay" nullable="true" originalLength="18" pattern="" precision="2" sourceType="FLOAT" type="id_Double" usefulColumn="true"/>
     </metadata>
   </node>
   <node componentName="tHashOutput" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="576" posY="448">
@@ -1543,48 +1554,8 @@
       <column comment="" key="false" length="100" name="masterProjectDivisionObjectNo" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="NVARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="8" name="timeLogMonth" nullable="true" originalLength="8" pattern="" precision="0" sourceType="" type="id_Integer" usefulColumn="true"/>
       <column comment="" key="false" length="8" name="timeLogYear" nullable="true" originalLength="8" pattern="" precision="0" sourceType="" type="id_Integer" usefulColumn="true"/>
-      <column comment="" defaultValue="" key="false" length="7" name="hour" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="FLOAT" type="id_Double" usefulColumn="true"/>
-    </metadata>
-  </node>
-  <node componentName="tFileOutputDelimited" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="768" posY="448">
-    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tFileOutputDelimited_1"/>
-    <elementParameter field="CHECK" name="USESTREAM" value="false"/>
-    <elementParameter field="TEXT" name="STREAMNAME" show="false" value="outputStream"/>
-    <elementParameter field="FILE" name="FILENAME" value="&quot;/Users/minganntew/Downloads/abc.csv&quot;"/>
-    <elementParameter field="TEXT" name="ROWSEPARATOR" show="false" value="&quot;\n&quot;"/>
-    <elementParameter field="CHECK" name="OS_LINE_SEPARATOR_AS_ROW_SEPARATOR" value="true"/>
-    <elementParameter field="OPENED_LIST" name="CSVROWSEPARATOR" value="&quot;\n&quot;"/>
-    <elementParameter field="TEXT" name="FIELDSEPARATOR" value="&quot;,&quot;"/>
-    <elementParameter field="CHECK" name="APPEND" value="false"/>
-    <elementParameter field="CHECK" name="INCLUDEHEADER" value="true"/>
-    <elementParameter field="CHECK" name="COMPRESS" value="false"/>
-    <elementParameter field="CHECK" name="ADVANCED_SEPARATOR" value="false"/>
-    <elementParameter field="TEXT" name="THOUSANDS_SEPARATOR" show="false" value="&quot;,&quot;"/>
-    <elementParameter field="TEXT" name="DECIMAL_SEPARATOR" show="false" value="&quot;.&quot;"/>
-    <elementParameter field="CHECK" name="CSV_OPTION" value="true"/>
-    <elementParameter field="TEXT" name="ESCAPE_CHAR" value="&quot;&quot;&quot;"/>
-    <elementParameter field="TEXT" name="TEXT_ENCLOSURE" value="&quot;&quot;&quot;"/>
-    <elementParameter field="CHECK" name="CREATE" value="true"/>
-    <elementParameter field="CHECK" name="SPLIT" value="false"/>
-    <elementParameter field="TEXT" name="SPLIT_EVERY" show="false" value="1000"/>
-    <elementParameter field="CHECK" name="FLUSHONROW" value="false"/>
-    <elementParameter field="TEXT" name="FLUSHONROW_NUM" show="false" value="1"/>
-    <elementParameter field="CHECK" name="ROW_MODE" value="false"/>
-    <elementParameter field="ENCODING_TYPE" name="ENCODING" value="&quot;ISO-8859-15&quot;"/>
-    <elementParameter field="TECHNICAL" name="ENCODING:ENCODING_TYPE" value="ISO-8859-15"/>
-    <elementParameter field="CHECK" name="DELETE_EMPTYFILE" value="true"/>
-    <elementParameter field="CHECK" name="FILE_EXIST_EXCEPTION" value="false"/>
-    <elementParameter field="TEXT" name="SCHEMA_OPT_NUM" show="false" value="90"/>
-    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
-    <metadata connector="FLOW" name="tFileOutputDelimited_1">
-      <column comment="" key="false" length="50" name="eePersoNo" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="500" name="eeName" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="NVARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="4" name="companyCode" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="NCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="500" name="projectID" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="100" name="masterProjectDivisionObjectNo" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="NVARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="8" name="timeLogMonth" nullable="true" originalLength="8" pattern="" precision="0" sourceType="" type="id_Integer" usefulColumn="true"/>
-      <column comment="" key="false" length="8" name="timeLogYear" nullable="true" originalLength="8" pattern="" precision="0" sourceType="" type="id_Integer" usefulColumn="true"/>
-      <column comment="" defaultValue="" key="false" length="7" name="hour" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="FLOAT" type="id_Double" usefulColumn="true"/>
+      <column comment="" defaultValue="" key="false" length="18" name="hour" nullable="true" originalLength="18" pattern="" precision="2" sourceType="FLOAT" type="id_Double" usefulColumn="true"/>
+      <column comment="" key="false" length="18" name="workingHourPerDay" nullable="true" originalLength="18" pattern="" precision="2" sourceType="FLOAT" type="id_Double" usefulColumn="true"/>
     </metadata>
   </node>
   <node componentName="tMSSqlInput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="64" posY="544">
@@ -3318,6 +3289,11 @@
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="toComputeH"/>
   </connection>
   <connection connectorName="FLOW" label="timelog" lineStyle="0" metaname="tDBInput_3" offsetLabelX="0" offsetLabelY="0" source="tDBInput_3" target="tMap_6">
+    <elementParameter field="TABLE" name="TRACES_CONNECTION_FILTER" show="false">
+      <elementValue elementRef="TRACE_COLUMN" value="workingHourPerDay"/>
+      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
+      <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
+    </elementParameter>
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="timelog"/>
   </connection>
@@ -3326,16 +3302,22 @@
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="OnSubjobOk8"/>
   </connection>
   <connection connectorName="FLOW" label="toAggre" lineStyle="0" metaname="toAggre" offsetLabelX="0" offsetLabelY="0" source="tMap_6" target="tAggregateRow_2">
+    <elementParameter field="TABLE" name="TRACES_CONNECTION_FILTER" show="false">
+      <elementValue elementRef="TRACE_COLUMN" value="workingHourPerDay"/>
+      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
+      <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
+    </elementParameter>
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="toAggre"/>
   </connection>
   <connection connectorName="FLOW" label="aAggregated" lineStyle="0" metaname="tAggregateRow_2" offsetLabelX="0" offsetLabelY="0" source="tAggregateRow_2" target="tHashOutput_5">
+    <elementParameter field="TABLE" name="TRACES_CONNECTION_FILTER" show="false">
+      <elementValue elementRef="TRACE_COLUMN" value="workingHourPerDay"/>
+      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
+      <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
+    </elementParameter>
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="aAggregated"/>
-  </connection>
-  <connection connectorName="FLOW" label="row1" lineStyle="0" metaname="tHashOutput_5" offsetLabelX="0" offsetLabelY="0" source="tHashOutput_5" target="tFileOutputDelimited_1">
-    <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
-    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="row1"/>
   </connection>
   <connection connectorName="SUBJOB_OK" label="OnSubjobOk" lineStyle="1" metaname="tDBInput_4" offsetLabelX="41" offsetLabelY="-16" source="tDBInput_4" target="tDBInput_5">
     <elementParameter field="CHECK" name="ACTIVATE" show="false" value="false"/>
@@ -3556,13 +3538,13 @@
     <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="92;131;150"/>
     <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
   </subjob>
-<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_ebdc1a7d-de88-46a8-858f-28b06b1bc910"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>Qh2/HRmQLaSm1pAJwRGs2rkTbqWjj32JWTNy4YmxADK3/KRffWcvhYC3lrHbEAGUe3MqysrhN73k&#13;
-HPSwhCXZHw==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_9439a8b5-6730-4b2a-b46d-5c76a221f187"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>o4PWIVyTdnbwA+hNEATtbWCYQYafTnbrxCDJzFEuIEU9RrxNTEyU6P3OHW95uQ6bWscKeY5p2QbM&#13;
-Tlv+RBRWSg==</DigestValue></Reference></SignedInfo><SignatureValue>n7jJZJ3Zp6Bs9fNCL4itcC6ASBBKiiozN5UB9lZcqM+B3wcLZh+YF3bfvrSo7Vk5KeL1rUtYM3O2&#13;
-dVMnQ7VeyDZWiFpzRYzAk0L2oDRvkzWG8qkWHemz3JJnQKHG+de86EH0+XFNqdbPOmyplUv335ZO&#13;
-+gO2AjT1pMQfCNBZUoCsE4mjyqS8EvPTO/yog+pxSPzg3LY4c+7fSUvhYboAOy5HFHpKjsPgdZcV&#13;
-xY3et58Hb2phulu5gCiIzO5y+LjQfBXIwWoJYK1mUjaJWyeyeHy24DQ5xCftEumCxOK6NlXs+pDA&#13;
-Hx0CK07ctH+6O+buh21rJrBume/FLBsFlIPgpg==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w&#13;
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_56e6694c-5fe0-4301-8fa2-1be9a046a339"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>bxQkmL1eF5Xgh/0v1EKpn7OjFmxQVtp2SW0/gwOnYNBb4Fo4UiBZbGRpn2XYIxPh48s/cCdfvG8o&#13;
+0UOxAvW2ZQ==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_893ca74d-87c4-4c7b-be9d-f56f39dcd729"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>xf09y+3o60rO+wxddFRkUvy2ISlJCIw7psjPNMQZe4SeY5kV/qPgk4JTVJsSF7WyJL80c4+gP2Qp&#13;
+OGhKWDfyLQ==</DigestValue></Reference></SignedInfo><SignatureValue>ZFia8YWy8lCreXF7CcCnDeMyb/txdV+0m6CbR4pfFLaertWyd9yPtKavHbt45HwuvkgAIuhfCT6g&#13;
+nsn+Vt5gP2Z+iRBnDdJm3g/KdXgKPslu4RQQGfn3dgiX/ltIcRZbnDW1F62JPeXvtPqfKSFfROeG&#13;
+A24P+e2152+Q/ez/r7LA5dMy0vDc4N16vfXck01LJBpFC8lPkujOweQ3xOaHfH3/D0FVgLvd7f4r&#13;
+93+PQqjaEvzJICMqsPRvBSz0q8+W/w9Zog4ZaQm3wmYZfHtthEhOvENyQKnN4ZPlgKU+KFtgesRs&#13;
+DPYhWLCZPl8j6AUN2NgeTCIsGtwVequZuptA0A==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w&#13;
 DAYDVQQIEwVQYXJpczEOMAwGA1UEBxMFUGFyaXMxFDASBgNVBAoTC1RhbGVuZCBJbmMuMQwwCgYD&#13;
 VQQLDANSJkQxFjAUBgNVBAMMDVRhbGVuZCBSJkQgQ0ExIjAgBgkqhkiG9w0BCQEWE3NlY3VyaXR5&#13;
 QHRhbGVuZC5jb20wHhcNMTkwNjAzMDgxODIwWhcNMjkwNjAzMDAwMDAwWjB7MSgwJgYDVQQDEx9U&#13;
@@ -3584,4 +3566,4 @@ hakvpzhOyLo91h8YAQrEZJdNuKA8IYmBrFZQZDCz0uywKSyFfzPyJhvxylCLG/iDPPfE0VWcrMJ/&#13
 WQJly/2XPg/NBCTF3pSKS0kCiA7PeaI3cWkMYYA3PMwYDvzqs1opBRglG7ikj0bQxSm3lcjMuuvW&#13;
 gBRksFKjP3K/nztsjSoYITOM9jR29ReIL3v0E8RbAFwA2RGq6Dxd0ixfbucMesy5Gnr8tfYy6rW+&#13;
 qSQqd3ah4+PSzBNVwIB4ytpdrG3SlhCI2i2Th8ek8Sjsaquh9qPAerWNd2+84HWOOGj1Xe1qc6vg&#13;
-qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_9439a8b5-6730-4b2a-b46d-5c76a221f187" Target="#_ebdc1a7d-de88-46a8-858f-28b06b1bc910"><Timestamp>2024-05-30 15:13:41</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
+qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_893ca74d-87c4-4c7b-be9d-f56f39dcd729" Target="#_56e6694c-5fe0-4301-8fa2-1be9a046a339"><Timestamp>2024-05-30 16:06:31</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>

@@ -2465,7 +2465,7 @@
     <elementParameter field="TEXT" name="ROWS_BUFFER_SIZE" value="2000000"/>
     <elementParameter field="CHECK" name="CHANGE_HASH_AND_EQUALS_FOR_BIGDECIMAL" value="true"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
-    <metadata connector="FLOW" name="toMSSQL">
+    <metadata connector="FLOW" name="toGetSTMaster">
       <column comment="" key="false" length="50" name="StaffID" nullable="true" pattern="" precision="0" sourceType="NVARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
@@ -2493,7 +2493,6 @@
       <column comment="" defaultValue="((0))" key="false" length="18" name="TotalWorkingHourConsideredLeave" nullable="true" originalLength="18" pattern="" precision="2" sourceType="" type="id_Double" usefulColumn="true"/>
       <column comment="" defaultValue="((0))" key="false" length="7" name="TimeLogHour" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="FLOAT" type="id_Double" usefulColumn="true"/>
       <column comment="" defaultValue="((0))" key="false" length="18" name="TotalManDayLogPerMonthForProject" nullable="true" originalLength="18" pattern="" precision="2" sourceType="" type="id_Double" usefulColumn="true"/>
-      <column comment="" key="false" length="18" name="TotalWorkingHourPerMonth" nullable="true" originalLength="18" pattern="" precision="2" sourceType="FLOAT" type="id_Double" usefulColumn="true"/>
       <column comment="" defaultValue="((0))" key="false" length="18" name="MandaysLeft" nullable="true" originalLength="18" pattern="" precision="2" sourceType="" type="id_Double" usefulColumn="true"/>
       <column comment="" defaultValue="((0))" key="false" length="18" name="MonthsLeft" nullable="true" originalLength="18" pattern="" precision="2" sourceType="" type="id_Double" usefulColumn="true"/>
       <column comment="" defaultValue="((0))" key="false" length="18" name="AverageMandaysBasedOnMonthsLeft" nullable="true" originalLength="18" pattern="" precision="2" sourceType="" type="id_Double" usefulColumn="true"/>
@@ -2501,7 +2500,7 @@
     <nodeData xsi:type="TalendMapper:MapperData">
       <uiProperties shellMaximized="true"/>
       <varTables minimized="true" name="Var" sizeState="INTERMEDIATE"/>
-      <outputTables name="toMSSQL" sizeState="INTERMEDIATE">
+      <outputTables name="toGetSTMaster" sizeState="INTERMEDIATE">
         <mapperTableEntries expression="staffName.StaffID " name="StaffID" nullable="true" type="id_String"/>
         <mapperTableEntries expression="staffMaster.EmpName " name="StaffName" nullable="true" type="id_String"/>
         <mapperTableEntries expression="staffName.STID " name="STID" nullable="true" type="id_String"/>
@@ -2519,7 +2518,6 @@
         <mapperTableEntries expression="staffName.TotalWorkingHourConsideredLeave " name="TotalWorkingHourConsideredLeave" nullable="true" type="id_Double"/>
         <mapperTableEntries expression="staffName.TimeLogHour " name="TimeLogHour" nullable="true" type="id_Double"/>
         <mapperTableEntries expression="staffName.TotalManDayLogPerMonthForProject " name="TotalManDayLogPerMonthForProject" nullable="true" type="id_Double"/>
-        <mapperTableEntries expression="staffName.TotalWorkingHourPerMonth " name="TotalWorkingHourPerMonth" nullable="true" type="id_Double"/>
         <mapperTableEntries expression="staffName.MandaysLeft == null ? null : (staffName.MandaysLeft &lt; 0.0 ? 0.0 : staffName.MandaysLeft) " name="MandaysLeft" nullable="true" type="id_Double"/>
         <mapperTableEntries expression="staffName.MonthsLeft " name="MonthsLeft" nullable="true" type="id_Double"/>
         <mapperTableEntries expression="staffName.AverageMandaysBasedOnMonthsLeft == null ? null : (staffName.AverageMandaysBasedOnMonthsLeft &lt; 0.0 ? 0.0 : staffName.AverageMandaysBasedOnMonthsLeft) " name="AverageMandaysBasedOnMonthsLeft" nullable="true" type="id_Double"/>
@@ -2601,7 +2599,152 @@
       </column>
     </metadata>
   </node>
-  <node componentName="tMSSqlOutput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="448" posY="1408">
+  <node componentName="tMap" componentVersion="2.1" offsetLabelX="0" offsetLabelY="0" posX="384" posY="1408">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tMap_16"/>
+    <elementParameter field="EXTERNAL" name="MAP" value=""/>
+    <elementParameter field="CLOSED_LIST" name="LINK_STYLE" value="AUTO"/>
+    <elementParameter field="DIRECTORY" name="TEMPORARY_DATA_DIRECTORY" value=""/>
+    <elementParameter field="IMAGE" name="PREVIEW" value="_asxdMPNSEe6EtYPclWq0yg-tMap_16-PREVIEW.bmp"/>
+    <elementParameter field="CHECK" name="DIE_ON_ERROR" show="false" value="true"/>
+    <elementParameter field="CHECK" name="LKUP_PARALLELIZE" show="false" value="false"/>
+    <elementParameter field="TEXT" name="LEVENSHTEIN" show="false" value="0"/>
+    <elementParameter field="TEXT" name="JACCARD" show="false" value="0"/>
+    <elementParameter field="CHECK" name="ENABLE_AUTO_CONVERT_TYPE" show="false" value="false"/>
+    <elementParameter field="TEXT" name="ROWS_BUFFER_SIZE" value="2000000"/>
+    <elementParameter field="CHECK" name="CHANGE_HASH_AND_EQUALS_FOR_BIGDECIMAL" value="true"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <metadata connector="FLOW" name="toMSSQL">
+      <column comment="" key="false" length="50" name="StaffID" nullable="true" pattern="" precision="0" sourceType="NVARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="500" name="StaffName" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="NVARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="36" name="STID" nullable="true" pattern="" precision="0" sourceType="UNIQUEIDENTIFIER" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="500" name="StageName" nullable="true" originalLength="500" pattern="" precision="0" sourceType="NVARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="500" name="ProjectID" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="100" name="ProjectDivisionObjectNo" nullable="true" pattern="" precision="0" sourceType="NVARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="23" name="ProjectEndDate" nullable="true" originalLength="23" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
+      <column comment="" defaultValue="" key="false" length="3" name="ProjectMonths" nullable="true" originalLength="2" pattern="" precision="0" sourceType="" type="id_Integer" usefulColumn="true"/>
+      <column comment="" defaultValue="" key="false" length="4" name="ProjectYear" nullable="true" originalLength="4" pattern="" precision="0" sourceType="" type="id_Integer" usefulColumn="true"/>
+      <column comment="" key="false" length="8" name="WorkingDay" nullable="true" originalLength="8" pattern="" precision="0" sourceType="" type="id_Integer" usefulColumn="true"/>
+      <column comment="" defaultValue="((0))" key="false" length="24" name="ManDayAssignedForProject" nullable="true" pattern="" precision="2" sourceType="FLOAT" type="id_Double" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" defaultValue="((0))" key="false" length="24" name="TotalProjectMonths" nullable="true" originalLength="24" pattern="" precision="2" sourceType="" type="id_Double" usefulColumn="true"/>
+      <column comment="" defaultValue="((0))" key="false" length="24" name="AverageManDayAssignedPerMonthForProject" nullable="true" originalLength="24" pattern="" precision="2" sourceType="" type="id_Double" usefulColumn="true"/>
+      <column comment="" defaultValue="((0))" key="false" length="24" name="TimeLoggableMandayPerMonth" nullable="true" originalLength="24" pattern="" precision="2" sourceType="" type="id_Double" usefulColumn="true"/>
+      <column comment="" defaultValue="((0))" key="false" length="18" name="TotalWorkingHour" nullable="true" pattern="" precision="2" sourceType="FLOAT" type="id_Double" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" defaultValue="((0))" key="false" length="18" name="TotalWorkingHourConsideredLeave" nullable="true" originalLength="18" pattern="" precision="2" sourceType="" type="id_Double" usefulColumn="true"/>
+      <column comment="" defaultValue="((0))" key="false" length="7" name="TimeLogHour" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="FLOAT" type="id_Double" usefulColumn="true"/>
+      <column comment="" defaultValue="((0))" key="false" length="18" name="TotalManDayLogPerMonthForProject" nullable="true" originalLength="18" pattern="" precision="2" sourceType="" type="id_Double" usefulColumn="true"/>
+      <column comment="" defaultValue="((0))" key="false" length="18" name="MandaysLeft" nullable="true" originalLength="18" pattern="" precision="2" sourceType="" type="id_Double" usefulColumn="true"/>
+      <column comment="" defaultValue="((0))" key="false" length="18" name="MonthsLeft" nullable="true" originalLength="18" pattern="" precision="2" sourceType="" type="id_Double" usefulColumn="true"/>
+      <column comment="" defaultValue="((0))" key="false" length="18" name="AverageMandaysBasedOnMonthsLeft" nullable="true" originalLength="18" pattern="" precision="2" sourceType="" type="id_Double" usefulColumn="true"/>
+    </metadata>
+    <nodeData xsi:type="TalendMapper:MapperData">
+      <uiProperties shellMaximized="true"/>
+      <varTables minimized="true" name="Var" sizeState="INTERMEDIATE"/>
+      <outputTables name="toMSSQL" sizeState="INTERMEDIATE">
+        <mapperTableEntries expression="toGetSTMaster.StaffID " name="StaffID" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="toGetSTMaster.StaffName " name="StaffName" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="toGetSTMaster.STID " name="STID" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="stageMaster.StageName " name="StageName" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="toGetSTMaster.ProjectID " name="ProjectID" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="toGetSTMaster.ProjectDivisionObjectNo " name="ProjectDivisionObjectNo" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="toGetSTMaster.ProjectEndDate " name="ProjectEndDate" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="toGetSTMaster.ProjectMonths " name="ProjectMonths" nullable="true" type="id_Integer"/>
+        <mapperTableEntries expression="toGetSTMaster.ProjectYear " name="ProjectYear" nullable="true" type="id_Integer"/>
+        <mapperTableEntries expression="toGetSTMaster.WorkingDay " name="WorkingDay" nullable="true" type="id_Integer"/>
+        <mapperTableEntries expression="toGetSTMaster.ManDayAssignedForProject " name="ManDayAssignedForProject" nullable="true" type="id_Double"/>
+        <mapperTableEntries expression="toGetSTMaster.TotalProjectMonths " name="TotalProjectMonths" nullable="true" type="id_Double"/>
+        <mapperTableEntries expression="toGetSTMaster.AverageManDayAssignedPerMonthForProject " name="AverageManDayAssignedPerMonthForProject" nullable="true" type="id_Double"/>
+        <mapperTableEntries expression="toGetSTMaster.TimeLoggableMandayPerMonth " name="TimeLoggableMandayPerMonth" nullable="true" type="id_Double"/>
+        <mapperTableEntries expression="toGetSTMaster.TotalWorkingHour " name="TotalWorkingHour" nullable="true" type="id_Double"/>
+        <mapperTableEntries expression="toGetSTMaster.TotalWorkingHourConsideredLeave " name="TotalWorkingHourConsideredLeave" nullable="true" type="id_Double"/>
+        <mapperTableEntries expression="toGetSTMaster.TimeLogHour " name="TimeLogHour" nullable="true" type="id_Double"/>
+        <mapperTableEntries expression="toGetSTMaster.TotalManDayLogPerMonthForProject " name="TotalManDayLogPerMonthForProject" nullable="true" type="id_Double"/>
+        <mapperTableEntries expression="toGetSTMaster.MandaysLeft " name="MandaysLeft" nullable="true" type="id_Double"/>
+        <mapperTableEntries expression="toGetSTMaster.MonthsLeft " name="MonthsLeft" nullable="true" type="id_Double"/>
+        <mapperTableEntries expression="toGetSTMaster.AverageMandaysBasedOnMonthsLeft " name="AverageMandaysBasedOnMonthsLeft" nullable="true" type="id_Double"/>
+      </outputTables>
+      <inputTables lookupMode="LOAD_ONCE" matchingMode="UNIQUE_MATCH" name="toGetSTMaster" sizeState="INTERMEDIATE">
+        <mapperTableEntries name="StaffID" nullable="true" type="id_String"/>
+        <mapperTableEntries name="StaffName" nullable="true" type="id_String"/>
+        <mapperTableEntries name="STID" nullable="true" type="id_String"/>
+        <mapperTableEntries name="ProjectID" nullable="true" type="id_String"/>
+        <mapperTableEntries name="ProjectDivisionObjectNo" nullable="true" type="id_String"/>
+        <mapperTableEntries name="ProjectEndDate" nullable="true" type="id_String"/>
+        <mapperTableEntries name="ProjectMonths" nullable="true" type="id_Integer"/>
+        <mapperTableEntries name="ProjectYear" nullable="true" type="id_Integer"/>
+        <mapperTableEntries name="WorkingDay" nullable="true" type="id_Integer"/>
+        <mapperTableEntries name="ManDayAssignedForProject" nullable="true" type="id_Double"/>
+        <mapperTableEntries name="TotalProjectMonths" nullable="true" type="id_Double"/>
+        <mapperTableEntries name="AverageManDayAssignedPerMonthForProject" nullable="true" type="id_Double"/>
+        <mapperTableEntries name="TimeLoggableMandayPerMonth" nullable="true" type="id_Double"/>
+        <mapperTableEntries name="TotalWorkingHour" nullable="true" type="id_Double"/>
+        <mapperTableEntries name="TotalWorkingHourConsideredLeave" nullable="true" type="id_Double"/>
+        <mapperTableEntries name="TimeLogHour" nullable="true" type="id_Double"/>
+        <mapperTableEntries name="TotalManDayLogPerMonthForProject" nullable="true" type="id_Double"/>
+        <mapperTableEntries name="MandaysLeft" nullable="true" type="id_Double"/>
+        <mapperTableEntries name="MonthsLeft" nullable="true" type="id_Double"/>
+        <mapperTableEntries name="AverageMandaysBasedOnMonthsLeft" nullable="true" type="id_Double"/>
+      </inputTables>
+      <inputTables lookupMode="LOAD_ONCE" matchingMode="UNIQUE_MATCH" name="stageMaster" sizeState="INTERMEDIATE">
+        <mapperTableEntries expression="toGetSTMaster.STID " name="STID" operator="=" type="id_String"/>
+        <mapperTableEntries name="StageName" nullable="true" type="id_String"/>
+      </inputTables>
+    </nodeData>
+  </node>
+  <node componentName="tMSSqlInput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="384" posY="1504">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tDBInput_7"/>
+    <elementParameter field="CHECK" name="USE_EXISTING_CONNECTION" value="false"/>
+    <elementParameter field="COMPONENT_LIST" name="CONNECTION" show="false" value=""/>
+    <elementParameter field="TECHNICAL" name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY"/>
+    <elementParameter field="TECHNICAL" name="PROPERTY:REPOSITORY_PROPERTY_TYPE" show="false" value="_6XJPUPEEEe6lz_uoJFWK-Q"/>
+    <elementParameter field="TEXT" name="HOST" value="&quot;10.1.20.82&quot;"/>
+    <elementParameter field="CLOSED_LIST" name="DRIVER" value="MSSQL_PROP"/>
+    <elementParameter field="TEXT" name="TYPE" show="false" value="MSSQL"/>
+    <elementParameter field="TEXT" name="PORT" value="&quot;1433&quot;"/>
+    <elementParameter field="TEXT" name="DB_SCHEMA" value="&quot;&quot;"/>
+    <elementParameter field="TEXT" name="DBNAME" value="&quot;CPG_TRANSFORMED&quot;"/>
+    <elementParameter field="TEXT" name="USER" value="&quot;dev_user&quot;"/>
+    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:2AsZ3NCvHEezIfjW3nAMzuTkShSfN9kn+8/rGiLfiI+gxo+Hi4s="/>
+    <elementParameter field="DBTABLE" name="TABLE" value="&quot;trans_ProjectStage&quot;"/>
+    <elementParameter field="QUERYSTORE_TYPE" name="QUERYSTORE" value="&quot;&quot;"/>
+    <elementParameter field="TECHNICAL" name="QUERYSTORE:REPOSITORY_QUERYSTORE_TYPE" show="false" value=""/>
+    <elementParameter field="TECHNICAL" name="QUERYSTORE:QUERYSTORE_TYPE" value="BUILT_IN"/>
+    <elementParameter field="GUESS_SCHEMA" name="GUESS_SCHEMA" value="&quot;&quot;"/>
+    <elementParameter field="MEMO_SQL" name="QUERY" value="&quot;&#10;SELECT &#10;&#9;&#9;STID,&#10;&#9;&#9;StageName&#10;FROM&#9;trans_ProjectStage&#10;&quot;"/>
+    <elementParameter field="LABEL" name="NOTE" value="This option only applies when deploying and running in the Talend Runtime"/>
+    <elementParameter field="CHECK" name="SPECIFY_DATASOURCE_ALIAS" value="false"/>
+    <elementParameter field="TEXT" name="DATASOURCE_ALIAS" show="false" value="&quot;&quot;"/>
+    <elementParameter field="MAPPING_TYPE" name="MAPPING" show="false" value="id_MSSQL"/>
+    <elementParameter field="TEXT" name="PROPERTIES" value="&quot;&quot;"/>
+    <elementParameter field="CHECK" name="ACTIVE_DIR_AUTH" value="false"/>
+    <elementParameter field="ENCODING_TYPE" name="ENCODING" show="false" value="&quot;ISO-8859-15&quot;"/>
+    <elementParameter field="TECHNICAL" name="ENCODING:ENCODING_TYPE" value="ISO-8859-15"/>
+    <elementParameter field="CHECK" name="TRIM_ALL_COLUMN" value="true"/>
+    <elementParameter field="TABLE" name="TRIM_COLUMN" show="false">
+      <elementValue elementRef="SCHEMA_COLUMN" value="STID"/>
+      <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="StageName"/>
+      <elementValue elementRef="TRIM" value="false"/>
+    </elementParameter>
+    <elementParameter field="CHECK" name="SET_QUERY_TIMEOUT" value="false"/>
+    <elementParameter field="TEXT" name="QUERY_TIMEOUT_IN_SECONDS" show="false" value="30"/>
+    <elementParameter field="TEXT" name="LABEL" value="Trans_TimeLog"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <metadata connector="FLOW" name="tDBInput_7">
+      <column comment="" key="false" length="255" name="STID" nullable="false" originalLength="-1" pattern="" precision="0" sourceType="NVARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="1073741823" name="StageName" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="NVARCHAR" type="id_String" usefulColumn="true"/>
+    </metadata>
+  </node>
+  <node componentName="tMSSqlOutput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="576" posY="1408">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tDBOutput_1"/>
     <elementParameter field="TECHNICAL" name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY"/>
     <elementParameter field="TECHNICAL" name="PROPERTY:REPOSITORY_PROPERTY_TYPE" show="false" value="_6XJPUPEEEe6lz_uoJFWK-Q"/>
@@ -2650,6 +2793,11 @@
       <elementValue elementRef="UPDATABLE" value="true"/>
       <elementValue elementRef="INSERTABLE" value="true"/>
       <elementValue elementRef="SCHEMA_COLUMN" value="STID"/>
+      <elementValue elementRef="UPDATE_KEY" value="false"/>
+      <elementValue elementRef="DELETE_KEY" value="false"/>
+      <elementValue elementRef="UPDATABLE" value="true"/>
+      <elementValue elementRef="INSERTABLE" value="true"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="StageName"/>
       <elementValue elementRef="UPDATE_KEY" value="false"/>
       <elementValue elementRef="DELETE_KEY" value="false"/>
       <elementValue elementRef="UPDATABLE" value="true"/>
@@ -2724,11 +2872,6 @@
       <elementValue elementRef="DELETE_KEY" value="false"/>
       <elementValue elementRef="UPDATABLE" value="true"/>
       <elementValue elementRef="INSERTABLE" value="true"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="TotalWorkingHourPerMonth"/>
-      <elementValue elementRef="UPDATE_KEY" value="false"/>
-      <elementValue elementRef="DELETE_KEY" value="false"/>
-      <elementValue elementRef="UPDATABLE" value="true"/>
-      <elementValue elementRef="INSERTABLE" value="true"/>
       <elementValue elementRef="SCHEMA_COLUMN" value="MandaysLeft"/>
       <elementValue elementRef="UPDATE_KEY" value="false"/>
       <elementValue elementRef="DELETE_KEY" value="false"/>
@@ -2762,6 +2905,7 @@
       <column comment="" key="false" length="36" name="STID" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
+      <column comment="" key="false" length="500" name="StageName" nullable="true" originalLength="500" pattern="" precision="0" sourceType="NVARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="500" name="ProjectID" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="100" name="ProjectDivisionObjectNo" nullable="true" pattern="" precision="0" sourceType="NVARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
@@ -2782,7 +2926,6 @@
       <column comment="" defaultValue="((0))" key="false" length="18" name="TotalWorkingHourConsideredLeave" nullable="true" originalLength="18" pattern="" precision="2" sourceType="FLOAT" type="id_Double" usefulColumn="true"/>
       <column comment="" defaultValue="((0))" key="false" length="7" name="TimeLogHour" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="FLOAT" type="id_Double" usefulColumn="true"/>
       <column comment="" defaultValue="((0))" key="false" length="18" name="TotalManDayLogPerMonthForProject" nullable="true" originalLength="18" pattern="" precision="2" sourceType="FLOAT" type="id_Double" usefulColumn="true"/>
-      <column comment="" key="false" length="18" name="TotalWorkingHourPerMonth" nullable="true" originalLength="18" pattern="" precision="2" sourceType="FLOAT" type="id_Double" usefulColumn="true"/>
       <column comment="" defaultValue="((0))" key="false" length="18" name="MandaysLeft" nullable="true" originalLength="18" pattern="" precision="2" sourceType="FLOAT" type="id_Double" usefulColumn="true"/>
       <column comment="" defaultValue="((0))" key="false" length="18" name="MonthsLeft" nullable="true" originalLength="18" pattern="" precision="2" sourceType="FLOAT" type="id_Double" usefulColumn="true"/>
       <column comment="" defaultValue="((0))" key="false" length="18" name="AverageMandaysBasedOnMonthsLeft" nullable="true" originalLength="18" pattern="" precision="2" sourceType="FLOAT" type="id_Double" usefulColumn="true"/>
@@ -2795,6 +2938,7 @@
       <column comment="" key="false" length="36" name="STID" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
+      <column comment="" key="false" length="500" name="StageName" nullable="true" originalLength="500" pattern="" precision="0" sourceType="NVARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="500" name="ProjectID" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="100" name="ProjectDivisionObjectNo" nullable="true" pattern="" precision="0" sourceType="NVARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
@@ -2815,7 +2959,6 @@
       <column comment="" defaultValue="((0))" key="false" length="18" name="TotalWorkingHourConsideredLeave" nullable="true" originalLength="18" pattern="" precision="2" sourceType="FLOAT" type="id_Double" usefulColumn="true"/>
       <column comment="" defaultValue="((0))" key="false" length="7" name="TimeLogHour" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="FLOAT" type="id_Double" usefulColumn="true"/>
       <column comment="" defaultValue="((0))" key="false" length="18" name="TotalManDayLogPerMonthForProject" nullable="true" originalLength="18" pattern="" precision="2" sourceType="FLOAT" type="id_Double" usefulColumn="true"/>
-      <column comment="" key="false" length="18" name="TotalWorkingHourPerMonth" nullable="true" originalLength="18" pattern="" precision="2" sourceType="FLOAT" type="id_Double" usefulColumn="true"/>
       <column comment="" defaultValue="((0))" key="false" length="18" name="MandaysLeft" nullable="true" originalLength="18" pattern="" precision="2" sourceType="FLOAT" type="id_Double" usefulColumn="true"/>
       <column comment="" defaultValue="((0))" key="false" length="18" name="MonthsLeft" nullable="true" originalLength="18" pattern="" precision="2" sourceType="FLOAT" type="id_Double" usefulColumn="true"/>
       <column comment="" defaultValue="((0))" key="false" length="18" name="AverageMandaysBasedOnMonthsLeft" nullable="true" originalLength="18" pattern="" precision="2" sourceType="FLOAT" type="id_Double" usefulColumn="true"/>
@@ -3406,18 +3549,21 @@
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="staffName"/>
   </connection>
-  <connection connectorName="FLOW" label="toMSSQL" lineStyle="0" metaname="toMSSQL" offsetLabelX="0" offsetLabelY="0" source="tMap_15" target="tDBOutput_1">
-    <elementParameter field="TABLE" name="TRACES_CONNECTION_FILTER" show="false">
-      <elementValue elementRef="TRACE_COLUMN" value="TotalWorkingHourPerMonth"/>
-      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
-      <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
-    </elementParameter>
+  <connection connectorName="FLOW" label="toGetSTMaster" lineStyle="0" metaname="toGetSTMaster" offsetLabelX="0" offsetLabelY="0" source="tMap_15" target="tMap_16">
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
-    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="toMSSQL"/>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="toGetSTMaster"/>
   </connection>
   <connection connectorName="FLOW" label="staffMaster" lineStyle="8" metaname="tDBInput_6" offsetLabelX="-6" offsetLabelY="1" source="tDBInput_6" target="tMap_15">
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="staffMaster"/>
+  </connection>
+  <connection connectorName="FLOW" label="toMSSQL" lineStyle="0" metaname="toMSSQL" offsetLabelX="0" offsetLabelY="0" source="tMap_16" target="tDBOutput_1">
+    <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="toMSSQL"/>
+  </connection>
+  <connection connectorName="FLOW" label="stageMaster" lineStyle="8" metaname="tDBInput_7" offsetLabelX="0" offsetLabelY="0" source="tDBInput_7" target="tMap_16">
+    <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="stageMaster"/>
   </connection>
   <connection connectorName="FLOW" label="out1" lineStyle="0" metaname="out1" offsetLabelX="0" offsetLabelY="0" source="tMap_13" target="tHashOutput_9">
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
@@ -3511,13 +3657,13 @@
     <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="92;131;150"/>
     <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
   </subjob>
-<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_fa076d3c-369b-45f7-9cb6-b0e4e45b631d"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>7//+lWXmKPoqvD+z1yPoJczJgKTvCInriXSG1YBqHdp1JI+iSvdgLG+5KdDcYms0CMLk8uMaab71&#13;
-wjA8ZpgXUg==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_da2d159a-df36-4bd1-b326-b26125bb63a6"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>sWGZn8P6R05guSx8h9kcbYiHGCyl9erntfgQCP5MSn5HOuOWwKH6ngqwzbVaIDKi4cR9uXwJ5LMt&#13;
-ZkcZFLy2HA==</DigestValue></Reference></SignedInfo><SignatureValue>m0L5Lb1PNyg2a6ZcbutcGkramE9po26OCEJKXWrGPJvhNM8GbYU+eT1Sqt/Ykr9VuD5sg8At0kbU&#13;
-9SnFDEr8xaol/G8UTAQ9gTOn8w+RiMc2EodCbdVI0Fhf1D4Hyk7WeAZUMwI5x3M1vjYgxH7SApzA&#13;
-mxkPhE7BihGXveD2ZpV/kAqiMUIQifZiaidfOxwKkpT1AuRAY8KFuIstskxgk3x/RkkeNhKCMnSD&#13;
-A/JhioOXBBBjqiSUfvHrQ0Mva0MPWOPM1INnhao9pxYmfZQGcQrPnC5EAOXnXeI/Ugcz2FRXYZmd&#13;
-UMYgH3o4HPUrBr95JZ3YUr+M4Tce1khw6KeXxA==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w&#13;
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_bca78333-9bde-49df-923f-d5276f5f91dd"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>eXLj88wxB+vavW7JT5zLKqPgO9xZ2AVADB73xLYHK83Kt4g59/7jyHSWUTwTWHDEgxOqJSSESvex&#13;
+SIb2fWhw6Q==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_dd1a05c5-307c-4f6c-8be2-41ec6afac97a"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>89ZvQ5dAgM+tvDCfzjndSzm61toWXMIrKlfIZ16LbMqvOW3bYSIsvhLBYYK/+21MnkRds4g+MnyO&#13;
+Te+yErYerQ==</DigestValue></Reference></SignedInfo><SignatureValue>MLL1qoQsxbsD7H4QxH/GnIZgxIUV08Nt9rTwWLpJERl3GkJ2H8d42K9NZ0MzPyxVpH8H+h28aJnD&#13;
+EE4t32L9Id5hZ42R/GoDcsaUjXcuskVHMYtUBVSyssfN4994dPS97Y1nKcJm8t9LvgtPWiH/xXNk&#13;
+MeHwheK6N19nHNYbOxD8oHW6b5G4d/ybry+HvWo6nWbYHwtmb95Cf450t7u0/+Utlnw1sfNMRqPD&#13;
+D1dfzAD1cP/FL6F/w+VpnJ4W87ivEnXtkgCHagh6aZu3VXiArPTZv/b0lm1+Ojf9GhI8iRsIgoVx&#13;
+d/ZCNmK7jug53dLUBS4csXefMMXkQNFERBtTmg==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w&#13;
 DAYDVQQIEwVQYXJpczEOMAwGA1UEBxMFUGFyaXMxFDASBgNVBAoTC1RhbGVuZCBJbmMuMQwwCgYD&#13;
 VQQLDANSJkQxFjAUBgNVBAMMDVRhbGVuZCBSJkQgQ0ExIjAgBgkqhkiG9w0BCQEWE3NlY3VyaXR5&#13;
 QHRhbGVuZC5jb20wHhcNMTkwNjAzMDgxODIwWhcNMjkwNjAzMDAwMDAwWjB7MSgwJgYDVQQDEx9U&#13;
@@ -3539,4 +3685,4 @@ hakvpzhOyLo91h8YAQrEZJdNuKA8IYmBrFZQZDCz0uywKSyFfzPyJhvxylCLG/iDPPfE0VWcrMJ/&#13
 WQJly/2XPg/NBCTF3pSKS0kCiA7PeaI3cWkMYYA3PMwYDvzqs1opBRglG7ikj0bQxSm3lcjMuuvW&#13;
 gBRksFKjP3K/nztsjSoYITOM9jR29ReIL3v0E8RbAFwA2RGq6Dxd0ixfbucMesy5Gnr8tfYy6rW+&#13;
 qSQqd3ah4+PSzBNVwIB4ytpdrG3SlhCI2i2Th8ek8Sjsaquh9qPAerWNd2+84HWOOGj1Xe1qc6vg&#13;
-qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_da2d159a-df36-4bd1-b326-b26125bb63a6" Target="#_fa076d3c-369b-45f7-9cb6-b0e4e45b631d"><Timestamp>2024-05-30 16:30:02</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
+qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_dd1a05c5-307c-4f6c-8be2-41ec6afac97a" Target="#_bca78333-9bde-49df-923f-d5276f5f91dd"><Timestamp>2024-05-30 16:42:39</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>

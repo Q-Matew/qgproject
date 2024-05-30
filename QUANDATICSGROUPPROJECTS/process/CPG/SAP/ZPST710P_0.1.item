@@ -317,7 +317,7 @@
       <column comment="" key="false" length="255" name="Variance_Total" nullable="true" originalLength="-1" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
     </metadata>
   </node>
-  <node componentName="tMap" componentVersion="2.1" offsetLabelX="0" offsetLabelY="0" posX="480" posY="64">
+  <node componentName="tMap" componentVersion="2.1" offsetLabelX="0" offsetLabelY="0" posX="448" posY="64">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tMap_1"/>
     <elementParameter field="EXTERNAL" name="MAP" value=""/>
     <elementParameter field="CLOSED_LIST" name="LINK_STYLE" value="AUTO"/>
@@ -331,7 +331,7 @@
     <elementParameter field="TEXT" name="ROWS_BUFFER_SIZE" value="2000000"/>
     <elementParameter field="CHECK" name="CHANGE_HASH_AND_EQUALS_FOR_BIGDECIMAL" value="true"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
-    <metadata connector="FLOW" name="out1">
+    <metadata connector="FLOW" name="main1">
       <column comment="" key="false" length="255" name="PL_Year" nullable="true" originalLength="-1" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="255" name="PL_Month" nullable="true" originalLength="-1" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="255" name="SAP_Project_Code" nullable="true" originalLength="-1" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
@@ -356,29 +356,29 @@
     <nodeData xsi:type="TalendMapper:MapperData">
       <uiProperties/>
       <varTables minimized="true" name="Var" sizeState="INTERMEDIATE"/>
-      <outputTables name="out1" sizeState="INTERMEDIATE">
-        <mapperTableEntries expression="row2.PL_Year" name="PL_Year" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="row2.PL_Month" name="PL_Month" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="row2.SAP_Project_Code" name="SAP_Project_Code" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="row2.Row_No" name="Row_No" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="row2.Currency" name="Currency" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="row2.CE_Group" name="CE_Group" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="row2.Class1" name="Class1" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="row2.Category" name="Category" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="row2.Original_Estimate.contains(&quot;-&quot;) ? &quot;-&quot; + row2.Original_Estimate.replace(&quot;-&quot;, &quot;&quot;) : row2.Original_Estimate " name="Original_Estimate" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="row2.Revised_Period_plan.contains(&quot;-&quot;) ? &quot;-&quot; + row2.Revised_Period_plan.replace(&quot;-&quot;, &quot;&quot;) : row2.Revised_Period_plan " name="Revised_Period_plan" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="row2.Revised_YTD.contains(&quot;-&quot;) ? &quot;-&quot; + row2.Revised_YTD.replace(&quot;-&quot;, &quot;&quot;) : row2.Revised_YTD " name="Revised_YTD" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="row2.Revised_Accum.contains(&quot;-&quot;) ? &quot;-&quot; + row2.Revised_Accum.replace(&quot;-&quot;, &quot;&quot;) : row2.Revised_Accum " name="Revised_Accum" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="row2.Revised_Total.contains(&quot;-&quot;) ? &quot;-&quot; + row2.Revised_Total.replace(&quot;-&quot;, &quot;&quot;) : row2.Revised_Total " name="Revised_Total" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="row2.Actual_Period.contains(&quot;-&quot;) ? &quot;-&quot; + row2.Actual_Period.replace(&quot;-&quot;, &quot;&quot;) : row2.Actual_Period " name="Actual_Period" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="row2.Actual_YTD.contains(&quot;-&quot;) ? &quot;-&quot; + row2.Actual_YTD.replace(&quot;-&quot;, &quot;&quot;) : row2.Actual_YTD " name="Actual_YTD" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="row2.Actual_Accum.contains(&quot;-&quot;) ? &quot;-&quot; + row2.Actual_Accum.replace(&quot;-&quot;, &quot;&quot;) : row2.Actual_Accum " name="Actual_Accum" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="row2.Variance_Period.contains(&quot;-&quot;) ? &quot;-&quot; + row2.Variance_Period.replace(&quot;-&quot;, &quot;&quot;) : row2.Variance_Period " name="Variance_Period" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="row2.Variance_YTD.contains(&quot;-&quot;) ? &quot;-&quot; + row2.Variance_YTD.replace(&quot;-&quot;, &quot;&quot;) : row2.Variance_YTD " name="Variance_YTD" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="row2.Variance_Accum.contains(&quot;-&quot;) ? &quot;-&quot; + row2.Variance_Accum.replace(&quot;-&quot;, &quot;&quot;) : row2.Variance_Accum " name="Variance_Accum" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="row2.Variance_Total.contains(&quot;-&quot;) ? &quot;-&quot; + row2.Variance_Total.replace(&quot;-&quot;, &quot;&quot;) : row2.Variance_Total " name="Variance_Total" nullable="true" type="id_String"/>
+      <outputTables name="main1" sizeState="INTERMEDIATE">
+        <mapperTableEntries expression="sample.PL_Year" name="PL_Year" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="sample.PL_Month" name="PL_Month" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="sample.SAP_Project_Code" name="SAP_Project_Code" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="sample.Row_No" name="Row_No" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="sample.Currency" name="Currency" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="sample.CE_Group" name="CE_Group" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="sample.Class1" name="Class1" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="sample.Category" name="Category" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="sample.Original_Estimate.contains(&quot;-&quot;) ? &quot;-&quot; + sample.Original_Estimate.replace(&quot;-&quot;, &quot;&quot;) : sample.Original_Estimate " name="Original_Estimate" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="sample.Revised_Period_plan.contains(&quot;-&quot;) ? &quot;-&quot; + sample.Revised_Period_plan.replace(&quot;-&quot;, &quot;&quot;) : sample.Revised_Period_plan " name="Revised_Period_plan" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="sample.Revised_YTD.contains(&quot;-&quot;) ? &quot;-&quot; + sample.Revised_YTD.replace(&quot;-&quot;, &quot;&quot;) : sample.Revised_YTD " name="Revised_YTD" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="sample.Revised_Accum.contains(&quot;-&quot;) ? &quot;-&quot; + sample.Revised_Accum.replace(&quot;-&quot;, &quot;&quot;) : sample.Revised_Accum " name="Revised_Accum" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="sample.Revised_Total.contains(&quot;-&quot;) ? &quot;-&quot; + sample.Revised_Total.replace(&quot;-&quot;, &quot;&quot;) : sample.Revised_Total " name="Revised_Total" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="sample.Actual_Period.contains(&quot;-&quot;) ? &quot;-&quot; + sample.Actual_Period.replace(&quot;-&quot;, &quot;&quot;) : sample.Actual_Period " name="Actual_Period" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="sample.Actual_YTD.contains(&quot;-&quot;) ? &quot;-&quot; + sample.Actual_YTD.replace(&quot;-&quot;, &quot;&quot;) : sample.Actual_YTD " name="Actual_YTD" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="sample.Actual_Accum.contains(&quot;-&quot;) ? &quot;-&quot; + sample.Actual_Accum.replace(&quot;-&quot;, &quot;&quot;) : sample.Actual_Accum " name="Actual_Accum" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="sample.Variance_Period.contains(&quot;-&quot;) ? &quot;-&quot; + sample.Variance_Period.replace(&quot;-&quot;, &quot;&quot;) : sample.Variance_Period " name="Variance_Period" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="sample.Variance_YTD.contains(&quot;-&quot;) ? &quot;-&quot; + sample.Variance_YTD.replace(&quot;-&quot;, &quot;&quot;) : sample.Variance_YTD " name="Variance_YTD" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="sample.Variance_Accum.contains(&quot;-&quot;) ? &quot;-&quot; + sample.Variance_Accum.replace(&quot;-&quot;, &quot;&quot;) : sample.Variance_Accum " name="Variance_Accum" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="sample.Variance_Total.contains(&quot;-&quot;) ? &quot;-&quot; + sample.Variance_Total.replace(&quot;-&quot;, &quot;&quot;) : sample.Variance_Total " name="Variance_Total" nullable="true" type="id_String"/>
       </outputTables>
-      <inputTables lookupMode="LOAD_ONCE" matchingMode="ALL_ROWS" name="row2" sizeState="INTERMEDIATE">
+      <inputTables lookupMode="LOAD_ONCE" matchingMode="ALL_ROWS" name="sample" sizeState="INTERMEDIATE">
         <mapperTableEntries name="PL_Year" nullable="true" type="id_String"/>
         <mapperTableEntries name="PL_Month" nullable="true" type="id_String"/>
         <mapperTableEntries name="SAP_Project_Code" nullable="true" type="id_String"/>
@@ -402,7 +402,7 @@
       </inputTables>
     </nodeData>
   </node>
-  <node componentName="tHashOutput" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="640" posY="64">
+  <node componentName="tHashOutput" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="576" posY="64">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tHashOutput_1"/>
     <elementParameter field="CHECK" name="LINK_WITH" value="false"/>
     <elementParameter field="COMPONENT_LIST" name="LIST" show="false" value=""/>
@@ -437,7 +437,7 @@
       <column comment="" key="false" length="255" name="Variance_Total" nullable="true" originalLength="-1" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
     </metadata>
   </node>
-  <node componentName="tAggregateRow" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="768" posY="64">
+  <node componentName="tAggregateRow" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="704" posY="64">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tAggregateRow_1"/>
     <elementParameter field="TABLE" name="GROUPBYS">
       <elementValue elementRef="OUTPUT_COLUMN" value="PL_Year"/>
@@ -465,40 +465,26 @@
       <column comment="" key="false" length="8" name="NoOfRecords" nullable="true" originalLength="8" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_Integer" usefulColumn="true"/>
     </metadata>
   </node>
-  <node componentName="tLogRow" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="896" posY="64">
-    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tLogRow_2"/>
-    <elementParameter field="RADIO" name="BASIC_MODE" value="false"/>
-    <elementParameter field="RADIO" name="TABLE_PRINT" value="true"/>
-    <elementParameter field="RADIO" name="VERTICAL" value="false"/>
-    <elementParameter field="RADIO" name="PRINT_UNIQUE" show="false" value="true"/>
-    <elementParameter field="RADIO" name="PRINT_LABEL" show="false" value="false"/>
-    <elementParameter field="RADIO" name="PRINT_UNIQUE_LABEL" show="false" value="false"/>
-    <elementParameter field="TEXT" name="FIELDSEPARATOR" show="false" value="&quot;|&quot;"/>
-    <elementParameter field="CHECK" name="PRINT_HEADER" show="false" value="false"/>
-    <elementParameter field="CHECK" name="PRINT_UNIQUE_NAME" show="false" value="false"/>
-    <elementParameter field="CHECK" name="PRINT_COLNAMES" show="false" value="false"/>
-    <elementParameter field="CHECK" name="USE_FIXED_LENGTH" show="false" value="false"/>
-    <elementParameter field="TABLE" name="LENGTHS" show="false">
-      <elementValue elementRef="SCHEMA_COLUMN" value="PL_Year"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="PL_Month"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="SAP_Project_Code"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="NoOfRecords"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-    </elementParameter>
-    <elementParameter field="CHECK" name="PRINT_CONTENT_WITH_LOG4J" value="true"/>
-    <elementParameter field="TEXT" name="SCHEMA_OPT_NUM" show="false" value="100"/>
+  <node componentName="tHashOutput" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="832" posY="64">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tHashOutput_2"/>
+    <elementParameter field="CHECK" name="LINK_WITH" value="false"/>
+    <elementParameter field="COMPONENT_LIST" name="LIST" show="false" value=""/>
+    <elementParameter field="CLOSED_LIST" name="DATA_WRITE_MODEL" value="MEMORY"/>
+    <elementParameter field="FILE" name="BASE_FILE_PATH" show="false" value="&quot;/Applications/TalendStudio-8.0.1/studio/workspace/in.hash&quot;"/>
+    <elementParameter field="TEXT" name="MEMORY_HEAP_MAX_SIZE" show="false" value="2"/>
+    <elementParameter field="CLOSED_LIST" name="KEYS_MANAGEMENT" value="KEEP_ALL"/>
+    <elementParameter field="CHECK" name="APPEND" value="true"/>
+    <elementParameter field="CHECK" name="HASH_KEY_FROM_INPUT_CONNECTOR" show="false" value="false"/>
+    <elementParameter field="TEXT" name="LABEL" value="distinct"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
-    <metadata connector="FLOW" name="tLogRow_2">
+    <metadata connector="FLOW" name="tHashOutput_2">
       <column comment="" key="false" length="255" name="PL_Year" nullable="true" originalLength="-1" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="255" name="PL_Month" nullable="true" originalLength="-1" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="255" name="SAP_Project_Code" nullable="true" originalLength="-1" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="8" name="NoOfRecords" nullable="true" originalLength="8" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_Integer" usefulColumn="true"/>
     </metadata>
   </node>
-  <node componentName="tHashInput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="64" posY="160">
+  <node componentName="tHashInput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="384" posY="160">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tHashInput_2"/>
     <elementParameter field="CHECK" name="ACTIVATE" value="false"/>
     <elementParameter field="CHECK" name="LINK_WITH" value="true"/>
@@ -530,7 +516,7 @@
       <column comment="" key="false" length="255" name="Variance_Total" nullable="true" originalLength="-1" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
     </metadata>
   </node>
-  <node componentName="tMap" componentVersion="2.1" offsetLabelX="0" offsetLabelY="0" posX="224" posY="160">
+  <node componentName="tMap" componentVersion="2.1" offsetLabelX="0" offsetLabelY="0" posX="544" posY="160">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tMap_2"/>
     <elementParameter field="CHECK" name="ACTIVATE" value="false"/>
     <elementParameter field="EXTERNAL" name="MAP" value=""/>
@@ -612,7 +598,7 @@
       </inputTables>
     </nodeData>
   </node>
-  <node componentName="tLogRow" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="384" posY="160">
+  <node componentName="tLogRow" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="704" posY="160">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tLogRow_1"/>
     <elementParameter field="CHECK" name="ACTIVATE" value="false"/>
     <elementParameter field="RADIO" name="BASIC_MODE" value="false"/>
@@ -682,34 +668,48 @@
       <column comment="" key="false" length="255" name="Revised_Total" nullable="true" originalLength="-1" pattern="&quot;dd-MM-yyyy&quot;" precision="2" type="id_String" usefulColumn="true"/>
     </metadata>
   </node>
+  <node componentName="tHashInput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="64" posY="160">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tHashInput_1"/>
+    <elementParameter field="CHECK" name="LINK_WITH" value="true"/>
+    <elementParameter field="COMPONENT_LIST" name="LIST" value="tHashOutput_2"/>
+    <elementParameter field="FILE" name="BASE_FILE_PATH" show="false" value="&quot;/Applications/TalendStudio-8.0.1/studio/workspace/in.hash&quot;"/>
+    <elementParameter field="CHECK" name="RELEASE_CACHE" value="false"/>
+    <elementParameter field="TEXT" name="LABEL" value="distinct"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <metadata connector="FLOW" name="tHashInput_1"/>
+  </node>
+  <node componentName="tFlowToIterate" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="192" posY="160">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tFlowToIterate_1"/>
+    <elementParameter field="CHECK" name="DEFAULT_MAP" value="true"/>
+    <elementParameter field="TABLE" name="MAP" show="false"/>
+    <elementParameter field="TEXT" name="LABEL" value="flow"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <metadata connector="FLOW" name="tFlowToIterate_1"/>
+  </node>
   <connection connectorName="ITERATE" label="Iterate" lineStyle="7" metaname="tFileList_1" offsetLabelX="0" offsetLabelY="0" source="tFileList_1" target="tFileInputDelimited_1">
     <elementParameter field="CHECK" name="ENABLE_PARALLEL" value="false"/>
     <elementParameter field="TEXT" name="NUMBER_PARALLEL" show="false" value="2"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="iterate1"/>
   </connection>
-  <connection connectorName="SUBJOB_OK" label="OnSubjobOk" lineStyle="1" metaname="tFileList_1" offsetLabelX="50" offsetLabelY="-16" source="tFileList_1" target="tHashInput_2">
-    <elementParameter field="CHECK" name="ACTIVATE" show="false" value="false"/>
-    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="OnSubjobOk1"/>
-  </connection>
   <connection connectorName="FLOW" label="main" lineStyle="0" metaname="tFileInputDelimited_1" offsetLabelX="0" offsetLabelY="0" source="tFileInputDelimited_1" target="tSampleRow_1">
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="main"/>
   </connection>
-  <connection connectorName="FLOW" label="row2" lineStyle="0" metaname="tSampleRow_1" offsetLabelX="0" offsetLabelY="0" source="tSampleRow_1" target="tMap_1">
+  <connection connectorName="FLOW" label="sample" lineStyle="0" metaname="tSampleRow_1" offsetLabelX="0" offsetLabelY="0" source="tSampleRow_1" target="tMap_1">
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
-    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="row2"/>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="sample"/>
   </connection>
-  <connection connectorName="FLOW" label="out1" lineStyle="0" metaname="out1" offsetLabelX="0" offsetLabelY="0" source="tMap_1" target="tHashOutput_1">
+  <connection connectorName="FLOW" label="main1" lineStyle="0" metaname="main1" offsetLabelX="0" offsetLabelY="0" source="tMap_1" target="tHashOutput_1">
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
-    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="out1"/>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="main1"/>
   </connection>
-  <connection connectorName="FLOW" label="row3" lineStyle="0" metaname="tHashOutput_1" offsetLabelX="0" offsetLabelY="0" source="tHashOutput_1" target="tAggregateRow_1">
+  <connection connectorName="FLOW" label="toDistinct" lineStyle="0" metaname="tHashOutput_1" offsetLabelX="0" offsetLabelY="0" source="tHashOutput_1" target="tAggregateRow_1">
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
-    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="row3"/>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="toDistinct"/>
   </connection>
-  <connection connectorName="FLOW" label="row4" lineStyle="0" metaname="tAggregateRow_1" offsetLabelX="0" offsetLabelY="0" source="tAggregateRow_1" target="tLogRow_2">
+  <connection connectorName="FLOW" label="distinct" lineStyle="0" metaname="tAggregateRow_1" offsetLabelX="0" offsetLabelY="0" source="tAggregateRow_1" target="tHashOutput_2">
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
-    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="row4"/>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="distinct"/>
   </connection>
   <connection connectorName="FLOW" label="row1" lineStyle="0" metaname="tHashInput_2" offsetLabelX="0" offsetLabelY="0" source="tHashInput_2" target="tMap_2">
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
@@ -729,6 +729,10 @@
     <elementParameter field="CHECK" name="ACTIVATE" show="false" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="out2"/>
   </connection>
+  <connection connectorName="FLOW" label="flow" lineStyle="0" metaname="tHashInput_1" offsetLabelX="0" offsetLabelY="0" source="tHashInput_1" target="tFlowToIterate_1">
+    <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="flow"/>
+  </connection>
   <subjob>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tFileList_1"/>
     <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="92;131;150"/>
@@ -739,13 +743,18 @@
     <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="92;131;150"/>
     <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
   </subjob>
-<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_2f7b7fcd-01f9-47ab-9328-311d9809f1c8"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>UJi30VKp9y69++OIHPKW31oVsOWmBF0hat2gkxTBPxSIP/gtr75Ryunmr+fFomjZ1YzeMYxZKE4U&#13;
-e+SzBFSEpQ==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_24838a4e-55f9-46aa-a191-3d07e975f2d3"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>2wW26IROAtKKjnE2KgVwbCw1SfTx7sI5Kf1SGKOenHPVR6TxBf16xOwTz4tk49aBa3MNaPl5f1d9&#13;
-YaXN6N3HNA==</DigestValue></Reference></SignedInfo><SignatureValue>Y9f6MvBT4yRu0chX2H/e35oj7D9kYlKRVfJITxWxyrAacrjWYEqb8WmQkZWYOVsWhtCFXi4JK366&#13;
-C/BAXikf4O5RgX7afEDulNS+KAWuhOlCB/yasRGwFRb3PAV46xXS51p5nX+4W4MqrSsVpT4ruPZM&#13;
-1oniGk2XXYoYeHWcRhyUbAmxSvrIQtfph0uqcrA+u/4mOYJE0Jkz+C3a/67v4B5QO7I7gDZafaYN&#13;
-CjKG5A9CA+gdhuWbXvEcaSbK9yh7SUSPlOFgqwOVWpA3v2+way6N84YDyndWhPncJA9LSW8uv/Tl&#13;
-KC51lWZRHhdUWhZ5H0whdjhSR+lp8PSYbX4hzA==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w&#13;
+  <subjob>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tHashInput_1"/>
+    <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="92;131;150"/>
+    <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
+  </subjob>
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_7b8255a5-3222-4de5-8cd5-60a5871a14fd"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>oBemGIqj/8ow7KqCF7oLIZJO6ahfKcy4ggB3kOlTMayPzLt2WZmn5p7W6mEIvH/RWj4AcO5sP8DF&#13;
+KYCmpt8aRQ==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_ceae8c72-deda-43f5-a12d-42cbc56edd6a"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>q2nBt2Kt49T+FZWbTDC8a4cW4w22rT95RFdvOHbE2ZYzxS8EyeTw6Uc8t6r6igcQHS/i5DudqOz6&#13;
+GfJPAPRB3A==</DigestValue></Reference></SignedInfo><SignatureValue>msCKqF+QypRO44sqvJbwBS+olJ0XWYgc/r/gxVK7ZFtHBiZCCcrxcYKFztHEYj/AyHGyjlW7R6Jg&#13;
+zHk3hq6/guIXBHSDiPura+XHsWe8JHNUga6XQFe9yby7kyJ6d1E90ytYkOLNi9jmOu+jXlxmDQiA&#13;
+K6yMNqlU5UYa5NwnTIJH//Gmq3A38u4igavvqB6V8WjgEsGvoiyrCvOFacLi4cF+FL7j5Kdom0F8&#13;
+TSGSF/7/JrU5HCgFRswaUf4LeTTQVzClZNWxowxyp0NtRV6n3JAmEYp+EVJNoS3bYaUEPsKiYhMQ&#13;
+3WNmSte688p/o3lAdgaRG3guqXZsFSEKlGvsaQ==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w&#13;
 DAYDVQQIEwVQYXJpczEOMAwGA1UEBxMFUGFyaXMxFDASBgNVBAoTC1RhbGVuZCBJbmMuMQwwCgYD&#13;
 VQQLDANSJkQxFjAUBgNVBAMMDVRhbGVuZCBSJkQgQ0ExIjAgBgkqhkiG9w0BCQEWE3NlY3VyaXR5&#13;
 QHRhbGVuZC5jb20wHhcNMTkwNjAzMDgxODIwWhcNMjkwNjAzMDAwMDAwWjB7MSgwJgYDVQQDEx9U&#13;
@@ -767,4 +776,4 @@ hakvpzhOyLo91h8YAQrEZJdNuKA8IYmBrFZQZDCz0uywKSyFfzPyJhvxylCLG/iDPPfE0VWcrMJ/&#13
 WQJly/2XPg/NBCTF3pSKS0kCiA7PeaI3cWkMYYA3PMwYDvzqs1opBRglG7ikj0bQxSm3lcjMuuvW&#13;
 gBRksFKjP3K/nztsjSoYITOM9jR29ReIL3v0E8RbAFwA2RGq6Dxd0ixfbucMesy5Gnr8tfYy6rW+&#13;
 qSQqd3ah4+PSzBNVwIB4ytpdrG3SlhCI2i2Th8ek8Sjsaquh9qPAerWNd2+84HWOOGj1Xe1qc6vg&#13;
-qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_24838a4e-55f9-46aa-a191-3d07e975f2d3" Target="#_2f7b7fcd-01f9-47ab-9328-311d9809f1c8"><Timestamp>2024-05-30 02:05:08</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
+qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_ceae8c72-deda-43f5-a12d-42cbc56edd6a" Target="#_7b8255a5-3222-4de5-8cd5-60a5871a14fd"><Timestamp>2024-05-30 02:19:03</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>

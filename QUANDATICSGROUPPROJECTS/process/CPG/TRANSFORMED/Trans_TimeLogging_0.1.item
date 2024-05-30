@@ -640,7 +640,7 @@
       </column>
     </metadata>
     <nodeData xsi:type="TalendMapper:MapperData">
-      <uiProperties shellMaximized="true"/>
+      <uiProperties/>
       <varTables minimized="true" name="Var" sizeState="INTERMEDIATE"/>
       <outputTables name="checkWH" sizeState="INTERMEDIATE">
         <mapperTableEntries expression="toMoreInfo.eePersoNo " name="eePersoNo" nullable="true" type="id_String"/>
@@ -803,6 +803,7 @@
       <column comment="" key="false" length="18" name="hour" nullable="true" pattern="" precision="2" sourceType="FLOAT" type="id_Double" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
+      <column comment="" key="false" length="18" name="workingHourPerDay" nullable="true" originalLength="18" pattern="" precision="2" sourceType="" type="id_Double" usefulColumn="true"/>
       <column comment="" key="false" length="10" name="status" nullable="true" pattern="" precision="0" sourceType="INT" type="id_Integer" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
@@ -814,7 +815,7 @@
       </column>
     </metadata>
     <nodeData xsi:type="TalendMapper:MapperData">
-      <uiProperties/>
+      <uiProperties shellMaximized="true"/>
       <varTables minimized="true" name="Var" sizeState="INTERMEDIATE"/>
       <outputTables name="out1" sizeState="INTERMEDIATE">
         <mapperTableEntries expression="checkWH.eePersoNo " name="eePersoNo" nullable="true" type="id_String"/>
@@ -833,6 +834,7 @@
         <mapperTableEntries expression="calendar.Date == null ? &quot;Y&quot; : &quot;N&quot;" name="isWorkingDay" type="id_String"/>
         <mapperTableEntries expression="checkWH.workingHourRequired " name="workingHourRequired" nullable="true" type="id_Double"/>
         <mapperTableEntries expression="checkWH.hour " name="hour" nullable="true" type="id_Double"/>
+        <mapperTableEntries expression="checkWH.hour / checkWH.workingHourRequired " name="workingHourPerDay" nullable="true" type="id_Double"/>
         <mapperTableEntries expression="checkWH.status " name="status" nullable="true" type="id_Integer"/>
         <mapperTableEntries expression="checkWH.hourInText " name="hourInText" nullable="true" type="id_String"/>
         <mapperTableEntries expression="checkWH.hourInMins " name="hourInMins" nullable="true" type="id_Double"/>
@@ -955,6 +957,7 @@
       <column comment="" key="false" length="18" name="hour" nullable="true" pattern="" precision="2" sourceType="FLOAT" type="id_Double" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
+      <column comment="" key="false" length="18" name="workingHourPerDay" nullable="true" originalLength="18" pattern="" precision="2" sourceType="" type="id_Double" usefulColumn="true"/>
       <column comment="" key="false" length="10" name="status" nullable="true" pattern="" precision="0" sourceType="INT" type="id_Integer" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
@@ -1271,6 +1274,7 @@
       <column comment="" key="false" length="18" name="hour" nullable="true" pattern="" precision="2" sourceType="FLOAT" type="id_Double" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
+      <column comment="" key="false" length="18" name="workingHourPerDay" nullable="true" originalLength="18" pattern="" precision="2" sourceType="" type="id_Double" usefulColumn="true"/>
       <column comment="" key="false" length="10" name="status" nullable="true" pattern="" precision="0" sourceType="INT" type="id_Integer" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
@@ -1335,6 +1339,7 @@
       <column comment="" key="false" length="18" name="hour" nullable="true" pattern="" precision="2" sourceType="FLOAT" type="id_Double" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
+      <column comment="" key="false" length="18" name="workingHourPerDay" nullable="true" originalLength="18" pattern="" precision="2" sourceType="" type="id_Double" usefulColumn="true"/>
       <column comment="" key="false" length="10" name="status" nullable="true" pattern="" precision="0" sourceType="INT" type="id_Integer" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
@@ -1351,7 +1356,7 @@
       <column comment="" defaultValue="" key="false" length="18" name="halfDayLeaveWorkingHour" nullable="true" originalLength="-1" pattern="" precision="2" sourceType="FLOAT" type="id_Double" usefulColumn="true"/>
     </metadata>
     <nodeData xsi:type="TalendMapper:MapperData">
-      <uiProperties/>
+      <uiProperties shellMaximized="true"/>
       <varTables minimized="true" name="Var" sizeState="INTERMEDIATE"/>
       <outputTables name="enriched" sizeState="INTERMEDIATE">
         <mapperTableEntries expression="toGetLeave.eePersoNo " name="eePersoNo" nullable="true" type="id_String"/>
@@ -1370,6 +1375,7 @@
         <mapperTableEntries expression="toGetLeave.isWorkingDay " name="isWorkingDay" type="id_String"/>
         <mapperTableEntries expression="toGetLeave.workingHourRequired " name="workingHourRequired" nullable="true" type="id_Double"/>
         <mapperTableEntries expression="toGetLeave.hour " name="hour" nullable="true" type="id_Double"/>
+        <mapperTableEntries expression="toGetLeave.workingHourPerDay " name="workingHourPerDay" nullable="true" type="id_Double"/>
         <mapperTableEntries expression="toGetLeave.status " name="status" nullable="true" type="id_Integer"/>
         <mapperTableEntries expression="toGetLeave.hourInText " name="hourInText" nullable="true" type="id_String"/>
         <mapperTableEntries expression="leaveDetails.date == null ? &quot;N&quot; : &quot;Y&quot;" name="isOnLeave" nullable="true" type="id_String"/>
@@ -1398,6 +1404,7 @@
         <mapperTableEntries name="isWorkingDay" type="id_String"/>
         <mapperTableEntries name="workingHourRequired" nullable="true" type="id_Double"/>
         <mapperTableEntries name="hour" nullable="true" type="id_Double"/>
+        <mapperTableEntries name="workingHourPerDay" nullable="true" type="id_Double"/>
         <mapperTableEntries name="status" nullable="true" type="id_Integer"/>
         <mapperTableEntries name="hourInText" nullable="true" type="id_String"/>
         <mapperTableEntries name="hourInMins" nullable="true" type="id_Double"/>
@@ -1488,6 +1495,7 @@
       <column comment="" key="false" length="18" name="hour" nullable="true" pattern="" precision="2" sourceType="FLOAT" type="id_Double" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
+      <column comment="" key="false" length="18" name="workingHourPerDay" nullable="true" originalLength="18" pattern="" precision="2" sourceType="" type="id_Double" usefulColumn="true"/>
       <column comment="" key="false" length="10" name="status" nullable="true" pattern="" precision="0" sourceType="INT" type="id_Integer" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
@@ -1542,6 +1550,7 @@
       <column comment="" key="false" length="18" name="hour" nullable="true" pattern="" precision="2" sourceType="FLOAT" type="id_Double" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
+      <column comment="" key="false" length="18" name="workingHourPerDay" nullable="true" originalLength="18" pattern="" precision="2" sourceType="" type="id_Double" usefulColumn="true"/>
       <column comment="" key="false" length="10" name="status" nullable="true" pattern="" precision="0" sourceType="INT" type="id_Integer" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
@@ -1596,6 +1605,7 @@
       <column comment="" key="false" length="18" name="hour" nullable="true" pattern="" precision="2" sourceType="FLOAT" type="id_Double" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
+      <column comment="" key="false" length="18" name="workingHourPerDay" nullable="true" originalLength="18" pattern="" precision="2" sourceType="" type="id_Double" usefulColumn="true"/>
       <column comment="" key="false" length="10" name="status" nullable="true" pattern="" precision="0" sourceType="INT" type="id_Integer" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
@@ -1667,6 +1677,7 @@
       <column comment="" key="false" length="18" name="hour" nullable="true" pattern="" precision="2" sourceType="FLOAT" type="id_Double" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
+      <column comment="" key="false" length="18" name="workingHourPerDay" nullable="true" originalLength="18" pattern="" precision="2" sourceType="" type="id_Double" usefulColumn="true"/>
       <column comment="" key="false" length="10" name="status" nullable="true" pattern="" precision="0" sourceType="INT" type="id_Integer" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
@@ -1683,134 +1694,8 @@
       <column comment="" defaultValue="" key="false" length="18" name="halfDayLeaveWorkingHour" nullable="true" originalLength="-1" pattern="" precision="2" sourceType="FLOAT" type="id_Double" usefulColumn="true"/>
     </metadata>
   </node>
-  <node componentName="tLogRow" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="736" posY="480">
-    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tLogRow_1"/>
-    <elementParameter field="RADIO" name="BASIC_MODE" value="false"/>
-    <elementParameter field="RADIO" name="TABLE_PRINT" value="true"/>
-    <elementParameter field="RADIO" name="VERTICAL" value="false"/>
-    <elementParameter field="RADIO" name="PRINT_UNIQUE" show="false" value="true"/>
-    <elementParameter field="RADIO" name="PRINT_LABEL" show="false" value="false"/>
-    <elementParameter field="RADIO" name="PRINT_UNIQUE_LABEL" show="false" value="false"/>
-    <elementParameter field="TEXT" name="FIELDSEPARATOR" show="false" value="&quot;|&quot;"/>
-    <elementParameter field="CHECK" name="PRINT_HEADER" show="false" value="false"/>
-    <elementParameter field="CHECK" name="PRINT_UNIQUE_NAME" show="false" value="false"/>
-    <elementParameter field="CHECK" name="PRINT_COLNAMES" show="false" value="false"/>
-    <elementParameter field="CHECK" name="USE_FIXED_LENGTH" show="false" value="false"/>
-    <elementParameter field="TABLE" name="LENGTHS" show="false">
-      <elementValue elementRef="SCHEMA_COLUMN" value="eePersoNo"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="eeName"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="companyCode"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="wbsCode"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="projectID"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="masterProjectID"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="masterProjectDivisionObjectNo"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="masterProjectName"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="projectName"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="projectDirectorName"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="activityID"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="activityDesc"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="timeLogDate"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="isWorkingDay"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="workingHourRequired"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="hour"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="status"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="hourInText"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="isOnLeave"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="leaveType"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="startDate"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="endDate"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="noOfDaysOnLeave"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="startTime"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="endTime"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="halfDayLeaveWorkingHour"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-    </elementParameter>
-    <elementParameter field="CHECK" name="PRINT_CONTENT_WITH_LOG4J" value="true"/>
-    <elementParameter field="TEXT" name="SCHEMA_OPT_NUM" show="false" value="100"/>
-    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
-    <metadata connector="FLOW" name="tLogRow_1">
-      <column comment="" key="false" length="50" name="eePersoNo" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
-        <additionalField key="Comment" value=""/>
-      </column>
-      <column comment="" key="false" length="500" name="eeName" nullable="true" pattern="" precision="0" sourceType="NVARCHAR" type="id_String" usefulColumn="true">
-        <additionalField key="Comment" value=""/>
-      </column>
-      <column comment="" key="false" length="4" name="companyCode" nullable="true" pattern="" precision="0" sourceType="NCHAR" type="id_String" usefulColumn="true">
-        <additionalField key="Comment" value=""/>
-      </column>
-      <column comment="" key="false" length="40" name="wbsCode" nullable="true" pattern="" precision="0" sourceType="NVARCHAR" type="id_String" usefulColumn="true">
-        <additionalField key="Comment" value=""/>
-      </column>
-      <column comment="" key="false" length="500" name="projectID" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
-        <additionalField key="Comment" value=""/>
-      </column>
-      <column comment="" key="false" length="100" name="masterProjectID" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="NVARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="100" name="masterProjectDivisionObjectNo" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="NVARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="1073741823" name="masterProjectName" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="NVARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="500" name="projectName" nullable="true" pattern="" precision="0" sourceType="NVARCHAR" type="id_String" usefulColumn="true">
-        <additionalField key="Comment" value=""/>
-      </column>
-      <column comment="" key="false" length="100" name="projectDirectorName" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="NVARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="50" name="activityID" nullable="true" pattern="" precision="0" sourceType="NVARCHAR" type="id_String" usefulColumn="true">
-        <additionalField key="Comment" value=""/>
-      </column>
-      <column comment="" key="false" length="500" name="activityDesc" nullable="true" pattern="" precision="0" sourceType="NVARCHAR" type="id_String" usefulColumn="true">
-        <additionalField key="Comment" value=""/>
-      </column>
-      <column comment="" key="false" length="10" name="timeLogDate" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="DATE" type="id_Date" usefulColumn="true">
-        <additionalField key="Comment" value=""/>
-      </column>
-      <column comment="" key="false" length="1" name="isWorkingDay" nullable="false" originalLength="1" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="DATETIME" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="18" name="workingHourRequired" nullable="true" pattern="" precision="2" sourceType="FLOAT" type="id_Double" usefulColumn="true">
-        <additionalField key="Comment" value=""/>
-      </column>
-      <column comment="" key="false" length="18" name="hour" nullable="true" pattern="" precision="2" sourceType="FLOAT" type="id_Double" usefulColumn="true">
-        <additionalField key="Comment" value=""/>
-      </column>
-      <column comment="" key="false" length="10" name="status" nullable="true" pattern="" precision="0" sourceType="INT" type="id_Integer" usefulColumn="true">
-        <additionalField key="Comment" value=""/>
-      </column>
-      <column comment="" key="false" length="50" name="hourInText" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
-        <additionalField key="Comment" value=""/>
-      </column>
-      <column comment="" key="false" length="1" name="isOnLeave" nullable="true" originalLength="1" pattern="" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="4" name="leaveType" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="10" name="startDate" nullable="true" originalLength="-1" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="DATE" type="id_Date" usefulColumn="true"/>
-      <column comment="" key="false" length="10" name="endDate" nullable="true" originalLength="-1" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="DATE" type="id_Date" usefulColumn="true"/>
-      <column comment="" key="false" length="8" name="noOfDaysOnLeave" nullable="true" originalLength="8" pattern="" precision="0" sourceType="" type="id_Integer" usefulColumn="true"/>
-      <column comment="" key="false" length="10" name="startTime" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="10" name="endTime" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" defaultValue="" key="false" length="18" name="halfDayLeaveWorkingHour" nullable="true" originalLength="-1" pattern="" precision="2" sourceType="FLOAT" type="id_Double" usefulColumn="true"/>
-    </metadata>
-  </node>
-  <node componentName="tMSSqlOutput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="896" posY="608">
+  <node componentName="tMSSqlOutput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="768" posY="480">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tDBOutput_2"/>
-    <elementParameter field="CHECK" name="ACTIVATE" value="false"/>
     <elementParameter field="TECHNICAL" name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY"/>
     <elementParameter field="TECHNICAL" name="PROPERTY:REPOSITORY_PROPERTY_TYPE" show="false" value="_6XJPUPEEEe6lz_uoJFWK-Q"/>
     <elementParameter field="CHECK" name="USE_EXISTING_CONNECTION" value="false"/>
@@ -1927,6 +1812,11 @@
       <elementValue elementRef="DELETE_KEY" value="false"/>
       <elementValue elementRef="UPDATABLE" value="true"/>
       <elementValue elementRef="INSERTABLE" value="true"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="workingHourPerDay"/>
+      <elementValue elementRef="UPDATE_KEY" value="false"/>
+      <elementValue elementRef="DELETE_KEY" value="false"/>
+      <elementValue elementRef="UPDATABLE" value="true"/>
+      <elementValue elementRef="INSERTABLE" value="true"/>
       <elementValue elementRef="SCHEMA_COLUMN" value="status"/>
       <elementValue elementRef="UPDATE_KEY" value="false"/>
       <elementValue elementRef="DELETE_KEY" value="false"/>
@@ -2026,6 +1916,7 @@
       <column comment="" key="false" length="18" name="hour" nullable="true" pattern="" precision="2" sourceType="FLOAT" type="id_Double" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
+      <column comment="" key="false" length="18" name="workingHourPerDay" nullable="true" originalLength="18" pattern="" precision="2" sourceType="FLOAT" type="id_Double" usefulColumn="true"/>
       <column comment="" key="false" length="10" name="status" nullable="true" pattern="" precision="0" sourceType="INT" type="id_Integer" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
@@ -2080,6 +1971,7 @@
       <column comment="" key="false" length="18" name="hour" nullable="true" pattern="" precision="2" sourceType="FLOAT" type="id_Double" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
+      <column comment="" key="false" length="18" name="workingHourPerDay" nullable="true" originalLength="18" pattern="" precision="2" sourceType="FLOAT" type="id_Double" usefulColumn="true"/>
       <column comment="" key="false" length="10" name="status" nullable="true" pattern="" precision="0" sourceType="INT" type="id_Integer" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
@@ -2137,6 +2029,11 @@
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="manHour"/>
   </connection>
   <connection connectorName="FLOW" label="out1" lineStyle="0" metaname="out1" offsetLabelX="0" offsetLabelY="0" source="tMap_7" target="tHashOutput_3">
+    <elementParameter field="TABLE" name="TRACES_CONNECTION_FILTER" show="false">
+      <elementValue elementRef="TRACE_COLUMN" value="workingHourPerDay"/>
+      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
+      <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
+    </elementParameter>
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="out1"/>
   </connection>
@@ -2184,10 +2081,20 @@
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="expanded"/>
   </connection>
   <connection connectorName="FLOW" label="toGetLeave" lineStyle="0" metaname="tHashInput_2" offsetLabelX="0" offsetLabelY="0" source="tHashInput_2" target="tMap_6">
+    <elementParameter field="TABLE" name="TRACES_CONNECTION_FILTER" show="false">
+      <elementValue elementRef="TRACE_COLUMN" value="workingHourPerDay"/>
+      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
+      <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
+    </elementParameter>
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="toGetLeave"/>
   </connection>
   <connection connectorName="FLOW" label="enriched" lineStyle="0" metaname="enriched" offsetLabelX="0" offsetLabelY="0" source="tMap_6" target="tFilterRow_20">
+    <elementParameter field="TABLE" name="TRACES_CONNECTION_FILTER" show="false">
+      <elementValue elementRef="TRACE_COLUMN" value="workingHourPerDay"/>
+      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
+      <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
+    </elementParameter>
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="enriched"/>
   </connection>
@@ -2231,7 +2138,7 @@
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="filter"/>
   </connection>
-  <connection connectorName="FLOW" label="row1" lineStyle="0" metaname="tSortRow_2" offsetLabelX="0" offsetLabelY="0" source="tSortRow_2" target="tLogRow_1">
+  <connection connectorName="FLOW" label="row1" lineStyle="0" metaname="tSortRow_2" offsetLabelX="0" offsetLabelY="0" source="tSortRow_2" target="tDBOutput_2">
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="row1"/>
   </connection>
@@ -2255,18 +2162,13 @@
     <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="92;131;150"/>
     <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
   </subjob>
-  <subjob>
-    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tDBOutput_2"/>
-    <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="92;131;150"/>
-    <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
-  </subjob>
-<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_ae14a382-79e2-4899-9aa1-a7e32258325a"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>g0rpDt5QbJ2M2lvbgXi3gOrokBJEfr4GSLGrA1KsxL5UDry6Lx2z1JxBPGphGB3rhzgaodvcW1HP&#13;
-0fl5AdzFGw==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_ec2e3ec6-afbb-41ab-a962-ba70fcffc552"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>vCcHGtILvOgbFqvecjcxmw5NybmEgcDzrhv+v7Q+OkX+9f9eWVMVGp9R9YOgOhKjHt4YXUuLLnAZ&#13;
-tZxGWqo8hw==</DigestValue></Reference></SignedInfo><SignatureValue>Yq+7cInSsjVlAaKowBtYpHy5bBsA/y4lO388gBOtxSdMJOqPSCnCNcEMEexUmeKD3B+5dkVvmNgQ&#13;
-5RiMLjE2/ugs3QQfxpaTrMGMbU3BCOojNAsCXxYkKrqR59QL0Oy4Ot4l3ZefW1FfjeMrE8B7FnOt&#13;
-7oG3dCg4Iy+m3tUamm+M46nKGpB5gd3FGXwqYjP2LGaPWa94qla4WgKFIzXCZJMydnDFhMa5F1O5&#13;
-hwH5dAW6PINi5SBVkkhQLDLTp2F4YfT9JQP6UPakjm9+9en7wfj85YqXoLVQ+sYirgjIWMEQ52p1&#13;
-wbN4x0xQAtTRcJMnng2ryx9uENFFVO3X4RGQIQ==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w&#13;
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_284d856d-223f-4b48-9b77-4a3ef7be574d"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>lqJvmvMidgsERp3K0982V2Cj1GBzS7DAlxkJMX2039AJaeqsWVFQNotWoHBDsXZMlRNu9sCqmblz&#13;
+hxLhZmfSuw==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_f3cf8412-c7dd-494b-8897-7357dc930c9b"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>bgn5L6c1cMr9ubJmpfjMSThk8oDRzZwp6mOunxGSbkUVnOtgIH9VNMoQOSAEGwFER3WQYHAkycKC&#13;
+8Uf7IKIXjg==</DigestValue></Reference></SignedInfo><SignatureValue>euw3RpO4VS+dphVofTrmq6KNrY+rYGrfZzsyGdCupyWRWxH+BrHIBOKNNIrY7AbygTuVMvuPi8J3&#13;
+Ra2S/5hjl60zW7t6peVOEDQ2BmXP4AnL6LViqbQuqzux6PNFUvGUX3PQZjywiDEfiMJMQHFQBFBo&#13;
+WupSum/Q8CKNcWF9tGxAQPgGd8CatpMxxOhBCtcZm5XhWBe7roMIa52XILLrHjuUcDAsRhw7+6nz&#13;
+Xsiv3wmwBCAa3BwLyHdwo40x4iykuPavLYGO+kRvNkfRoJSyb4Sc7bvotOLfvarV1KsoD6IviVH3&#13;
+rrjJUOc5ldM9e8414iil/FfYmQzYjM8y2n8ZeQ==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w&#13;
 DAYDVQQIEwVQYXJpczEOMAwGA1UEBxMFUGFyaXMxFDASBgNVBAoTC1RhbGVuZCBJbmMuMQwwCgYD&#13;
 VQQLDANSJkQxFjAUBgNVBAMMDVRhbGVuZCBSJkQgQ0ExIjAgBgkqhkiG9w0BCQEWE3NlY3VyaXR5&#13;
 QHRhbGVuZC5jb20wHhcNMTkwNjAzMDgxODIwWhcNMjkwNjAzMDAwMDAwWjB7MSgwJgYDVQQDEx9U&#13;
@@ -2288,4 +2190,4 @@ hakvpzhOyLo91h8YAQrEZJdNuKA8IYmBrFZQZDCz0uywKSyFfzPyJhvxylCLG/iDPPfE0VWcrMJ/&#13
 WQJly/2XPg/NBCTF3pSKS0kCiA7PeaI3cWkMYYA3PMwYDvzqs1opBRglG7ikj0bQxSm3lcjMuuvW&#13;
 gBRksFKjP3K/nztsjSoYITOM9jR29ReIL3v0E8RbAFwA2RGq6Dxd0ixfbucMesy5Gnr8tfYy6rW+&#13;
 qSQqd3ah4+PSzBNVwIB4ytpdrG3SlhCI2i2Th8ek8Sjsaquh9qPAerWNd2+84HWOOGj1Xe1qc6vg&#13;
-qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_ec2e3ec6-afbb-41ab-a962-ba70fcffc552" Target="#_ae14a382-79e2-4899-9aa1-a7e32258325a"><Timestamp>2024-05-30 14:59:26</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
+qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_f3cf8412-c7dd-494b-8897-7357dc930c9b" Target="#_284d856d-223f-4b48-9b77-4a3ef7be574d"><Timestamp>2024-05-30 15:23:37</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>

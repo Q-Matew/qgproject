@@ -164,7 +164,7 @@
     <elementParameter field="TECHNICAL" name="QUERYSTORE:REPOSITORY_QUERYSTORE_TYPE" show="false" value=""/>
     <elementParameter field="TECHNICAL" name="QUERYSTORE:QUERYSTORE_TYPE" value="BUILT_IN"/>
     <elementParameter field="GUESS_SCHEMA" name="GUESS_SCHEMA" value="&quot;&quot;"/>
-    <elementParameter field="MEMO_SQL" name="QUERY" value="&quot;SELECT RAW_ZPST710A.SAP_Project_Code,&#10;&#9;&#9;RAW_ZPST710A.Staff_No,&#10;&#9;&#9;RAW_ZPST710A.Project_Code_Level&#10;FROM&#9;RAW_ZPST710A&quot;"/>
+    <elementParameter field="MEMO_SQL" name="QUERY" value="&quot;&#10;SELECT RAW_ZPST710A.SAP_Project_Code,&#10;&#9;&#9;RAW_ZPST710A.Staff_No,&#10;&#9;&#9;RAW_ZPST710A.Project_Code_Level&#10;FROM&#9;RAW_ZPST710A&#10;WHERE RAW_ZPST710A.Project_Code_Level = '3'&#10;&quot;"/>
     <elementParameter field="LABEL" name="NOTE" value="This option only applies when deploying and running in the Talend Runtime"/>
     <elementParameter field="CHECK" name="SPECIFY_DATASOURCE_ALIAS" value="false"/>
     <elementParameter field="TEXT" name="DATASOURCE_ALIAS" show="false" value="&quot;&quot;"/>
@@ -246,42 +246,6 @@
       <column comment="" key="false" length="255" name="CalculatedField" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
-      <column comment="" key="false" length="255" name="Original_Estimate" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
-        <additionalField key="Comment" value=""/>
-      </column>
-      <column comment="" key="false" length="255" name="Revised_Period_plan" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
-        <additionalField key="Comment" value=""/>
-      </column>
-      <column comment="" key="false" length="255" name="Revised_YTD" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
-        <additionalField key="Comment" value=""/>
-      </column>
-      <column comment="" key="false" length="255" name="Revised_Accum" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
-        <additionalField key="Comment" value=""/>
-      </column>
-      <column comment="" key="false" length="255" name="Revised_Total" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
-        <additionalField key="Comment" value=""/>
-      </column>
-      <column comment="" key="false" length="255" name="Actual_Period" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
-        <additionalField key="Comment" value=""/>
-      </column>
-      <column comment="" key="false" length="255" name="Actual_YTD" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
-        <additionalField key="Comment" value=""/>
-      </column>
-      <column comment="" key="false" length="255" name="Actual_Accum" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
-        <additionalField key="Comment" value=""/>
-      </column>
-      <column comment="" key="false" length="255" name="Variance_Period" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
-        <additionalField key="Comment" value=""/>
-      </column>
-      <column comment="" key="false" length="255" name="Variance_YTD" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
-        <additionalField key="Comment" value=""/>
-      </column>
-      <column comment="" key="false" length="255" name="Variance_Accum" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
-        <additionalField key="Comment" value=""/>
-      </column>
-      <column comment="" key="false" length="255" name="Variance_Total" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
-        <additionalField key="Comment" value=""/>
-      </column>
     </metadata>
     <nodeData xsi:type="TalendMapper:MapperData">
       <uiProperties shellMaximized="true"/>
@@ -298,18 +262,6 @@
         <mapperTableEntries expression="ZPST710P.Class1 " name="Class1" nullable="true" type="id_String"/>
         <mapperTableEntries expression="ZPST710P.Category " name="Category" nullable="true" type="id_String"/>
         <mapperTableEntries expression="ZPST710P.CalculatedField " name="CalculatedField" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="ZPST710P.Original_Estimate " name="Original_Estimate" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="ZPST710P.Revised_Period_plan " name="Revised_Period_plan" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="ZPST710P.Revised_YTD " name="Revised_YTD" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="ZPST710P.Revised_Accum " name="Revised_Accum" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="ZPST710P.Revised_Total " name="Revised_Total" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="ZPST710P.Actual_Period " name="Actual_Period" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="ZPST710P.Actual_YTD " name="Actual_YTD" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="ZPST710P.Actual_Accum " name="Actual_Accum" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="ZPST710P.Variance_Period " name="Variance_Period" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="ZPST710P.Variance_YTD " name="Variance_YTD" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="ZPST710P.Variance_Accum " name="Variance_Accum" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="ZPST710P.Variance_Total " name="Variance_Total" nullable="true" type="id_String"/>
       </outputTables>
       <inputTables lookupMode="LOAD_ONCE" matchingMode="UNIQUE_MATCH" name="ZPST710A" sizeState="INTERMEDIATE">
         <mapperTableEntries name="SAP_Project_Code" nullable="true" type="id_String"/>
@@ -343,16 +295,6 @@
   </node>
   <node componentName="tMSSqlInput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="224" posY="256">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tDBInput_2"/>
-    <elementParameter field="TEXT" name="COMPONENT_NAME" show="false" value="tMSSqlInput"/>
-    <elementParameter field="TEXT" name="VERSION" show="false" value="0.102 (ALPHA)"/>
-    <elementParameter field="TEXT" name="FAMILY" show="false" value="Databases/DB Specifics/MS_SQL_Server"/>
-    <elementParameter field="CHECK" name="START" show="false" value="false"/>
-    <elementParameter field="CHECK" name="STARTABLE" show="false" value="true"/>
-    <elementParameter field="CHECK" name="SUBTREE_START" show="false" value="false"/>
-    <elementParameter field="CHECK" name="END_OF_FLOW" show="false" value="false"/>
-    <elementParameter field="TEXT" name="HELP" show="false" value="org.talend.help.tMSSqlInput"/>
-    <elementParameter field="DIRECTORY" name="IREPORT_PATH" show="false" value=""/>
-    <elementParameter field="DIRECTORY" name="JAVA_LIBRARY_PATH" show="false" value="/Applications/TalendStudio-8.0.1/studio/configuration/lib/java"/>
     <elementParameter field="CHECK" name="USE_EXISTING_CONNECTION" value="false"/>
     <elementParameter field="COMPONENT_LIST" name="CONNECTION" show="false" value=""/>
     <elementParameter field="TECHNICAL" name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY"/>
@@ -372,7 +314,7 @@
     <elementParameter field="TECHNICAL" name="QUERYSTORE:REPOSITORY_QUERYSTORE_TYPE" show="false" value=""/>
     <elementParameter field="TECHNICAL" name="QUERYSTORE:QUERYSTORE_TYPE" value="BUILT_IN"/>
     <elementParameter field="GUESS_SCHEMA" name="GUESS_SCHEMA" value="&quot;&quot;"/>
-    <elementParameter field="MEMO_SQL" name="QUERY" value="&quot;SELECT RAW_ZPST710P.PL_Year,&#10;&#9;&#9;RAW_ZPST710P.PL_Month,&#10;&#9;&#9;RAW_ZPST710P.SAP_Project_Code,&#10;&#9;&#9;RAW_ZPST710P.Row_Number,&#10;&#9;&#9;RAW_ZPST710P.Currency,&#10;&#9;&#9;RAW_ZPST710P.CE_Group,&#10;&#9;&#9;RAW_ZPST710P.Class1,&#10;&#9;&#9;RAW_ZPST710P.Category,&#10;&#9;&#9;RAW_ZPST710P.CalculatedField,&#10;&#9;&#9;RAW_ZPST710P.Original_Estimate,&#10;&#9;&#9;RAW_ZPST710P.Revised_Period_plan,&#10;&#9;&#9;RAW_ZPST710P.Revised_YTD,&#10;&#9;&#9;RAW_ZPST710P.Revised_Accum,&#10;&#9;&#9;RAW_ZPST710P.Revised_Total,&#10;&#9;&#9;RAW_ZPST710P.Actual_Period,&#10;&#9;&#9;RAW_ZPST710P.Actual_YTD,&#10;&#9;&#9;RAW_ZPST710P.Actual_Accum,&#10;&#9;&#9;RAW_ZPST710P.Variance_Period,&#10;&#9;&#9;RAW_ZPST710P.Variance_YTD,&#10;&#9;&#9;RAW_ZPST710P.Variance_Accum,&#10;&#9;&#9;RAW_ZPST710P.Variance_Total&#10;FROM&#9;RAW_ZPST710P&quot;"/>
+    <elementParameter field="MEMO_SQL" name="QUERY" value="&quot;&#10;SELECT RAW_ZPST710P.PL_Year,&#10;&#9;&#9;RAW_ZPST710P.PL_Month,&#10;&#9;&#9;RAW_ZPST710P.SAP_Project_Code,&#10;&#9;&#9;RAW_ZPST710P.Row_Number,&#10;&#9;&#9;RAW_ZPST710P.Currency,&#10;&#9;&#9;RAW_ZPST710P.CE_Group,&#10;&#9;&#9;RAW_ZPST710P.Class1,&#10;&#9;&#9;RAW_ZPST710P.Category,&#10;&#9;&#9;RAW_ZPST710P.CalculatedField,&#10;&#9;&#9;RAW_ZPST710P.Original_Estimate,&#10;&#9;&#9;RAW_ZPST710P.Revised_Period_plan,&#10;&#9;&#9;RAW_ZPST710P.Revised_YTD,&#10;&#9;&#9;RAW_ZPST710P.Revised_Accum,&#10;&#9;&#9;RAW_ZPST710P.Revised_Total,&#10;&#9;&#9;RAW_ZPST710P.Actual_Period,&#10;&#9;&#9;RAW_ZPST710P.Actual_YTD,&#10;&#9;&#9;RAW_ZPST710P.Actual_Accum,&#10;&#9;&#9;RAW_ZPST710P.Variance_Period,&#10;&#9;&#9;RAW_ZPST710P.Variance_YTD,&#10;&#9;&#9;RAW_ZPST710P.Variance_Accum,&#10;&#9;&#9;RAW_ZPST710P.Variance_Total&#10;FROM&#9;RAW_ZPST710P&#10;WHERE RAW_ZPST710P.Row_Number IN ('2', '39')&#10;&quot;"/>
     <elementParameter field="LABEL" name="NOTE" value="This option only applies when deploying and running in the Talend Runtime"/>
     <elementParameter field="CHECK" name="SPECIFY_DATASOURCE_ALIAS" value="false"/>
     <elementParameter field="TEXT" name="DATASOURCE_ALIAS" show="false" value="&quot;&quot;"/>
@@ -496,8 +438,75 @@
       </column>
     </metadata>
   </node>
-  <node componentName="tMap" componentVersion="2.1" offsetLabelX="0" offsetLabelY="0" posX="384" posY="160">
+  <node componentName="tFileOutputDelimited" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="416" posY="160">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tFileOutputDelimited_1"/>
+    <elementParameter field="CHECK" name="USESTREAM" value="false"/>
+    <elementParameter field="TEXT" name="STREAMNAME" show="false" value="outputStream"/>
+    <elementParameter field="FILE" name="FILENAME" value="&quot;/Users/minganntew/Downloads/abc.csv&quot;"/>
+    <elementParameter field="TEXT" name="ROWSEPARATOR" show="false" value="&quot;\n&quot;"/>
+    <elementParameter field="CHECK" name="OS_LINE_SEPARATOR_AS_ROW_SEPARATOR" value="true"/>
+    <elementParameter field="OPENED_LIST" name="CSVROWSEPARATOR" value="&quot;\n&quot;"/>
+    <elementParameter field="TEXT" name="FIELDSEPARATOR" value="&quot;,&quot;"/>
+    <elementParameter field="CHECK" name="APPEND" value="false"/>
+    <elementParameter field="CHECK" name="INCLUDEHEADER" value="true"/>
+    <elementParameter field="CHECK" name="COMPRESS" value="false"/>
+    <elementParameter field="CHECK" name="ADVANCED_SEPARATOR" value="false"/>
+    <elementParameter field="TEXT" name="THOUSANDS_SEPARATOR" show="false" value="&quot;,&quot;"/>
+    <elementParameter field="TEXT" name="DECIMAL_SEPARATOR" show="false" value="&quot;.&quot;"/>
+    <elementParameter field="CHECK" name="CSV_OPTION" value="true"/>
+    <elementParameter field="TEXT" name="ESCAPE_CHAR" value="&quot;&quot;&quot;"/>
+    <elementParameter field="TEXT" name="TEXT_ENCLOSURE" value="&quot;&quot;&quot;"/>
+    <elementParameter field="CHECK" name="CREATE" value="true"/>
+    <elementParameter field="CHECK" name="SPLIT" value="false"/>
+    <elementParameter field="TEXT" name="SPLIT_EVERY" show="false" value="1000"/>
+    <elementParameter field="CHECK" name="FLUSHONROW" value="false"/>
+    <elementParameter field="TEXT" name="FLUSHONROW_NUM" show="false" value="1"/>
+    <elementParameter field="CHECK" name="ROW_MODE" value="false"/>
+    <elementParameter field="ENCODING_TYPE" name="ENCODING" value="&quot;ISO-8859-15&quot;"/>
+    <elementParameter field="TECHNICAL" name="ENCODING:ENCODING_TYPE" value="ISO-8859-15"/>
+    <elementParameter field="CHECK" name="DELETE_EMPTYFILE" value="true"/>
+    <elementParameter field="CHECK" name="FILE_EXIST_EXCEPTION" value="false"/>
+    <elementParameter field="TEXT" name="SCHEMA_OPT_NUM" show="false" value="90"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <metadata connector="FLOW" name="tFileOutputDelimited_1">
+      <column comment="" key="true" length="255" name="PL_Year" nullable="false" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="true" length="255" name="PL_Month" nullable="false" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="30" name="Staff_No" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="true" length="255" name="SAP_Project_Code" nullable="false" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="10" name="Project_Code_Level" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="true" length="255" name="Row_Number" nullable="false" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="255" name="Currency" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="255" name="CE_Group" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="255" name="Class1" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="255" name="Category" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="255" name="CalculatedField" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+    </metadata>
+  </node>
+  <node componentName="tMap" componentVersion="2.1" offsetLabelX="0" offsetLabelY="0" posX="736" posY="320">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tMap_2"/>
+    <elementParameter field="CHECK" name="ACTIVATE" value="false"/>
     <elementParameter field="EXTERNAL" name="MAP" value=""/>
     <elementParameter field="CLOSED_LIST" name="LINK_STYLE" value="AUTO"/>
     <elementParameter field="DIRECTORY" name="TEMPORARY_DATA_DIRECTORY" value=""/>
@@ -591,7 +600,7 @@
       </column>
     </metadata>
     <nodeData xsi:type="TalendMapper:MapperData">
-      <uiProperties shellMaximized="true"/>
+      <uiProperties/>
       <varTables minimized="true" name="Var" sizeState="INTERMEDIATE"/>
       <outputTables name="out2" sizeState="INTERMEDIATE">
         <mapperTableEntries expression="out1.PL_Year " name="PL_Year" type="id_String"/>
@@ -621,31 +630,6 @@
         <mapperTableEntries expression="out1.Variance_Accum " name="Variance_Accum" nullable="true" type="id_String"/>
         <mapperTableEntries expression="out1.Variance_Total " name="Variance_Total" nullable="true" type="id_String"/>
       </outputTables>
-      <inputTables lookupMode="LOAD_ONCE" matchingMode="UNIQUE_MATCH" name="out1" sizeState="INTERMEDIATE">
-        <mapperTableEntries name="PL_Year" type="id_String"/>
-        <mapperTableEntries name="PL_Month" type="id_String"/>
-        <mapperTableEntries name="Staff_No" nullable="true" type="id_String"/>
-        <mapperTableEntries name="SAP_Project_Code" type="id_String"/>
-        <mapperTableEntries name="Project_Code_Level" nullable="true" type="id_String"/>
-        <mapperTableEntries name="Row_Number" type="id_String"/>
-        <mapperTableEntries name="Currency" nullable="true" type="id_String"/>
-        <mapperTableEntries name="CE_Group" nullable="true" type="id_String"/>
-        <mapperTableEntries name="Class1" nullable="true" type="id_String"/>
-        <mapperTableEntries name="Category" nullable="true" type="id_String"/>
-        <mapperTableEntries name="CalculatedField" nullable="true" type="id_String"/>
-        <mapperTableEntries name="Original_Estimate" nullable="true" type="id_String"/>
-        <mapperTableEntries name="Revised_Period_plan" nullable="true" type="id_String"/>
-        <mapperTableEntries name="Revised_YTD" nullable="true" type="id_String"/>
-        <mapperTableEntries name="Revised_Accum" nullable="true" type="id_String"/>
-        <mapperTableEntries name="Revised_Total" nullable="true" type="id_String"/>
-        <mapperTableEntries name="Actual_Period" nullable="true" type="id_String"/>
-        <mapperTableEntries name="Actual_YTD" nullable="true" type="id_String"/>
-        <mapperTableEntries name="Actual_Accum" nullable="true" type="id_String"/>
-        <mapperTableEntries name="Variance_Period" nullable="true" type="id_String"/>
-        <mapperTableEntries name="Variance_YTD" nullable="true" type="id_String"/>
-        <mapperTableEntries name="Variance_Accum" nullable="true" type="id_String"/>
-        <mapperTableEntries name="Variance_Total" nullable="true" type="id_String"/>
-      </inputTables>
       <inputTables activateCondensedTool="true" lookupMode="LOAD_ONCE" matchingMode="UNIQUE_MATCH" name="StaffMaster" sizeState="INTERMEDIATE">
         <mapperTableEntries expression="out1.Staff_No " name="EmployeeID" operator="=" type="id_String"/>
         <mapperTableEntries name="EmpName" nullable="true" type="id_String"/>
@@ -674,8 +658,9 @@
       </inputTables>
     </nodeData>
   </node>
-  <node componentName="tMSSqlInput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="384" posY="256">
+  <node componentName="tMSSqlInput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="736" posY="416">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tDBInput_4"/>
+    <elementParameter field="CHECK" name="ACTIVATE" value="false"/>
     <elementParameter field="CHECK" name="USE_EXISTING_CONNECTION" value="false"/>
     <elementParameter field="COMPONENT_LIST" name="CONNECTION" show="false" value=""/>
     <elementParameter field="TECHNICAL" name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY"/>
@@ -834,8 +819,9 @@
       </column>
     </metadata>
   </node>
-  <node componentName="tMSSqlOutput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="576" posY="160">
+  <node componentName="tMSSqlOutput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="928" posY="320">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tDBOutput_1"/>
+    <elementParameter field="CHECK" name="ACTIVATE" value="false"/>
     <elementParameter field="TECHNICAL" name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY"/>
     <elementParameter field="TECHNICAL" name="PROPERTY:REPOSITORY_PROPERTY_TYPE" show="false" value="_I2a48PDcEe6lz_uoJFWK-Q"/>
     <elementParameter field="CHECK" name="USE_EXISTING_CONNECTION" value="false"/>
@@ -1188,7 +1174,7 @@
   <connection connectorName="SUBJOB_OK" label="OnSubjobOk" lineStyle="1" metaname="tDBInput_1" offsetLabelX="50" offsetLabelY="32" source="tDBInput_1" target="tJava_1">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="OnSubjobOk3"/>
   </connection>
-  <connection connectorName="FLOW" label="out1" lineStyle="0" metaname="out1" offsetLabelX="0" offsetLabelY="0" source="tMap_1" target="tMap_2">
+  <connection connectorName="FLOW" label="out1" lineStyle="0" metaname="out1" offsetLabelX="0" offsetLabelY="0" source="tMap_1" target="tFileOutputDelimited_1">
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="out1"/>
   </connection>
@@ -1263,10 +1249,12 @@
       <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
     </elementParameter>
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
+    <elementParameter field="CHECK" name="ACTIVATE" show="false" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="out2"/>
   </connection>
   <connection connectorName="FLOW" label="StaffMaster" lineStyle="8" metaname="tDBInput_4" offsetLabelX="0" offsetLabelY="0" source="tDBInput_4" target="tMap_2">
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
+    <elementParameter field="CHECK" name="ACTIVATE" show="false" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="StaffMaster"/>
   </connection>
   <note opaque="true" posX="672" posY="128" sizeHeight="97" sizeWidth="193" text="Please check the PK &amp; FK&#10;and change to connection to&#10;Transformed layer if needed">
@@ -1300,13 +1288,18 @@
     <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="92;131;150"/>
     <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
   </subjob>
-<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_2d98c9d5-c019-46bd-94d7-5d8acae21062"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>1Nh7KYehDA5mIonnFUHfTkXJoHxEYMjCdxT+AdGVHIGdOMxHn5BLQO2NIYUeK+veUGG7gGUIY61k&#13;
-HLLSHCwRLA==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_1f69d871-1fb0-4277-8e87-6bbca1728491"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>wyhJDUrqvRmznuHEq5Mp9aWX5NEn9oAskFySzqn8S9BU94KyEEObF4RIw8ggGmBg7JKnMSe+F6t0&#13;
-x75iZT0M6Q==</DigestValue></Reference></SignedInfo><SignatureValue>QEpv5w25UvPN49YqLIJl5PRdFH4q6/5N6ethfxpavuhT1E1USQMjiKL49q1/CZmadtzWHVuJPHBG&#13;
-cxxgInT1eJoGgT/qUdH4kpC4Y4Iom/F9PBnKy3BpjiCYIjB6A13CTHyZRYyw94Wwd9OJJPsVGAEd&#13;
-lz/diF8HA0wnW6dXcvl9mH4k6IIQqpwIXMkGTjyjRAIs1Tqk+G923JfkmF6OrK7rXeno0qrPeJ5r&#13;
-sutisUSg3gs9rYXD+lkjLZjPYY8/mr5z/a34zzz+cqX2sKHcM0x+EoJ6KUhVHpbPHIbB/XdfxXrO&#13;
-zOZQSgX1KfyQAcQDj3f8x6g7J16KMNLjVgzkRw==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w&#13;
+  <subjob>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tMap_2"/>
+    <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="92;131;150"/>
+    <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
+  </subjob>
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_7e49ba5e-09f3-4ae8-bc36-9d555b8f3eba"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>zGc1Fhg1otvh5zEAfiPXRVifr0rc+i+ccWXus2dLZuoLBZyUyttUP3gg+RpGYrbKzdjMbbxe7jqn&#13;
+QX0nEOp1vA==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_d1249b9d-d4ab-4282-9fd9-69722a175260"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>rPtGriSsA8kg6HV2x3PVfyKshsdhIJaWAd652lF+MCzINTBKk3PrKvaEN3U/xOMV7WoB8Vy4DbrS&#13;
+hTUBdTrhVQ==</DigestValue></Reference></SignedInfo><SignatureValue>Fi/S0UxznC1RyP6Ox3QzrfTWr10X6uXLFEJanC94UqI38CAvq54snna9YOJHWKIOw99Ob6RluuKl&#13;
+ojmjHmnuKTaZkk/0ppb2FKR8aU3jYAP62k467br0nVp4bTNQ+GxD4YxgenJfX1riqDrUfw39hy4v&#13;
+2PIiR7r/XwmCpaFasDulJDCX9kfm24EkuHA0tmYsguuH4YkQYh2FSPscQ0wrz+4bWG56qn3i7rJx&#13;
+H6SWsxT7yGE2C62o27Lo+eTpUCLLEL6k4QdCLX+VN5tHBoz3iTtpnN7CbrKjqXCV9g+MwAvxjLpi&#13;
+K+yrfX0OMmnyDlzueTJebvAHftqEX9BH//vraQ==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w&#13;
 DAYDVQQIEwVQYXJpczEOMAwGA1UEBxMFUGFyaXMxFDASBgNVBAoTC1RhbGVuZCBJbmMuMQwwCgYD&#13;
 VQQLDANSJkQxFjAUBgNVBAMMDVRhbGVuZCBSJkQgQ0ExIjAgBgkqhkiG9w0BCQEWE3NlY3VyaXR5&#13;
 QHRhbGVuZC5jb20wHhcNMTkwNjAzMDgxODIwWhcNMjkwNjAzMDAwMDAwWjB7MSgwJgYDVQQDEx9U&#13;
@@ -1328,4 +1321,4 @@ hakvpzhOyLo91h8YAQrEZJdNuKA8IYmBrFZQZDCz0uywKSyFfzPyJhvxylCLG/iDPPfE0VWcrMJ/&#13
 WQJly/2XPg/NBCTF3pSKS0kCiA7PeaI3cWkMYYA3PMwYDvzqs1opBRglG7ikj0bQxSm3lcjMuuvW&#13;
 gBRksFKjP3K/nztsjSoYITOM9jR29ReIL3v0E8RbAFwA2RGq6Dxd0ixfbucMesy5Gnr8tfYy6rW+&#13;
 qSQqd3ah4+PSzBNVwIB4ytpdrG3SlhCI2i2Th8ek8Sjsaquh9qPAerWNd2+84HWOOGj1Xe1qc6vg&#13;
-qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_1f69d871-1fb0-4277-8e87-6bbca1728491" Target="#_2d98c9d5-c019-46bd-94d7-5d8acae21062"><Timestamp>2024-06-11 01:52:06</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
+qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_d1249b9d-d4ab-4282-9fd9-69722a175260" Target="#_7e49ba5e-09f3-4ae8-bc36-9d555b8f3eba"><Timestamp>2024-06-11 03:17:28</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
